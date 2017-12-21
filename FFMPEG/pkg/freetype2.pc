@@ -1,0 +1,12 @@
+prefix=E:/VS2015/ffbuild/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 2.6
+Libs: -L${libdir} -llibfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2

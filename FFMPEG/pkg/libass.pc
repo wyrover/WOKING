@@ -1,0 +1,12 @@
+prefix=E:/VS2015/ffbuild/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libass
+Description: LibASS is an SSA/ASS subtitles rendering library
+Version: 0.14.0
+Requires: 
+Libs: -L${libdir} -llibass -liconv -lharfbuzz -llibfontconfig -llibfribidi -llibfreetype
+Libs.private: 
+Cflags: -I${includedir}

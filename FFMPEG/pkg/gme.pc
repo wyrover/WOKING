@@ -1,0 +1,11 @@
+prefix=E:/VS2015/ffbuild/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libgme
+Description: open game music files, play tracks, and read game and track information tags
+Version: 0.6.2
+Libs: -L${libdir} -lgme
+Libs.private: 
+Cflags: -I${includedir}
