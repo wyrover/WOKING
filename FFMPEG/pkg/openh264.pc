@@ -1,4 +1,4 @@
-prefix=E:/VS2015/ffbuild/pkg
+prefix=G:/Build/ffmpeg/pkg
 libdir=${prefix}/lib
 includedir=${prefix}/include
 

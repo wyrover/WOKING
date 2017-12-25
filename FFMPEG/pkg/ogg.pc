@@ -1,4 +1,4 @@
-prefix=E:/VS2015/ffbuild/pkg
+prefix=G:/Build/ffmpeg/pkg
 exec_prefix=${prefix}
 libdir=${exec_prefix}/bin/lib/Release_x64
 includedir=${exec_prefix}/src/include

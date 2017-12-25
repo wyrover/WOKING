@@ -7,7 +7,7 @@ Title 用 VS2015 静态编译X64位 ffmpeg
 set "CurrentCD=%~dp0"
 
 :: 设置 ffmpeg 源代码目录
-set "FFmpegSource=E:\source\ffmpeg\src"
+set "FFmpegSource=E:\source\05.ffmpeg\src"
 
 :: 设置 MSYS 的位置
 set "MSYS=F:\Green\Language\MSYS\bin"
@@ -42,13 +42,13 @@ cd %FFmpegSource%
 :: VS2015 静态编译 x64 版本
 git clean -xdf
 bash -c "make clean"
-bash -c "./configure --arch=x86_64 --enable-static --enable-gpl --enable-version3 --enable-nonfree --enable-libgme --enable-libfdk-aac --enable-libilbc --enable-libmp3lame --enable-libfribidi --enable-libfreetype --enable-libxml2 --enable-libfontconfig --enable-libass --enable-libvorbis --enable-libtheora --enable-libopenh264 --enable-libx264 --enable-libx265 --enable-libxvid --enable-libwebp --enable-libmfx --enable-cuda-sdk --toolchain=msvc --prefix=%InstallPath%"
+bash -c "./configure --arch=x86_64 --enable-static --enable-gpl --enable-version3 --enable-nonfree --enable-gnutls --enable-gmp --enable-libgme --enable-libfdk-aac --enable-libilbc --enable-libmp3lame --enable-libfribidi --enable-libfreetype --enable-libxml2 --enable-libfontconfig --enable-libass --enable-libvorbis --enable-libtheora --enable-libopenh264 --enable-libx264 --enable-libx265 --enable-libxvid --enable-libwebp --enable-libmfx --enable-cuda-sdk --toolchain=msvc --prefix=%InstallPath%"
 
 :: 暂停一下，查看是否有错误，如果有，打开 ffmpeg 源代码目录 ffbuild\config.log 查看错误
 pause
 
 :: 根据自己的机器的线程数修改 -j8。如果你的机器是8核16线程，修改为 "make -j16"。极大提高编译速度。
-bash -c "make -j8"
+bash -c "make -j16"
 
 :: 安装，本目录下，以今天的日期为目录
 bash -c "make install"
