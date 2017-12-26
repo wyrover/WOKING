@@ -19,6 +19,7 @@ type
     FbX64                 : Boolean;
     FintImageFileHeaderPos: Integer;
     FintNumberOfSections  : Integer;
+    FimgSectionTable      : array of TImageSectionHeader;
     procedure PEInfo(const strFileName: string);
     procedure ShowSummary;
     procedure ShowImageDosHeader;
@@ -30,6 +31,7 @@ type
     procedure ShowImageFileHeaderRecord;
     procedure ShowImageSectionTable;
     procedure ShowImageSectionTableRecord(const intStartPos: Integer);
+    procedure ShowImageSectionData;
   public
     { Public declarations }
     function RVA2FOA(const intRVA: DWORD; const isth: array of TImageSectionHeader): Integer;
@@ -121,24 +123,54 @@ begin
   finally
     FileClose(hFile);
   end;
+end;
 
+function GetLineValue(const intIndex: Integer; Buffer: array of Byte): String;
+var
+  III        : Integer;
+  intStartPos: Integer;
+  intStopXPos: Integer;
+begin
+  intStartPos := (intIndex + 0) * 16;
+  intStopXPos := (intIndex + 1) * 16;
+  Result      := '';
+  for III     := intStartPos to intStopXPos - 1 do
+  begin
+    Result := Result + Ifthen((Buffer[III] >= 33) and (Buffer[III] <= 126), Chr(Buffer[III]), '.');
+  end;
+end;
 
-
-  // imgNtHeaders32.OptionalHeader.SizeOfImage
-
-  // VA (虚拟地址)      =  RVA (相对虚拟地址) +  ImageBase (基地址)
-  // RVA (相对虚拟地址) = VA (虚拟地址)　－　ImageBase (基地址)
-  // 文件偏移地址 File Offset =　RVA (相对虚拟地址)　－　ΔK
-  // 文件偏移地址 File Offset =　VA (虚拟地址) －　ImageBase (基地址)　－　ΔK
-
+function DisplayString(Buffer: array of Byte; const intStartPos: Integer = 0): String;
+var
+  III         : Integer;
+  JJJ         : Integer;
+  StrLineValue: String;
+begin
+  Result  := '$' + IntToHex(intStartPos, 8) + Chr(9);
+  JJJ     := 0;
+  for III := Low(Buffer) to High(Buffer) do
+  begin
+    if III mod 16 <> 15 then
+    begin
+      Result := Result + IntToHex(Buffer[III], 2) + ' ';
+    end
+    else
+    begin
+      Inc(JJJ);
+      Result       := Result + IntToHex(Buffer[III], 2) + ' ';
+      StrLineValue := GetLineValue(III div 16, Buffer);
+      if III = High(Buffer) then
+        Result := Result + Chr(9) + StrLineValue
+      else
+        Result := Result + Chr(9) + StrLineValue + #13#10 + '$' + IntToHex(JJJ * 16 + intStartPos, 8) + Chr(9);
+    end;
+  end;
 end;
 
 procedure TForm1.ShowHexData(const intStartPos, Count: Integer);
 var
-  III    : Integer;
   hFile  : THandle;
   strTemp: String;
-  strLine: string;
   Buffer : TBytes;
 begin
   hFile := FileOpen(FstrFileName, fmOpenRead or fmShareDenyNone);
@@ -152,27 +184,12 @@ begin
     SetLength(Buffer, Count);
     FileSeek(hFile, intStartPos, 0);
     FileRead(hFile, Buffer[0], Count);
-
-    for III := 0 to Count - 1 do
-    begin
-      if III mod 16 = 0 then
-      begin
-        strLine := Format('%0.8x', [intStartPos + III]) + '  ';
-        if III <> 0 then
-        begin
-          strTemp := strTemp + #13#10 + strLine;
-        end
-        else
-        begin
-          strTemp := strLine;
-        end;
-      end;
-      strTemp := strTemp + ' ' + IntToHex(Buffer[III], 2);
-    end;
-    mmo1.Lines.Add(strTemp);
   finally
     FileClose(hFile);
   end;
+
+  strTemp := DisplayString(Buffer, intStartPos);
+  mmo1.Lines.Add(strTemp);
 end;
 
 procedure TForm1.ShowImageDosHeaderRecord;
@@ -386,7 +403,6 @@ end;
 procedure TForm1.ShowImageSectionTableRecord(const intStartPos: Integer);
 var
   hFile              : THandle;
-  imgSectionTable    : array of TImageSectionHeader;
   III                : Integer;
   strSectionTableName: String;
 begin
@@ -397,10 +413,10 @@ begin
     Exit;
   end;
 
-  SetLength(imgSectionTable, FintNumberOfSections);
+  SetLength(FimgSectionTable, FintNumberOfSections);
   try
     FileSeek(hFile, intStartPos, 0);
-    FileRead(hFile, imgSectionTable[0], FintNumberOfSections * SizeOf(TImageSectionHeader));
+    FileRead(hFile, FimgSectionTable[0], FintNumberOfSections * SizeOf(TImageSectionHeader));
   finally
     FileClose(hFile);
   end;
@@ -409,9 +425,9 @@ begin
   mmo1.Lines.Add(Format('序列  名称%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s', [Chr(9), 'VirtualSize', Chr(9), 'VirtualAddress', Chr(9), 'SizeOfRawData', Chr(9), 'PointerToRawData', Chr(9), 'PointerToRelocations', Chr(9), 'PointerToLinenumbers', Chr(9), 'NumberOfRelocations', Chr(9), 'NumberOfLinenumbers', Chr(9), 'Characteristics']));
   for III := 0 to FintNumberOfSections - 1 do
   begin
-    strSectionTableName := Trim(Chr(imgSectionTable[III].Name[0]) + Chr(imgSectionTable[III].Name[1]) + Chr(imgSectionTable[III].Name[2]) + Chr(imgSectionTable[III].Name[3]) + Chr(imgSectionTable[III].Name[4]) + Chr(imgSectionTable[III].Name[5]) + Chr(imgSectionTable[III].Name[6]) + Chr(imgSectionTable[III].Name[7]));
-    mmo1.Lines.Add(Format('%d  %-10s%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x', [III + 1, strSectionTableName, Chr(9), imgSectionTable[III].Misc.VirtualSize, Chr(9), imgSectionTable[III].VirtualAddress, Chr(9), imgSectionTable[III].SizeOfRawData, Chr(9), imgSectionTable[III].PointerToRawData, Chr(9) + Chr(9), imgSectionTable[III].PointerToRelocations,
-      Chr(9) + Chr(9), imgSectionTable[III].PointerToLinenumbers, Chr(9) + Chr(9), imgSectionTable[III].NumberOfRelocations, Chr(9) + Chr(9), imgSectionTable[III].NumberOfLinenumbers, Chr(9) + Chr(9), imgSectionTable[III].Characteristics]));
+    strSectionTableName := String(PAnsiChar(@FimgSectionTable[III].Name[0]));
+    mmo1.Lines.Add(Format('%d  %-10s%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x', [III + 1, strSectionTableName, Chr(9), FimgSectionTable[III].Misc.VirtualSize, Chr(9), FimgSectionTable[III].VirtualAddress, Chr(9), FimgSectionTable[III].SizeOfRawData, Chr(9), FimgSectionTable[III].PointerToRawData, Chr(9) + Chr(9), FimgSectionTable[III].PointerToRelocations,
+      Chr(9) + Chr(9), FimgSectionTable[III].PointerToLinenumbers, Chr(9) + Chr(9), FimgSectionTable[III].NumberOfRelocations, Chr(9) + Chr(9), FimgSectionTable[III].NumberOfLinenumbers, Chr(9) + Chr(9), FimgSectionTable[III].Characteristics]));
   end;
 end;
 
@@ -426,6 +442,41 @@ begin
 
   ShowHexData(intStartPos, FintNumberOfSections * SizeOf(TImageSectionHeader));
   ShowImageSectionTableRecord(intStartPos);
+end;
+
+procedure TForm1.ShowImageSectionData;
+var
+  hFile              : THandle;
+  III                : Integer;
+  strSectionTableName: String;
+  intStartPos        : Integer;
+begin
+  hFile := FileOpen(FstrFileName, fmOpenRead or fmShareDenyNone);
+  if hFile = INVALID_HANDLE_VALUE then
+  begin
+    ShowMessage('Open File Error! Check whether the file has been opened');
+    Exit;
+  end;
+
+  if FbX64 then
+    intStartPos := FintImageFileHeaderPos + SizeOf(TImageNtHeaders64)
+  else
+    intStartPos := FintImageFileHeaderPos + SizeOf(TImageNtHeaders32);
+
+  SetLength(FimgSectionTable, FintNumberOfSections);
+  try
+    FileSeek(hFile, intStartPos, 0);
+    FileRead(hFile, FimgSectionTable[0], FintNumberOfSections * SizeOf(TImageSectionHeader));
+  finally
+    FileClose(hFile);
+  end;
+
+  mmo1.Lines.Add(Format('序列  名称%s%s%s%s%s%s%s%s%s%s%s%s', [Chr(9), 'VirtualSize', Chr(9), 'VirtualAddress', Chr(9), 'SizeOfRawData', Chr(9), 'PointerToRawData', Chr(9), 'Characteristics', Chr(9), '物理地址']));
+  for III := 0 to FintNumberOfSections - 1 do
+  begin
+    strSectionTableName := String(PAnsiChar(@FimgSectionTable[III].Name[0]));
+    mmo1.Lines.Add(Format('%4d  %-8s%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x%s$%0.8x', [III + 1, strSectionTableName, Chr(9), FimgSectionTable[III].Misc.VirtualSize, Chr(9), FimgSectionTable[III].VirtualAddress, Chr(9), FimgSectionTable[III].SizeOfRawData, Chr(9), FimgSectionTable[III].PointerToRawData, Chr(9) + Chr(9), FimgSectionTable[III].Characteristics, Chr(9), 0]));
+  end;
 end;
 
 procedure TForm1.tvPEChange(Sender: TObject; Node: TTreeNode);
@@ -449,6 +500,9 @@ begin
 
   if (Node.Index = 3) and (Node.Parent.Index = 0) then
     ShowImageSectionTable;
+
+  if (Node.Index = 4) and (Node.Parent.Index = 0) then
+    ShowImageSectionData;
 end;
 
 end.

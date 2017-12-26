@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'PE Info v2.0'
-  ClientHeight = 605
-  ClientWidth = 985
+  ClientHeight = 704
+  ClientWidth = 1207
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -15,8 +15,8 @@ object Form1: TForm1
   Position = poScreenCenter
   OnClose = FormClose
   DesignSize = (
-    985
-    605)
+    1207
+    704)
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -35,7 +35,7 @@ object Form1: TForm1
   object srchbxOpenFile: TSearchBox
     Left = 78
     Top = 8
-    Width = 895
+    Width = 1117
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = GB2312_CHARSET
@@ -47,12 +47,13 @@ object Form1: TForm1
     TabOrder = 0
     OnDblClick = srchbxOpenFileInvokeSearch
     OnInvokeSearch = srchbxOpenFileInvokeSearch
+    ExplicitWidth = 895
   end
   object tvPE: TTreeView
     Left = 12
     Top = 37
     Width = 265
-    Height = 560
+    Height = 659
     Anchors = [akLeft, akTop, akBottom]
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
@@ -67,12 +68,13 @@ object Form1: TForm1
     ShowHint = True
     TabOrder = 1
     OnChange = tvPEChange
+    ExplicitHeight = 560
   end
   object mmo1: TMemo
     Left = 283
     Top = 37
-    Width = 690
-    Height = 560
+    Width = 912
+    Height = 659
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
@@ -85,5 +87,7 @@ object Form1: TForm1
     TabOrder = 2
     WantReturns = False
     WordWrap = False
+    ExplicitWidth = 690
+    ExplicitHeight = 560
   end
 end
