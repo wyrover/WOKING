@@ -1,0 +1,12 @@
+prefix=E:/Woking/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.12.6
+Requires:  
+Libs: -L${libdir} -lfontconfig -lfreetype -liconv -lxml2 -lzlib
+Libs.private: 
+Cflags: -I${includedir} 

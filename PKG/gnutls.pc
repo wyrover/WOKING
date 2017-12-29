@@ -1,0 +1,13 @@
+prefix=E:/Woking/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: GnuTLS
+Description: Transport Security Layer implementation for the GNU system
+URL: http://www.gnutls.org/
+Version: 3.6.1
+Libs: -L${libdir} -lgnutls -llibgmp -llibhogweed -llibnettle -lws2_32 -lzlib -lAdvapi32
+Libs.private:
+Requires.private:
+Cflags: -I${includedir}

@@ -1,0 +1,11 @@
+prefix=E:/Woking/pkg
+exec_prefix=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: glog
+Description: google 出的一个C++轻量级日志库
+Version: 0.3.5
+Libs: -L${libdir} -lglog
+Libs.private:
+Cflags: -I${includedir}

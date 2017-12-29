@@ -1,0 +1,11 @@
+prefix=E:/Woking/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libfdk-aac
+Description: the MPEG Advanced Audio Coding encoding and decoding scheme for digital audio
+Version: 0.1.5
+Libs: -L${libdir} -lfdk-aac
+Libs.private: 
+Cflags: -I${includedir}
