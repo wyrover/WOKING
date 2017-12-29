@@ -1,0 +1,28 @@
+晤祒ん馱釬埻燴ㄩ
+
+	test.c---------------------------->test.i------------------------------->test.s--------------------------->test.o--------------------------------------------------------------------------------------------------------->test.exe
+       		1.啎晤祒ㄗprepressingㄘ            2.晤祒ㄗcompliationㄘ                 3.颯晤ㄗassemblyㄘ                4.蟈諉ㄗlinkingㄘ
+  GCC     	gcc 每E test.c 每o test.i          gcc 每S test.i 每o test.s             gcc 每c test.s 每o test.o         ld 每static crti.o crtbeginT.o test.o 每start-group -lgcc 每lgcc_eh 每lc 每end-group crtend.o ctrn.o
+  VC   		cl /P test.c                       cl /PS test.i
+
+
+
+
+test.c 聆彸埭鎢ㄩ
+
+#include <stdio.h>
+int main()
+{
+    printf("Hello World");
+    return 0;
+}
+
+1  gcc 每E test.c 每o test.i
+2  gcc 每S test.i 每o test.s
+3  gcc 每c test.s 每o test.o
+4  ld 每static crti.o crtbeginT.o test.o 每start-group -lgcc 每lgcc_eh 每lc 每end-group crtend.o ctrn.o
+
+
+
+桯羲粽隅砱
+刉壺蛁庋
