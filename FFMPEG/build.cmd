@@ -13,7 +13,7 @@ set "FFmpegSource=E:\source\05.ffmpeg\src"
 set "MSYS=F:\Green\Language\MSYS\bin"
 
 :: 设置 PKG_CONFIG.EXE 的位置，以及 PKG_CONFIG_PATH 位置 
-set "PKG_CONFIG_PATH=%CurrentCD%PKG"
+set "PKG_CONFIG_PATH=%CurrentCD%..\..\PKG"
 set "PKG_CONFIG_PROC=%PKG_CONFIG_PATH%\PKGCONFIG"
 
 :: 设置 CUDASDK 的位置
