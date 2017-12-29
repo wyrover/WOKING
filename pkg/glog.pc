@@ -1,4 +1,4 @@
-prefix=G:/Build/ffmpeg/pkg
+prefix=E:/Woking/pkg
 exec_prefix=${prefix}/bin
 libdir=${prefix}/lib
 includedir=${prefix}/include

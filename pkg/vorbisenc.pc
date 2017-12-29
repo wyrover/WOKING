@@ -1,4 +1,4 @@
-prefix=G:/Build/ffmpeg/pkg
+prefix=E:/Woking/pkg
 exec_prefix=${prefix}
 libdir=${exec_prefix}/win32/VS2010/bin/lib/Release_x64
 includedir=${prefix}/include
