@@ -13,11 +13,16 @@ set "FFmpegSource=E:\source\ffmpeg\src"
 set "MSYS=F:\Green\Language\MSYS\bin"
 
 :: 设置 PKG_CONFIG.EXE 的位置，以及 PKG_CONFIG_PATH 位置 
-set "PKG_CONFIG_PROC=%CurrentCD%PKG\PKGCONFIG"
 set "PKG_CONFIG_PATH=%CurrentCD%PKG"
+set "PKG_CONFIG_PROC=%PKG_CONFIG_PATH%\PKGCONFIG"
+
+:: 设置 CUDASDK 的位置
+set "CudaInc=%Cuda_Path%\include"
+set "CudaLib=%Cuda_Path%\lib\x64"
+set "CudaBin=%Cuda_Path%\bin"
 
 :: 设置 系统搜索路径
-set "Path=%MSYS%;%PKG_CONFIG_PROC%;%Path%"
+set "Path=%MSYS%;%PKG_CONFIG_PROC%;%CudaBin%;%Path%"
 
 :: 设置 安装目录 <注意系统日期应该修改为 - 格式(例如：2017-12-12)，不能是 \ 格式(2017\12\12),因为 \ 是目录路径，不是目录名称>
 set "TempInstallPath=%CurrentCD%%date%"
@@ -27,10 +32,7 @@ set "InstallPath=%TempInstallPath:\=/%"
 call "%VS140COMNTOOLS%..\..\VC\vcvarsall.bat" amd64
 
 :: 添加第三方的头文件、库文件搜索路径
-set "CudaInc=D:\Language\NVIDIA\CUDA9.0\SDK\include"
-set "CudaLib=D:\Language\NVIDIA\CUDA9.0\SDK\lib\x64"
-
-set "include=%CurrentCD%pkg\include;%CudaInc%;%CurrentCD%pkg\include\libxml2;%include%"
+set "include=%CurrentCD%PKG\include;%CurrentCD%PKG\include\libxml2;%CudaInc%;%include%"
 set "lib=%CurrentCD%pkg\lib;%CudaLib%;%lib%"
 
 :: 切换到 ffmpeg 源代码目录。先切换到根目录，再进入子目录
