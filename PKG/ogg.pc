@@ -1,4 +1,4 @@
-prefix=E:/Woking/pkg
+prefix=E:/Working/pkg
 exec_prefix=${prefix}
 libdir=${exec_prefix}/bin/lib/Release_x64
 includedir=${exec_prefix}/src/include

@@ -1,4 +1,4 @@
-prefix=E:/Woking/pkg
+prefix=E:/Working/pkg
 libdir=${prefix}/lib
 includedir=${prefix}/include
 
