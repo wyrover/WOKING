@@ -3,8 +3,6 @@ unit Unit2;
 
   多线程 PING 机器。扫描多个 IP
 
-  arp -a 也可以。只是只能用于局域网
-
 }
 
 interface
