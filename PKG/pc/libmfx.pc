@@ -1,0 +1,11 @@
+prefix=E:/Working/pkg
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libmfx
+Description: Intel Media SDK Dispatched static library
+Version: 1.23
+Libs: -L${libdir} -llibmfx  -ladvapi32
+Libs.private:
+Cflags: -I${includedir}
