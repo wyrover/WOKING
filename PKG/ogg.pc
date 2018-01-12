@@ -1,7 +1,7 @@
 prefix=E:/Working/pkg
 exec_prefix=${prefix}
-libdir=${exec_prefix}/bin/lib/Release_x64
-includedir=${exec_prefix}/src/include
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
 
 Name: ogg
 Description: ogg is a library for manipulating ogg bitstreams
