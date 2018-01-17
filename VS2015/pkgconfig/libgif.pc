@@ -1,0 +1,12 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: gif
+Description: a library for manipulating GIF files.
+Version: 5.1.4
+
+Requires:
+Libs: -L${libdir} -llibgif
+Cflags: -I${includedir}
