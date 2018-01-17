@@ -8,4 +8,5 @@ VS2015 Static Library /MT
 06 libgif
 07 libtiff
 08 lcms2
+09 openjpeg
 
