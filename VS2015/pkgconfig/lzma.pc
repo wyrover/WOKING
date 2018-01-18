@@ -1,0 +1,12 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: lzma
+Description: lzma general-purpose data-compression library.
+Version: 5.3.0
+
+Requires:
+Libs: -L${libdir} -lliblzma
+Cflags: -I${includedir}
