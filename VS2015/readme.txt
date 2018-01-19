@@ -29,3 +29,6 @@ VS2015 Static Library /MT
 27 x265
 28 libxml2
 29 pcre
+30 boost
+31 sdl2
+32 leveldb

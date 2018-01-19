@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: leveldb
+Description: LevelDB is a light-weight, single-purpose library for persistence with bindings to many platforms.
+Version: 1.1.8
+Libs: -L${libdir} -lleveldb
+Libs.private: 
+Cflags: -I${includedir}
