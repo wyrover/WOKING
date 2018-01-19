@@ -1,0 +1,12 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: intl
+Description: intl library for lossless, block-sorting data compression.
+Version: 1.0.6
+
+Requires:
+Libs: -L${libdir} -llibintl
+Cflags: -I${includedir}

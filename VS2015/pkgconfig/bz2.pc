@@ -6,7 +6,6 @@ includedir=${prefix}/include
 Name: bzip2
 Description: bzip2 library for lossless, block-sorting data compression.
 Version: 1.0.6
-
 Requires:
 Libs: -L${libdir} -llibbz2
 Cflags: -I${includedir}

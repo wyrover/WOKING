@@ -1,0 +1,12 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: webp
+Description: library to encode and decode images in WebP format
+Version: 0.6.1
+
+Requires:
+Libs: -L${libdir} -lwebp
+Cflags: -I${includedir}/webp
