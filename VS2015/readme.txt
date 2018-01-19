@@ -32,3 +32,4 @@ VS2015 Static Library /MT
 30 boost
 31 sdl2
 32 leveldb
+33 libffi
