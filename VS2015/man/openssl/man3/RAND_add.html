@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>RAND_add</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#RETURN-VALUES">RETURN VALUES</a></li>
+  <li><a href="#NOTES">NOTES</a>
+    <ul>
+      <li><a href="#DRBG-with-automatic-seeding-enabled">DRBG with automatic seeding enabled</a></li>
+      <li><a href="#DRBG-with-automatic-seeding-disabled---with-rand-seed-none">DRBG with automatic seeding disabled (--with-rand-seed=none)</a></li>
+    </ul>
+  </li>
+  <li><a href="#HISTORY">HISTORY</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>RAND_add, RAND_poll, RAND_seed, RAND_status, RAND_event, RAND_screen - add randomness to the PRNG or get its status</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> #include &lt;openssl/rand.h&gt;
+
+ int RAND_status(void);
+ int RAND_poll();
+
+ void RAND_add(const void *buf, int num, double randomness);
+ void RAND_seed(const void *buf, int num);</code></pre>
+
+<p>Deprecated:</p>
+
+<pre><code> #if OPENSSL_API_COMPAT &lt; 0x10100000L
+ int RAND_event(UINT iMsg, WPARAM wParam, LPARAM lParam);
+ void RAND_screen(void);
+ #endif</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Random numbers are a vital part of cryptography, including key generation, creating salts, etc., and software-based generators must be &quot;seeded&quot; with external randomness before they can be used as a cryptographically-secure pseudo-random number generator (CSPRNG). The availability of common hardware with special instructions and modern operating systems, which may use items such as interrupt jitter and network packet timings, can be reasonable sources of seeding material.</p>
+
+<p>RAND_status() indicates whether or not the CSPRNG has been sufficiently seeded. If not, functions such as RAND_bytes(3) will fail.</p>
+
+<p>RAND_poll() uses the system&#39;s capabilities to seed the CSPRNG using random input obtained from polling various trusted entropy sources. The default choice of the entropy source can be modified at build time using the --with-rand-seed configure option, see also the <b>NOTES</b> section. A summary of the configure options can be displayed with the OpenSSL <a href="../man1/version.html">version(1)</a> command.</p>
+
+<p>RAND_add() mixes the <b>num</b> bytes at <b>buf</b> into the PRNG state. The <b>randomness</b> argument is an estimate of how much randomness is contained in <b>buf</b>, in bytes, and should be a number between zero and <b>num</b>. Details about sources of randomness and how to estimate their randomness can be found in the literature; for example NIST SP 800-90B. The content of <b>buf</b> cannot be recovered from subsequent CSPRNG output. This function will not normally be needed, as RAND_poll() should have been configured to do the appropriate seeding for the local platform. Applications that need to keep random state in an external file should use <a href="../man3/RAND_load_file.html">RAND_load_file(3)</a>.</p>
+
+<p>RAND_seed() is equivalent to RAND_add() with <b>randomness</b> set to <b>num</b>.</p>
+
+<p>RAND_event() and RAND_screen() are equivalent to RAND_poll().</p>
+
+<h1 id="RETURN-VALUES">RETURN VALUES</h1>
+
+<p>RAND_status() returns 1 if the CSPRNG has been seeded with enough data, 0 otherwise.</p>
+
+<p>RAND_poll() returns 1 if it generated seed data, 0 otherwise.</p>
+
+<p>RAND_event() returns RAND_status().</p>
+
+<p>The other functions do not return values.</p>
+
+<h1 id="NOTES">NOTES</h1>
+
+<p>The new OpenSSL DRBG has some peculiarities which need to be taken into account when it is selected as the default OpenSSL CSPRNG, i.e., when RAND_get_rand_method() == RAND_OpenSSL(). This applies in particular to the way reseeding is done by the DRBG:</p>
+
+<ul>
+
+<li><p>The DRBG seeds itself automatically, pulling random input from trusted entropy sources. Automatic reseeding occurs after a predefined number of generate requests. The selection of the trusted entropy sources is configured at build time using the --with-rand-seed option.</p>
+
+</li>
+<li><p>The DRBG distinguishes two different types of random input: &#39;entropy&#39;, which comes from a trusted source, and &#39;additional input&#39;, which can optionally be added by the user and is considered untrusted.</p>
+
+</li>
+</ul>
+
+<p>Automatic seeding can be disabled using the --with-rand-seed=none option.</p>
+
+<h2 id="DRBG-with-automatic-seeding-enabled">DRBG with automatic seeding enabled</h2>
+
+<p>Calling RAND_poll() or RAND_add() is not necessary, because the DRBG polls the entropy source automatically. However, both calls are permitted, and do reseed the RNG.</p>
+
+<p>RAND_add() can be used to add both kinds of random input, depending on the value of the <b>randomness</b> argument:</p>
+
+<dl>
+
+<dt id="randomness-0">randomness == 0:</dt>
+<dd>
+
+<p>The random bytes are mixed as additional input into the current state of the DRBG. Mixing in additional input is not considered a full reseeding, hence the reseed counter is not reset.</p>
+
+</dd>
+<dt id="randomness-01">randomness &gt; 0:</dt>
+<dd>
+
+<p>The random bytes are used as entropy input for a full reseeding (resp. reinstantiation) if the DRBG is instantiated (resp. uninstantiated or in an error state). A reseeding requires 16 bytes (128 bits) of randomness. It is possible to provide less randomness than required. In this case the missing randomness will be obtained by pulling random input from the trusted entropy sources.</p>
+
+</dd>
+</dl>
+
+<h2 id="DRBG-with-automatic-seeding-disabled---with-rand-seed-none">DRBG with automatic seeding disabled (--with-rand-seed=none)</h2>
+
+<p>Calling RAND_poll() will always fail.</p>
+
+<p>RAND_add() needs to be called for initial seeding and periodic reseeding. At least 16 bytes (128 bits) of randomness have to be provided, otherwise the (re-)seeding of the DRBG will fail.</p>
+
+<h1 id="HISTORY">HISTORY</h1>
+
+<p>RAND_event() and RAND_screen() were deprecated in OpenSSL 1.1.0 and should not be used.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="../man3/RAND_bytes.html">RAND_bytes(3)</a>, <a href="../man3/RAND_egd.html">RAND_egd(3)</a>, <a href="../man3/RAND_load_file.html">RAND_load_file(3)</a></p>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2000-2017 The OpenSSL Project Authors. All Rights Reserved.</p>
+
+<p>Licensed under the OpenSSL license (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
+
+
+</body>
+
+</html>
+
+

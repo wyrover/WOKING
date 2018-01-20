@@ -33,3 +33,5 @@ VS2015 Static Library /MT
 31 sdl2
 32 leveldb
 33 libffi
+34 openssl
+35 libssh2
