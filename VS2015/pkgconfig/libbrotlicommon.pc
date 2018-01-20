@@ -1,0 +1,10 @@
+prefix=E:/Working/dbyoung/VS2015
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libbrotlicommon
+Description: Shared data used by libbrotlienc and libbrotlidec libraries
+URL: https://github.com/google/brotli
+Version: 1.0.0
+Libs: -L${libdir} -lbrotlicommon
+Cflags: -I${includedir}
