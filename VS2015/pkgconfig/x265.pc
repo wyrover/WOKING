@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: x265
+Description: H.265/HEVC video encoder
+Version: 2.6
+Libs: -L${libdir} -llibx265
+Libs.private: 
+Cflags: -I${includedir}

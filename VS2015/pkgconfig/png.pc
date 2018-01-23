@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libpng
+Description:libpng is a read, create, and manipulate PNG (Portable Network Graphics) raster image files library
+Version: 1.6.34
+Requires:
+Libs: -L${libdir} -llibpng -lzlib
+Cflags: -I${includedir}

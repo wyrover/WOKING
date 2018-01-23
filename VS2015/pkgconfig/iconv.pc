@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: iconv
+Description: This library provides an iconv() implementation, for use on systems which don't have one, or whose implementation cannot convert from/to Unicode.
+Version: 1.0.6
+Requires:
+Libs: -L${libdir} -llibiconv
+Cflags: -I${includedir}

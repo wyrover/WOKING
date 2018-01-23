@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: pixman
+Description: Pixman is a library that provides low-level pixel manipulation features such as image compositing and trapezoid rasterization.
+Version: 0.34.0
+Requires:
+Libs: -L${libdir} -lpixman
+Cflags: -I${includedir}

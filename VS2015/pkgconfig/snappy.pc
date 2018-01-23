@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: snappy
+Description: Snappy is a compression/decompression library
+Version: 1.1.7
+Requires:
+Libs: -L${libdir} -lsnappy -lzlib
+Cflags: -I${includedir}

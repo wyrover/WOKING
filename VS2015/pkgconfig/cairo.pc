@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: cairo
+Description: cairo is a lossless, block-sorting data compression library
+Version: 1.15.11
+Requires:
+Libs: -L${libdir} -lcairo -lfreetype -lpixman -lzlib -llibpng
+Cflags: -I${includedir}/cairo

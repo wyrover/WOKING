@@ -1,0 +1,14 @@
+prefix=E:/Working/dbyoung/VS2015
+bindir=${prefix}/bin
+mandir=${prefix}/share/man/
+docdir=${prefix}/share/doc/openjpeg-2.3
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: openjp2
+Description: JPEG2000 library (Part 1 and 2)
+URL: http://www.openjpeg.org/
+Version: 2.3.0
+Libs: -L${libdir} -lopenjp2 -lzlib -llibpng -llibtiff -lliblcms2_static
+Libs.private:
+Cflags: -I${includedir}/openjpeg-2.3

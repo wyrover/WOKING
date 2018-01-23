@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libintl
+Description: Libintl is a library that provides native language support to programs.
+Version: 0.17 2007.11.06
+Requires:
+Libs: -L${libdir} -llibintl
+Cflags: -I${includedir}

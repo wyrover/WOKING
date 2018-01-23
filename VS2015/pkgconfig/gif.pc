@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libgif
+Description:libgif provides code for reading GIF files and transforming them into RGB bitmaps, and for writing RGB bitmaps as GIF files.
+Version: 5.1.4
+Requires:
+Libs: -L${libdir} -llibgif -lzlib
+Cflags: -I${includedir}

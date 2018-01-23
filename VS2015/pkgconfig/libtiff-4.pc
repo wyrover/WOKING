@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libtiff
+Description:  Tag Image File Format (TIFF) library.
+Version: 4.0.9
+Libs: -L${libdir} -ltiff -lzlib -llzma -ljpeg
+Libs.private: 
+Cflags: -I${includedir}
