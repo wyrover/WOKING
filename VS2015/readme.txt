@@ -34,7 +34,7 @@ VS2015 Static Library -MT
 32 leveldb
 33 libffi
 34 openssl
-35 libss2
+35 libssh2
 36 libcurl
 37 brotli
 38 hdf5
