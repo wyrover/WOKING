@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libbrotlienc
+Description: Brotli encoder library
+URL: https://github.com/google/brotli
+Version: 1.0.0
+Requires.private: libbrotlicommon
+Libs: -L${libdir} -lbrotlienc -lbrotlicommon
+Cflags: -I${includedir}/brotli
