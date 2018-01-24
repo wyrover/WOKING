@@ -40,3 +40,5 @@ VS2015 Static Library -MT
 38 hdf5
 39 openjpeg
 40 opencore-amr
+41 expat
+42 libvpx
