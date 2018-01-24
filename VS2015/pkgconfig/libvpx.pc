@@ -1,0 +1,11 @@
+prefix=E:/Working/dbyoung/VS2015
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libvpx
+Description: libvpx provides the reference implementations of the VP8 Codec, used in most current html5 video, and of the next-generation VP9 Codec.
+Version: 1.6.1-1521-g742ae4b24
+Requires:
+Libs: -L${libdir} -llibvpx
+Cflags: -I${includedir}/vpx
