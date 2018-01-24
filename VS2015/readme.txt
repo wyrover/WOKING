@@ -38,3 +38,5 @@ VS2015 Static Library -MT
 36 libcurl
 37 brotli
 38 hdf5
+39 openjpeg
+40 opencore-amr
