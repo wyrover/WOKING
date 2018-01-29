@@ -42,3 +42,5 @@ VS2015 Static Library -MT
 40 opencore-amr
 41 expat
 42 libvpx
+43 FFTW
+44 Eigen
