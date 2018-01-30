@@ -1,20 +1,22 @@
 unit Unit1;
+{$WARN UNIT_PLATFORM OFF}
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.CheckLst, System.IOUtils, System.Types;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.CheckLst, FileCtrl, System.IOUtils, System.Types, IniFiles;
 
 type
   TForm1 = class(TForm)
     chklst1: TCheckListBox;
     btn1: TButton;
     btn2: TButton;
-    procedure FormCreate(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
+    FstrFFmpegVcPath: String;
+    procedure FillFileList(const strPath: string);
   public
     { Public declarations }
   end;
@@ -27,9 +29,10 @@ implementation
 {$R *.dfm}
 
 const
-  c_constFFMPEGVCPath = 'E:\Source\ffmpeg\backup\ffvc';
-  c_strReleaseX64     = '<ItemDefinitionGroup Condition="' + #$27 + '$(Configuration)|$(Platform)' + #$27 + '==' + #$27 + 'Release|x64' + #$27 + '">';
-  c_strReleaseX64MT   = '      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>';
+  c_strReleaseX64MT      = '      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>';
+  c_strReleaseX64        = '<ItemDefinitionGroup Condition="' + #$27 + '$(Configuration)|$(Platform)' + #$27 + '==' + #$27 + 'Release|x64' + #$27 + '">';
+  c_strX265Release10bX64 = '<ItemDefinitionGroup Condition="' + #$27 + '$(Configuration)|$(Platform)' + #$27 + '==' + #$27 + 'Release_10b|x64' + #$27 + '">';
+  c_strX265Release12bX64 = '<ItemDefinitionGroup Condition="' + #$27 + '$(Configuration)|$(Platform)' + #$27 + '==' + #$27 + 'Release_12b|x64' + #$27 + '">';
 
 function ModifyFileReleaseX64MTProc(const strFileName: String; const lstFile: TStringList; const intPos: Integer): Boolean;
 var
@@ -155,6 +158,62 @@ begin
   end;
 end;
 
+{ 修改 x265 }
+procedure ModifyFileX265(const strPath: String);
+var
+  strX265: String;
+  III    : Integer;
+  JJJ    : Integer;
+  lstFile: TStringList;
+begin
+  strX265 := strPath + '\x265\SMP\libx265.vcxproj';
+  lstFile := TStringList.Create;
+  try
+    { X265 Release10b X64 }
+    JJJ := -1;
+    lstFile.LoadFromFile(strX265);
+    for III := 0 to lstFile.Count - 1 do
+    begin
+      if lstFile.Strings[III].Contains(c_strX265Release10bX64) then
+      begin
+        JJJ := III;
+        break;
+      end;
+    end;
+
+    if JJJ <> -1 then
+    begin
+      if not ModifyFileReleaseX64MTProc(strX265, lstFile, JJJ) then
+      begin
+        ShowMessage('找到文件了，但没有修改成功');
+      end;
+    end;
+
+    { X265 Release12b X64 }
+    JJJ := -1;
+    lstFile.LoadFromFile(strX265);
+    for III := 0 to lstFile.Count - 1 do
+    begin
+      if lstFile.Strings[III].Contains(c_strX265Release12bX64) then
+      begin
+        JJJ := III;
+        break;
+      end;
+    end;
+
+    if JJJ <> -1 then
+    begin
+      if not ModifyFileReleaseX64MTProc(strX265, lstFile, JJJ) then
+      begin
+        ShowMessage('找到文件了，但没有修改成功');
+      end;
+    end;
+
+  finally
+    lstFile.Free;
+  end;
+end;
+
 procedure TForm1.btn1Click(Sender: TObject);
 var
   III: Integer;
@@ -166,20 +225,19 @@ begin
       ModifyFileReleaseX64MT(chklst1.Items.Strings[III]);
     end;
   end;
+
+  { 修改 x265 }
+  ModifyFileX265(FstrFFmpegVcPath);
+
   ShowMessage('修改完毕');
 end;
 
-procedure TForm1.btn2Click(Sender: TObject);
-begin
-  //
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TForm1.FillFileList(const strPath: string);
 var
   strFiles: TStringDynArray;
   III     : Integer;
 begin
-  strFiles := TDirectory.GetFiles(c_constFFMPEGVCPath, '*.vcxproj', TSearchOption.soAllDirectories);
+  strFiles := TDirectory.GetFiles(strPath, '*.vcxproj', TSearchOption.soAllDirectories);
   for III  := Low(strFiles) to High(strFiles) do
   begin
     if strFiles[III].Contains('\SMP\') then
@@ -187,6 +245,39 @@ begin
       chklst1.Checked[chklst1.Items.Add(strFiles[III])] := True;
     end;
   end;
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+begin
+  if not SelectDirectory('选择FFMEPGVC所在的目录', '', FstrFFmpegVcPath) then
+    Exit;
+
+  if not FileExists(FstrFFmpegVcPath + '\ffmpeg\SMP\ffmpeg_deps.sln') then
+    Exit;
+
+  FillFileList(FstrFFmpegVcPath);
+
+  with TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'config.ini') do
+  begin
+    WriteString('FFMPEGVC', 'Path', FstrFFmpegVcPath);
+    Free;
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  FstrFFmpegVcPath := '';
+  if FileExists(ExtractFilePath(ParamStr(0)) + 'config.ini') then
+  begin
+    with TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'config.ini') do
+    begin
+      FstrFFmpegVcPath := ReadString('FFMPEGVC', 'Path', '');
+      Free;
+    end;
+  end;
+
+  if FileExists(FstrFFmpegVcPath + '\ffmpeg\SMP\ffmpeg_deps.sln') then
+    FillFileList(FstrFFmpegVcPath);
 end;
 
 end.
