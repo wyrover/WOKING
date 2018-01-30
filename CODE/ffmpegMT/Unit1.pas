@@ -166,7 +166,7 @@ var
   JJJ    : Integer;
   lstFile: TStringList;
 begin
-  strX265 := strPath + '\x265\SMP\libx265.vcproj';
+  strX265 := strPath + '\x265\SMP\libx265.vcxproj';
   lstFile := TStringList.Create;
   try
     { X265 Release10b X64 }
