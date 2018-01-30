@@ -27,7 +27,7 @@ implementation
 {$R *.dfm}
 
 const
-  c_constFFMPEGVCPath = 'G:\Source\ffmpeg\back\ffmpegVC';
+  c_constFFMPEGVCPath = 'E:\Source\ffmpeg\backup\ffvc';
   c_strReleaseX64     = '<ItemDefinitionGroup Condition="' + #$27 + '$(Configuration)|$(Platform)' + #$27 + '==' + #$27 + 'Release|x64' + #$27 + '">';
   c_strReleaseX64MT   = '      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>';
 
