@@ -6,8 +6,7 @@ program yyIME;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1} ,
-  untHZ in 'untHZ.pas';
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 

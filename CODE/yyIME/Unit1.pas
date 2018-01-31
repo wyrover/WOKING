@@ -10,13 +10,18 @@ type
     srchbx1: TSearchBox;
     pnl1: TPanel;
     edt2: TEdit;
+    lstHZ: TListBox;
+    lstHZPY: TListBox;
+    lstCY: TListBox;
+    lstCYPY: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure srchbx1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
-    FstrhashList: THashedStringList;
+    FHZPYHashList  : THashedStringList;
+    FChenYuHashList: THashedStringList;
     function LengthText(const strValue: string; const fFont: TFont): Integer;
   public
     { Public declarations }
@@ -28,8 +33,6 @@ var
 implementation
 
 {$R *.dfm}
-
-uses untHZ;
 
 function TForm1.LengthText(const strValue: string; const fFont: TFont): Integer;
 var
@@ -64,15 +67,15 @@ begin
   JJJ       := 0;
   edt2.Text := '';
 
-  for III := Low(c_hzpy) to High(c_hzpy) do
+  for III := 0 to lstHZ.Count - 1 do
   begin
-    if string(c_hzpy[III]).Contains(strPY) then
+    if string(lstHZPY.Items.Strings[III]).Contains(strPY) then
     begin
       if JJJ >= 10 then
         Break;
 
       Inc(JJJ);
-      edt2.Text := edt2.Text + ' ' + Format('%0.2d.%s', [JJJ, c_hz[III]]);
+      edt2.Text := edt2.Text + ' ' + Format('%0.2d.%s', [JJJ, lstHZ.Items.Strings[III]]);
     end;
   end;
 
@@ -93,16 +96,23 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   III: Integer;
 begin
-  FstrhashList := THashedStringList.Create;
-  for III      := Low(c_hzpy) to High(c_hzpy) do
+  FHZPYHashList := THashedStringList.Create;
+  for III       := 0 to lstHZ.Count - 1 do
   begin
-    FstrhashList.Add(Format('%s=%s', [c_hz[III], c_hzpy[III]]));
+    FHZPYHashList.Add(Format('%s=%s', [lstHZ.Items.Strings[III], lstHZPY.Items.Strings[III]]));
+  end;
+
+  FChenYuHashList := THashedStringList.Create;
+  for III         := 0 to lstCY.Count - 1 do
+  begin
+    FChenYuHashList.Add(Format('%s=%s', [lstCY.Items.Strings[III], lstCYPY.Items.Strings[III]]));
   end;
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
 begin
-  FstrhashList.Free;
+  FHZPYHashList.Free;
+  FChenYuHashList.Free;
 end;
 
 end.
