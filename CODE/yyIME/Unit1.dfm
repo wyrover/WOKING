@@ -12,8 +12,9 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -31,6 +32,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnKeyDown = srchbx1KeyDown
     OnKeyUp = srchbx1KeyUp
   end
   object pnl1: TPanel
