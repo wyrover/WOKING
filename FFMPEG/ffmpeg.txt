@@ -1,0 +1,91 @@
+alsa           disable ALSA support [autodetect]  										<Linux>
+appkit         disable Apple AppKit framework [autodetect]  									<Apple>
+avfoundation   disable Apple AVFoundation framework [autodetect]  								<Apple>	
+avisynth        enable reading of AviSynth script files [no]  									<Windows>
+bzlib          disable bzlib [autodetect]											<Windows>
+coreimage      disable Apple CoreImage framework [autodetect]									<Apple>
+chromaprint     enable audio fingerprinting with chromaprint [no]								<Windows>
+frei0r          enable frei0r video filtering [no]										<Windows>
+gcrypt          enable gcrypt, needed for rtmp(t)e support  if openssl, librtmp or gmp is not used [no]				<Windows>
+gmp             enable gmp, needed for rtmp(t)e support  if openssl or librtmp is not used [no]					<Windows>
+gnutls          enable gnutls, needed for https support  if openssl or libtls is not used [no]					<Windows>
+iconv          disable iconv [autodetect]											<Windows>
+jni             enable JNI support [no]												<Windows>
+ladspa          enable LADSPA audio filtering [no]										<Linux>
+libass          enable libass subtitles rendering,  needed for subtitles and ass filter [no]					<Windows>
+libbluray       enable BluRay reading using libbluray [no]									<Windows>
+libbs2b         enable bs2b DSP library [no]											<Windows>
+libcaca         enable textual display using libcaca [no]									<Windows>
+libcelt         enable CELT decoding via libcelt [no]										<Windows>
+libcdio         enable audio CD grabbing with libcdio [no]									<Windows>
+libdc1394       enable IIDC-1394 grabbing using libdc1394     and libraw1394 [no]						<Linux>
+libfdk-aac      enable AAC de/encoding via libfdk-aac [no]									<Windows>
+libflite        enable flite (voice synthesis) support via libflite [no]							<Windows>
+libfontconfig   enable libfontconfig, useful for drawtext filter [no]								<Windows>
+libfreetype     enable libfreetype, needed for drawtext filter [no]								<Windows>
+libfribidi      enable libfribidi, improves drawtext filter [no]								<Windows>
+libgme          enable Game Music Emu via libgme [no]										<Windows>
+libgsm          enable GSM de/encoding via libgsm [no]										<Windows>
+libiec61883     enable iec61883 via libiec61883 [no]										<Linux>
+libilbc         enable iLBC de/encoding via libilbc [no]									<Windows>
+libjack         enable JACK audio sound server [no]										<Windows>
+libkvazaar      enable HEVC encoding via libkvazaar [no]									<Windows>
+libmodplug      enable ModPlug via libmodplug [no]										<Windows>
+libmp3lame      enable MP3 encoding via libmp3lame [no]										<Windows>
+libopencore-amrnb enable AMR-NB de/encoding via libopencore-amrnb [no]								<Windows>
+libopencore-amrwb enable AMR-WB decoding via libopencore-amrwb [no]								<Windows>
+libopencv       enable video filtering via libopencv [no]									<Windows>
+libopenh264     enable H.264 encoding via OpenH264 [no]										<Windows>
+libopenjpeg     enable JPEG 2000 de/encoding via OpenJPEG [no]									<Windows>
+libopenmpt      enable decoding tracked files via libopenmpt [no]								<Windows>
+libopus         enable Opus de/encoding via libopus [no]									<Windows>
+libpulse        enable Pulseaudio input via libpulse [no]									<Linux>
+librsvg         enable SVG rasterization via librsvg [no]									<Windows>
+librubberband   enable rubberband needed for rubberband filter [no]								<Windows>
+librtmp         enable RTMP[E] support via librtmp [no]										<Windows>
+libshine        enable fixed-point MP3 encoding via libshine [no]								<Windows>
+libsmbclient    enable Samba protocol via libsmbclient [no]									<Windows>
+libsnappy       enable Snappy compression, needed for hap encoding [no]								<Windows>
+libsoxr         enable Include libsoxr resampling [no]										<Windows>
+libspeex        enable Speex de/encoding via libspeex [no]									<Windows>
+libssh          enable SFTP protocol via libssh [no]										<Windows>
+libtesseract    enable Tesseract, needed for ocr filter [no]									<Windows>
+libtheora       enable Theora encoding via libtheora [no]									<Windows>
+libtls          enable LibreSSL (via libtls), needed for https support  if openssl or gnutls is not used [no]			<Windows>
+libtwolame      enable MP2 encoding via libtwolame [no]										<Windows>
+libv4l2         enable libv4l2/v4l-utils [no]											<Windows>
+libvidstab      enable video stabilization using vid.stab [no]									<Windows>
+libvmaf         enable vmaf filter via libvmaf [no]										<Windows>
+libvo-amrwbenc  enable AMR-WB encoding via libvo-amrwbenc [no]									<Windows>
+libvorbis       enable Vorbis en/decoding via libvorbis, native implementation exists [no]					<Windows>
+libvpx          enable VP8 and VP9 de/encoding via libvpx [no]									<Windows>
+libwavpack      enable wavpack encoding via libwavpack [no]									<Windows>
+libwebp         enable WebP encoding via libwebp [no]										<Windows>
+libx264         enable H.264 encoding via x264 [no]										<Windows>
+libx265         enable HEVC encoding via x265 [no]										<Windows>
+libxavs         enable AVS encoding via xavs [no]										<Windows>
+libxcb          enable X11 grabbing using XCB [autodetect]									<Linux>
+libxcb-shm      enable X11 grabbing shm communication [autodetect]								<Linux>
+libxcb-xfixes   enable X11 grabbing mouse rendering [autodetect]								<Linux>
+libxcb-shape    enable X11 grabbing shape rendering [autodetect]								<Linux>
+libxvid         enable Xvid encoding via xvidcore,  native MPEG-4/Xvid encoder exists [no]					<Windows>
+libxml2         enable XML parsing using the C library libxml2 [no]								<Windows>
+libzimg         enable z.lib, needed for zscale filter [no]									<Windows>
+libzmq          enable message passing via libzmq [no]										<Windows>
+libzvbi         enable teletext support via libzvbi [no]									<Linux>
+lv2             enable LV2 audio filtering [no]											<Windows>
+lzma           disable lzma [autodetect]											<Windows>
+decklink        enable Blackmagic DeckLink I/O support [no]									<Windows>
+libndi_newtek   enable Newteck NDI I/O support [no]										<Windows>
+mediacodec      enable Android MediaCodec support [no]										<Android>
+libmysofa       enable libmysofa, needed for sofalizer filter [no]								<Linux>
+openal          enable OpenAL 1.1 capture support [no]										<Windows>
+opencl          enable OpenCL processing [no]											<Windows>
+opengl          enable OpenGL rendering [no]											<Windows>
+openssl         enable openssl, needed for https support, if gnutls or libtls is not used [no]					<Windows>
+sndio          disable sndio support [autodetect]										<Linux>
+schannel       disable SChannel SSP, needed for TLS support on  Windows if openssl and gnutls are not used [autodetect]		<Windows>
+sdl2           disable sdl2 [autodetect]											<Windows>
+securetransport disable Secure Transport, needed for TLS support  on OSX if openssl and gnutls are not used [autodetect]	<Apple>
+xlib           disable xlib [autodetect]											<Linux>
+zlib           disable zlib [autodetect]											<Windows>
