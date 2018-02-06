@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Winapi.Imm;
 
 type
   TForm1 = class(TForm)
@@ -42,7 +42,6 @@ begin
           Form1.mmo1.Lines.Add(Chr(vKey) + ' ' + Inttostr(vKey) + ' $' + IntToHex(vKey, 2));
         end;
     end;
-
   end;
   Result := CallNextHookEx(FKeyHook, code, wparam, lparam);
 end;
