@@ -59,10 +59,10 @@ object Form1: TForm1
   object cbbProcess: TComboBox
     Left = 28
     Top = 35
-    Width = 225
+    Width = 281
     Height = 21
     Style = csDropDownList
-    DropDownCount = 20
+    DropDownCount = 30
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -75,10 +75,10 @@ object Form1: TForm1
   object cbbMoudule: TComboBox
     Left = 28
     Top = 91
-    Width = 225
+    Width = 281
     Height = 21
     Style = csDropDownList
-    DropDownCount = 20
+    DropDownCount = 30
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -86,14 +86,15 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnChange = cbbMouduleChange
   end
   object cbbFunc: TComboBox
     Left = 28
     Top = 147
-    Width = 225
+    Width = 281
     Height = 21
     Style = csDropDownList
-    DropDownCount = 20
+    DropDownCount = 30
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
