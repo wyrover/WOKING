@@ -23,6 +23,7 @@ cd "%zlibpath%"
 
 :: ±àÒë
 copy /Y "%CurrentCD%patch\zlib.gcc" "%zlibsrc%\makefile.gcc"
+copy /Y "%CurrentCD%patch\zlib.pc.in" "%zlibsrc%\zlib.pc.in"
 bash -c "make -f Makefile.gcc"
 
 :: °²×°
