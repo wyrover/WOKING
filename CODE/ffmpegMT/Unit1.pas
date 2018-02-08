@@ -214,6 +214,42 @@ begin
   end;
 end;
 
+procedure ModifyFileSoxr(const strPath: String);
+var
+  strSoxrSrc   : String;
+  III, JJJ, KKK: Integer;
+begin
+  strSoxrSrc := strPath + '\soxr\SMP\libsoxr.vcxproj';
+  with TStringList.Create do
+  begin
+    LoadFromFile(strSoxrSrc);
+    JJJ     := -1;
+    for III := 0 to Count - 1 do
+    begin
+      if Strings[III].Contains(c_strReleaseX64) then
+      begin
+        JJJ := III;
+        break;
+      end;
+    end;
+
+    if JJJ <> -1 then
+    begin
+      for KKK := JJJ to JJJ + 20 do
+      begin
+        if Strings[KKK].Contains('<OpenMPSupport>true</OpenMPSupport>') then
+        begin
+          Strings[KKK] := '      <OpenMPSupport>false</OpenMPSupport>';
+          SaveToFile(strSoxrSrc);
+          break;
+        end;
+      end;
+    end;
+
+    Free;
+  end;
+end;
+
 procedure TForm1.btn1Click(Sender: TObject);
 var
   III: Integer;
@@ -228,6 +264,9 @@ begin
 
   { 修改 x265 }
   ModifyFileX265(FstrFFmpegVcPath);
+
+  { 修改 soxr }
+  ModifyFileSoxr(FstrFFmpegVcPath);
 
   ShowMessage('修改完毕');
 end;
