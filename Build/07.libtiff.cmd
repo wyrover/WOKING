@@ -19,7 +19,7 @@ set "MINGWBIN=%MSYS%\mingw\bin"
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
 :: libtiff 源码路径
-set "libtiffsrc=G:\Source\07.tiff-4.0.9"
+set "libtiffsrc=E:\Source\07.libtiff"
 
 :: 进入源代码目录 
 set "libtiffDisk=%libtiffsrc:~0,2%"
@@ -32,7 +32,7 @@ cd "%libtiffPath%"
 :: 编译 x64 静态库
 bash -c "make clean"
 bash -c "./configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --enable-static --disable-shared --with-zlib-include-dir=%IncPath% --with-zlib-lib-dir=%LibPath% --with-jpeg-include-dir=%IncPath% --with-jpeg-lib-dir=%LibPath% --with-lzma-include-dir=%IncPath% --with-lzma-lib-dir=%LibPath%"
-bash -c "make -j16"
+bash -c "make -j8"
 bash -c "make install"
 
 pause

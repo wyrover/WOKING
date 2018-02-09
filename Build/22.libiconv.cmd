@@ -4,7 +4,7 @@ set "MINGWBIN=F:\Green\Language\MSYS\mingw\bin"
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
 :: libiconv Ô´´úÂëÂ·¾¶
-set "libiconvsrc=G:\Source\libiconv-1.15"
+set "libiconvsrc=E:\Source\22.libiconv-1.15"
 set "libiconvsrcDisk=%libiconvsrc:~0,2%
 set "libiconvsrcPath=%libiconvsrc:~3%
 

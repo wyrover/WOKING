@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 
 :: 当前目录 
 set "CurrentCD=%~dp0"
@@ -24,6 +24,7 @@ cd "%zlibpath%"
 :: 编译
 copy /Y "%CurrentCD%patch\zlib.gcc" "%zlibsrc%\makefile.gcc"
 copy /Y "%CurrentCD%patch\zlib.pc.in" "%zlibsrc%\zlib.pc.in"
+bash -c "make -f Makefile.in distclean"
 bash -c "make -f Makefile.gcc"
 
 :: 安装

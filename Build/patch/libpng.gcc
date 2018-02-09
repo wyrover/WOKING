@@ -24,8 +24,8 @@ WARNMORE = -Wwrite-strings -Wpointer-arith -Wshadow \
 	-Wstrict-prototypes -Wmissing-prototypes # -Wconversion
 CPPFLAGS = -I$(ZLIBINC) # -DPNG_DEBUG=5
 CFLAGS = -W -Wall -O2 # $(WARNMORE) -g
-LDFLAGS =
-LIBS = -llibz
+LDFLAGS =-L/local/lib
+LIBS = libz.a
 
 # File extensions
 EXEEXT =
