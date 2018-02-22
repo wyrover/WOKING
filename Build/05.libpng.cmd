@@ -14,7 +14,7 @@ set "MINGWBIN=%MSYS%\mingw\bin"
 set "Path=%MSYSBIN%;%MINGWBIN%;%IncPath%;%LibPath%;%Path%"
 
 :: libpng 源码路径
-set "libpngsrc=G:\Source\05.libpng"
+set "libpngsrc=E:\Source\05.libpng"
 
 :: 进入源代码目录 
 set "libpngDisk=%libpngsrc:~0,2%"
