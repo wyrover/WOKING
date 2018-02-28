@@ -25,15 +25,11 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 992
     Height = 713
-    ActivePage = tsSearchPath
+    ActivePage = tsDataBase
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
       Caption = #31995#32479#31616#20171
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object lbl1: TLabel
         Left = 20
         Top = 16
@@ -167,10 +163,6 @@ object frmSystem: TfrmSystem
     object tsProcess: TTabSheet
       Caption = #36827#31243#21015#34920
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         984
         685)
@@ -273,50 +265,89 @@ object frmSystem: TfrmSystem
     object tsPE: TTabSheet
       Caption = 'PE '#20998#26512
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsAutorun: TTabSheet
       Caption = #24320#26426#33258#21160#36816#34892
       ImageIndex = 7
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsServer: TTabSheet
       Caption = #26381#21153
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsShell: TTabSheet
       Caption = 'Shell '#31649#29702
       ImageIndex = 8
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsWebSoft: TTabSheet
       Caption = #32593#32476
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsDataBase: TTabSheet
       Caption = #25968#25454#24211
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      DesignSize = (
+        984
+        685)
+      object btnLinkDataBase: TButton
+        Left = 16
+        Top = 16
+        Width = 229
+        Height = 33
+        Caption = #36830#25509#25968#25454#24211
+        TabOrder = 0
+        OnClick = btnLinkDataBaseClick
+      end
+      object grpTableName: TGroupBox
+        Left = 16
+        Top = 60
+        Width = 229
+        Height = 329
+        Anchors = [akLeft, akTop, akBottom]
+        Caption = #25152#26377#34920#65306
+        TabOrder = 1
+        DesignSize = (
+          229
+          329)
+        object lstTables: TListBox
+          Left = 8
+          Top = 16
+          Width = 213
+          Height = 305
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          BorderStyle = bsNone
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = #23435#20307
+          Font.Style = []
+          ItemHeight = 13
+          ParentFont = False
+          TabOrder = 0
+          OnClick = lstTablesClick
+        end
+      end
+      object grpFields: TGroupBox
+        Left = 16
+        Top = 395
+        Width = 229
+        Height = 282
+        Anchors = [akLeft, akBottom]
+        Caption = #23383#27573#65306
+        TabOrder = 2
+      end
+      object lvData: TListView
+        Left = 253
+        Top = 16
+        Width = 720
+        Height = 661
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Columns = <>
+        GridLines = True
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 3
+        ViewStyle = vsReport
+      end
     end
   end
   object pmProcess: TPopupMenu
@@ -384,5 +415,9 @@ object frmSystem: TfrmSystem
       Caption = #25152#36873#34892#20445#23384#21040#25991#20214
       OnClick = mniSelectedLineToSaveFileClick
     end
+  end
+  object adoconn: TADOConnection
+    Left = 72
+    Top = 108
   end
 end

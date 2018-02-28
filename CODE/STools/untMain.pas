@@ -6,7 +6,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Winapi.TlHelp32, System.Math, System.StrUtils, System.Win.ComObj, Winapi.ActiveX,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, System.IniFiles, Winapi.PsAPI, Winapi.ShLwApi, Winapi.ShellAPI, Winapi.ShlObj, System.Types, System.IOUtils,
-  Vcl.Clipbrd, Vcl.FileCtrl, System.Win.Registry, Vcl.Menus;
+  Vcl.Clipbrd, Vcl.FileCtrl, System.Win.Registry, Vcl.Menus, Data.Win.ADODB, Data.DB, Data.Win.ADOConEd;
 
 type
   TfrmSystem = class(TForm)
@@ -51,6 +51,12 @@ type
     btnSysSearchDel: TButton;
     btnInputSysSearch: TButton;
     lstSystemSearchPath: TListBox;
+    btnLinkDataBase: TButton;
+    adoconn: TADOConnection;
+    grpTableName: TGroupBox;
+    grpFields: TGroupBox;
+    lstTables: TListBox;
+    lvData: TListView;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -77,6 +83,8 @@ type
     procedure btnSysSearchDownClick(Sender: TObject);
     procedure btnSysSearchUpTopClick(Sender: TObject);
     procedure btnSysSearchDownBottomClick(Sender: TObject);
+    procedure btnLinkDataBaseClick(Sender: TObject);
+    procedure lstTablesClick(Sender: TObject);
   private
     { Private declarations }
     function ReadDefaultPage: Integer;
@@ -275,7 +283,7 @@ end;
 function GetbX64Process(const intPID: Integer): Boolean;
 var
   hProcess: UInt64;
-  bWow64  : BOOL;
+  bWow64  : Bool;
 begin
   hProcess := OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ, False, intPID);
   if IsWow64Process(hProcess, bWow64) then
@@ -517,6 +525,9 @@ begin
 end;
 
 // ---------------------------------------------------------------------------------------------------------------------------------------//
+// ----------------------------------------------------------- ÏµÍ³ËÑË÷Â·¾¶ --------------------------------------------------------------//
+// ---------------------------------------------------------------------------------------------------------------------------------------//
+
 procedure TfrmSystem.btnInputSysSearchClick(Sender: TObject);
 var
   strNewPath: String;
@@ -633,6 +644,74 @@ begin
   lstSystemSearchPath.Items.Move(lstSystemSearchPath.ItemIndex, 0);
   ModifySysSearchPath(lstSystemSearchPath.Items);
   lstSystemSearchPath.Selected[0] := True;
+end;
+
+// --------------------------------------------------------------------------------------------------------------------------------------//
+// -------------------------------------------------------- Database ---------------------------------------------------------------------//
+// ---------------------------------------------------------------------------------------------------------------------------------------//
+
+procedure TfrmSystem.btnLinkDataBaseClick(Sender: TObject);
+begin
+  if not EditConnectionString(adoconn) then
+    Exit;
+
+  adoconn.GetTableNames(lstTables.Items);
+end;
+
+procedure TfrmSystem.lstTablesClick(Sender: TObject);
+var
+  strTableName: string;
+  qry         : TADOQuery;
+  bOpen       : Boolean;
+  strsFields  : TStringList;
+  III         : Integer;
+begin
+  if lstTables.SelCount = 0 then
+    Exit;
+
+  bOpen        := True;
+  strTableName := lstTables.Items.Strings[lstTables.ItemIndex];
+  qry          := TADOQuery.Create(nil);
+  strsFields   := TStringList.Create;
+  try
+    qry.Connection := adoconn;
+    qry.SQL.Add('select * from ' + strTableName);
+    try
+      qry.Open;
+    except
+      bOpen := False;
+    end;
+
+    if not bOpen then
+      Exit;
+
+    adoconn.GetFieldNames(strTableName, strsFields);
+    lvData.Items.BeginUpdate;
+    lvData.Clear;
+    lvData.Columns.Clear;
+    for III := 0 to strsFields.Count - 1 do
+    begin
+      with lvData.Columns.Add do
+      begin
+        Text  := strsFields[III];
+        Width := 100;
+      end;
+    end;
+
+    if qry.RecordCount > 0 then
+    begin
+      qry.First;
+      while not qry.Eof do
+      begin
+
+        qry.Next;
+      end;
+    end;
+    lvData.Items.EndUpdate;
+  finally
+    strsFields.Free;
+    qry.Free;
+  end;
 end;
 
 end.
