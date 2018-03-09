@@ -693,8 +693,8 @@ begin
     begin
       with lvData.Columns.Add do
       begin
-        Text  := strsFields[III];
-        Width := 100;
+        Caption := strsFields[III];
+        Width   := 100;
       end;
     end;
 
@@ -703,7 +703,14 @@ begin
       qry.First;
       while not qry.Eof do
       begin
-
+        with lvData.Items.Add do
+        begin
+          Caption := qry.Fields[0].AsString;
+          for III := 1 to qry.FieldCount - 1 do
+          begin
+            SubItems.Add(qry.Fields[III].AsString);
+          end;
+        end;
         qry.Next;
       end;
     end;
