@@ -25,7 +25,7 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 992
     Height = 713
-    ActivePage = tsSystem
+    ActivePage = tsAutorun
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
@@ -454,25 +454,45 @@ object frmSystem: TfrmSystem
         Height = 657
         ActivePage = ts1
         Anchors = [akLeft, akTop, akRight, akBottom]
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = '@Fixedsys'
+        Font.Style = []
+        MultiLine = True
+        ParentFont = False
         TabOrder = 0
+        TabPosition = tpRight
         object ts1: TTabSheet
           Caption = '01.'#27880#20876#34920
         end
         object ts2: TTabSheet
           Caption = '02.'#26381#21153#31649#29702
           ImageIndex = 1
+          ExplicitTop = 24
+          ExplicitWidth = 945
+          ExplicitHeight = 629
         end
         object ts3: TTabSheet
           Caption = '03.'#39537#21160#31649#29702
           ImageIndex = 2
+          ExplicitTop = 24
+          ExplicitWidth = 945
+          ExplicitHeight = 629
         end
         object ts4: TTabSheet
           Caption = '04.shell '#31649#29702
           ImageIndex = 3
+          ExplicitTop = 24
+          ExplicitWidth = 945
+          ExplicitHeight = 629
         end
         object ts5: TTabSheet
           Caption = '05.'#35745#21010#20219#21153
           ImageIndex = 4
+          ExplicitTop = 24
+          ExplicitWidth = 945
+          ExplicitHeight = 629
         end
       end
     end
