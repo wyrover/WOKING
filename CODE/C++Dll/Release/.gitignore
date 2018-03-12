@@ -1,0 +1,13 @@
+dllmain.obj
+stdafx.obj
+Test.dll
+Test.exe
+Test.exp
+Test.iobj
+Test.ipdb
+Test.lib
+Test.log
+Test.obj
+Test.pdb
+vc140.pdb
+Test.tlog
