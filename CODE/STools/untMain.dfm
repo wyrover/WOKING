@@ -25,7 +25,7 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 992
     Height = 713
-    ActivePage = tsDataBase
+    ActivePage = tsSystem
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
@@ -33,9 +33,184 @@ object frmSystem: TfrmSystem
       object lbl1: TLabel
         Left = 20
         Top = 16
-        Width = 96
+        Width = 104
         Height = 13
         Caption = #25805#20316#31995#32479#29256#26412#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl2: TLabel
+        Left = 20
+        Top = 49
+        Width = 67
+        Height = 13
+        Caption = 'CPU '#22411#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl3: TLabel
+        Left = 20
+        Top = 83
+        Width = 65
+        Height = 13
+        Caption = #20869#23384#22823#23567#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl4: TLabel
+        Left = 20
+        Top = 116
+        Width = 65
+        Height = 13
+        Caption = #30913#30424#22823#23567#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl5: TLabel
+        Left = 20
+        Top = 150
+        Width = 65
+        Height = 13
+        Caption = #26174#21345#22411#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl6: TLabel
+        Left = 20
+        Top = 184
+        Width = 65
+        Height = 13
+        Caption = #26426#22120#31867#22411#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl7: TLabel
+        Left = 172
+        Top = 16
+        Width = 104
+        Height = 13
+        Caption = #25805#20316#31995#32479#29256#26412#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl8: TLabel
+        Left = 172
+        Top = 49
+        Width = 67
+        Height = 13
+        Caption = 'CPU '#22411#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl9: TLabel
+        Left = 172
+        Top = 83
+        Width = 65
+        Height = 13
+        Caption = #20869#23384#22823#23567#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl10: TLabel
+        Left = 172
+        Top = 116
+        Width = 65
+        Height = 13
+        Caption = #30913#30424#22823#23567#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl11: TLabel
+        Left = 172
+        Top = 150
+        Width = 65
+        Height = 13
+        Caption = #26174#21345#22411#21495#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl12: TLabel
+        Left = 172
+        Top = 184
+        Width = 65
+        Height = 13
+        Caption = #26426#22120#31867#22411#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl13: TLabel
+        Left = 20
+        Top = 216
+        Width = 65
+        Height = 13
+        Caption = #32593#21345#20449#24687#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl14: TLabel
+        Left = 172
+        Top = 216
+        Width = 65
+        Height = 13
+        Caption = #32593#21345#20449#24687#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
       end
     end
     object tsSearchPath: TTabSheet
@@ -269,14 +444,37 @@ object frmSystem: TfrmSystem
     object tsAutorun: TTabSheet
       Caption = #24320#26426#33258#21160#36816#34892
       ImageIndex = 7
-    end
-    object tsServer: TTabSheet
-      Caption = #26381#21153
-      ImageIndex = 6
-    end
-    object tsShell: TTabSheet
-      Caption = 'Shell '#31649#29702
-      ImageIndex = 8
+      DesignSize = (
+        984
+        685)
+      object pgcAutorun: TPageControl
+        Left = 16
+        Top = 16
+        Width = 953
+        Height = 657
+        ActivePage = ts1
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        TabOrder = 0
+        object ts1: TTabSheet
+          Caption = '01.'#27880#20876#34920
+        end
+        object ts2: TTabSheet
+          Caption = '02.'#26381#21153#31649#29702
+          ImageIndex = 1
+        end
+        object ts3: TTabSheet
+          Caption = '03.'#39537#21160#31649#29702
+          ImageIndex = 2
+        end
+        object ts4: TTabSheet
+          Caption = '04.shell '#31649#29702
+          ImageIndex = 3
+        end
+        object ts5: TTabSheet
+          Caption = '05.'#35745#21010#20219#21153
+          ImageIndex = 4
+        end
+      end
     end
     object tsWebSoft: TTabSheet
       Caption = #32593#32476
@@ -352,8 +550,8 @@ object frmSystem: TfrmSystem
   end
   object pmProcess: TPopupMenu
     AutoHotkeys = maManual
-    Left = 204
-    Top = 116
+    Left = 588
+    Top = 324
     object mniOpenProcessPath: TMenuItem
       Caption = #25171#24320#25991#20214#20301#32622
       OnClick = mniOpenProcessPathClick
@@ -376,8 +574,8 @@ object frmSystem: TfrmSystem
   end
   object pmModule: TPopupMenu
     AutoHotkeys = maManual
-    Left = 204
-    Top = 508
+    Left = 588
+    Top = 428
     object mniOpenModulePath: TMenuItem
       Caption = #25171#24320#25991#20214#20301#32622
       OnClick = mniOpenModulePathClick
@@ -417,7 +615,7 @@ object frmSystem: TfrmSystem
     end
   end
   object adoconn: TADOConnection
-    Left = 72
-    Top = 108
+    Left = 592
+    Top = 372
   end
 end
