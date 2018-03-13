@@ -187,8 +187,8 @@ end;
 
 procedure TfrmSystem.FormCreate(Sender: TObject);
 begin
-  EnableDebugPrivilege('SeDebugPrivilege', True);
-  EnableDebugPrivilege('SeSecurityPrivilege', True);
+  // EnableDebugPrivilege('SeDebugPrivilege', True);
+  // EnableDebugPrivilege('SeSecurityPrivilege', True);
 
   pgcAll.ActivePageIndex := ReadDefaultPage;
   EnumProcess(lvProcess);
@@ -448,7 +448,7 @@ begin
         Caption := Format('%0.3d', [intCount]);
         SubItems.Add(me32.szModule);
         SubItems.Add(me32.szExePath);
-        SubItems.Add(Format('$%0.8x', [Cardinal(me32.modBaseAddr)]));
+        SubItems.Add(Format('$%0.16x', [Int64(me32.modBaseAddr)]));
         SubItems.Add(Format('$%0.8x', [Cardinal(me32.modBaseSize)]));
         SubItems.Add(GetFileCompany(me32.szExePath));
       end;

@@ -25,7 +25,7 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 992
     Height = 713
-    ActivePage = tsAutorun
+    ActivePage = tsProcess
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
@@ -391,9 +391,9 @@ object frmSystem: TfrmSystem
         OnColumnClick = lvProcessColumnClick
       end
       object lvModule: TListView
-        Left = 3
+        Left = 8
         Top = 376
-        Width = 966
+        Width = 965
         Height = 298
         Anchors = [akLeft, akRight, akBottom]
         Columns = <
@@ -411,7 +411,7 @@ object frmSystem: TfrmSystem
           end
           item
             Caption = #22320#22336
-            Width = 85
+            Width = 140
           end
           item
             Caption = #22823#23567
@@ -419,7 +419,7 @@ object frmSystem: TfrmSystem
           end
           item
             Caption = #20844#21496
-            Width = 230
+            Width = 175
           end>
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -469,30 +469,18 @@ object frmSystem: TfrmSystem
         object ts2: TTabSheet
           Caption = '02.'#26381#21153#31649#29702
           ImageIndex = 1
-          ExplicitTop = 24
-          ExplicitWidth = 945
-          ExplicitHeight = 629
         end
         object ts3: TTabSheet
           Caption = '03.'#39537#21160#31649#29702
           ImageIndex = 2
-          ExplicitTop = 24
-          ExplicitWidth = 945
-          ExplicitHeight = 629
         end
         object ts4: TTabSheet
           Caption = '04.shell '#31649#29702
           ImageIndex = 3
-          ExplicitTop = 24
-          ExplicitWidth = 945
-          ExplicitHeight = 629
         end
         object ts5: TTabSheet
           Caption = '05.'#35745#21010#20219#21153
           ImageIndex = 4
-          ExplicitTop = 24
-          ExplicitWidth = 945
-          ExplicitHeight = 629
         end
       end
     end
