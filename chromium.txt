@@ -33,13 +33,12 @@
 	配置VS的版本，环境变量设置
 
 	DEPOT_TOOLS_WIN_TOOLCHAIN = 0
-
 	GYP_MSVS_VERSION = 2017
-
 	GYP_MSVS_OVERRIDE_PATH = D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
 	
 	如果你不打算用VS来编译 chromium，后两项可以不用设置。
 
+  C)：
 	新建一个目录，用来放置 chromium 源代码。我的目录是 E:\Source\chromium。开个CMD窗口，切换到此目录，执行：
 
 	E:\Source\chromium>fetch chromium
@@ -58,3 +57,5 @@
         也可以用 vs2017 打开 all.sln 编译
 	又是漫长的等待......
 
+
+如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定。
