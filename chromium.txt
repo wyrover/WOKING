@@ -19,18 +19,17 @@
 	E:\Source\depot_tools>gclient
 
 	要不了多久 depot_tools 目录下，会出现一个 win_tools-2_7_6_bin 目录，里面包含了 python 和 git，这是下载和编译 chromium 必须的工具。
-	工具下载下来之后，就可以下载 depot_tools 源码了。如果没能下载下来，说明你用的VPN有问题，只能更换VPN代理。
+	工具下载下来之后，就可以关闭这个命令行窗口了。如果没能下载下来，说明你用的VPN有问题，只能更换VPN代理。
 	
 
 3 下载 chromium 源码
-  下载代码之前先进行配置：
    A)：
 	首先将你的系统搜索目录 Path 备份一下，然后将你的 depot_tools 目录，添加到系统搜索目录中去。其它的都删除不用，只保留WINDOWS系统必须的四项。这样：
 	C:\Windows;C:\Windows\system32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\Source\depot_tools;
   	<注：E:\Source\depot_tools 是我的 depot_tools 代码目录，你需要换成你的 depot_tools 代码目录。>
 
    B)：
-	配置VS的版本，环境变量设置
+	配置VS的版本，环境变量设置：
 
 	DEPOT_TOOLS_WIN_TOOLCHAIN = 0
 	GYP_MSVS_VERSION = 2017
@@ -45,7 +44,7 @@
 
 	漫长的下载代码中.....。
 
-        如果中途断了，可以执行： 
+    如果中途断了，可以执行： 
 	E:\Source\chromium>gclient sync
 	同步代码。
 
@@ -54,8 +53,8 @@
 	E:\Source\chromium>gn gen --ide=vs out\Default (如果不需要生成vs2017项目，此步骤可忽略） 
 	E:\Source\chromium>ninja -C out/Default chrome 
 
-        也可以用 vs2017 打开 all.sln 编译
+    也可以用 vs2017 打开 all.sln 编译
 	又是漫长的等待......
 
 
-如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定。
+如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定上面所有的事。
