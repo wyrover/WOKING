@@ -108,6 +108,7 @@ type
     procedure mniDeleteProcessFileClick(Sender: TObject);
   private
     { Private declarations }
+    function GetFileVersion(const strExeName: string): String;
     procedure GetOSInfo;
     function ReadDefaultPage: Integer;
     procedure EnumProcess(lv: TListView);
@@ -191,8 +192,37 @@ begin
 end;
 
 procedure TfrmSystem.GetOSInfo;
+var
+  intIndex  : Integer;
+  strFileVer: String;
+  dwType    : Cardinal;
+  strPCName : array [0 .. 255] of Char;
+  intSize   : DWORD;
 begin
-  //
+  { 版本号 }
+  strFileVer   := GetFileVersion('C:\Windows\System32\wintrust.dll');
+  intIndex     := LastDelimiter('.', strFileVer);
+  lbl7.Caption := Format('%d.%d.%d.%s', [Win32MajorVersion, Win32MinorVersion, Win32BuildNumber, RightStr(strFileVer, Length(strFileVer) - intIndex)]);
+  if GetProductInfo(Win32MajorVersion, Win32MinorVersion, 0, 0, dwType) then
+  begin
+    case dwType of
+      PRODUCT_ULTIMATE:
+        lbl7.Caption := lbl7.Caption + ' 旗舰版 ';
+      PRODUCT_HOME_BASIC:
+        lbl7.Caption := lbl7.Caption + ' 家庭版 ';
+      PRODUCT_ENTERPRISE:
+        lbl7.Caption := lbl7.Caption + ' 企业版 ';
+      PRODUCT_BUSINESS:
+        lbl7.Caption := lbl7.Caption + ' 商业版 ';
+      PRODUCT_PROFESSIONAL:
+        lbl7.Caption := lbl7.Caption + ' 专业版 ';
+    end;
+  end;
+
+  { }
+  intSize := 256;
+  GetComputerName(strPCName, intSize);
+  lbl16.Caption := StrPas(strPCName);
 end;
 
 procedure TfrmSystem.FormCreate(Sender: TObject);
@@ -388,7 +418,7 @@ begin
   end;
 end;
 
-function GetFileVersion(const strExeName: string): String;
+function TfrmSystem.GetFileVersion(const strExeName: string): String;
 var
   n, Len     : DWORD;
   Buf        : PChar;

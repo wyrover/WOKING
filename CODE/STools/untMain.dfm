@@ -25,12 +25,11 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 1132
     Height = 760
-    ActivePage = tsProcess
+    ActivePage = tsSystem
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
       Caption = #31995#32479#31616#20171
-      ExplicitLeft = 0
       object lbl1: TLabel
         Left = 20
         Top = 16
@@ -112,8 +111,9 @@ object frmSystem: TfrmSystem
       object lbl7: TLabel
         Left = 172
         Top = 16
-        Width = 104
+        Width = 429
         Height = 13
+        AutoSize = False
         Caption = #25805#20316#31995#32479#29256#26412#21495#65306
         Font.Charset = GB2312_CHARSET
         Font.Color = clRed
