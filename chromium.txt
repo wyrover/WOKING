@@ -1,0 +1,60 @@
+1 下载 depot_tools
+
+无论你使用什么VPN，先 git 下来 depot_tools。这步应该不难。你如果能翻墙成功，肯定能下载得下来。
+如果你使用的是蓝灯，看一下蓝灯的代理IP和端口号。到GIT里面就设置一下代理IP和端口，就可以将代码拉下来了。
+其它的VPN，原理一样。
+
+2 下载工具：
+        先设置系统的全局代理(假设你的VPN代理是：127.0.0.1:1080，就是上面的那个IP和端口)
+        首先使用管理员身份打开cmd，切换到你要放置 depot_tools 的代码目录(我的是 E:\Source\depot_tools)，执行：
+	E:\Source\depot_tools>netsh  
+	E:\Source\depot_tools>winhttp  
+	E:\Source\depot_tools>set proxy 127.0.0.1:1080 
+	E:\Source\depot_tools>exit
+	E:\Source\depot_tools>set http_proxy=http://127.0.0.1:1080  
+	E:\Source\depot_tools>set https_proxy=http://127.0.0.1:1080 
+
+	这样系统的全局代理就设置好了。可以下载工具了。执行
+
+	E:\Source\depot_tools>gclient
+
+	要不了多久 depot_tools 目录下，会出现一个 win_tools-2_7_6_bin 目录，里面包含了 python 和 git，这是下载和编译 chromium 必须的工具。
+	工具下载下来之后，就可以下载 depot_tools 源码了。如果没能下载下来，说明你用的VPN有问题，只能更换VPN代理。
+	
+
+3 下载 chromium 源码
+  下载代码之前先进行配置：
+   A)：
+	首先将你的系统搜索目录 Path 备份一下，然后将你的 depot_tools 目录，添加到系统搜索目录中去。其它的都删除不用，只保留WINDOWS系统必须的四项。这样：
+	C:\Windows;C:\Windows\system32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\Source\depot_tools;
+  	<注：E:\Source\depot_tools 是我的 depot_tools 代码目录，你需要换成你的 depot_tools 代码目录。>
+
+   B)：
+	配置VS的版本，环境变量设置
+
+	DEPOT_TOOLS_WIN_TOOLCHAIN = 0
+
+	GYP_MSVS_VERSION = 2017
+
+	GYP_MSVS_OVERRIDE_PATH = D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
+	
+	如果你不打算用VS来编译 chromium，后两项可以不用设置。
+
+	新建一个目录，用来放置 chromium 源代码。我的目录是 E:\Source\chromium。开个CMD窗口，切换到此目录，执行：
+
+	E:\Source\chromium>fetch chromium
+
+	漫长的下载代码中.....。
+
+        如果中途断了，可以执行： 
+	E:\Source\chromium>gclient sync
+	同步代码。
+
+4 编译 chromium 
+	E:\Source\chromium>gn gen out/Default  
+	E:\Source\chromium>gn gen --ide=vs out\Default (如果不需要生成vs2017项目，此步骤可忽略） 
+	E:\Source\chromium>ninja -C out/Default chrome 
+
+        也可以用 vs2017 打开 all.sln 编译
+	又是漫长的等待......
+
