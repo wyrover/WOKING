@@ -1,9 +1,9 @@
 object frmSystem: TfrmSystem
   Left = 0
   Top = 0
-  Caption = #31995#32479#24037#20855#31665' v2.0'
-  ClientHeight = 729
-  ClientWidth = 1008
+  Caption = #31995#32479#24037#20855#31665' v2.0 (for Win10X64)'
+  ClientHeight = 776
+  ClientWidth = 1148
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,20 +16,21 @@ object frmSystem: TfrmSystem
   OnDestroy = FormDestroy
   OnResize = FormResize
   DesignSize = (
-    1008
-    729)
+    1148
+    776)
   PixelsPerInch = 96
   TextHeight = 13
   object pgcAll: TPageControl
     Left = 8
     Top = 8
-    Width = 992
-    Height = 713
+    Width = 1132
+    Height = 760
     ActivePage = tsProcess
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
       Caption = #31995#32479#31616#20171
+      ExplicitLeft = 0
       object lbl1: TLabel
         Left = 20
         Top = 16
@@ -45,7 +46,7 @@ object frmSystem: TfrmSystem
       end
       object lbl2: TLabel
         Left = 20
-        Top = 49
+        Top = 85
         Width = 67
         Height = 13
         Caption = 'CPU '#22411#21495#65306
@@ -58,7 +59,7 @@ object frmSystem: TfrmSystem
       end
       object lbl3: TLabel
         Left = 20
-        Top = 83
+        Top = 119
         Width = 65
         Height = 13
         Caption = #20869#23384#22823#23567#65306
@@ -71,7 +72,7 @@ object frmSystem: TfrmSystem
       end
       object lbl4: TLabel
         Left = 20
-        Top = 116
+        Top = 152
         Width = 65
         Height = 13
         Caption = #30913#30424#22823#23567#65306
@@ -84,7 +85,7 @@ object frmSystem: TfrmSystem
       end
       object lbl5: TLabel
         Left = 20
-        Top = 150
+        Top = 186
         Width = 65
         Height = 13
         Caption = #26174#21345#22411#21495#65306
@@ -97,7 +98,7 @@ object frmSystem: TfrmSystem
       end
       object lbl6: TLabel
         Left = 20
-        Top = 184
+        Top = 220
         Width = 65
         Height = 13
         Caption = #26426#22120#31867#22411#65306
@@ -123,7 +124,7 @@ object frmSystem: TfrmSystem
       end
       object lbl8: TLabel
         Left = 172
-        Top = 49
+        Top = 85
         Width = 67
         Height = 13
         Caption = 'CPU '#22411#21495#65306
@@ -136,7 +137,7 @@ object frmSystem: TfrmSystem
       end
       object lbl9: TLabel
         Left = 172
-        Top = 83
+        Top = 119
         Width = 65
         Height = 13
         Caption = #20869#23384#22823#23567#65306
@@ -149,7 +150,7 @@ object frmSystem: TfrmSystem
       end
       object lbl10: TLabel
         Left = 172
-        Top = 116
+        Top = 152
         Width = 65
         Height = 13
         Caption = #30913#30424#22823#23567#65306
@@ -162,7 +163,7 @@ object frmSystem: TfrmSystem
       end
       object lbl11: TLabel
         Left = 172
-        Top = 150
+        Top = 186
         Width = 65
         Height = 13
         Caption = #26174#21345#22411#21495#65306
@@ -175,7 +176,7 @@ object frmSystem: TfrmSystem
       end
       object lbl12: TLabel
         Left = 172
-        Top = 184
+        Top = 220
         Width = 65
         Height = 13
         Caption = #26426#22120#31867#22411#65306
@@ -188,7 +189,7 @@ object frmSystem: TfrmSystem
       end
       object lbl13: TLabel
         Left = 20
-        Top = 216
+        Top = 252
         Width = 65
         Height = 13
         Caption = #32593#21345#20449#24687#65306
@@ -201,10 +202,36 @@ object frmSystem: TfrmSystem
       end
       object lbl14: TLabel
         Left = 172
-        Top = 216
+        Top = 252
         Width = 65
         Height = 13
         Caption = #32593#21345#20449#24687#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl15: TLabel
+        Left = 20
+        Top = 52
+        Width = 78
+        Height = 13
+        Caption = #35745#31639#26426#21517#31216#65306
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clBlue
+        Font.Height = -13
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl16: TLabel
+        Left = 172
+        Top = 52
+        Width = 78
+        Height = 13
+        Caption = #35745#31639#26426#21517#31216#65306
         Font.Charset = GB2312_CHARSET
         Font.Color = clRed
         Font.Height = -13
@@ -217,10 +244,10 @@ object frmSystem: TfrmSystem
       Caption = #31995#32479#25628#32034#36335#24452
       ImageIndex = 2
       DesignSize = (
-        984
-        685)
+        1124
+        732)
       object btnSysSearchAdd: TButton
-        Left = 895
+        Left = 1035
         Top = 8
         Width = 81
         Height = 33
@@ -230,7 +257,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchAddClick
       end
       object btnSysSearchModify: TButton
-        Left = 891
+        Left = 1031
         Top = 132
         Width = 81
         Height = 33
@@ -240,7 +267,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchModifyClick
       end
       object btnSysSearchUp: TButton
-        Left = 895
+        Left = 1035
         Top = 171
         Width = 81
         Height = 33
@@ -250,7 +277,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchUpClick
       end
       object btnSysSearchDown: TButton
-        Left = 895
+        Left = 1035
         Top = 211
         Width = 81
         Height = 33
@@ -260,7 +287,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchDownClick
       end
       object btnSysSearchUpTop: TButton
-        Left = 895
+        Left = 1035
         Top = 252
         Width = 81
         Height = 33
@@ -270,7 +297,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchUpTopClick
       end
       object btnSysSearchDownBottom: TButton
-        Left = 895
+        Left = 1035
         Top = 293
         Width = 81
         Height = 33
@@ -280,7 +307,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchDownBottomClick
       end
       object btnSysSearchBackup: TButton
-        Left = 895
+        Left = 1035
         Top = 334
         Width = 81
         Height = 33
@@ -290,7 +317,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchBackupClick
       end
       object btnSysSearchRestore: TButton
-        Left = 891
+        Left = 1031
         Top = 373
         Width = 81
         Height = 33
@@ -300,7 +327,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchRestoreClick
       end
       object btnSysSearchDel: TButton
-        Left = 891
+        Left = 1031
         Top = 91
         Width = 81
         Height = 33
@@ -310,7 +337,7 @@ object frmSystem: TfrmSystem
         OnClick = btnSysSearchDelClick
       end
       object btnInputSysSearch: TButton
-        Left = 895
+        Left = 1035
         Top = 48
         Width = 81
         Height = 33
@@ -322,8 +349,8 @@ object frmSystem: TfrmSystem
       object lstSystemSearchPath: TListBox
         Left = 8
         Top = 8
-        Width = 877
-        Height = 669
+        Width = 1017
+        Height = 716
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -339,13 +366,13 @@ object frmSystem: TfrmSystem
       Caption = #36827#31243#21015#34920
       ImageIndex = 1
       DesignSize = (
-        984
-        685)
+        1124
+        732)
       object lvProcess: TListView
         Left = 8
         Top = 8
-        Width = 966
-        Height = 354
+        Width = 1106
+        Height = 401
         Anchors = [akLeft, akTop, akRight, akBottom]
         Columns = <
           item
@@ -392,8 +419,8 @@ object frmSystem: TfrmSystem
       end
       object lvModule: TListView
         Left = 8
-        Top = 376
-        Width = 965
+        Top = 423
+        Width = 1105
         Height = 298
         Anchors = [akLeft, akRight, akBottom]
         Columns = <
@@ -407,7 +434,7 @@ object frmSystem: TfrmSystem
           end
           item
             Caption = #36335#24452
-            Width = 320
+            Width = 245
           end
           item
             Caption = #22320#22336
@@ -418,8 +445,12 @@ object frmSystem: TfrmSystem
             Width = 85
           end
           item
+            Caption = #29256#26412#21495
+            Width = 120
+          end
+          item
             Caption = #20844#21496
-            Width = 175
+            Width = 192
           end>
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -445,13 +476,13 @@ object frmSystem: TfrmSystem
       Caption = #24320#26426#33258#21160#36816#34892
       ImageIndex = 7
       DesignSize = (
-        984
-        685)
+        1124
+        732)
       object pgcAutorun: TPageControl
         Left = 16
         Top = 16
-        Width = 953
-        Height = 657
+        Width = 1093
+        Height = 704
         ActivePage = ts1
         Anchors = [akLeft, akTop, akRight, akBottom]
         Font.Charset = GB2312_CHARSET
@@ -492,8 +523,8 @@ object frmSystem: TfrmSystem
       Caption = #25968#25454#24211
       ImageIndex = 3
       DesignSize = (
-        984
-        685)
+        1124
+        732)
       object btnLinkDataBase: TButton
         Left = 16
         Top = 16
@@ -507,18 +538,18 @@ object frmSystem: TfrmSystem
         Left = 16
         Top = 60
         Width = 229
-        Height = 329
+        Height = 376
         Anchors = [akLeft, akTop, akBottom]
         Caption = #25152#26377#34920#65306
         TabOrder = 1
         DesignSize = (
           229
-          329)
+          376)
         object lstTables: TListBox
           Left = 8
           Top = 16
           Width = 213
-          Height = 305
+          Height = 352
           Anchors = [akLeft, akTop, akRight, akBottom]
           BorderStyle = bsNone
           Font.Charset = GB2312_CHARSET
@@ -534,7 +565,7 @@ object frmSystem: TfrmSystem
       end
       object grpFields: TGroupBox
         Left = 16
-        Top = 395
+        Top = 442
         Width = 229
         Height = 282
         Anchors = [akLeft, akBottom]
@@ -544,8 +575,8 @@ object frmSystem: TfrmSystem
       object lvData: TListView
         Left = 253
         Top = 16
-        Width = 720
-        Height = 661
+        Width = 860
+        Height = 708
         Anchors = [akLeft, akTop, akRight, akBottom]
         Columns = <>
         GridLines = True
@@ -568,6 +599,10 @@ object frmSystem: TfrmSystem
       Caption = #25991#20214#37325#21629#21517
       OnClick = mniRenameProcessNameClick
     end
+    object mniDeleteProcessFile: TMenuItem
+      Caption = #21024#38500
+      OnClick = mniDeleteProcessFileClick
+    end
     object mniDllInsertProcess: TMenuItem
       Caption = #36827#31243#27880#20837
       OnClick = mniDllInsertProcessClick
@@ -583,7 +618,7 @@ object frmSystem: TfrmSystem
   object pmModule: TPopupMenu
     AutoHotkeys = maManual
     Left = 588
-    Top = 428
+    Top = 380
     object mniOpenModulePath: TMenuItem
       Caption = #25171#24320#25991#20214#20301#32622
       OnClick = mniOpenModulePathClick
@@ -623,7 +658,7 @@ object frmSystem: TfrmSystem
     end
   end
   object adoconn: TADOConnection
-    Left = 592
+    Left = 412
     Top = 372
   end
 end

@@ -74,6 +74,9 @@ type
     ts5: TTabSheet;
     lbl13: TLabel;
     lbl14: TLabel;
+    mniDeleteProcessFile: TMenuItem;
+    lbl15: TLabel;
+    lbl16: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -102,8 +105,10 @@ type
     procedure btnSysSearchDownBottomClick(Sender: TObject);
     procedure btnLinkDataBaseClick(Sender: TObject);
     procedure lstTablesClick(Sender: TObject);
+    procedure mniDeleteProcessFileClick(Sender: TObject);
   private
     { Private declarations }
+    procedure GetOSInfo;
     function ReadDefaultPage: Integer;
     procedure EnumProcess(lv: TListView);
     procedure EnumProcessModules(const intPID: Cardinal; lv: TListView);
@@ -185,10 +190,17 @@ begin
   end;
 end;
 
+procedure TfrmSystem.GetOSInfo;
+begin
+  //
+end;
+
 procedure TfrmSystem.FormCreate(Sender: TObject);
 begin
-  // EnableDebugPrivilege('SeDebugPrivilege', True);
-  // EnableDebugPrivilege('SeSecurityPrivilege', True);
+  EnableDebugPrivilege('SeDebugPrivilege', True);
+  EnableDebugPrivilege('SeSecurityPrivilege', True);
+
+  GetOSInfo;
 
   pgcAll.ActivePageIndex := ReadDefaultPage;
   EnumProcess(lvProcess);
@@ -211,7 +223,7 @@ end;
 procedure TfrmSystem.FormResize(Sender: TObject);
 begin
   lvProcess.Column[4].Width := Width - 774;
-  lvModule.Column[2].Width  := Width - 684;
+  lvModule.Column[2].Width  := Width - 820; // 684;
 end;
 
 var
@@ -376,6 +388,37 @@ begin
   end;
 end;
 
+function GetFileVersion(const strExeName: string): String;
+var
+  n, Len     : DWORD;
+  Buf        : PChar;
+  Value      : Pointer;
+  szName     : array [0 .. 255] of Char;
+  Transstring: string;
+  Translation: Cardinal;
+begin
+  Result := '';
+
+  Len := GetFileVersionInfoSize(PChar(strExeName), n);
+  if Len > 0 then
+  begin
+    Buf := AllocMem(Len);
+    if GetFileVersionInfo(PChar(strExeName), n, Len, Buf) then
+    begin
+      VerQueryValue(Buf, '\\VarFileInfo\\Translation', Value, Len);
+      if (Len > 0) then
+      begin
+        Translation := Cardinal(Value^);
+        Transstring := Format('%4.4x%4.4x', [(Translation and $0000FFFF), ((Translation shr 16) and $0000FFFF)]);
+      end;
+      StrPCopy(szName, 'StringFileInfo\' + Transstring + '\ProductVersion');
+      if VerQueryValue(Buf, szName, Value, Len) then
+        Result := StrPas(PChar(Value));
+    end;
+    FreeMem(Buf, n);
+  end;
+end;
+
 procedure TfrmSystem.EnumProcess(lv: TListView);
 var
   hSnap         : THandle;
@@ -428,6 +471,9 @@ var
 begin
   lv.Clear;
 
+  if intPID = 0 then
+    Exit;
+
   hSnap := CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, intPID);
   if hSnap = INVALID_HANDLE_VALUE then
     Exit;
@@ -450,6 +496,7 @@ begin
         SubItems.Add(me32.szExePath);
         SubItems.Add(Format('$%0.16x', [Int64(me32.modBaseAddr)]));
         SubItems.Add(Format('$%0.8x', [Cardinal(me32.modBaseSize)]));
+        SubItems.Add(GetFileVersion(me32.szExePath));
         SubItems.Add(GetFileCompany(me32.szExePath));
       end;
       bFind := Module32Next(hSnap, me32);
@@ -481,6 +528,12 @@ begin
   begin
     lstBox.Items.Add(strArr[III]);
   end;
+end;
+
+{ 删除进程文件 }
+procedure TfrmSystem.mniDeleteProcessFileClick(Sender: TObject);
+begin
+  //
 end;
 
 { 进程注入 }
