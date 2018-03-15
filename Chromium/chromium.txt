@@ -1,0 +1,66 @@
+1 下载 depot_tools
+	无论你使用什么VPN，先 git 下来 depot_tools。这步应该不难。你如果能翻墙成功，应该就能下载得下来。
+	如果你使用的是蓝灯，看一下蓝灯的代理IP和端口号。到 GIT/TortoiseGit 里面就设置一下代理IP和端口，就可以将代码拉下来了。
+	其它的VPN，原理一样。
+	下载地址：https://chromium.googlesource.com/chromium/tools/depot_tools.git
+	附图：
+	查看蓝灯的代理IP和端口号：
+	TortoiseGit中设置网络代理：
+
+2 下载工具：
+	A)：
+		先设置系统的全局代理(假设你的VPN代理是：127.0.0.1:1080，就是上面的那个IP和端口)
+		首先使用管理员身份打开cmd，执行：
+		E:\Source\depot_tools>netsh  
+		E:\Source\depot_tools>winhttp  
+		E:\Source\depot_tools>set proxy 127.0.0.1:1080 
+		E:\Source\depot_tools>exit
+		结束，关闭CMD窗口。
+
+	B)：
+		这样系统的全局代理就设置好了。就可以下载工具了。
+		打开一个新的CMD窗口，切换到 depot_tools 你要保存的目录（我的目录是：E:\Source\depot_tools），执行gclient：
+		E:\Source\depot_tools>gclient
+		如果没能下载下来，说明你用的VPN有问题，只能更换VPN代理。
+		要不了多久 depot_tools 目录下，会出现一个 win_tools-2_7_6_bin 目录，里面包含了 python 和 git，这是下载和编译 chromium 必须的工具。
+		结束，关闭CMD窗口。
+
+
+3 下载 chromium 源码
+	A)：
+		首先将你的系统搜索目录 Path 备份一下，然后将你的 depot_tools 目录，添加到系统搜索目录中去。其它的都删除不用，只保留WINDOWS系统必须的四项。这样：
+		C:\Windows;C:\Windows\system32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\Source\depot_tools;
+		<注：E:\Source\depot_tools 是我的 depot_tools 代码目录，你需要换成你的 depot_tools 代码目录。>
+
+	B)：
+		配置VS的版本，环境变量设置：
+		DEPOT_TOOLS_WIN_TOOLCHAIN = 0
+		GYP_MSVS_VERSION = 2017
+		GYP_MSVS_OVERRIDE_PATH = D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
+		如果你不打算用VS来编译 chromium，后两项可以不用设置。
+
+	C)：
+		新建一个目录，用来放置 chromium 源代码。我的目录是 E:\Source\chromium。开个CMD窗口，切换到此目录，执行：
+		E:\Source\chromium>set http_proxy=http://127.0.0.1:1080  
+		E:\Source\chromium>set https_proxy=http://127.0.0.1:1080 
+		E:\Source\chromium>fetch chromium
+		漫长的下载代码中.....。
+		如果中途断了，原先下载的就作废了，又会从头再来。这时候，是考验你的VPN代理稳定性的时候了。 
+		代码下载下来之后，平时可以用：
+		E:\Source\chromium>gclient sync 
+		来更新代码。
+		最好立即执行一次，防止有的代码没有拉下来。
+
+		经过了3个多小时后，git 下载下来的代码 15G 左右。
+		(编译也会占用较大的磁盘空间，找一个大分区，是必须的)
+
+
+4 编译 chromium 
+		E:\Source\chromium>gn gen out/Default  
+		E:\Source\chromium>gn gen --ide=vs out\Default (如果不需要生成vs2017项目，此步骤可忽略） 
+		E:\Source\chromium>ninja -C out/Default chrome 
+		也可以用 vs2017 打开 all.sln 编译
+		又是漫长的等待......
+
+
+如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定上面所有的事。
