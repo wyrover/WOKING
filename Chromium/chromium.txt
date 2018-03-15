@@ -65,3 +65,24 @@
 
 
 如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定上面所有的事。
+
+
+如果使用http代理同步chromium代码，在执行fetch chromium或者gclient sync的最后会提示下面的错误，无法生成sln文件。
+Failed download_from_google_storage --no_resume --platform=win32 --no_auth   
+--bucket chromium-gn -s src/buildtools/linux32/gn.sha1 
+NOTICE: You have PROXY values set in your environment, but gsutil in   
+depot_tools does not (yet) obey them. 
+Also, --no_auth prevents the normal BOTO_CONFIG environment variable from   
+being used. 
+To use a proxy in this situation, please supply those settings in a .boto   
+file pointed to by the NO_AUTH_BOTO_CONFIG environment var.
+解决办法，随便找个地方生成一个文本文件，比如 D:\boto.cfg
+在该文件中输入下面的内容(假设代理服务器是 http://http.proxy.com:12345)：
+[Boto]
+proxy=http://http.proxy.com
+proxy_port = 12345
+
+然后设置环境变量
+set NO_AUTH_BOTO_CONFIG=D:\boto.cfg
+再执行fetch chromium或者gclient sync
+
