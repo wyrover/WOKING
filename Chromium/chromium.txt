@@ -41,8 +41,8 @@
 
 	C)：
 		新建一个目录，用来放置 chromium 源代码。我的目录是 E:\Source\chromium。开个CMD窗口，切换到此目录，执行：
-		E:\Source\chromium>set http_proxy=http://127.0.0.1:1080  
-		E:\Source\chromium>set https_proxy=http://127.0.0.1:1080 
+		E:\Source\chromium>set http_proxy=http://127.0.0.1:1080
+		E:\Source\chromium>set https_proxy=http://127.0.0.1:1080
 		E:\Source\chromium>fetch chromium
 		漫长的下载代码中.....。
 		如果中途断了，原先下载的就作废了，又会从头再来。这时候，是考验你的VPN代理稳定性的时候了。 
@@ -52,7 +52,7 @@
 		最好立即执行一次，防止有的代码没有拉下来。
 
 		经过了3个多小时后，git 下载下来的代码大约 21G 左右。
-		(编译也会占用较大的磁盘空间，找一个大分区，是必须的)
+		(编译也会占用较大的磁盘空间，将近 90G。找一个大分区，是必须的)
 
 
 4 编译 chromium 
