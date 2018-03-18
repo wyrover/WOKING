@@ -57,11 +57,19 @@
 
 4 编译 chromium 
 		这一步就简单了，执行：
-		E:\Source\chromium>gn gen out/Default  
+		E:\Source\chromium>set GYP_DEFINES="is_debug=false is_component_build=true"
+		
+		E:\Source\chromium>gn gen out/Default --args="is_component_build = false is_debug = false"
+		
+		E:\Source\chromium>gn gen  out/Default  
 		E:\Source\chromium>gn gen --ide=vs out\Default (如果不需要生成vs2017项目，此步骤可忽略） 
 		E:\Source\chromium>ninja -C out/Default chrome 
 		也可以用 vs2017 打开 all.sln 编译
 		又是漫长的等待......
+
+		ninja Static Release
+		E:\Source\chromium>gn gen out/Default --args="is_component_build = false is_debug = false"
+		E:\Source\chromium>ninja -C out/Default chrome 
 
 
 如果你的VPN代理，可以正常工作的话，你完全可以编写一个BAT文件，一次性搞定上面所有的事。
