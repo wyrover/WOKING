@@ -1,4 +1,4 @@
-unit Unit1;
+ï»¿unit Unit1;
 
 interface
 
@@ -20,7 +20,7 @@ type
     procedure lbl2Click(Sender: TObject);
     procedure img1Click(Sender: TObject);
   private
-    { Êı¾İ¿âÁ¬½Ó³É¹¦Ö®ºó£¬Ö´ĞĞÖ÷³ÌĞò }
+    { æ•°æ®åº“è¿æ¥æˆåŠŸä¹‹åï¼Œæ‰§è¡Œä¸»ç¨‹åº }
     procedure DBLinkSuccess(const connLink: TADOConnection);
   public
     { Public declarations }
@@ -34,14 +34,14 @@ implementation
 {$R *.dfm}
 
 const
-  c_strYYEncDecKey      = 'ÉÏº£ÒàÔ´ÖÇÄÜ¿Æ¼¼ÓĞÏŞ¹«Ë¾¼Ó½âÃÜÃÜÔ¿';
+  c_strYYEncDecKey      = 'ä¸Šæµ·äº¦æºæ™ºèƒ½ç§‘æŠ€æœ‰é™å…¬å¸åŠ è§£å¯†å¯†é’¥';
   c_strDefaultMainProc  = 'main.exe';
   c_strDBConfigFileName = 'DBInit.dat';
 
-  { ÉÏº£ÒàÔ´ÖÇÄÜ¿Æ¼¼×Ö·û´®¼Ó½âÃÜº¯Êı }
+  { ä¸Šæµ·äº¦æºæ™ºèƒ½ç§‘æŠ€å­—ç¬¦ä¸²åŠ è§£å¯†å‡½æ•° }
 function YYEncDecStr(const S: String; const bEncrypt: Boolean = True): String; stdcall; export;
 
-{ ×Ö·û´®×ªÎª16½øÖÆ±í´ï×Ö·û }
+{ å­—ç¬¦ä¸²è½¬ä¸º16è¿›åˆ¶è¡¨è¾¾å­—ç¬¦ }
   function MyStrToHex(AStr: string): string;
   var
     I, Len: Integer;
@@ -52,7 +52,7 @@ function YYEncDecStr(const S: String; const bEncrypt: Boolean = True): String; s
     for I  := 1 to Len do
     begin
       S      := AStr[I];
-      Result := Result + IntToHex(Ord(S), 2); // ½«×Ö·û´®×ª»¯Îª16½øÖÆ×Ö·û´®£¬
+      Result := Result + IntToHex(Ord(S), 2); // å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸º16è¿›åˆ¶å­—ç¬¦ä¸²ï¼Œ
     end;
   end;
 
@@ -68,7 +68,7 @@ begin
   if L < 1 then
     Exit;
 
-  { ±ä»»´¦ÀíÃØÔ¿×Ö·û´® }
+  { å˜æ¢å¤„ç†ç§˜é’¥å­—ç¬¦ä¸² }
   newkeystr := MyStrToHex(c_strYYEncDecKey);
   mm        := (Length(newkeystr) div 2) - 1;
   if mm < 0 then
@@ -84,7 +84,7 @@ begin
   K := 0;
   if bEncrypt then
   begin
-    { ¼ÓÃÜ }
+    { åŠ å¯† }
     for I := 1 to L do
     begin
       B      := WORD(S[I]) xor Ord(key[K]);
@@ -96,7 +96,7 @@ begin
   end
   else
   begin
-    { »¹Ô­ }
+    { è¿˜åŸ }
     K := 0;
     I := 0;
     while I < L div 4 do
@@ -110,20 +110,20 @@ begin
   end;
 end;
 
-procedure ShowDBErr(const strDisplayTip: String = 'Êı¾İ¿âÁ¬½ÓÒì³££¬Çë¼ì²éÊı¾İ¿âÁ¬½Ó');
+procedure ShowDBErr(const strDisplayTip: String = 'æ•°æ®åº“è¿æ¥å¼‚å¸¸ï¼Œè¯·æ£€æŸ¥æ•°æ®åº“è¿æ¥');
 begin
   ShowMessage(strDisplayTip);
 end;
 
-{ ĞŞ¸Äµ±Ç°Ê±¼äÎª sqlserver Ê±¼ä }
+{ ä¿®æ”¹å½“å‰æ—¶é—´ä¸º sqlserver æ—¶é—´ }
 procedure ModifyNativeTimeToServer(const strDateTime: string);
 var
   systemtime: Tsystemtime;
   DateTime  : TDateTime;
 begin
-  DateTime := StrToDateTime(strDateTime);     // »ñµÃÊ±¼ä£¨TDateTime¸ñÊ½£©
-  DateTimeToSystemTime(DateTime, systemtime); // °ÑDelphiµÄTDateTime¸ñÊ½×ª»¯ÎªAPIµÄTSystemTime¸ñÊ½
-  SetLocalTime(systemtime);                   // ÉèÖÃÏµÍ³Ê±¼ä
+  DateTime := StrToDateTime(strDateTime);     // è·å¾—æ—¶é—´ï¼ˆTDateTimeæ ¼å¼ï¼‰
+  DateTimeToSystemTime(DateTime, systemtime); // æŠŠDelphiçš„TDateTimeæ ¼å¼è½¬åŒ–ä¸ºAPIçš„TSystemTimeæ ¼å¼
+  SetLocalTime(systemtime);                   // è®¾ç½®ç³»ç»Ÿæ—¶é—´
 end;
 
 function LinkDataBase(AdoConn: TADOConnection): Boolean;
@@ -136,7 +136,7 @@ label _linkconn;
 begin
   Result := False;
 
-  { ÅäÖÃÎÄ¼ş²»´æÔÚ£¬µ¯³öÁ¬½ÓÊı¾İ¿â¶Ô»°¿ò }
+  { é…ç½®æ–‡ä»¶ä¸å­˜åœ¨ï¼Œå¼¹å‡ºè¿æ¥æ•°æ®åº“å¯¹è¯æ¡† }
   if not FileExists(ExtractFilePath(ParamStr(0)) + c_strDBConfigFileName) then
   begin
     strConn := PromptDataSource(Application.Handle, c_strDefaultConn);
@@ -150,14 +150,14 @@ begin
     end;
   end;
 
-  { ÅäÖÃÎÄ¼ş´æÔÚ }
+  { é…ç½®æ–‡ä»¶å­˜åœ¨ }
 _linkconn:
   with TIniFile.Create(ExtractFilePath(ParamStr(0)) + c_strDBConfigFileName) do
   begin
     strConn := ReadString('database', 'name', '');
     if Trim(strConn) = '' then
     begin
-      { ÅäÖÃÎÄ¼ş´æÔÚ£¬µ«Êı¾İ¿âÁ¬½Ó×Ö¶ÎÃ»ÓĞ }
+      { é…ç½®æ–‡ä»¶å­˜åœ¨ï¼Œä½†æ•°æ®åº“è¿æ¥å­—æ®µæ²¡æœ‰ }
       strConn := PromptDataSource(Application.Handle, c_strDefaultConn);
       if CompareText(strConn, c_strDefaultConn) = 0 then
         Exit;
@@ -205,8 +205,8 @@ var
 begin
   with TOpenDialog.Create(nil) do
   begin
-    Title  := 'Ñ¡ÔñÒ»¸ö¿ÉÖ´ĞĞÎÄ¼ş×÷ÎªÖ÷³ÌĞò';
-    Filter := '¿ÉÖ´ĞĞÎÄ¼ş(*.EXE)|*.EXE';
+    Title  := 'é€‰æ‹©ä¸€ä¸ªå¯æ‰§è¡Œæ–‡ä»¶ä½œä¸ºä¸»ç¨‹åº';
+    Filter := 'å¯æ‰§è¡Œæ–‡ä»¶(*.EXE)|*.EXE';
     if Execute then
     begin
       stra := FileName;
@@ -219,7 +219,7 @@ begin
         end
         else
         begin
-          MessageBox(Handle, '²»ÄÜÖ´ĞĞ×ÔÉí£¬ÇëÖØĞÂÑ¡ÔñÒ»¸ö³ÌĞò', 'ÏµÍ³ÌáÊ¾£º', MB_OK OR MB_ICONWARNING);
+          MessageBox(Handle, 'ä¸èƒ½æ‰§è¡Œè‡ªèº«ï¼Œè¯·é‡æ–°é€‰æ‹©ä¸€ä¸ªç¨‹åº', 'ç³»ç»Ÿæç¤ºï¼š', MB_OK OR MB_ICONWARNING);
         end;
         Free;
       end;
@@ -228,7 +228,7 @@ begin
   end;
 end;
 
-{ ÔËĞĞ³ÌĞò }
+{ è¿è¡Œç¨‹åº }
 function RunMainProc(const strMainProc, strParam: string): Boolean;
 var
   si: STARTUPINFO;
@@ -244,7 +244,7 @@ begin
   end;
 end;
 
-{ Êı¾İ¿âÁ¬½Ó³É¹¦Ö®ºó£¬Ö´ĞĞÖ÷³ÌĞò }
+{ æ•°æ®åº“è¿æ¥æˆåŠŸä¹‹åï¼Œæ‰§è¡Œä¸»ç¨‹åº }
 procedure TfrmDB.DBLinkSuccess(const connLink: TADOConnection);
 var
   strMainProgramFileName: string;
@@ -270,7 +270,7 @@ procedure TfrmDB.lbl1Click(Sender: TObject);
 begin
   if not LinkDataBase(conLink) then
   begin
-    if MessageBox(Handle, '±ØĞëÏÈÅäÖÃºÃÊı¾İ¿â£¬³ÌĞò²ÅÄÜÔËĞĞ£¬·ñÔò³ÌĞò½«ÎŞ·¨ÔËĞĞ£¬ÄãÈ·¶¨ÒªÍË³öÂğ£¿', 'ÏµÍ³ÌáÊ¾£º', MB_YESNO OR MB_ICONINFORMATION) = ID_YES then
+    if MessageBox(Handle, 'å¿…é¡»å…ˆé…ç½®å¥½æ•°æ®åº“ï¼Œç¨‹åºæ‰èƒ½è¿è¡Œï¼Œå¦åˆ™ç¨‹åºå°†æ— æ³•è¿è¡Œï¼Œä½ ç¡®å®šè¦é€€å‡ºå—ï¼Ÿ', 'ç³»ç»Ÿæç¤ºï¼š', MB_YESNO OR MB_ICONINFORMATION) = ID_YES then
     begin
       Close;
     end;
@@ -279,7 +279,7 @@ begin
   begin
     Close;
 
-    { Êı¾İ¿âÁ¬½Ó³É¹¦Ö®ºó£¬Ö´ĞĞÖ÷³ÌĞò }
+    { æ•°æ®åº“è¿æ¥æˆåŠŸä¹‹åï¼Œæ‰§è¡Œä¸»ç¨‹åº }
     DBLinkSuccess(conLink);
   end;
 end;
