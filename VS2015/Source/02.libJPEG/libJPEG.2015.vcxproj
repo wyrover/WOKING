@@ -160,8 +160,15 @@
     </ResourceCompile>
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\jconfig.h ..\..\Install\include\jconfig.h
+copy .\jerror.h ..\..\Install\include\jerror.h
+copy .\jinclude.h ..\..\Install\include\jinclude.h
+copy .\jmorecfg.h ..\..\Install\include\jmorecfg.h
+copy .\jpeglib.h ..\..\Install\include\jpeglib.h</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -192,8 +199,15 @@
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\jconfig.h ..\..\Install\include\jconfig.h
+copy .\jerror.h ..\..\Install\include\jerror.h
+copy .\jinclude.h ..\..\Install\include\jinclude.h
+copy .\jmorecfg.h ..\..\Install\include\jmorecfg.h
+copy .\jpeglib.h ..\..\Install\include\jpeglib.h</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="jaricom.c" />

@@ -136,8 +136,12 @@
     </ResourceCompile>
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\zlib.h ..\..\Install\include\zlib.h
+copy .\zconf.h ..\..\Install\include\zconf.h </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -202,8 +206,12 @@
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\zlib.h ..\..\Install\include\zlib.h
+copy .\zconf.h ..\..\Install\include\zconf.h </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="adler32.c" />

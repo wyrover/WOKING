@@ -146,10 +146,17 @@
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\png.h  ..\..\Install\Include\png.h
+copy .\pngconf.h  ..\..\Install\Include\pngconf.h
+copy .\pnglibconf.h  ..\..\Install\Include\pnglibconf.h
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -198,8 +205,14 @@
     </ResourceCompile>
     <Lib>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\Install\lib\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+copy .\png.h  ..\..\Install\Include\png.h
+copy .\pngconf.h  ..\..\Install\Include\pngconf.h
+copy .\pnglibconf.h  ..\..\Install\Include\pnglibconf.h
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="png.c" />
@@ -228,7 +241,7 @@
     <ClInclude Include="pngstruct.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZLib\ZLib.2013.vcxproj">
+    <ProjectReference Include="..\01.ZLib\ZLib.2015.vcxproj">
       <Project>{33134f61-c1ad-4b6f-9cea-503a9f140c52}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
