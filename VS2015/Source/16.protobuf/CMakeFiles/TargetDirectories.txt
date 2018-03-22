@@ -1,0 +1,8 @@
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/protoc.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/libprotobuf-lite.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/libprotoc.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/libprotobuf.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/INSTALL.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/js_embed.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/ALL_BUILD.dir
+E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/ZERO_CHECK.dir

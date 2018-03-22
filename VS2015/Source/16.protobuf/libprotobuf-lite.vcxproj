@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D55E2BEE-5EE4-3B1C-9554-06A91C7B7268}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>libprotobuf-lite</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Working\dbyoung\VS2015\Source\16.protobuf\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libprotobuf-lite.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libprotobuf-lited</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Working\dbyoung\VS2015\Source\16.protobuf\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libprotobuf-lite.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libprotobuf-lite</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4018;4065;4146;4244;4251;4267;4305;4307;4309;4334;4355;4506;4800;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GOOGLE_PROTOBUF_CMAKE_BUILD;HAVE_ZLIB;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GOOGLE_PROTOBUF_CMAKE_BUILD;HAVE_ZLIB;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /ignore:4221</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4018;4065;4146;4244;4251;4267;4305;4307;4309;4334;4355;4506;4800;4996</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner></SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;HAVE_ZLIB;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;HAVE_ZLIB;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Working\dbyoung\VS2015\Install\include;E:\Working\dbyoung\VS2015\Source\16.protobuf;E:\Source\protobuf\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /ignore:4221</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Source\protobuf\protobuf\cmake\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Source/protobuf/protobuf/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+F:\Green\Language\CMake\3.10.2\x64\bin\cmake.exe -HE:/Source/protobuf/protobuf/cmake -BE:/Working/dbyoung/VS2015/Source/16.protobuf --check-stamp-file E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/Source/protobuf/protobuf/cmake/CMakeLists.txt;E:\Source\protobuf\protobuf\cmake\CMakeLists.txt;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeSystem.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeCCompiler.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeRCInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeDependentOption.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-options.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindThreads.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckLibraryExists.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckSymbolExists.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckIncludeFile.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageMessage.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindZLIB.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Source\protobuf\protobuf\cmake\extract_includes.bat.in;E:\Source\protobuf\protobuf\cmake\libprotobuf-lite.cmake;E:\Source\protobuf\protobuf\cmake\libprotobuf.cmake;E:\Source\protobuf\protobuf\cmake\libprotoc.cmake;E:\Source\protobuf\protobuf\cmake\protoc.cmake;E:\Source\protobuf\protobuf\cmake\install.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\GNUInstallDirs.cmake;E:\Source\protobuf\protobuf\cmake\protobuf.pc.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-lite.pc.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-config.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-config-version.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-module.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-options.cmake;E:\Source\protobuf\protobuf\cmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Source/protobuf/protobuf/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+F:\Green\Language\CMake\3.10.2\x64\bin\cmake.exe -HE:/Source/protobuf/protobuf/cmake -BE:/Working/dbyoung/VS2015/Source/16.protobuf --check-stamp-file E:/Working/dbyoung/VS2015/Source/16.protobuf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/Source/protobuf/protobuf/cmake/CMakeLists.txt;E:\Source\protobuf\protobuf\cmake\CMakeLists.txt;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeSystem.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeCCompiler.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeCXXCompiler.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\3.10.2\CMakeRCCompiler.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeRCInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCXXInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Compiler\MSVC-CXX.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Compiler\CMakeCommonCompilerMacros.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC-CXX.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeDependentOption.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-options.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindThreads.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckLibraryExists.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckSymbolExists.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckIncludeFile.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageMessage.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindZLIB.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\FindPackageMessage.cmake;E:\Source\protobuf\protobuf\cmake\extract_includes.bat.in;E:\Source\protobuf\protobuf\cmake\libprotobuf-lite.cmake;E:\Source\protobuf\protobuf\cmake\libprotobuf.cmake;E:\Source\protobuf\protobuf\cmake\libprotoc.cmake;E:\Source\protobuf\protobuf\cmake\protoc.cmake;E:\Source\protobuf\protobuf\cmake\install.cmake;F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\GNUInstallDirs.cmake;E:\Source\protobuf\protobuf\cmake\protobuf.pc.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-lite.pc.cmake;E:\Source\protobuf\protobuf\cmake\protobuf-config.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-config-version.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-module.cmake.in;E:\Source\protobuf\protobuf\cmake\protobuf-options.cmake;E:\Source\protobuf\protobuf\cmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Working\dbyoung\VS2015\Source\16.protobuf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\arena.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\arenastring.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\extension_set.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\generated_message_table_driven_lite.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\generated_message_util.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\implicit_weak_message.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\coded_stream.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\zero_copy_stream.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\message_lite.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\repeated_field.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_gcc.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\bytestream.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\common.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\int128.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\io_win32.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\once.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\status.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\statusor.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\stringpiece.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\stringprintf.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\structurally_valid.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\strutil.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\time.cc"  />
+    <ClCompile Include="E:\Source\protobuf\protobuf\src\google\protobuf\wire_format_lite.cc"  />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\arena.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\arenastring.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\extension_set.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\generated_message_util.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\implicit_weak_message.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\coded_stream.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\zero_copy_stream.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\io\zero_copy_stream_impl_lite.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\message_lite.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\repeated_field.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\atomicops_internals_x86_msvc.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\bytestream.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\common.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\int128.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\once.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\status.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\statusor.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\stringpiece.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\stringprintf.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\strutil.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\stubs\time.h" />
+    <ClInclude Include="E:\Source\protobuf\protobuf\src\google\protobuf\wire_format_lite.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\Working\dbyoung\VS2015\Source\16.protobuf\ZERO_CHECK.vcxproj">
+      <Project>{B821D2D5-1446-3692-847D-B57980BBAA99}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
