@@ -10,3 +10,4 @@
 08.libTIFF
 09.libTIFF4
 10.OpenEXR
+11.libgif
