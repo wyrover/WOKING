@@ -1,0 +1,11 @@
+E:/Working/dbyoung/VS2015/Install/include/webp/decode.h
+E:/Working/dbyoung/VS2015/Install/include/webp/demux.h
+E:/Working/dbyoung/VS2015/Install/include/webp/encode.h
+E:/Working/dbyoung/VS2015/Install/include/webp/mux.h
+E:/Working/dbyoung/VS2015/Install/include/webp/mux_types.h
+E:/Working/dbyoung/VS2015/Install/include/webp/types.h
+E:/Working/dbyoung/VS2015/Install/lib/webpdecoder.lib
+E:/Working/dbyoung/VS2015/Install/lib/webp.lib
+E:/Working/dbyoung/VS2015/Install/lib/webpdemux.lib
+E:/Working/dbyoung/VS2015/Install/share/WebP/cmake/WebPConfigVersion.cmake
+E:/Working/dbyoung/VS2015/Install/share/WebP/cmake/WebPConfig.cmake

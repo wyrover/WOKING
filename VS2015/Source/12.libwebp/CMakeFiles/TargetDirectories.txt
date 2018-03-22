@@ -1,0 +1,12 @@
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpdecoder.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpdecode.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpdspdecode.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webputilsdecode.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpdsp.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpencode.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webputils.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webp.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/webpdemux.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/INSTALL.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/ALL_BUILD.dir
+E:/Working/dbyoung/VS2015/Source/12.libwebp/CMakeFiles/ZERO_CHECK.dir
