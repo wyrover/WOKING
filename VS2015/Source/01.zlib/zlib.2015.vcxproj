@@ -138,7 +138,11 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+      <Command>mkdir ..\..\Install
+mkdir ..\..\install\include
+mkdir ..\..\install\lib
+
+copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\zlib.h ..\..\Install\include\zlib.h
 copy .\zconf.h ..\..\Install\include\zconf.h </Command>
     </PostBuildEvent>
@@ -208,7 +212,11 @@ copy .\zconf.h ..\..\Install\include\zconf.h </Command>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+      <Command>mkdir ..\..\Install
+mkdir ..\..\install\include
+mkdir ..\..\install\lib
+
+copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\zlib.h ..\..\Install\include\zlib.h
 copy .\zconf.h ..\..\Install\include\zconf.h </Command>
     </PostBuildEvent>

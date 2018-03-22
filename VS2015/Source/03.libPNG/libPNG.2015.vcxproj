@@ -151,7 +151,11 @@
       </AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+      <Command>mkdir ..\..\Install
+mkdir ..\..\install\include
+mkdir ..\..\install\lib
+
+copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\png.h  ..\..\Install\Include\png.h
 copy .\pngconf.h  ..\..\Install\Include\pngconf.h
 copy .\pnglibconf.h  ..\..\Install\Include\pnglibconf.h
@@ -207,7 +211,11 @@ copy .\pnglibconf.h  ..\..\Install\Include\pnglibconf.h
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
+      <Command>mkdir ..\..\Install
+mkdir ..\..\install\include
+mkdir ..\..\install\lib
+
+copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\png.h  ..\..\Install\Include\png.h
 copy .\pngconf.h  ..\..\Install\Include\pngconf.h
 copy .\pnglibconf.h  ..\..\Install\Include\pnglibconf.h
