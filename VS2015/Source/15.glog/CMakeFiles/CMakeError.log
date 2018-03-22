@@ -1,0 +1,2056 @@
+Determining the gflags namespace gflags failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_103ee.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:39。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_103ee.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_103ee.dir\Debug\cmTC_103ee.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_103ee.dir\Debug\cmTC_103ee.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /IE:\Working\dbyoung\VS2015\Install\include /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D GFLAGS_NAMESPACE=gflags /D GFLAGS_IS_A_DLL=0 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_103ee.dir\Debug\\" /Fd"cmTC_103ee.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\DetermineGflagsNamespace.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /IE:\Working\dbyoung\VS2015\Install\include /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D GFLAGS_NAMESPACE=gflags /D GFLAGS_IS_A_DLL=0 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_103ee.dir\Debug\\" /Fd"cmTC_103ee.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\DetermineGflagsNamespace.cxx
+  
+  DetermineGflagsNamespace.cxx
+E:\Working\dbyoung\VS2015\Install\include\gflags/gflags_declare.h(43): warning C4005: “GFLAGS_NAMESPACE”: 宏重定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  E:\Working\dbyoung\VS2015\Install\include\gflags/gflags_declare.h(43): note: 命令行参数: 参见前面的“GFLAGS_NAMESPACE”定义
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_103ee.exe" /INCREMENTAL /NOLOGO E:\Working\dbyoung\VS2015\Install\lib\gflags_static.lib shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_103ee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_103ee.lib" /MACHINE:X64  /machine:x64 cmTC_103ee.dir\Debug\DetermineGflagsNamespace.obj
+gflags_static.lib(gflags.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+gflags_static.lib(gflags.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPEAV_Facet_base@1@@Z) 已经在 msvcprtd.lib(locale0_implib.obj) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPEAV12@PEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_dtor(class std::_Locinfo *)" (?_Locinfo_dtor@_Locinfo@std@@SAXPEAV12@@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(cerr.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(cerr.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(locale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QEAA@H@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QEAA@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(ios.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(ios.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(xwctomb.obj) : error LNK2005: _Getcvt 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_103ee.exe : fatal error LNK1169: 找到一个或多个多重定义的符号 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Install\include\gflags/gflags_declare.h(43): warning C4005: “GFLAGS_NAMESPACE”: 宏重定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  gflags_static.lib(gflags.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  gflags_static.lib(gflags.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPEAV_Facet_base@1@@Z) 已经在 msvcprtd.lib(locale0_implib.obj) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPEAV12@PEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_dtor(class std::_Locinfo *)" (?_Locinfo_dtor@_Locinfo@std@@SAXPEAV12@@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(cerr.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(cerr.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(locale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QEAA@H@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QEAA@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(ios.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(ios.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(xwctomb.obj) : error LNK2005: _Getcvt 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_103ee.exe : fatal error LNK1169: 找到一个或多个多重定义的符号 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_103ee.vcxproj]
+
+    2 个警告
+    49 个错误
+
+已用时间 00:00:00.76
+
+
+Determining the gflags namespace google failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_8bf5f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:40。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_8bf5f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_8bf5f.dir\Debug\cmTC_8bf5f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_8bf5f.dir\Debug\cmTC_8bf5f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /IE:\Working\dbyoung\VS2015\Install\include /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D GFLAGS_NAMESPACE=google /D GFLAGS_IS_A_DLL=0 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8bf5f.dir\Debug\\" /Fd"cmTC_8bf5f.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\DetermineGflagsNamespace.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /IE:\Working\dbyoung\VS2015\Install\include /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D GFLAGS_NAMESPACE=google /D GFLAGS_IS_A_DLL=0 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8bf5f.dir\Debug\\" /Fd"cmTC_8bf5f.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\DetermineGflagsNamespace.cxx
+  
+  DetermineGflagsNamespace.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8bf5f.exe" /INCREMENTAL /NOLOGO E:\Working\dbyoung\VS2015\Install\lib\gflags_static.lib shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8bf5f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8bf5f.lib" /MACHINE:X64  /machine:x64 cmTC_8bf5f.dir\Debug\DetermineGflagsNamespace.obj
+gflags_static.lib(gflags.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+gflags_static.lib(gflags.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPEAV_Facet_base@1@@Z) 已经在 msvcprtd.lib(locale0_implib.obj) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPEAV12@PEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_dtor(class std::_Locinfo *)" (?_Locinfo_dtor@_Locinfo@std@@SAXPEAV12@@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(cerr.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(cerr.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(locale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QEAA@H@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QEAA@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(ios.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(ios.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(xwctomb.obj) : error LNK2005: _Getcvt 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8bf5f.exe : fatal error LNK1169: 找到一个或多个多重定义的符号 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  gflags_static.lib(gflags.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  gflags_static.lib(gflags.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  gflags_static.lib(gflags_reporting.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  gflags_static.lib(gflags_completions.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPEAV_Facet_base@1@@Z) 已经在 msvcprtd.lib(locale0_implib.obj) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPEAV12@PEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_dtor(class std::_Locinfo *)" (?_Locinfo_dtor@_Locinfo@std@@SAXPEAV12@@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(cerr.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(cerr.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(locale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QEAA@H@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlock.obj) : error LNK2005: "public: __cdecl std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QEAA@XZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(ios.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(ios.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPEBD@Z) 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(xwctomb.obj) : error LNK2005: _Getcvt 已经在 msvcprtd.lib(MSVCP140D.dll) 中定义 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(winapisupp.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlCompareStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(winapinls.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlCompareStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlLCMapStringW.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  libcpmt.lib(StlLCMapStringA.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(DetermineGflagsNamespace.obj 中) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8bf5f.exe : fatal error LNK1169: 找到一个或多个多重定义的符号 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8bf5f.vcxproj]
+
+    1 个警告
+    49 个错误
+
+已用时间 00:00:00.66
+
+
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_ae1fa.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:40。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_ae1fa.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_ae1fa.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_ae1fa.dir\Debug\cmTC_ae1fa.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_ae1fa.dir\Debug\cmTC_ae1fa.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae1fa.dir\Debug\\" /Fd"cmTC_ae1fa.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ae1fa.dir\Debug\\" /Fd"cmTC_ae1fa.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_ae1fa.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_ae1fa.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_ae1fa.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_ae1fa.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file dlfcn.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4d523.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:41。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4d523.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4d523.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4d523.dir\Debug\cmTC_4d523.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4d523.dir\Debug\cmTC_4d523.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4d523.dir\Debug\\" /Fd"cmTC_4d523.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4d523.dir\Debug\\" /Fd"cmTC_4d523.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “dlfcn.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4d523.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4d523.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4d523.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “dlfcn.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4d523.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file execinfo.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_1e54c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:41。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1e54c.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_1e54c.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_1e54c.dir\Debug\cmTC_1e54c.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_1e54c.dir\Debug\cmTC_1e54c.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e54c.dir\Debug\\" /Fd"cmTC_1e54c.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e54c.dir\Debug\\" /Fd"cmTC_1e54c.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “execinfo.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1e54c.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1e54c.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1e54c.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “execinfo.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1e54c.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.26
+
+
+Determining if the include file glob.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_69f62.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:42。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69f62.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_69f62.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_69f62.dir\Debug\cmTC_69f62.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_69f62.dir\Debug\cmTC_69f62.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69f62.dir\Debug\\" /Fd"cmTC_69f62.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69f62.dir\Debug\\" /Fd"cmTC_69f62.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “glob.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69f62.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69f62.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69f62.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “glob.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69f62.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file libunwind.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_08c0b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:43。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_08c0b.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_08c0b.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_08c0b.dir\Debug\cmTC_08c0b.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_08c0b.dir\Debug\cmTC_08c0b.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_08c0b.dir\Debug\\" /Fd"cmTC_08c0b.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_08c0b.dir\Debug\\" /Fd"cmTC_08c0b.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “libunwind.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_08c0b.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_08c0b.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_08c0b.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “libunwind.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_08c0b.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.26
+
+
+Determining if the include file pwd.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_7852f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:44。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7852f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_7852f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_7852f.dir\Debug\cmTC_7852f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_7852f.dir\Debug\cmTC_7852f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7852f.dir\Debug\\" /Fd"cmTC_7852f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7852f.dir\Debug\\" /Fd"cmTC_7852f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “pwd.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7852f.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7852f.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7852f.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “pwd.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7852f.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file strings.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_0a99a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:46。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0a99a.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_0a99a.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_0a99a.dir\Debug\cmTC_0a99a.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_0a99a.dir\Debug\cmTC_0a99a.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0a99a.dir\Debug\\" /Fd"cmTC_0a99a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0a99a.dir\Debug\\" /Fd"cmTC_0a99a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “strings.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0a99a.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0a99a.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0a99a.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “strings.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0a99a.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file sys/syscall.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_195f4.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:47。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_195f4.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_195f4.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_195f4.dir\Debug\cmTC_195f4.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_195f4.dir\Debug\cmTC_195f4.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_195f4.dir\Debug\\" /Fd"cmTC_195f4.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_195f4.dir\Debug\\" /Fd"cmTC_195f4.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/syscall.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_195f4.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_195f4.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_195f4.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/syscall.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_195f4.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.24
+
+
+Determining if the include file sys/time.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_52d57.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:48。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_52d57.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_52d57.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_52d57.dir\Debug\cmTC_52d57.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_52d57.dir\Debug\cmTC_52d57.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_52d57.dir\Debug\\" /Fd"cmTC_52d57.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_52d57.dir\Debug\\" /Fd"cmTC_52d57.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/time.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_52d57.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_52d57.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_52d57.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/time.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_52d57.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.24
+
+
+Determining if the include file sys/utsname.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_7902b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:49。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7902b.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_7902b.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_7902b.dir\Debug\cmTC_7902b.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_7902b.dir\Debug\cmTC_7902b.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7902b.dir\Debug\\" /Fd"cmTC_7902b.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7902b.dir\Debug\\" /Fd"cmTC_7902b.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/utsname.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7902b.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7902b.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7902b.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “sys/utsname.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7902b.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.24
+
+
+Determining if the include file syscall.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b309e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:49。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b309e.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b309e.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b309e.dir\Debug\cmTC_b309e.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b309e.dir\Debug\cmTC_b309e.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b309e.dir\Debug\\" /Fd"cmTC_b309e.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b309e.dir\Debug\\" /Fd"cmTC_b309e.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “syscall.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b309e.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b309e.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b309e.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “syscall.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b309e.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file syslog.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_d9738.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:49。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d9738.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d9738.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d9738.dir\Debug\cmTC_d9738.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d9738.dir\Debug\cmTC_d9738.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d9738.dir\Debug\\" /Fd"cmTC_d9738.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d9738.dir\Debug\\" /Fd"cmTC_d9738.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “syslog.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d9738.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d9738.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d9738.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “syslog.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d9738.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.40
+
+
+Determining if the include file ucontext.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_554fd.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:50。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_554fd.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_554fd.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_554fd.dir\Debug\cmTC_554fd.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_554fd.dir\Debug\cmTC_554fd.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_554fd.dir\Debug\\" /Fd"cmTC_554fd.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_554fd.dir\Debug\\" /Fd"cmTC_554fd.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “ucontext.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_554fd.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_554fd.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_554fd.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “ucontext.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_554fd.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file unistd.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_1b15d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:50。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1b15d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_1b15d.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_1b15d.dir\Debug\cmTC_1b15d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_1b15d.dir\Debug\cmTC_1b15d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1b15d.dir\Debug\\" /Fd"cmTC_1b15d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1b15d.dir\Debug\\" /Fd"cmTC_1b15d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “unistd.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1b15d.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1b15d.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1b15d.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “unistd.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1b15d.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.26
+
+
+Determining if the include file unwind.h exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_d7dff.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:51。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d7dff.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d7dff.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d7dff.dir\Debug\cmTC_d7dff.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d7dff.dir\Debug\cmTC_d7dff.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d7dff.dir\Debug\\" /Fd"cmTC_d7dff.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d7dff.dir\Debug\\" /Fd"cmTC_d7dff.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “unwind.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d7dff.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d7dff.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d7dff.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: 无法打开包括文件: “unwind.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d7dff.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file ext/hash_map exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_37dc1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:51。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_37dc1.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_37dc1.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_37dc1.dir\Debug\cmTC_37dc1.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_37dc1.dir\Debug\cmTC_37dc1.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_37dc1.dir\Debug\\" /Fd"cmTC_37dc1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_37dc1.dir\Debug\\" /Fd"cmTC_37dc1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/hash_map”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_37dc1.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_37dc1.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_37dc1.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/hash_map”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_37dc1.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file ext/hash_set exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b18c8.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:52。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b18c8.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b18c8.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b18c8.dir\Debug\cmTC_b18c8.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b18c8.dir\Debug\cmTC_b18c8.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b18c8.dir\Debug\\" /Fd"cmTC_b18c8.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b18c8.dir\Debug\\" /Fd"cmTC_b18c8.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/hash_set”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b18c8.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b18c8.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b18c8.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/hash_set”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b18c8.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.24
+
+
+Determining if the include file ext/slist exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_c1405.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:52。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c1405.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_c1405.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_c1405.dir\Debug\cmTC_c1405.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_c1405.dir\Debug\cmTC_c1405.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c1405.dir\Debug\\" /Fd"cmTC_c1405.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c1405.dir\Debug\\" /Fd"cmTC_c1405.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/slist”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c1405.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c1405.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c1405.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “ext/slist”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c1405.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file tr1/unordered_map exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_bc499.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:53。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_bc499.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_bc499.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_bc499.dir\Debug\cmTC_bc499.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_bc499.dir\Debug\cmTC_bc499.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bc499.dir\Debug\\" /Fd"cmTC_bc499.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bc499.dir\Debug\\" /Fd"cmTC_bc499.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “tr1/unordered_map”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_bc499.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_bc499.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_bc499.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “tr1/unordered_map”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_bc499.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining if the include file tr1/unordered_set exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_09c53.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:53。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_09c53.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_09c53.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_09c53.dir\Debug\cmTC_09c53.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_09c53.dir\Debug\cmTC_09c53.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_09c53.dir\Debug\\" /Fd"cmTC_09c53.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_09c53.dir\Debug\\" /Fd"cmTC_09c53.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “tr1/unordered_set”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_09c53.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_09c53.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_09c53.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx(1): fatal error C1083: 无法打开包括文件: “tr1/unordered_set”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_09c53.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.25
+
+
+Determining size of u_int16_t failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_e2aa7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:56。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_e2aa7.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_e2aa7.dir\Debug\cmTC_e2aa7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_e2aa7.dir\Debug\cmTC_e2aa7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2aa7.dir\Debug\\" /Fd"cmTC_e2aa7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2aa7.dir\Debug\\" /Fd"cmTC_e2aa7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c
+  
+  HAVE_U_INT16_T.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(25): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(26): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(27): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(28): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(29): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(25): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(26): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(27): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(28): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.c(29): error C2065: “u_int16_t”: 未声明的标识符 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e2aa7.vcxproj]
+
+    0 个警告
+    5 个错误
+
+已用时间 00:00:00.24
+
+E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CheckTypeSize/HAVE_U_INT16_T.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(u_int16_t))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function dladdr exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_8ce9a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:57。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_8ce9a.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_8ce9a.dir\Debug\cmTC_8ce9a.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_8ce9a.dir\Debug\cmTC_8ce9a.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=dladdr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8ce9a.dir\Debug\\" /Fd"cmTC_8ce9a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=dladdr /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8ce9a.dir\Debug\\" /Fd"cmTC_8ce9a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8ce9a.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8ce9a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8ce9a.lib" /MACHINE:X64  /machine:x64 cmTC_8ce9a.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 dladdr，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8ce9a.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 dladdr，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8ce9a.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8ce9a.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+
+Determining if the function fcntl exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_3ab19.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:58。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_3ab19.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_3ab19.dir\Debug\cmTC_3ab19.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_3ab19.dir\Debug\cmTC_3ab19.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fcntl /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3ab19.dir\Debug\\" /Fd"cmTC_3ab19.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fcntl /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3ab19.dir\Debug\\" /Fd"cmTC_3ab19.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_3ab19.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_3ab19.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_3ab19.lib" /MACHINE:X64  /machine:x64 cmTC_3ab19.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 fcntl，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_3ab19.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 fcntl，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_3ab19.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_3ab19.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+
+Determining if the function pread exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4f585.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:58。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4f585.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4f585.dir\Debug\cmTC_4f585.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4f585.dir\Debug\cmTC_4f585.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pread /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4f585.dir\Debug\\" /Fd"cmTC_4f585.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pread /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4f585.dir\Debug\\" /Fd"cmTC_4f585.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4f585.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4f585.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4f585.lib" /MACHINE:X64  /machine:x64 cmTC_4f585.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 pread，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4f585.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 pread，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4f585.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4f585.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+
+Determining if the function pwrite exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4abbc.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:59。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4abbc.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4abbc.dir\Debug\cmTC_4abbc.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4abbc.dir\Debug\cmTC_4abbc.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pwrite /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4abbc.dir\Debug\\" /Fd"cmTC_4abbc.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pwrite /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4abbc.dir\Debug\\" /Fd"cmTC_4abbc.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4abbc.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4abbc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4abbc.lib" /MACHINE:X64  /machine:x64 cmTC_4abbc.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 pwrite，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4abbc.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 pwrite，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4abbc.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abbc.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+
+Determining if the function sigaction exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_41bf7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:59。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_41bf7.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_41bf7.dir\Debug\cmTC_41bf7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_41bf7.dir\Debug\cmTC_41bf7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sigaction /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_41bf7.dir\Debug\\" /Fd"cmTC_41bf7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sigaction /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_41bf7.dir\Debug\\" /Fd"cmTC_41bf7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_41bf7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_41bf7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_41bf7.lib" /MACHINE:X64  /machine:x64 cmTC_41bf7.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 sigaction，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_41bf7.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 sigaction，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_41bf7.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_41bf7.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.36
+
+
+Determining if the function sigaltstack exists failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b351d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:00。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b351d.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b351d.dir\Debug\cmTC_b351d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b351d.dir\Debug\cmTC_b351d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sigaltstack /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b351d.dir\Debug\\" /Fd"cmTC_b351d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sigaltstack /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b351d.dir\Debug\\" /Fd"cmTC_b351d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_b351d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_b351d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_b351d.lib" /MACHINE:X64  /machine:x64 cmTC_b351d.dir\Debug\CheckFunctionExists.obj
+CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 sigaltstack，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_b351d.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  CheckFunctionExists.obj : error LNK2019: 无法解析的外部符号 sigaltstack，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_b351d.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b351d.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.52
+
+
+Performing C++ SOURCE FILE Test HAVE_NO_DEPRECATED failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_93b0f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:01。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_93b0f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_93b0f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_93b0f.dir\Debug\cmTC_93b0f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_93b0f.dir\Debug\cmTC_93b0f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NO_DEPRECATED /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_93b0f.dir\Debug\\" /Fd"cmTC_93b0f.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue  -Wdeprecated E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NO_DEPRECATED /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_93b0f.dir\Debug\\" /Fd"cmTC_93b0f.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue  -Wdeprecated E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+cl : 命令行 error D8021: 无效的数值参数“/Wdeprecated” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_93b0f.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_93b0f.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_93b0f.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  cl : 命令行 error D8021: 无效的数值参数“/Wdeprecated” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_93b0f.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.24
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_f84c1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:01。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f84c1.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_f84c1.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_f84c1.dir\Debug\cmTC_f84c1.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_f84c1.dir\Debug\cmTC_f84c1.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f84c1.dir\Debug\\" /Fd"cmTC_f84c1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue  -Wunnamed-type-template-args E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f84c1.dir\Debug\\" /Fd"cmTC_f84c1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue  -Wunnamed-type-template-args E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+cl : 命令行 error D8021: 无效的数值参数“/Wunnamed-type-template-args” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f84c1.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f84c1.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f84c1.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  cl : 命令行 error D8021: 无效的数值参数“/Wunnamed-type-template-args” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f84c1.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.22
+
+Source file was:
+int main() { return 0; }
+Determining if the function get_static_proc_name exists in the unwind failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_c0c7f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:02。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c0c7f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_c0c7f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_c0c7f.dir\Debug\cmTC_c0c7f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_c0c7f.dir\Debug\cmTC_c0c7f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=get_static_proc_name /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c0c7f.dir\Debug\\" /Fd"cmTC_c0c7f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=get_static_proc_name /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c0c7f.dir\Debug\\" /Fd"cmTC_c0c7f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_c0c7f.exe" /INCREMENTAL /NOLOGO unwind.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_c0c7f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_c0c7f.lib" /MACHINE:X64  /machine:x64 cmTC_c0c7f.dir\Debug\CheckFunctionExists.obj
+LINK : fatal error LNK1104: 无法打开文件“unwind.lib” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c0c7f.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c0c7f.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c0c7f.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  LINK : fatal error LNK1104: 无法打开文件“unwind.lib” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_c0c7f.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.31
+
+
+Performing C SOURCE FILE Test HAVE___ATTRIBUTE__ failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_91177.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:02。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_91177.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_91177.dir\Debug\cmTC_91177.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_91177.dir\Debug\cmTC_91177.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__ /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_91177.dir\Debug\\" /Fd"cmTC_91177.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__ /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_91177.dir\Debug\\" /Fd"cmTC_91177.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_91177.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.24
+
+Source file was:
+
+#include <stdlib.h>
+static void foo(void) __attribute__ ((unused));
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test HAVE___ATTRIBUTE__VISIBILITY_DEFAULT failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_6d42a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:03。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_6d42a.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_6d42a.dir\Debug\cmTC_6d42a.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_6d42a.dir\Debug\cmTC_6d42a.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__VISIBILITY_DEFAULT /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6d42a.dir\Debug\\" /Fd"cmTC_6d42a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__VISIBILITY_DEFAULT /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6d42a.dir\Debug\\" /Fd"cmTC_6d42a.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2143: 语法错误: 缺少“)”(在“字符串”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“)” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2143: 语法错误: 缺少“)”(在“字符串”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“)” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_6d42a.vcxproj]
+
+    0 个警告
+    4 个错误
+
+已用时间 00:00:00.29
+
+Source file was:
+
+#include <stdlib.h>
+static void foo(void) __attribute__ ((visibility("default")));
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test HAVE___ATTRIBUTE__VISIBILITY_HIDDEN failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b6eda.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:04。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b6eda.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b6eda.dir\Debug\cmTC_b6eda.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b6eda.dir\Debug\cmTC_b6eda.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__VISIBILITY_HIDDEN /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6eda.dir\Debug\\" /Fd"cmTC_b6eda.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___ATTRIBUTE__VISIBILITY_HIDDEN /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6eda.dir\Debug\\" /Fd"cmTC_b6eda.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2143: 语法错误: 缺少“)”(在“字符串”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“)” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2061: 语法错误: 标识符“__attribute__” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2143: 语法错误: 缺少“)”(在“字符串”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): error C2059: 语法错误:“)” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b6eda.vcxproj]
+
+    0 个警告
+    4 个错误
+
+已用时间 00:00:00.25
+
+Source file was:
+
+#include <stdlib.h>
+static void foo(void) __attribute__ ((visibility("hidden")));
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test HAVE___BUILTIN_EXPECT failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_33034.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:04。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_33034.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_33034.dir\Debug\cmTC_33034.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_33034.dir\Debug\cmTC_33034.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___BUILTIN_EXPECT /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33034.dir\Debug\\" /Fd"cmTC_33034.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___BUILTIN_EXPECT /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33034.dir\Debug\\" /Fd"cmTC_33034.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(2): warning C4013: “__builtin_expect”未定义；假设外部返回 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_33034.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_33034.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_33034.lib" /MACHINE:X64  /machine:x64 cmTC_33034.dir\Debug\src.obj
+src.obj : error LNK2019: 无法解析的外部符号 __builtin_expect，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_33034.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(2): warning C4013: “__builtin_expect”未定义；假设外部返回 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  src.obj : error LNK2019: 无法解析的外部符号 __builtin_expect，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_33034.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_33034.vcxproj]
+
+    1 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+Source file was:
+
+int main(void) { if (__builtin_expect(0, 0)) return 1; return 0; }
+
+Performing C SOURCE FILE Test HAVE___SYNC_VAL_COMPARE_AND_SWAP failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_34973.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:05。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_34973.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_34973.dir\Debug\cmTC_34973.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_34973.dir\Debug\cmTC_34973.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___SYNC_VAL_COMPARE_AND_SWAP /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_34973.dir\Debug\\" /Fd"cmTC_34973.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___SYNC_VAL_COMPARE_AND_SWAP /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_34973.dir\Debug\\" /Fd"cmTC_34973.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(4): warning C4013: “__sync_val_compare_and_swap”未定义；假设外部返回 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_34973.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_34973.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_34973.lib" /MACHINE:X64  /machine:x64 cmTC_34973.dir\Debug\src.obj
+src.obj : error LNK2019: 无法解析的外部符号 __sync_val_compare_and_swap，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_34973.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(4): warning C4013: “__sync_val_compare_and_swap”未定义；假设外部返回 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj”(默认目标) (1) ->
+(Link 目标) -> 
+  src.obj : error LNK2019: 无法解析的外部符号 __sync_val_compare_and_swap，该符号在函数 main 中被引用 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_34973.exe : fatal error LNK1120: 1 个无法解析的外部命令 [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_34973.vcxproj]
+
+    1 个警告
+    2 个错误
+
+已用时间 00:00:00.34
+
+Source file was:
+
+int main(void)
+{
+  int a; if (__sync_val_compare_and_swap(&a, 0, 1)) return 1; return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_RWLOCK failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_0cd32.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:05。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0cd32.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_0cd32.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_0cd32.dir\Debug\cmTC_0cd32.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_0cd32.dir\Debug\cmTC_0cd32.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_RWLOCK /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0cd32.dir\Debug\\" /Fd"cmTC_0cd32.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_RWLOCK /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0cd32.dir\Debug\\" /Fd"cmTC_0cd32.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0cd32.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0cd32.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0cd32.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c(3): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_0cd32.vcxproj]
+
+    0 个警告
+    1 个错误
+
+已用时间 00:00:00.27
+
+Source file was:
+
+#define _XOPEN_SOURCE 500
+#include <pthread.h>
+int main(void)
+{
+  pthread_rwlock_t l;
+  pthread_rwlock_init(&l, NULL);
+  pthread_rwlock_rdlock(&l);
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test STL_NO_NAMESPACE failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b7b2c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:06。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b7b2c.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b7b2c.dir\Debug\cmTC_b7b2c.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b7b2c.dir\Debug\cmTC_b7b2c.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D STL_NO_NAMESPACE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b7b2c.dir\Debug\\" /Fd"cmTC_b7b2c.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D STL_NO_NAMESPACE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b7b2c.dir\Debug\\" /Fd"cmTC_b7b2c.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(3): error C2143: 语法错误: 缺少“;”(在“<”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(3): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(3): error C2143: 语法错误: 缺少“;”(在“<”的前面) [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(3): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7b2c.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.37
+
+Source file was:
+
+#include <vector>
+vector<int> t; int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_GCC_TLS failed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_7fd63.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:09。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_7fd63.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_7fd63.dir\Debug\cmTC_7fd63.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_7fd63.dir\Debug\cmTC_7fd63.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_GCC_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7fd63.dir\Debug\\" /Fd"cmTC_7fd63.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_GCC_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7fd63.dir\Debug\\" /Fd"cmTC_7fd63.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(2): error C2144: 语法错误:“int”的前面应有“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj]
+E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(2): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj]
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj”(默认目标)的操作 - 失败。
+
+生成失败。
+
+“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj”(默认目标) (1) ->
+(ClCompile 目标) -> 
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(2): error C2144: 语法错误:“int”的前面应有“;” [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj]
+  E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx(2): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int [E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_7fd63.vcxproj]
+
+    0 个警告
+    2 个错误
+
+已用时间 00:00:00.25
+
+Source file was:
+
+__thread int tls;
+int main() { }
+

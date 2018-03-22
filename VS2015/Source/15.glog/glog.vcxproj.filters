@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Source\glog\src\demangle.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\logging.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\raw_logging.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\symbolize.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\utilities.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\vlog_is_on.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\signalhandler.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Source\glog\src\windows\port.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Working\dbyoung\VS2015\Source\15.glog\glog\logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Working\dbyoung\VS2015\Source\15.glog\glog\raw_logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Working\dbyoung\VS2015\Source\15.glog\glog\stl_logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Working\dbyoung\VS2015\Source\15.glog\glog\vlog_is_on.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\glog\log_severity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\base\commandlineflags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\base\googleinit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\base\mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\demangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\symbolize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Source\glog\src\windows\port.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Source\glog\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{19449373-2623-327B-9D90-7C4270A1BC3C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5A724D64-D0CA-3739-B336-631B11562A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

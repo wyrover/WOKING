@@ -1,0 +1,8 @@
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/INSTALL.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/gflags_static.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/uninstall.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/gflags.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/gflags_nothreads_static.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/gflags_nothreads.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/ALL_BUILD.dir
+E:/Working/dbyoung/VS2015/Source/14.gflags/CMakeFiles/ZERO_CHECK.dir

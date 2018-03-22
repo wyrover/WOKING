@@ -1,0 +1,1229 @@
+The system is: Windows - 10.0.16299 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2018-03-22 23:50:34��
+��Ŀ�в����� BeforeTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)��λ���г���Ŀ�ꡰ_ConvertPdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� AfterTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)��λ���г���Ŀ�ꡰ_CollectPdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� BeforeTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)��λ���г���Ŀ�ꡰ_CollectMdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� AfterTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)��λ���г���Ŀ�ꡰ_CopyMdbFiles���������Ը�Ŀ�ꡣ
+�ڵ� 1 �ϵ���Ŀ��E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdC.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdC.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=D:\VS2015\VC\bin\x86_amd64\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdC.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:00.35
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/3.10.2/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2018-03-22 23:50:34��
+��Ŀ�в����� BeforeTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)��λ���г���Ŀ�ꡰ_ConvertPdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� AfterTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)��λ���г���Ŀ�ꡰ_CollectPdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� BeforeTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)��λ���г���Ŀ�ꡰ_CollectMdbFiles���������Ը�Ŀ�ꡣ
+��Ŀ�в����� AfterTargets �����еġ�C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)��λ���г���Ŀ�ꡰ_CopyMdbFiles���������Ը�Ŀ�ꡣ
+�ڵ� 1 �ϵ���Ŀ��E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdCXX.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdCXX.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=D:\VS2015\VC\bin\x86_amd64\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdCXX.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\3.10.2\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:00.37
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/3.10.2/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_8b30f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:35。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8b30f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_8b30f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_8b30f.dir\Debug\cmTC_8b30f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_8b30f.dir\Debug\cmTC_8b30f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8b30f.dir\Debug\\" /Fd"cmTC_8b30f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\testCCompiler.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8b30f.dir\Debug\\" /Fd"cmTC_8b30f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\testCCompiler.c
+  
+  testCCompiler.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8b30f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8b30f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8b30f.lib" /MACHINE:X64  /machine:x64 cmTC_8b30f.dir\Debug\testCCompiler.obj
+  cmTC_8b30f.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_8b30f.exe
+  cmTC_8b30f.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_8b30f.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_8b30f.dir\Debug\cmTC_8b30f.tlog\unsuccessfulbuild”。
+  正在对“cmTC_8b30f.dir\Debug\cmTC_8b30f.tlog\cmTC_8b30f.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_8b30f.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_9c1a6.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:36。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_9c1a6.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_9c1a6.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_9c1a6.dir\Debug\cmTC_9c1a6.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_9c1a6.dir\Debug\cmTC_9c1a6.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9c1a6.dir\Debug\\" /Fd"cmTC_9c1a6.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9c1a6.dir\Debug\\" /Fd"cmTC_9c1a6.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_9c1a6.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9c1a6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9c1a6.lib" /MACHINE:X64  /machine:x64 cmTC_9c1a6.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_9c1a6.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_9c1a6.exe
+  cmTC_9c1a6.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9c1a6.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_9c1a6.dir\Debug\cmTC_9c1a6.tlog\unsuccessfulbuild”。
+  正在对“cmTC_9c1a6.dir\Debug\cmTC_9c1a6.tlog\cmTC_9c1a6.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_9c1a6.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.63
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_489c1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:36。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_489c1.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_489c1.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_489c1.dir\Debug\cmTC_489c1.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_489c1.dir\Debug\cmTC_489c1.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_489c1.dir\Debug\\" /Fd"cmTC_489c1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_489c1.dir\Debug\\" /Fd"cmTC_489c1.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  
+  testCXXCompiler.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_489c1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_489c1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_489c1.lib" /MACHINE:X64  /machine:x64 cmTC_489c1.dir\Debug\testCXXCompiler.obj
+  cmTC_489c1.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_489c1.exe
+  cmTC_489c1.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_489c1.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_489c1.dir\Debug\cmTC_489c1.tlog\unsuccessfulbuild”。
+  正在对“cmTC_489c1.dir\Debug\cmTC_489c1.tlog\cmTC_489c1.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_489c1.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.43
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_466e5.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:37。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_466e5.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_466e5.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_466e5.dir\Debug\cmTC_466e5.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_466e5.dir\Debug\cmTC_466e5.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_466e5.dir\Debug\\" /Fd"cmTC_466e5.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCXXCompilerABI.cpp"
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_466e5.dir\Debug\\" /Fd"cmTC_466e5.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue "F:\Green\Language\CMake\3.10.2\x64\share\cmake-3.10\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_466e5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_466e5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_466e5.lib" /MACHINE:X64  /machine:x64 cmTC_466e5.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_466e5.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_466e5.exe
+  cmTC_466e5.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_466e5.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_466e5.dir\Debug\cmTC_466e5.tlog\unsuccessfulbuild”。
+  正在对“cmTC_466e5.dir\Debug\cmTC_466e5.tlog\cmTC_466e5.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_466e5.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_abe2e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:38。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_abe2e.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_abe2e.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_abe2e.dir\Debug\cmTC_abe2e.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_abe2e.dir\Debug\cmTC_abe2e.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_abe2e.dir\Debug\\" /Fd"cmTC_abe2e.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\feature_tests.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_abe2e.dir\Debug\\" /Fd"cmTC_abe2e.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_abe2e.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_abe2e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_abe2e.lib" /MACHINE:X64  /machine:x64 cmTC_abe2e.dir\Debug\feature_tests.obj
+  cmTC_abe2e.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_abe2e.exe
+  cmTC_abe2e.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_abe2e.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_abe2e.dir\Debug\cmTC_abe2e.tlog\unsuccessfulbuild”。
+  正在对“cmTC_abe2e.dir\Debug\cmTC_abe2e.tlog\cmTC_abe2e.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_abe2e.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.43
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_66335.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:42。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_66335.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_66335.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_66335.dir\Debug\cmTC_66335.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_66335.dir\Debug\cmTC_66335.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_66335.dir\Debug\\" /Fd"cmTC_66335.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_66335.dir\Debug\\" /Fd"cmTC_66335.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_66335.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_66335.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_66335.lib" /MACHINE:X64  /machine:x64 cmTC_66335.dir\Debug\CheckIncludeFile.obj
+  cmTC_66335.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_66335.exe
+  cmTC_66335.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_66335.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_66335.dir\Debug\cmTC_66335.tlog\unsuccessfulbuild”。
+  正在对“cmTC_66335.dir\Debug\cmTC_66335.tlog\cmTC_66335.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_66335.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.42
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_2a20f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:43。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_2a20f.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_2a20f.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_2a20f.dir\Debug\cmTC_2a20f.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_2a20f.dir\Debug\cmTC_2a20f.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2a20f.dir\Debug\\" /Fd"cmTC_2a20f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2a20f.dir\Debug\\" /Fd"cmTC_2a20f.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_2a20f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_2a20f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_2a20f.lib" /MACHINE:X64  /machine:x64 cmTC_2a20f.dir\Debug\CheckIncludeFile.obj
+  cmTC_2a20f.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_2a20f.exe
+  cmTC_2a20f.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_2a20f.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_2a20f.dir\Debug\cmTC_2a20f.tlog\unsuccessfulbuild”。
+  正在对“cmTC_2a20f.dir\Debug\cmTC_2a20f.tlog\cmTC_2a20f.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_2a20f.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_5fbeb.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:44。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_5fbeb.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_5fbeb.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_5fbeb.dir\Debug\cmTC_5fbeb.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_5fbeb.dir\Debug\cmTC_5fbeb.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5fbeb.dir\Debug\\" /Fd"cmTC_5fbeb.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5fbeb.dir\Debug\\" /Fd"cmTC_5fbeb.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_5fbeb.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_5fbeb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_5fbeb.lib" /MACHINE:X64  /machine:x64 cmTC_5fbeb.dir\Debug\CheckIncludeFile.obj
+  cmTC_5fbeb.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_5fbeb.exe
+  cmTC_5fbeb.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_5fbeb.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_5fbeb.dir\Debug\cmTC_5fbeb.tlog\unsuccessfulbuild”。
+  正在对“cmTC_5fbeb.dir\Debug\cmTC_5fbeb.tlog\cmTC_5fbeb.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_5fbeb.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.55
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_dc8a8.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:45。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_dc8a8.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_dc8a8.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_dc8a8.dir\Debug\cmTC_dc8a8.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_dc8a8.dir\Debug\cmTC_dc8a8.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dc8a8.dir\Debug\\" /Fd"cmTC_dc8a8.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dc8a8.dir\Debug\\" /Fd"cmTC_dc8a8.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_dc8a8.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_dc8a8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_dc8a8.lib" /MACHINE:X64  /machine:x64 cmTC_dc8a8.dir\Debug\CheckIncludeFile.obj
+  cmTC_dc8a8.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_dc8a8.exe
+  cmTC_dc8a8.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_dc8a8.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_dc8a8.dir\Debug\cmTC_dc8a8.tlog\unsuccessfulbuild”。
+  正在对“cmTC_dc8a8.dir\Debug\cmTC_dc8a8.tlog\cmTC_dc8a8.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_dc8a8.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_e01ae.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:45。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e01ae.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_e01ae.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_e01ae.dir\Debug\cmTC_e01ae.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_e01ae.dir\Debug\cmTC_e01ae.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e01ae.dir\Debug\\" /Fd"cmTC_e01ae.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e01ae.dir\Debug\\" /Fd"cmTC_e01ae.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_e01ae.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e01ae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e01ae.lib" /MACHINE:X64  /machine:x64 cmTC_e01ae.dir\Debug\CheckIncludeFile.obj
+  cmTC_e01ae.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_e01ae.exe
+  cmTC_e01ae.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e01ae.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_e01ae.dir\Debug\cmTC_e01ae.tlog\unsuccessfulbuild”。
+  正在对“cmTC_e01ae.dir\Debug\cmTC_e01ae.tlog\cmTC_e01ae.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e01ae.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.42
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4abf6.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:47。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abf6.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4abf6.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4abf6.dir\Debug\cmTC_4abf6.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4abf6.dir\Debug\cmTC_4abf6.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4abf6.dir\Debug\\" /Fd"cmTC_4abf6.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4abf6.dir\Debug\\" /Fd"cmTC_4abf6.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4abf6.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4abf6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4abf6.lib" /MACHINE:X64  /machine:x64 cmTC_4abf6.dir\Debug\CheckIncludeFile.obj
+  cmTC_4abf6.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4abf6.exe
+  cmTC_4abf6.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4abf6.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_4abf6.dir\Debug\cmTC_4abf6.tlog\unsuccessfulbuild”。
+  正在对“cmTC_4abf6.dir\Debug\cmTC_4abf6.tlog\cmTC_4abf6.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4abf6.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.45
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_a7b27.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:48。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_a7b27.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_a7b27.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_a7b27.dir\Debug\cmTC_a7b27.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_a7b27.dir\Debug\cmTC_a7b27.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a7b27.dir\Debug\\" /Fd"cmTC_a7b27.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a7b27.dir\Debug\\" /Fd"cmTC_a7b27.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_a7b27.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_a7b27.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_a7b27.lib" /MACHINE:X64  /machine:x64 cmTC_a7b27.dir\Debug\CheckIncludeFile.obj
+  cmTC_a7b27.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_a7b27.exe
+  cmTC_a7b27.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_a7b27.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_a7b27.dir\Debug\cmTC_a7b27.tlog\unsuccessfulbuild”。
+  正在对“cmTC_a7b27.dir\Debug\cmTC_a7b27.tlog\cmTC_a7b27.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_a7b27.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.40
+
+
+Determining if the include file unordered_map exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4cea8.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:53。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4cea8.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4cea8.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4cea8.dir\Debug\cmTC_4cea8.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4cea8.dir\Debug\cmTC_4cea8.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4cea8.dir\Debug\\" /Fd"cmTC_4cea8.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4cea8.dir\Debug\\" /Fd"cmTC_4cea8.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4cea8.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4cea8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4cea8.lib" /MACHINE:X64  /machine:x64 cmTC_4cea8.dir\Debug\CheckIncludeFile.obj
+  cmTC_4cea8.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4cea8.exe
+  cmTC_4cea8.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4cea8.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_4cea8.dir\Debug\cmTC_4cea8.tlog\unsuccessfulbuild”。
+  正在对“cmTC_4cea8.dir\Debug\cmTC_4cea8.tlog\cmTC_4cea8.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4cea8.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.55
+
+
+Determining if the include file unordered_set exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_4ccae.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:54。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4ccae.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4ccae.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4ccae.dir\Debug\cmTC_4ccae.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4ccae.dir\Debug\cmTC_4ccae.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4ccae.dir\Debug\\" /Fd"cmTC_4ccae.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_4ccae.dir\Debug\\" /Fd"cmTC_4ccae.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+  
+  CheckIncludeFile.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4ccae.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4ccae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4ccae.lib" /MACHINE:X64  /machine:x64 cmTC_4ccae.dir\Debug\CheckIncludeFile.obj
+  cmTC_4ccae.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_4ccae.exe
+  cmTC_4ccae.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_4ccae.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_4ccae.dir\Debug\cmTC_4ccae.tlog\unsuccessfulbuild”。
+  正在对“cmTC_4ccae.dir\Debug\cmTC_4ccae.tlog\cmTC_4ccae.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_4ccae.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.59
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_e72b7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:55。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e72b7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_e72b7.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_e72b7.dir\Debug\cmTC_e72b7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_e72b7.dir\Debug\cmTC_e72b7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e72b7.dir\Debug\\" /Fd"cmTC_e72b7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e72b7.dir\Debug\\" /Fd"cmTC_e72b7.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_e72b7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e72b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e72b7.lib" /MACHINE:X64  /machine:x64 cmTC_e72b7.dir\Debug\CheckIncludeFile.obj
+  cmTC_e72b7.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_e72b7.exe
+  cmTC_e72b7.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_e72b7.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_e72b7.dir\Debug\cmTC_e72b7.tlog\unsuccessfulbuild”。
+  正在对“cmTC_e72b7.dir\Debug\cmTC_e72b7.tlog\cmTC_e72b7.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_e72b7.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.59
+
+
+Determining size of unsigned __int16 passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_69edc.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:56。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69edc.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_69edc.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_69edc.dir\Debug\cmTC_69edc.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_69edc.dir\Debug\cmTC_69edc.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69edc.dir\Debug\\" /Fd"cmTC_69edc.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE___UINT16.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69edc.dir\Debug\\" /Fd"cmTC_69edc.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE___UINT16.c
+  
+  HAVE___UINT16.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_69edc.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_69edc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_69edc.lib" /MACHINE:X64  /machine:x64 cmTC_69edc.dir\Debug\HAVE___UINT16.obj
+  cmTC_69edc.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_69edc.exe
+  cmTC_69edc.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_69edc.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_69edc.dir\Debug\cmTC_69edc.tlog\unsuccessfulbuild”。
+  正在对“cmTC_69edc.dir\Debug\cmTC_69edc.tlog\cmTC_69edc.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_69edc.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+
+Determining size of uint16_t passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_d290d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:50:57。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d290d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d290d.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d290d.dir\Debug\cmTC_d290d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d290d.dir\Debug\cmTC_d290d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d290d.dir\Debug\\" /Fd"cmTC_d290d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_UINT16_T.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d290d.dir\Debug\\" /Fd"cmTC_d290d.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CheckTypeSize\HAVE_UINT16_T.c
+  
+  HAVE_UINT16_T.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_d290d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_d290d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_d290d.lib" /MACHINE:X64  /machine:x64 cmTC_d290d.dir\Debug\HAVE_UINT16_T.obj
+  cmTC_d290d.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_d290d.exe
+  cmTC_d290d.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_d290d.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_d290d.dir\Debug\cmTC_d290d.tlog\unsuccessfulbuild”。
+  正在对“cmTC_d290d.dir\Debug\cmTC_d290d.tlog\cmTC_d290d.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_d290d.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.43
+
+
+Determining if the snprintf exist passed with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_86777.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:01。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_86777.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_86777.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_86777.dir\Debug\cmTC_86777.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_86777.dir\Debug\cmTC_86777.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_86777.dir\Debug\\" /Fd"cmTC_86777.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_86777.dir\Debug\\" /Fd"cmTC_86777.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\CheckSymbolExists.c
+  
+  CheckSymbolExists.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_86777.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_86777.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_86777.lib" /MACHINE:X64  /machine:x64 cmTC_86777.dir\Debug\CheckSymbolExists.obj
+  cmTC_86777.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_86777.exe
+  cmTC_86777.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_86777.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_86777.dir\Debug\cmTC_86777.tlog\unsuccessfulbuild”。
+  正在对“cmTC_86777.dir\Debug\cmTC_86777.tlog\cmTC_86777.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_86777.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.42
+
+File E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef snprintf
+  return ((int*)(&snprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE___DECLSPEC succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_528cd.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:05。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_528cd.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_528cd.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_528cd.dir\Debug\cmTC_528cd.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_528cd.dir\Debug\cmTC_528cd.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___DECLSPEC /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_528cd.dir\Debug\\" /Fd"cmTC_528cd.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE___DECLSPEC /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_528cd.dir\Debug\\" /Fd"cmTC_528cd.dir\Debug\vc140.pdb" /Gd /TC /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_528cd.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_528cd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_528cd.lib" /MACHINE:X64  /machine:x64 cmTC_528cd.dir\Debug\src.obj
+  cmTC_528cd.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_528cd.exe
+  cmTC_528cd.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_528cd.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_528cd.dir\Debug\cmTC_528cd.tlog\unsuccessfulbuild”。
+  正在对“cmTC_528cd.dir\Debug\cmTC_528cd.tlog\cmTC_528cd.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_528cd.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.59
+
+Source file was:
+
+__declspec(selectany) int a;
+int main(void) { return 0; }
+
+Performing C++ SOURCE FILE Test STL_STD_NAMESPACE succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_f3362.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:07。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f3362.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_f3362.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_f3362.dir\Debug\cmTC_f3362.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_f3362.dir\Debug\cmTC_f3362.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D STL_STD_NAMESPACE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f3362.dir\Debug\\" /Fd"cmTC_f3362.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D STL_STD_NAMESPACE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f3362.dir\Debug\\" /Fd"cmTC_f3362.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_f3362.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_f3362.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_f3362.lib" /MACHINE:X64  /machine:x64 cmTC_f3362.dir\Debug\src.obj
+  cmTC_f3362.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_f3362.exe
+  cmTC_f3362.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_f3362.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_f3362.dir\Debug\cmTC_f3362.tlog\unsuccessfulbuild”。
+  正在对“cmTC_f3362.dir\Debug\cmTC_f3362.tlog\cmTC_f3362.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_f3362.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.56
+
+Source file was:
+
+#include <vector>
+std::vector<int> t; int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_USING_OPERATOR succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_9f3ba.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:08。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_9f3ba.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_9f3ba.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_9f3ba.dir\Debug\cmTC_9f3ba.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_9f3ba.dir\Debug\cmTC_9f3ba.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_USING_OPERATOR /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9f3ba.dir\Debug\\" /Fd"cmTC_9f3ba.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_USING_OPERATOR /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9f3ba.dir\Debug\\" /Fd"cmTC_9f3ba.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_9f3ba.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9f3ba.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9f3ba.lib" /MACHINE:X64  /machine:x64 cmTC_9f3ba.dir\Debug\src.obj
+  cmTC_9f3ba.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_9f3ba.exe
+  cmTC_9f3ba.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_9f3ba.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_9f3ba.dir\Debug\cmTC_9f3ba.tlog\unsuccessfulbuild”。
+  正在对“cmTC_9f3ba.dir\Debug\cmTC_9f3ba.tlog\cmTC_9f3ba.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_9f3ba.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.63
+
+Source file was:
+
+#include <iostream>
+std::ostream& operator<<(std::ostream&, struct s);
+using ::operator<<;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_NAMESPACES succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b7ee6.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:08。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7ee6.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b7ee6.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b7ee6.dir\Debug\cmTC_b7ee6.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b7ee6.dir\Debug\cmTC_b7ee6.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NAMESPACES /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b7ee6.dir\Debug\\" /Fd"cmTC_b7ee6.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_NAMESPACES /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b7ee6.dir\Debug\\" /Fd"cmTC_b7ee6.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_b7ee6.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_b7ee6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_b7ee6.lib" /MACHINE:X64  /machine:x64 cmTC_b7ee6.dir\Debug\src.obj
+  cmTC_b7ee6.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_b7ee6.exe
+  cmTC_b7ee6.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_b7ee6.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_b7ee6.dir\Debug\cmTC_b7ee6.tlog\unsuccessfulbuild”。
+  正在对“cmTC_b7ee6.dir\Debug\cmTC_b7ee6.tlog\cmTC_b7ee6.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_b7ee6.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+Source file was:
+
+namespace Outer { namespace Inner { int i = 0; }}
+using namespace Outer::Inner;;
+int main() { return i; }
+
+Performing C++ SOURCE FILE Test HAVE_MSVC_TLS succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_1d778.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:09。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1d778.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_1d778.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_1d778.dir\Debug\cmTC_1d778.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_1d778.dir\Debug\cmTC_1d778.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_MSVC_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1d778.dir\Debug\\" /Fd"cmTC_1d778.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_MSVC_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1d778.dir\Debug\\" /Fd"cmTC_1d778.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_1d778.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_1d778.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_1d778.lib" /MACHINE:X64  /machine:x64 cmTC_1d778.dir\Debug\src.obj
+  cmTC_1d778.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_1d778.exe
+  cmTC_1d778.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_1d778.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_1d778.dir\Debug\cmTC_1d778.tlog\unsuccessfulbuild”。
+  正在对“cmTC_1d778.dir\Debug\cmTC_1d778.tlog\cmTC_1d778.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_1d778.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+Source file was:
+
+__declspec(thread) int tls;
+int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_CXX11_TLS succeeded with the following output:
+Change Dir: E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_02e14.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018-03-22 23:51:10。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)”位置列出的目标“_ConvertPdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)”位置列出的目标“_CollectPdbFiles”，将忽略该目标。
+项目中不存在 BeforeTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)”位置列出的目标“_CollectMdbFiles”，将忽略该目标。
+项目中不存在 AfterTargets 特性中的“C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)”位置列出的目标“_CopyMdbFiles”，将忽略该目标。
+节点 1 上的项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_02e14.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_02e14.dir\Debug\”。
+  正在创建目录“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_02e14.dir\Debug\cmTC_02e14.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_02e14.dir\Debug\cmTC_02e14.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  D:\VS2015\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_CXX11_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_02e14.dir\Debug\\" /Fd"cmTC_02e14.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D HAVE_CXX11_TLS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_02e14.dir\Debug\\" /Fd"cmTC_02e14.dir\Debug\vc140.pdb" /Gd /TP /errorReport:queue E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\src.cxx
+  
+  src.cxx
+Link:
+  D:\VS2015\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_02e14.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_02e14.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_02e14.lib" /MACHINE:X64  /machine:x64 cmTC_02e14.dir\Debug\src.obj
+  cmTC_02e14.vcxproj -> E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\Debug\cmTC_02e14.exe
+  cmTC_02e14.vcxproj -> E:/Working/dbyoung/VS2015/Source/15.glog/CMakeFiles/CMakeTmp/Debug/cmTC_02e14.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_02e14.dir\Debug\cmTC_02e14.tlog\unsuccessfulbuild”。
+  正在对“cmTC_02e14.dir\Debug\cmTC_02e14.tlog\cmTC_02e14.lastbuildstate”执行 Touch 任务。
+已完成生成项目“E:\Working\dbyoung\VS2015\Source\15.glog\CMakeFiles\CMakeTmp\cmTC_02e14.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.41
+
+Source file was:
+
+thread_local int tls;
+int main() { }
+

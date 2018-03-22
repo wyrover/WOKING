@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+E:/Source/gtest/googletest/CMakeLists.txt
+E:/Source/gtest/googletest/cmake/internal_utils.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindPythonInterp.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindPackageMessage.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindThreads.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/CheckLibraryExists.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/CheckSymbolExists.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/CheckIncludeFile.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake
+F:/Green/Language/CMake/3.10.2/x64/share/cmake-3.10/Modules/FindPackageMessage.cmake
+E:/Source/gtest/googletest/cmake/gtest.pc.in
+E:/Source/gtest/googletest/cmake/gtest_main.pc.in

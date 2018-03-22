@@ -1,0 +1,10 @@
+E:/Working/dbyoung/VS2015/Install/lib/gflags_static.lib
+E:/Working/dbyoung/VS2015/Install/lib/gflags_nothreads_static.lib
+E:/Working/dbyoung/VS2015/Install/include/gflags/gflags.h
+E:/Working/dbyoung/VS2015/Install/include/gflags/gflags_declare.h
+E:/Working/dbyoung/VS2015/Install/include/gflags/gflags_completions.h
+E:/Working/dbyoung/VS2015/Install/include/gflags/gflags_gflags.h
+E:/Working/dbyoung/VS2015/Install/lib/cmake/gflags/gflags-config.cmake
+E:/Working/dbyoung/VS2015/Install/lib/cmake/gflags/gflags-config-version.cmake
+E:/Working/dbyoung/VS2015/Install/lib/cmake/gflags/gflags-targets.cmake
+E:/Working/dbyoung/VS2015/Install/lib/cmake/gflags/gflags-targets-release.cmake
