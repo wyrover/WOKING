@@ -16,3 +16,5 @@ webpdspdecode.dir
 webpencode.dir
 webputils.dir
 /VS2015/Source/12.libwebp/libwebp.VC.db
+/VS2015/Source/16.protobuf/CMakeFiles/CMakeOutput.log
+/VS2015/Source/16.protobuf/CMakeFiles/CMakeError.log
