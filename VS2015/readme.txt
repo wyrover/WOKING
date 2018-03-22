@@ -11,3 +11,7 @@
 09.libTIFF4
 10.OpenEXR
 11.libgif
+12.libwebp
+13.gtest
+14.gflags
+15.glog
