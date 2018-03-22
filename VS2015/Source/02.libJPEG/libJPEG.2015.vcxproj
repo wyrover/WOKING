@@ -162,9 +162,9 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir ..\..\Install
-mkdir ..\..\install\include
-mkdir ..\..\install\lib
+      <Command>if not exist ..\..\Install mkdir ..\..\Install
+if not exist ..\..\Install\include mkdir ..\..\install\include
+if not exist ..\..\Install\lib mkdir ..\..\install\lib
 
 copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\jconfig.h ..\..\Install\include\jconfig.h
@@ -205,9 +205,9 @@ copy .\jpeglib.h ..\..\Install\include\jpeglib.h</Command>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir ..\..\Install
-mkdir ..\..\install\include
-mkdir ..\..\install\lib
+      <Command>if not exist ..\..\Install mkdir ..\..\Install
+if not exist ..\..\Install\include mkdir ..\..\install\include
+if not exist ..\..\Install\lib mkdir ..\..\install\lib
 
 copy $(OutDir)$(TargetName)$(TargetExt) ..\..\Install\lib\$(TargetName)$(TargetExt)
 copy .\jconfig.h ..\..\Install\include\jconfig.h
