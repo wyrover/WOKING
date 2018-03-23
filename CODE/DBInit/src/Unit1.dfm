@@ -2,10 +2,10 @@ object frmDB: TfrmDB
   Left = 0
   Top = 0
   BorderIcons = []
-  BorderStyle = bsDialog
+  BorderStyle = bsNone
   Caption = #12304#25968#25454#24211#36830#25509#12305
-  ClientHeight = 228
-  ClientWidth = 392
+  ClientHeight = 268
+  ClientWidth = 398
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,11 +15,12 @@ object frmDB: TfrmDB
   OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
+  OnMouseDown = FormMouseDown
   PixelsPerInch = 96
   TextHeight = 13
-  object lbl1: TLabel
+  object lblLinkExistDB: TLabel
     Left = 96
-    Top = 40
+    Top = 24
     Width = 202
     Height = 28
     Cursor = crHandPoint
@@ -30,43 +31,43 @@ object frmDB: TfrmDB
     Font.Name = #24494#36719#38597#40657
     Font.Style = [fsBold]
     ParentFont = False
-    OnClick = lbl1Click
-    OnMouseEnter = lbl1MouseEnter
-    OnMouseLeave = lbl1MouseLeave
+    OnClick = lblLinkExistDBClick
+    OnMouseEnter = lblLinkExistDBMouseEnter
+    OnMouseLeave = lblLinkExistDBMouseLeave
   end
-  object lbl3: TLabel
+  object lblRestoreDB: TLabel
     Left = 96
-    Top = 152
+    Top = 166
     Width = 139
     Height = 28
     Cursor = crHandPoint
-    Caption = '3'#12289#24674#22797#25968#25454#24211
+    Caption = '4'#12289#24674#22797#25968#25454#24211
     Font.Charset = GB2312_CHARSET
     Font.Color = clBlue
     Font.Height = -21
     Font.Name = #24494#36719#38597#40657
     Font.Style = [fsBold]
     ParentFont = False
-    OnClick = lbl3Click
-    OnMouseEnter = lbl1MouseEnter
-    OnMouseLeave = lbl1MouseLeave
+    OnClick = lblRestoreDBClick
+    OnMouseEnter = lblLinkExistDBMouseEnter
+    OnMouseLeave = lblLinkExistDBMouseLeave
   end
-  object lbl2: TLabel
+  object lblAddDB: TLabel
     Left = 96
-    Top = 96
+    Top = 119
     Width = 139
     Height = 28
     Cursor = crHandPoint
-    Caption = '2'#12289#38468#21152#25968#25454#24211
+    Caption = '3'#12289#38468#21152#25968#25454#24211
     Font.Charset = GB2312_CHARSET
     Font.Color = clBlue
     Font.Height = -21
     Font.Name = #24494#36719#38597#40657
     Font.Style = [fsBold]
     ParentFont = False
-    OnClick = lbl2Click
-    OnMouseEnter = lbl1MouseEnter
-    OnMouseLeave = lbl1MouseLeave
+    OnClick = lblAddDBClick
+    OnMouseEnter = lblLinkExistDBMouseEnter
+    OnMouseLeave = lblLinkExistDBMouseLeave
   end
   object img1: TImage
     Left = 24
@@ -74,7 +75,9 @@ object frmDB: TfrmDB
     Width = 32
     Height = 32
     Cursor = crHandPoint
+    Hint = #35774#32622#20027#31243#24207
     AutoSize = True
+    ParentShowHint = False
     Picture.Data = {
       055449636F6E0000010006008080000001002000280801006600000040400000
       01002000284200008E0801003030000001002000A8250000B64A010020200000
@@ -3268,7 +3271,54 @@ object frmDB: TfrmDB
       FDFDFD49000000000000000000000000000000000000000000000000F0070000
       C0030000800100008001000080010000000000000180000003C0000001800000
       00000000800100008001000080010000C0030000E0270000FC3F0000}
+    ShowHint = True
     OnClick = img1Click
+  end
+  object lblChangeDB: TLabel
+    Left = 96
+    Top = 71
+    Width = 139
+    Height = 28
+    Cursor = crHandPoint
+    Caption = '2'#12289#26356#25442#25968#25454#24211
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clBlue
+    Font.Height = -21
+    Font.Name = #24494#36719#38597#40657
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = lblChangeDBClick
+    OnMouseEnter = lblLinkExistDBMouseEnter
+    OnMouseLeave = lblLinkExistDBMouseLeave
+  end
+  object lblBackupDB: TLabel
+    Left = 96
+    Top = 214
+    Width = 139
+    Height = 28
+    Cursor = crHandPoint
+    Caption = '5'#12289#22791#20221#25968#25454#24211
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clBlue
+    Font.Height = -21
+    Font.Name = #24494#36719#38597#40657
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = lblBackupDBClick
+    OnMouseEnter = lblLinkExistDBMouseEnter
+    OnMouseLeave = lblLinkExistDBMouseLeave
+  end
+  object btnClose: TSpeedButton
+    Left = 369
+    Top = 5
+    Width = 23
+    Height = 22
+    Hint = #20851#38381
+    Caption = #215
+    Flat = True
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = btnCloseClick
   end
   object conLink: TADOConnection
     LoginPrompt = False
