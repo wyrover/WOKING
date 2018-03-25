@@ -40,7 +40,7 @@ begin
   begin
     strFileName  := arrFiles[III];
     strStaticLib := ExtractFilePath(strFileName) + ChangeFileExt(ChangeFileExt(ExtractFileName(strFileName), ''), '.a');
-    if FileExists(strStaticLib) then
+    if not FileExists(strStaticLib) then
     begin
       DeleteFile(strFileName);
       //lst1.Items.Add(strFileName);
