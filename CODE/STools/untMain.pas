@@ -1,4 +1,4 @@
-unit untMain;
+ï»¿unit untMain;
 {$WARN UNIT_PLATFORM OFF}
 
 interface
@@ -77,6 +77,7 @@ type
     mniDeleteProcessFile: TMenuItem;
     lbl15: TLabel;
     lbl16: TLabel;
+    mniCopyFileTo: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -106,6 +107,7 @@ type
     procedure btnLinkDataBaseClick(Sender: TObject);
     procedure lstTablesClick(Sender: TObject);
     procedure mniDeleteProcessFileClick(Sender: TObject);
+    procedure mniCopyFileToClick(Sender: TObject);
   private
     { Private declarations }
     function GetFileVersion(const strExeName: string): String;
@@ -199,7 +201,7 @@ var
   strPCName : array [0 .. 255] of Char;
   intSize   : DWORD;
 begin
-  { °æ±¾ºÅ }
+  { ç‰ˆæœ¬å· }
   strFileVer   := GetFileVersion('C:\Windows\System32\wintrust.dll');
   intIndex     := LastDelimiter('.', strFileVer);
   lbl7.Caption := Format('%d.%d.%d.%s', [Win32MajorVersion, Win32MinorVersion, Win32BuildNumber, RightStr(strFileVer, Length(strFileVer) - intIndex)]);
@@ -207,15 +209,15 @@ begin
   begin
     case dwType of
       PRODUCT_ULTIMATE:
-        lbl7.Caption := lbl7.Caption + ' Æì½¢°æ ';
+        lbl7.Caption := lbl7.Caption + ' æ——èˆ°ç‰ˆ ';
       PRODUCT_HOME_BASIC:
-        lbl7.Caption := lbl7.Caption + ' ¼ÒÍ¥°æ ';
+        lbl7.Caption := lbl7.Caption + ' å®¶åº­ç‰ˆ ';
       PRODUCT_ENTERPRISE:
-        lbl7.Caption := lbl7.Caption + ' ÆóÒµ°æ ';
+        lbl7.Caption := lbl7.Caption + ' ä¼ä¸šç‰ˆ ';
       PRODUCT_BUSINESS:
-        lbl7.Caption := lbl7.Caption + ' ÉÌÒµ°æ ';
+        lbl7.Caption := lbl7.Caption + ' å•†ä¸šç‰ˆ ';
       PRODUCT_PROFESSIONAL:
-        lbl7.Caption := lbl7.Caption + ' ×¨Òµ°æ ';
+        lbl7.Caption := lbl7.Caption + ' ä¸“ä¸šç‰ˆ ';
     end;
   end;
 
@@ -560,19 +562,19 @@ begin
   end;
 end;
 
-{ É¾³ı½ø³ÌÎÄ¼ş }
+{ åˆ é™¤è¿›ç¨‹æ–‡ä»¶ }
 procedure TfrmSystem.mniDeleteProcessFileClick(Sender: TObject);
 begin
   //
 end;
 
-{ ½ø³Ì×¢Èë }
+{ è¿›ç¨‹æ³¨å…¥ }
 procedure TfrmSystem.mniDllInsertProcessClick(Sender: TObject);
 begin
   //
 end;
 
-{ ½ø³Ì¼ÓÔØµ½ PE }
+{ è¿›ç¨‹åŠ è½½åˆ° PE }
 procedure TfrmSystem.mniLoadPEClick(Sender: TObject);
 begin
   //
@@ -592,6 +594,28 @@ end;
 procedure TfrmSystem.mniOpenModulePathClick(Sender: TObject);
 begin
   //
+end;
+
+procedure TfrmSystem.mniCopyFileToClick(Sender: TObject);
+var
+  III        : Integer;
+  strFileName: String;
+  strSavePath: String;
+begin
+  if lvModule.SelCount = 0 then
+    Exit;
+
+  if not SelectDirectory('é€‰æ‹©ä¸€ä¸ªæ–‡ä»¶å¤¹ï¼š', '', strSavePath) then
+    Exit;
+
+  for III := 0 to lvModule.Items.Count - 1 do
+  begin
+    if lvModule.Items.Item[III].Selected then
+    begin
+      strFileName := lvModule.Items.Item[III].SubItems[1];
+      CopyFile(PChar(strFileName), PChar(strSavePath + '\' + ExtractFileName(strFileName)), True);
+    end;
+  end;
 end;
 
 procedure TfrmSystem.mniCopySelectedModuleMemoryAddressClick(Sender: TObject);
@@ -625,7 +649,7 @@ begin
 end;
 
 // ---------------------------------------------------------------------------------------------------------------------------------------//
-// ----------------------------------------------------------- ÏµÍ³ËÑË÷Â·¾¶ --------------------------------------------------------------//
+// ----------------------------------------------------------- ç³»ç»Ÿæœç´¢è·¯å¾„ --------------------------------------------------------------//
 // ---------------------------------------------------------------------------------------------------------------------------------------//
 
 procedure TfrmSystem.btnInputSysSearchClick(Sender: TObject);
@@ -633,7 +657,7 @@ var
   strNewPath: String;
 begin
   strNewPath := Clipboard.AsText;
-  if not InputQuery('Ìí¼ÓÂ·¾¶£º', 'Ãû³Æ£º', strNewPath) then
+  if not InputQuery('æ·»åŠ è·¯å¾„ï¼š', 'åç§°ï¼š', strNewPath) then
     Exit;
 
   lstSystemSearchPath.Selected[lstSystemSearchPath.Items.Add(strNewPath)] := True;
@@ -644,7 +668,7 @@ procedure TfrmSystem.btnSysSearchAddClick(Sender: TObject);
 var
   strSelectDir: String;
 begin
-  if not SelectDirectory('ÇëÑ¡ÔñÒ»¸öÎÄ¼ş¼Ğ£º', '', strSelectDir) then
+  if not SelectDirectory('è¯·é€‰æ‹©ä¸€ä¸ªæ–‡ä»¶å¤¹ï¼š', '', strSelectDir) then
     Exit;
 
   lstSystemSearchPath.Items.Add(strSelectDir);
@@ -655,7 +679,7 @@ procedure TfrmSystem.btnSysSearchBackupClick(Sender: TObject);
 begin
   with TSaveDialog.Create(nil) do
   begin
-    Filter := 'ÏµÍ³ËÑË÷Â·¾¶±¸·İÎÄ¼ş(*.SSP)|*.SSP';
+    Filter := 'ç³»ç»Ÿæœç´¢è·¯å¾„å¤‡ä»½æ–‡ä»¶(*.SSP)|*.SSP';
     if Execute() then
     begin
       lstSystemSearchPath.Items.SaveToFile(FileName + '.ssp');
@@ -706,7 +730,7 @@ begin
     Exit;
 
   strNewPath := lstSystemSearchPath.Items.Strings[lstSystemSearchPath.ItemIndex];
-  if not InputQuery('ĞŞ¸ÄÂ·¾¶', 'Â·¾¶£º', strNewPath) then
+  if not InputQuery('ä¿®æ”¹è·¯å¾„', 'è·¯å¾„ï¼š', strNewPath) then
     Exit;
 
   lstSystemSearchPath.Items.Strings[lstSystemSearchPath.ItemIndex] := strNewPath;
@@ -717,7 +741,7 @@ procedure TfrmSystem.btnSysSearchRestoreClick(Sender: TObject);
 begin
   with TOpenDialog.Create(nil) do
   begin
-    Filter := 'ÏµÍ³ËÑË÷Â·¾¶±¸·İÎÄ¼ş(*.SSP)|*.SSP';
+    Filter := 'ç³»ç»Ÿæœç´¢è·¯å¾„å¤‡ä»½æ–‡ä»¶(*.SSP)|*.SSP';
     if Execute() then
     begin
       lstSystemSearchPath.Items.LoadFromFile(FileName);
