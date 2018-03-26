@@ -1,3 +1,6 @@
 /Win32
 /DBInit.dproj.local
 /DBInit.identcache
+/untCommon.dcu
+/DBInit.otares
+/Unit1.dcu
