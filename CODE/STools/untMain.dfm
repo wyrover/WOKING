@@ -25,7 +25,7 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 1132
     Height = 760
-    ActivePage = tsSystem
+    ActivePage = tsProcess
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
@@ -647,6 +647,10 @@ object frmSystem: TfrmSystem
     end
     object mniLine03: TMenuItem
       Caption = '-'
+    end
+    object mniCopyFileTo: TMenuItem
+      Caption = #22797#21046#25152#36873#25991#20214#21040'...'
+      OnClick = mniCopyFileToClick
     end
     object mniSaveToFile: TMenuItem
       Caption = #27169#22359#21015#34920#20445#23384#21040#25991#20214
