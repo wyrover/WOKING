@@ -1,84 +1,84 @@
-1 ÏÂÔØ depot_tools
-	ÎŞÂÛÄãÊ¹ÓÃÊ²Ã´VPN£¬ÏÈ git ÏÂÀ´ depot_tools¡£Õâ²½Ó¦¸Ã²»ÄÑ¡£ÄãÈç¹ûÄÜ·­Ç½³É¹¦£¬Ó¦¸Ã¾ÍÄÜÏÂÔØµÃÏÂÀ´¡£
-	Èç¹ûÄãÊ¹ÓÃµÄÊÇÀ¶µÆ£¬¿´Ò»ÏÂÀ¶µÆµÄ´úÀíIPºÍ¶Ë¿ÚºÅ¡£µ½ GIT/TortoiseGit ÀïÃæ¾ÍÉèÖÃÒ»ÏÂ´úÀíIPºÍ¶Ë¿Ú£¬¾Í¿ÉÒÔ½«´úÂëÀ­ÏÂÀ´ÁË¡£
-	ÆäËüµÄVPN£¬Ô­ÀíÒ»Ñù¡£
-	ÏÂÔØµØÖ·£ºhttps://chromium.googlesource.com/chromium/tools/depot_tools.git
-	¸½Í¼£º
-	²é¿´À¶µÆµÄ´úÀíIPºÍ¶Ë¿ÚºÅ£º
-	TortoiseGitÖĞÉèÖÃÍøÂç´úÀí£º
+ï»¿1 ä¸‹è½½ depot_tools
+	æ— è®ºä½ ä½¿ç”¨ä»€ä¹ˆVPNï¼Œå…ˆ git ä¸‹æ¥ depot_toolsã€‚è¿™æ­¥åº”è¯¥ä¸éš¾ã€‚ä½ å¦‚æœèƒ½ç¿»å¢™æˆåŠŸï¼Œåº”è¯¥å°±èƒ½ä¸‹è½½å¾—ä¸‹æ¥ã€‚
+	å¦‚æœä½ ä½¿ç”¨çš„æ˜¯è“ç¯ï¼Œçœ‹ä¸€ä¸‹è“ç¯çš„ä»£ç†IPå’Œç«¯å£å·ã€‚åˆ° GIT/TortoiseGit é‡Œé¢å°±è®¾ç½®ä¸€ä¸‹ä»£ç†IPå’Œç«¯å£ï¼Œå°±å¯ä»¥å°†ä»£ç æ‹‰ä¸‹æ¥äº†ã€‚
+	å…¶å®ƒçš„VPNï¼ŒåŸç†ä¸€æ ·ã€‚
+	ä¸‹è½½åœ°å€ï¼šhttps://chromium.googlesource.com/chromium/tools/depot_tools.git
+	é™„å›¾ï¼š
+	æŸ¥çœ‹è“ç¯çš„ä»£ç†IPå’Œç«¯å£å·ï¼š
+	TortoiseGitä¸­è®¾ç½®ç½‘ç»œä»£ç†ï¼š
 
-2 ÏÂÔØ¹¤¾ß£º
-	A)£º
-		ÏÈÉèÖÃÏµÍ³µÄÈ«¾Ö´úÀí(¼ÙÉèÄãµÄVPN´úÀíÊÇ£º127.0.0.1:1080£¬¾ÍÊÇÉÏÃæµÄÄÇ¸öIPºÍ¶Ë¿Ú)
-		Ê×ÏÈÊ¹ÓÃ¹ÜÀíÔ±Éí·İ´ò¿ªcmd£¬Ö´ĞĞ£º
+2 ä¸‹è½½å·¥å…·ï¼š
+	A)ï¼š
+		å…ˆè®¾ç½®ç³»ç»Ÿçš„å…¨å±€ä»£ç†(å‡è®¾ä½ çš„VPNä»£ç†æ˜¯ï¼š127.0.0.1:1080ï¼Œå°±æ˜¯ä¸Šé¢çš„é‚£ä¸ªIPå’Œç«¯å£)
+		é¦–å…ˆä½¿ç”¨ç®¡ç†å‘˜èº«ä»½æ‰“å¼€cmdï¼Œæ‰§è¡Œï¼š
 		E:\Source\depot_tools>netsh  
 		E:\Source\depot_tools>winhttp  
 		E:\Source\depot_tools>set proxy 127.0.0.1:1080 
 		E:\Source\depot_tools>exit
-		½áÊø£¬¹Ø±ÕCMD´°¿Ú¡£
+		ç»“æŸï¼Œå…³é—­CMDçª—å£ã€‚
 
-	B)£º
-		ÕâÑùÏµÍ³µÄÈ«¾Ö´úÀí¾ÍÉèÖÃºÃÁË¡£¾Í¿ÉÒÔÏÂÔØ¹¤¾ßÁË¡£
-		´ò¿ªÒ»¸öĞÂµÄCMD´°¿Ú£¬ÇĞ»»µ½ depot_tools ÄãÒª±£´æµÄÄ¿Â¼£¨ÎÒµÄÄ¿Â¼ÊÇ£ºE:\Source\depot_tools£©£¬Ö´ĞĞgclient£º
+	B)ï¼š
+		è¿™æ ·ç³»ç»Ÿçš„å…¨å±€ä»£ç†å°±è®¾ç½®å¥½äº†ã€‚å°±å¯ä»¥ä¸‹è½½å·¥å…·äº†ã€‚
+		æ‰“å¼€ä¸€ä¸ªæ–°çš„CMDçª—å£ï¼Œåˆ‡æ¢åˆ° depot_tools ä½ è¦ä¿å­˜çš„ç›®å½•ï¼ˆæˆ‘çš„ç›®å½•æ˜¯ï¼šE:\Source\depot_toolsï¼‰ï¼Œæ‰§è¡Œgclientï¼š
 		E:\Source\depot_tools>gclient
-		Òª²»ÁË¶à¾Ã depot_tools Ä¿Â¼ÏÂ£¬»á³öÏÖÒ»¸ö win_tools-2_7_6_bin Ä¿Â¼£¬ÀïÃæ°üº¬ÁË python ºÍ git£¬ÕâÊÇÏÂÔØºÍ±àÒë chromium Ô´Âë±ØĞëµÄ¹¤¾ß¡£
-		Èç¹ûÃ»ÄÜÏÂÔØÏÂÀ´£¬ËµÃ÷ÄãÓÃµÄVPNÓĞÎÊÌâ£¬Ö»ÄÜ¸ü»»VPN´úÀí¡£
-		½áÊø£¬¹Ø±ÕCMD´°¿Ú¡£
+		è¦ä¸äº†å¤šä¹… depot_tools ç›®å½•ä¸‹ï¼Œä¼šå‡ºç°ä¸€ä¸ª win_tools-2_7_6_bin ç›®å½•ï¼Œé‡Œé¢åŒ…å«äº† python å’Œ gitï¼Œè¿™æ˜¯ä¸‹è½½å’Œç¼–è¯‘ chromium æºç å¿…é¡»çš„å·¥å…·ã€‚
+		å¦‚æœæ²¡èƒ½ä¸‹è½½ä¸‹æ¥ï¼Œè¯´æ˜ä½ ç”¨çš„VPNæœ‰é—®é¢˜ï¼Œåªèƒ½æ›´æ¢VPNä»£ç†ã€‚
+		ç»“æŸï¼Œå…³é—­CMDçª—å£ã€‚
 
 
-3 ÏÂÔØ chromium Ô´Âë
-	A)£º
-		Ê×ÏÈ½«ÄãµÄÏµÍ³ËÑË÷Ä¿Â¼ Path ±¸·İÒ»ÏÂ£¬È»ºó½«ÄãµÄ depot_tools Ä¿Â¼£¬Ìí¼Óµ½ÏµÍ³ËÑË÷Ä¿Â¼ÖĞÈ¥¡£ÆäËüµÄ¶¼É¾³ı²»ÓÃ£¬Ö»±£ÁôWINDOWSÏµÍ³±ØĞëµÄËÄÏî¡£ÕâÑù£º
+3 ä¸‹è½½ chromium æºç 
+	A)ï¼š
+		é¦–å…ˆå°†ä½ çš„ç³»ç»Ÿæœç´¢ç›®å½• Path å¤‡ä»½ä¸€ä¸‹ï¼Œç„¶åå°†ä½ çš„ depot_tools ç›®å½•ï¼Œæ·»åŠ åˆ°ç³»ç»Ÿæœç´¢ç›®å½•ä¸­å»ã€‚å…¶å®ƒçš„éƒ½åˆ é™¤ä¸ç”¨ï¼Œåªä¿ç•™WINDOWSç³»ç»Ÿå¿…é¡»çš„å››é¡¹ã€‚è¿™æ ·ï¼š
 		C:\Windows;C:\Windows\system32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\Source\depot_tools;
-		<×¢£ºE:\Source\depot_tools ÊÇÎÒµÄ depot_tools ´úÂëÄ¿Â¼£¬ÄãĞèÒª»»³ÉÄãµÄ depot_tools ´úÂëÄ¿Â¼¡£>
+		<æ³¨ï¼šE:\Source\depot_tools æ˜¯æˆ‘çš„ depot_tools ä»£ç ç›®å½•ï¼Œä½ éœ€è¦æ¢æˆä½ çš„ depot_tools ä»£ç ç›®å½•ã€‚>
 
-	B)£º
-		ÅäÖÃVSµÄ°æ±¾£¬»·¾³±äÁ¿ÉèÖÃ£º
+	B)ï¼š
+		é…ç½®VSçš„ç‰ˆæœ¬ï¼Œç¯å¢ƒå˜é‡è®¾ç½®ï¼š
 		DEPOT_TOOLS_WIN_TOOLCHAIN = 0
 		GYP_MSVS_VERSION = 2017
 		GYP_MSVS_OVERRIDE_PATH = D:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
-		Èç¹ûÄã²»´òËãÓÃVSÀ´±àÒë chromium£¬ºóÁ½Ïî¿ÉÒÔ²»ÓÃÉèÖÃ¡£
+		å¦‚æœä½ ä¸æ‰“ç®—ç”¨VSæ¥ç¼–è¯‘ chromiumï¼Œåä¸¤é¡¹å¯ä»¥ä¸ç”¨è®¾ç½®ã€‚
 
-	C)£º
-		ĞÂ½¨Ò»¸öÄ¿Â¼£¬ÓÃÀ´·ÅÖÃ chromium Ô´´úÂë¡£ÎÒµÄÄ¿Â¼ÊÇ E:\Source\chromium¡£¿ª¸öCMD´°¿Ú£¬ÇĞ»»µ½´ËÄ¿Â¼£¬Ö´ĞĞ£º
+	C)ï¼š
+		æ–°å»ºä¸€ä¸ªç›®å½•ï¼Œç”¨æ¥æ”¾ç½® chromium æºä»£ç ã€‚æˆ‘çš„ç›®å½•æ˜¯ E:\Source\chromiumã€‚å¼€ä¸ªCMDçª—å£ï¼Œåˆ‡æ¢åˆ°æ­¤ç›®å½•ï¼Œæ‰§è¡Œï¼š
 		E:\Source\chromium>set http_proxy=http://127.0.0.1:1080
 		E:\Source\chromium>set https_proxy=http://127.0.0.1:1080
 		E:\Source\chromium>fetch chromium
-		Âş³¤µÄÏÂÔØ´úÂëÖĞ.....¡£
-		Èç¹ûÖĞÍ¾¶ÏÁË£¬Ô­ÏÈÏÂÔØµÄ¾Í×÷·ÏÁË£¬ÓÖ»á´ÓÍ·ÔÙÀ´¡£ÕâÊ±ºò£¬ÊÇ¿¼ÑéÄãµÄVPN´úÀíÎÈ¶¨ĞÔµÄÊ±ºòÁË¡£ 
-		´úÂëÏÂÔØÏÂÀ´Ö®ºó£¬Æ½Ê±¿ÉÒÔÓÃ£º
+		æ¼«é•¿çš„ä¸‹è½½ä»£ç ä¸­.....ã€‚
+		å¦‚æœä¸­é€”æ–­äº†ï¼ŒåŸå…ˆä¸‹è½½çš„å°±ä½œåºŸäº†ï¼Œåˆä¼šä»å¤´å†æ¥ã€‚è¿™æ—¶å€™ï¼Œæ˜¯è€ƒéªŒä½ çš„VPNä»£ç†ç¨³å®šæ€§çš„æ—¶å€™äº†ã€‚ 
+		ä»£ç ä¸‹è½½ä¸‹æ¥ä¹‹åï¼Œå¹³æ—¶å¯ä»¥ç”¨ï¼š
 		E:\Source\chromium>gclient sync 
-		À´¸üĞÂ´úÂë¡£
-		×îºÃÁ¢¼´Ö´ĞĞÒ»´Î£¬·ÀÖ¹ÓĞµÄ´úÂëÃ»ÓĞÀ­ÏÂÀ´¡£
+		æ¥æ›´æ–°ä»£ç ã€‚
+		æœ€å¥½ç«‹å³æ‰§è¡Œä¸€æ¬¡ï¼Œé˜²æ­¢æœ‰çš„ä»£ç æ²¡æœ‰æ‹‰ä¸‹æ¥ã€‚
 
-		¾­¹ıÁË3¸ö¶àĞ¡Ê±ºó£¬git ÏÂÔØÏÂÀ´µÄ´úÂë´óÔ¼ 21G ×óÓÒ¡£
-		(±àÒëÒ²»áÕ¼ÓÃ½Ï´óµÄ´ÅÅÌ¿Õ¼ä£¬½«½ü 90G¡£ÕÒÒ»¸ö´ó·ÖÇø£¬ÊÇ±ØĞëµÄ)
+		ç»è¿‡äº†3ä¸ªå¤šå°æ—¶åï¼Œgit ä¸‹è½½ä¸‹æ¥çš„ä»£ç å¤§çº¦ 21G å·¦å³ã€‚
+		(ç¼–è¯‘ä¹Ÿä¼šå ç”¨è¾ƒå¤§çš„ç£ç›˜ç©ºé—´ï¼Œå°†è¿‘ 90Gã€‚æ‰¾ä¸€ä¸ªå¤§åˆ†åŒºï¼Œæ˜¯å¿…é¡»çš„)
 
 
-4 ±àÒë chromium 
-		ÕâÒ»²½¾Í¼òµ¥ÁË£¬Ö´ĞĞ£º
+4 ç¼–è¯‘ chromium 
+		è¿™ä¸€æ­¥å°±ç®€å•äº†ï¼Œæ‰§è¡Œï¼š
 		E:\Source\chromium>set GYP_DEFINES="is_debug=false is_component_build=true"
 		
 		E:\Source\chromium>gn gen out/Default --args="is_component_build = false is_debug = false"
 		
 		E:\Source\chromium>gn gen  out/Default  
-		E:\Source\chromium>gn gen --ide=vs out\Default (Èç¹û²»ĞèÒªÉú³Évs2017ÏîÄ¿£¬´Ë²½Öè¿ÉºöÂÔ£© 
+		E:\Source\chromium>gn gen --ide=vs out\Default (å¦‚æœä¸éœ€è¦ç”Ÿæˆvs2017é¡¹ç›®ï¼Œæ­¤æ­¥éª¤å¯å¿½ç•¥ï¼‰ 
 		E:\Source\chromium>ninja -C out/Default chrome 
 
 		ninja Static Release
 		E:\Source\chromium>gn gen out/Default --args="is_component_build = false is_debug = false"
 		E:\Source\chromium>ninja -C out/Default chrome 
 
-		VC£º
-		E:\Source\chromium>gn gen --ide=vs out\Default (Èç¹û²»ĞèÒªÉú³Évs2017ÏîÄ¿£¬´Ë²½Öè¿ÉºöÂÔ£© 
-		Ò²¿ÉÒÔÓÃ vs2017 ´ò¿ª all.sln ±àÒë
-		ÓÖÊÇÂş³¤µÄµÈ´ı......
+		VCï¼š
+		E:\Source\chromium>gn gen --ide=vs out\Default (å¦‚æœä¸éœ€è¦ç”Ÿæˆvs2017é¡¹ç›®ï¼Œæ­¤æ­¥éª¤å¯å¿½ç•¥ï¼‰ 
+		ä¹Ÿå¯ä»¥ç”¨ vs2017 æ‰“å¼€ all.sln ç¼–è¯‘
+		åˆæ˜¯æ¼«é•¿çš„ç­‰å¾…......
 
 
-Èç¹ûÄãµÄVPN´úÀí£¬¿ÉÒÔÕı³£¹¤×÷µÄ»°£¬ÄãÍêÈ«¿ÉÒÔ±àĞ´Ò»¸öBATÎÄ¼ş£¬Ò»´ÎĞÔ¸ã¶¨ÉÏÃæËùÓĞµÄÊÂ¡£
+å¦‚æœä½ çš„VPNä»£ç†ï¼Œå¯ä»¥æ­£å¸¸å·¥ä½œçš„è¯ï¼Œä½ å®Œå…¨å¯ä»¥ç¼–å†™ä¸€ä¸ªBATæ–‡ä»¶ï¼Œä¸€æ¬¡æ€§æå®šä¸Šé¢æ‰€æœ‰çš„äº‹ã€‚
 
 
-Èç¹ûÊ¹ÓÃhttp´úÀíÍ¬²½chromium´úÂë£¬ÔÚÖ´ĞĞfetch chromium»òÕßgclient syncµÄ×îºó»áÌáÊ¾ÏÂÃæµÄ´íÎó£¬ÎŞ·¨Éú³ÉslnÎÄ¼ş¡£
+å¦‚æœä½¿ç”¨httpä»£ç†åŒæ­¥chromiumä»£ç ï¼Œåœ¨æ‰§è¡Œfetch chromiumæˆ–è€…gclient syncçš„æœ€åä¼šæç¤ºä¸‹é¢çš„é”™è¯¯ï¼Œæ— æ³•ç”Ÿæˆslnæ–‡ä»¶ã€‚
 Failed download_from_google_storage --no_resume --platform=win32 --no_auth   
 --bucket chromium-gn -s src/buildtools/linux32/gn.sha1 
 NOTICE: You have PROXY values set in your environment, but gsutil in   
@@ -87,13 +87,13 @@ Also, --no_auth prevents the normal BOTO_CONFIG environment variable from
 being used. 
 To use a proxy in this situation, please supply those settings in a .boto   
 file pointed to by the NO_AUTH_BOTO_CONFIG environment var.
-½â¾ö°ì·¨£¬Ëæ±ãÕÒ¸öµØ·½Éú³ÉÒ»¸öÎÄ±¾ÎÄ¼ş£¬±ÈÈç D:\boto.cfg
-ÔÚ¸ÃÎÄ¼şÖĞÊäÈëÏÂÃæµÄÄÚÈİ(¼ÙÉè´úÀí·şÎñÆ÷ÊÇ http://http.proxy.com:12345)£º
+è§£å†³åŠæ³•ï¼Œéšä¾¿æ‰¾ä¸ªåœ°æ–¹ç”Ÿæˆä¸€ä¸ªæ–‡æœ¬æ–‡ä»¶ï¼Œæ¯”å¦‚ D:\boto.cfg
+åœ¨è¯¥æ–‡ä»¶ä¸­è¾“å…¥ä¸‹é¢çš„å†…å®¹(å‡è®¾ä»£ç†æœåŠ¡å™¨æ˜¯ http://http.proxy.com:12345)ï¼š
 [Boto]
 proxy=127.0.0.1
 proxy_port = 1080
 
-È»ºóÉèÖÃ»·¾³±äÁ¿
+ç„¶åè®¾ç½®ç¯å¢ƒå˜é‡
 set NO_AUTH_BOTO_CONFIG=D:\boto.cfg
-ÔÙÖ´ĞĞfetch chromium»òÕßgclient sync
+å†æ‰§è¡Œfetch chromiumæˆ–è€…gclient sync
 

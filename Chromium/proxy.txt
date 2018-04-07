@@ -1,0 +1,4 @@
+1. netsh winhttp set proxy 127.0.0.1
+2. netsh winhttp set proxy 127.0.0.1:8080
+2. netsh winhttp set proxy 127.0.0.1:8080 
+4. netsh winhttp set proxy proxy-server="http=myproxy:80;https=myproxy:80" bypass-list="*.abc.com"
