@@ -6,12 +6,12 @@ set "OpenCVSRC=G:\Source\OpenCV\src"
 set "OpenCVBLD=G:\Source\OpenCV\build"
 set "OpenCVExt=G:\Source\OpenCV\opencv_contrib\modules"
 
-:: 设置系统搜索路径
+:: 璁剧疆绯荤粺鎼滅储璺緞
 @set sPath=
 @for /f "tokens=*" %%I in (%CurrentCD%zvs.txt) do (set "sPath=!sPath!;%%I")
 set Path=%sPath%;%Path%
 
-:: 设置系统环境变量
+:: 璁剧疆绯荤粺鐜鍙橀噺
 set PKG_CONFIG_PATH=F:\Green\Language\VS2015\lib\pkgconfig
 set OPENNI2_INCLUDE64=F:\Green\Language\OpenNI2\Include\
 set OPENNI2_LIB64=F:\Green\Language\OpenNI2\Lib\
