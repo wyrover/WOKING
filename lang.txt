@@ -1,0 +1,208 @@
+Whitespace                                        空格
+Comment                                           注释
+Reserved word                                     保留字
+Identifier                                        标识符
+Symbol                                            符号
+String                                            字符串
+Character                                         字符
+Number                                            数
+Float                                             浮
+Octal                                             八进制
+Hex                                               十六进制
+Assembler                                         汇编程序
+Hot Link                                          热链接
+HTML/XML Tags                                     html标记
+HTML/XML Attrib Names                             HTML / XML属性名称
+HTML/XML Attrib Values                            HTML / XML属性值
+HTML/XML Scripts                                  HTML脚本
+Brace highlight                                   支撑突出
+Line Highlight                                    线突出
+Preprocessor/Compiler Directive                   预处理器/编译器指令
+Illegal Char                                      非法字符
+Plain text                                        纯文本
+Marked block                                      标志块
+Search match                                      搜索匹配
+Execution point                                   执行点
+Enabled break                                     启用打破
+Disabled break                                    禁用中断
+Invalid break                                     无效突破
+Error line                                        误差线
+Right margin                                      右缘
+Code folding tree                                 代码折叠树
+Folded code                                       折叠代码
+Line Number                                       线数
+Sync edit background                              同步编辑背景
+Sync edit highlight                               同步编辑的亮点
+Diff addition                                     不同的加法
+Diff deletion                                     不同的缺失
+Diff move                                         不同的移动
+Modified line                                     改线
+Additional search match highlight                 附加搜索匹配高亮
+
+类
+结构
+函数
+
+变量定义
+算术运算
+for 循环语句，while 循环语句
+函数定义，函数调用
+递归
+静态类型系统
+类型推导
+lambda 函数
+面向对象
+垃圾回收
+指针算术
+goto 语句
+
+Delphi:
+  保留字：
+    absolute//指令(变量)
+    abstract//指令(方法)
+    and//运算符(布尔)
+    array//类型
+    as//运算符(RTTI)
+    asm//语句
+    assembler//向后兼容(汇编)
+    at//语句(异常处理)
+    automated//访问类别符(类)
+    begin//块标记
+    case//语句
+    cdecl//函数调用协定
+    class//类型
+    const//声明或指令(参数)
+    constructor//特殊方法
+    contains//运算符(集合)
+    default//指令(属性)
+    delayed
+    deprecated11
+    destructor//特殊方法
+    dispid//dispinterface 接口类别符
+    dispinterface//类型
+    div//运算符
+    do//语句
+    downto//语句(for)
+    dynamic//指令(方法)
+    else//语句(if或case)
+    end//块标记
+    except//语句(异常处理)
+    export//向后兼容(类)
+    exports//声明
+    external//指令(函数)
+    far//向后兼容(类)
+    far1
+    file//类型
+    final
+    finalization//单元结构
+    finally//语句(异常处理)
+    for//语句
+    forward//函数指令
+    function//声明
+    goto//语句
+    if//语句
+    implementation//单元结构
+    implements//指令(属性)
+    in//运算符(集合)
+    index//指令(dispinterface 接口)
+    inherited//语句
+    initialization//单元结构
+    inline//向后兼容(见asm)
+    interface//类型
+    is//运算符(RTTI)
+    label//声明
+    library//程序结构
+    message//指令(方法)
+    mod//运算符(数学)
+    name//指令(函数)
+    near//向后兼容(类)
+    nil//数值
+    nodefault//指令(属性)
+    not//运算符(布尔)
+    object//向后兼容(类)
+    of//语句(case)
+    on//语句(异常处理)
+    or//运算符(布尔)
+    out//指令(参数)
+    overload//函数指令
+    override//函数指令
+    package//程序结构(控件包)
+    packed//指令(记录)
+    pascal//函数调用协定
+    private//访问类别符(class)
+    procedure//声明
+    program//程序结构
+    property//声明
+    protected//访问类别符(类)
+    public//访问类别符(类)
+    published//访问类别符(类)
+    raise//语句(异常处理)
+    read//属性类别符
+    readonly//dispatch 接口类别符
+    record//类型
+    register//函数调用协定
+    reintroduce//函数指令
+    repeat//语句
+    requires//程序结构(控件包)
+    resident//指令(函数)
+    resourcestring//类型
+    safecall//函数调用协定
+    set//类型
+    shl//运算符(数学)
+    shr//运算符(数学)
+    stdcall//函数调用协定
+    stored//指令(属性)
+    string//类型
+    then//语句(if)
+    threadvar//声明
+    to//语句(for)
+    try//语句(异常处理)
+    type//声明
+    unit//单元结构
+    until//语句
+    uses//单元结构
+    var//声明
+    virtual//指令(方法)
+    while//语句
+    with//语句
+    write//属性类别符
+    writeonly//dispatch 接口类别符
+    xor//运算符(布尔)
+    
+Identifiers denote constants, variables, fields, types, properties, procedures, functions, programs, units, libraries, and packages. An identifier can be of any length, but only the first 255 characters are significant. An identifier must begin with an alphabetic character, a Unicode character, or an underscore (_) and cannot contain spaces. Alphanumeric characters, Unicode characters, digits, and underscores are allowed after the first character. Reserved words cannot be used as identifiers.
+标识符包括：        常量，     变量，      类型，  结构， 属性，       过程，       函数，     程序，    单元，  库，和         包。      一个标识符可以是任意长度，            but only the first 255性状是重要的。标识符开始必须alphabetic字符识别与Unicode字符，黄金年，underscore（_）和不包含空间。alphanumeric Unicode字符，字符，数字，and underscores are allowed after the first字符。保留字cannot be used as标识符。
+
+Delphi 注释类型：
+1 //
+2 (* *)
+3 { }
+
+注意：如果左大括号或圆括号-星号后面跟美元符号($)，那么其中的内容就成了编译指令，如 {$X+}。
+实际上，编译指令仍是注释。例如，{$X+ This is a comment} 是合法的。这既是有效的编译指令又是一条注释，尽管明智的程序员很可能会注意把编译指令和注释分开。
+
+
+
+
+C++保留字
+基本的数据类型关键字：void, int, char, float, double, bool
+类型修饰关键字：long, short, singed, unsigned 
+布尔型字面值：true, false
+非常重要的变量声明修饰符：const, inline
+存储类别关键字：auto, static, extern, , register
+控制结构关键字：for, while, if, else, do
+switch语句关键字：switch, case, default
+路径跳转关键字：break, continue, return, goto
+动态创建变量关键字：new, delete
+长度运算符：sizeof
+复合类型关键字：class, struct, enum, union, typedef
+与类成员相关关键字：this, friend, virtual, mutable, explicit, operator 
+派生类继承方式：private, protected, public
+模板：template, typename
+命名空间：namespace, using
+异常处理：catch, throw, try,
+各种操作符的替代名：and, and_eq, bitand, bitor, compl, not, not_eq, or, or_eq, xor, xor_eq
+其他不常用的：asm, export, typeid, volatile
+
+C++ 注释类型：
+1 /*   */
+2 //
