@@ -2,9 +2,9 @@
 @setlocal enableextensions enabledelayedexpansion
 
 set "CurrentCD=%~dp0"
-set "OpenCVSRC=G:\Source\OpenCV\src"
-set "OpenCVBLD=G:\Source\OpenCV\build"
-set "OpenCVExt=G:\Source\OpenCV\opencv_contrib\modules"
+set "OpenCVSRC=D:\Source\OpenCV\src"
+set "OpenCVBLD=D:\Source\OpenCV\build"
+set "OpenCVExt=D:\Source\OpenCV\opencv_contrib\modules"
 
 :: 设置系统搜索路径
 @set sPath=
@@ -12,13 +12,13 @@ set "OpenCVExt=G:\Source\OpenCV\opencv_contrib\modules"
 set Path=%sPath%;%Path%
 
 :: 设置系统环境变量
-set PKG_CONFIG_PATH=F:\Green\Language\VS2015\lib\pkgconfig
-set OPENNI2_INCLUDE64=F:\Green\Language\OpenNI2\Include\
-set OPENNI2_LIB64=F:\Green\Language\OpenNI2\Lib\
-set OPENNI2_REDIST64=F:\Green\Language\OpenNI2\Redist\
-set INTELMEDIASDKROOT=F:\Green\Language\Intel\MSDK2017\Software Development Kit\
-set BOOST_ROOT=F:\Green\Language\boost\1_61
-set BOOST_LIBRARYDIR=F:\Green\Language\boost\1_61\lib
+set PKG_CONFIG_PATH=E:\Green\Language\VS2015\lib\pkgconfig
+set OPENNI2_INCLUDE64=E:\Green\Language\OpenNI2\Include\
+set OPENNI2_LIB64=E:\Green\Language\OpenNI2\Lib\
+set OPENNI2_REDIST64=E:\Green\Language\OpenNI2\Redist\
+set INTELMEDIASDKROOT=E:\Green\Language\Intel\MSDK2017\Software Development Kit\
+set BOOST_ROOT=E:\Green\Language\boost\1_61
+set BOOST_LIBRARYDIR=E:\Green\Language\boost\1_61\lib
 
 cmake ^
   -DBUILD_DOCS=TRUE ^
