@@ -25,7 +25,7 @@ object frmSystem: TfrmSystem
     Top = 8
     Width = 1132
     Height = 760
-    ActivePage = tsProcess
+    ActivePage = tsFileSearch
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     object tsSystem: TTabSheet
@@ -360,6 +360,7 @@ object frmSystem: TfrmSystem
         ItemHeight = 13
         ParentFont = False
         TabOrder = 10
+        OnDblClick = btnSysSearchModifyClick
       end
     end
     object tsProcess: TTabSheet
@@ -498,15 +499,15 @@ object frmSystem: TfrmSystem
           Caption = '01.'#27880#20876#34920
         end
         object ts2: TTabSheet
-          Caption = '02.'#26381#21153#31649#29702
+          Caption = '02.'#26381#21153
           ImageIndex = 1
         end
         object ts3: TTabSheet
-          Caption = '03.'#39537#21160#31649#29702
+          Caption = '03.'#39537#21160
           ImageIndex = 2
         end
         object ts4: TTabSheet
-          Caption = '04.shell '#31649#29702
+          Caption = '04.Explorer shell '
           ImageIndex = 3
         end
         object ts5: TTabSheet
@@ -584,6 +585,69 @@ object frmSystem: TfrmSystem
         RowSelect = True
         TabOrder = 3
         ViewStyle = vsReport
+      end
+    end
+    object tsFileSearch: TTabSheet
+      Caption = #25991#20214#25628#32034#65288#20809#36895#25628#32034#65289
+      ImageIndex = 7
+      DesignSize = (
+        1124
+        732)
+      object pnl1: TPanel
+        Left = 12
+        Top = 12
+        Width = 1101
+        Height = 41
+        Anchors = [akLeft, akTop, akRight]
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        Caption = 'pnl1'
+        Ctl3D = False
+        ParentCtl3D = False
+        ShowCaption = False
+        TabOrder = 0
+      end
+      object lvFiles: TListView
+        Left = 12
+        Top = 59
+        Width = 1101
+        Height = 662
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Columns = <
+          item
+            Caption = #24207#21015
+            Width = 100
+          end
+          item
+            Caption = #25991#20214#21517
+            Width = 100
+          end
+          item
+            Caption = #36335#24452
+            Width = 500
+          end
+          item
+            Caption = #20462#25913#26102#38388
+            Width = 100
+          end
+          item
+            Caption = #21019#24314#26102#38388
+            Width = 100
+          end>
+        GridLines = True
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 1
+        ViewStyle = vsReport
+      end
+      object lst1: TListBox
+        Left = 180
+        Top = 96
+        Width = 221
+        Height = 569
+        Anchors = [akLeft, akTop, akBottom]
+        ItemHeight = 13
+        TabOrder = 2
       end
     end
   end

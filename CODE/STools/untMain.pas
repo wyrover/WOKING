@@ -6,7 +6,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Winapi.TlHelp32, System.Math, System.StrUtils, System.Win.ComObj, Winapi.ActiveX,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, System.IniFiles, Winapi.PsAPI, Winapi.ShLwApi, Winapi.ShellAPI, Winapi.ShlObj, System.Types, System.IOUtils,
-  Vcl.Clipbrd, Vcl.FileCtrl, System.Win.Registry, Vcl.Menus, Data.Win.ADODB, Data.DB, Data.Win.ADOConEd;
+  Vcl.Clipbrd, Vcl.FileCtrl, System.Win.Registry, Vcl.Menus, Data.Win.ADODB, Data.DB, Data.Win.ADOConEd,
+  Vcl.ExtCtrls, uMFT;
 
 type
   TfrmSystem = class(TForm)
@@ -78,6 +79,10 @@ type
     lbl15: TLabel;
     lbl16: TLabel;
     mniCopyFileTo: TMenuItem;
+    tsFileSearch: TTabSheet;
+    pnl1: TPanel;
+    lvFiles: TListView;
+    lst1: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -110,12 +115,17 @@ type
     procedure mniCopyFileToClick(Sender: TObject);
   private
     { Private declarations }
+    procedure GetAllLogicalDisk(pnl: TPanel);
     function GetFileVersion(const strExeName: string): String;
     procedure GetOSInfo;
     function ReadDefaultPage: Integer;
     procedure EnumProcess(lv: TListView);
     procedure EnumProcessModules(const intPID: Cardinal; lv: TListView);
     procedure EnumSystemSearchPath(lstBox: TListBox);
+    procedure OnFileSearchClick(Sender: TObject);
+    { 获取逻辑磁盘下所有文件 }
+    procedure GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
+    function MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer = nil): Boolean;
   public
     { Public declarations }
   end;
@@ -172,7 +182,10 @@ begin
   strSearchPath := '';
   for III       := 0 to strsList.Count - 1 do
   begin
-    strSearchPath := strSearchPath + ';' + strsList.Strings[III];
+    if (Trim(strsList.Strings[III]) <> '') and (strsList.Strings[III] <> ';') and (System.SysUtils.DirectoryExists(strsList.Strings[III])) then
+    begin
+      strSearchPath := strSearchPath + ';' + strsList.Strings[III];
+    end;
   end;
   strSearchPath := RightStr(strSearchPath, Length(strSearchPath) - 1);
 
@@ -195,16 +208,35 @@ end;
 
 procedure TfrmSystem.GetOSInfo;
 var
-  intIndex  : Integer;
-  strFileVer: String;
-  dwType    : Cardinal;
-  strPCName : array [0 .. 255] of Char;
-  intSize   : DWORD;
+  intIndex    : Integer;
+  strFileVer  : String;
+  dwType      : Cardinal;
+  strPCName   : array [0 .. 255] of Char;
+  intSize     : DWORD;
+  strReleaseId: String;
 begin
+  { }
+  with TRegistry.Create do
+  begin
+    RootKey := HKEY_LOCAL_MACHINE;
+    OpenKey('SOFTWARE\Microsoft\Windows NT\CurrentVersion', False);
+    lbl7.Caption := ReadString('ProductName');
+    strReleaseId := ReadString('ReleaseId');
+    Free;
+  end;
+
+  { }
+  with TRegistry.Create do
+  begin
+    RootKey := HKEY_LOCAL_MACHINE;
+    OpenKey('HARDWARE\DESCRIPTION\System\CentralProcessor\0', False);
+    lbl8.Caption := ReadString('ProcessorNameString');
+    Free;
+  end;
   { 版本号 }
   strFileVer   := GetFileVersion('C:\Windows\System32\wintrust.dll');
   intIndex     := LastDelimiter('.', strFileVer);
-  lbl7.Caption := Format('%d.%d.%d.%s', [Win32MajorVersion, Win32MinorVersion, Win32BuildNumber, RightStr(strFileVer, Length(strFileVer) - intIndex)]);
+  lbl7.Caption := lbl7.Caption + ' ' + Format('ver%s %d.%d.%d.%s', [strReleaseId, Win32MajorVersion, Win32MinorVersion, Win32BuildNumber, RightStr(strFileVer, Length(strFileVer) - intIndex)]);
   if GetProductInfo(Win32MajorVersion, Win32MinorVersion, 0, 0, dwType) then
   begin
     case dwType of
@@ -231,6 +263,8 @@ procedure TfrmSystem.FormCreate(Sender: TObject);
 begin
   EnableDebugPrivilege('SeDebugPrivilege', True);
   EnableDebugPrivilege('SeSecurityPrivilege', True);
+
+  GetAllLogicalDisk(pnl1);
 
   GetOSInfo;
 
@@ -451,6 +485,27 @@ begin
   end;
 end;
 
+procedure TfrmSystem.GetAllLogicalDisk(pnl: TPanel);
+var
+  strsLogicalDisk: TStringDynArray;
+  III            : Integer;
+begin
+  strsLogicalDisk := TDirectory.GetLogicalDrives;
+  for III         := Low(strsLogicalDisk) to High(strsLogicalDisk) do
+  begin
+    with TButton.Create(pnl) do
+    begin
+      Parent  := pnl;
+      Caption := strsLogicalDisk[III];
+      Width   := 80;
+      Height  := 30;
+      Top     := 4;
+      Left    := 4 + III * (Width + 4);
+      OnClick := OnFileSearchClick;
+    end;
+  end;
+end;
+
 procedure TfrmSystem.EnumProcess(lv: TListView);
 var
   hSnap         : THandle;
@@ -593,7 +648,13 @@ end;
 
 procedure TfrmSystem.mniOpenModulePathClick(Sender: TObject);
 begin
-  //
+  if lvModule.Selected = nil then
+    Exit;
+
+  if Trim(lvModule.Selected.SubItems[1]) = '' then
+    Exit;
+
+  OpenFolderAndSelectFile(lvModule.Selected.SubItems[1]);
 end;
 
 procedure TfrmSystem.mniCopyFileToClick(Sender: TObject);
@@ -646,6 +707,41 @@ end;
 procedure TfrmSystem.mniSelectedLineToSaveFileClick(Sender: TObject);
 begin
   //
+end;
+
+
+function TfrmSystem.MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer): Boolean;
+begin
+  Result := True;
+end;
+
+{ 获取逻辑磁盘下所有文件 }
+procedure TfrmSystem.GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
+var
+  Count : UInt64;
+  Buffer: Pointer;
+  Extra : Pointer;
+  hRoot : THandle;
+begin
+  Count := GetRootFRN(Char(strLogicalDiskName[1]));
+  if Count > 0 then
+  begin
+    hRoot := GetRootHandle(Char(strLogicalDiskName[1]));
+    if hRoot <> INVALID_HANDLE_VALUE then
+    begin
+      Buffer := AllocMFTEnumBuffer(hRoot);
+      Extra  := nil;
+      EnumMFTEntries(hRoot, Buffer, MFTEnumCallback, Extra);
+    end;
+  end;
+end;
+
+procedure TfrmSystem.OnFileSearchClick(Sender: TObject);
+var
+  strLogicalDisk: String;
+begin
+  strLogicalDisk := TButton(Sender).Caption;
+  GetLogicalAllFiles(strLogicalDisk, lvFiles);
 end;
 
 // ---------------------------------------------------------------------------------------------------------------------------------------//
