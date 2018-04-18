@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.IniFiles, Generics.Collections,
-  Vcl.StdCtrls, System.StrUtils;
+  Vcl.StdCtrls, System.StrUtils, System.Math, System.DateUtils;
 
 type
   TForm1 = class(TForm)
@@ -23,8 +23,35 @@ implementation
 
 {$R *.dfm}
 
+type
+  PFileInfo = ^TFileInfo;
+
+  TFileInfo = record
+    strFileName: ShortString;
+    bDirectory: Boolean;
+    FileDateTime: TDateTime;
+    FileSize: Cardinal;
+    FileReason: Cardinal;
+    FileReferenceNumber: UInt64;
+    ParentFileReferenceNumber: UInt64;
+  end;
+
+function MySort(List: TStringList; Index1, Index2: Integer): Integer;
+var
+  Int64A, Int64B: Int64;
+begin
+  Int64A := PFileInfo(List.Objects[Index1])^.FileReferenceNumber;
+  Int64B := PFileInfo(List.Objects[Index2])^.FileReferenceNumber;
+  if Int64A < Int64B then
+    Result := -1
+  else if Int64A = Int64B then
+    Result := 0
+  else
+    Result := 1;
+end;
+
 { 获取磁盘所有文件列表 }
-function GetLogicalDiskAllFiles(const chrLogiclDiskName: Char; var FileList: TStringlist): Boolean;
+function GetLogicalDiskAllFiles(const chrLogiclDiskName: Char; var FileList: TStringList): Boolean;
 const
   PARTITION_IFS          = $07;
   BUF_LEN                = 500 * 1024;
@@ -86,13 +113,6 @@ type
     DeleteFlags: Cardinal;
   end;
 
-  TFileInfo = record
-    strFileName: ShortString;
-    FileAttributes: Cardinal;
-    FileReferenceNumber: UInt64;
-    ParentFileReferenceNumber: UInt64;
-  end;
-
 var
   Info       : PARTITION_INFORMATION;
   bStatus    : Boolean;
@@ -106,128 +126,143 @@ var
   Buffer     : array [0 .. BUF_LEN - 1] of Char;
   UsnRecord  : PUSN;
   strFileName: String;
-  // Queue      : TQueue<TFileInfo>;
-  // fi         : TFileInfo;
-  intInt64: Integer;
-  hsl     : THashedStringList;
+  int64Size  : Integer;
+  pPath      : PFileInfo;
 
-  { 获取文件全路径，包含路径和文件名 }
-  procedure GetFileFullPathName;
-  var
-    III     : Integer;
-    intIndex: Integer;
-  begin
-    hsl.Sort;
-    hsl.SaveToFile('e:\sort.txt');
-    for III := 0 to hsl.Count - 1 do
-    begin
-      intIndex := III;
-      repeat
-        intIndex := hsl.IndexOfName(hsl.ValueFromIndex[intIndex]);
-      until intIndex = -1;
-    end;
-  end;
-
-{ 优化的 MOVE 函数，也可以直接用 MOVE 函数 }
   procedure MyMove(const Source; var Dest; Count: NativeInt); assembler;
   asm
     FILD    QWORD PTR [EAX]
     FISTP   QWORD PTR [EDX]
   end;
 
+  { 获取文件全路径，包含路径和文件名 }
+  procedure GetFileFullPathName;
+  var
+    III     : Integer;
+    strList : TStringList;
+    UPID    : UInt64;
+    intIndex: Integer;
   begin
-    Result := False;
-
-    { 打开磁盘 }
-    hTempHandle := 0;
-    hRootHandle := CreateFile(PChar('\\.\' + chrLogiclDiskName + ':'), GENERIC_READ or GENERIC_WRITE, FILE_SHARE_READ or FILE_SHARE_WRITE, nil, OPEN_EXISTING, FILE_ATTRIBUTE_READONLY, hTempHandle); // 需要管理员权限
-    if hRootHandle = INVALID_HANDLE_VALUE then
-      Exit;
-
-    // Queue := TQueue<TFileInfo>.Create;
-    hsl := THashedStringList.Create;
+    FileList.Sorted := False;
+    FileList.CustomSort(MySort);
+    strList := TStringList.Create;
     try
-      { 是否是NTFS磁盘格式 }
-      if not DeviceIoControl(hRootHandle, IOCTL_DISK_GET_PARTITION_INFO, nil, 0, @Info, Sizeof(Info), dwRet, nil) then
-        Exit;
-
-      if not Info.RecognizedPartition then
-        Exit;
-
-      if Info.PartitionType <> PARTITION_IFS then
-        Exit;
-
-      { 初始化USN日志文件 }
-      bStatus := DeviceIoControl(hRootHandle, FSCTL_CREATE_USN_JOURNAL, @cujd, Sizeof(cujd), nil, 0, dwRet, nil);
-      if not bStatus then
-        Exit;
-
-      { 获取USN日志基本信息 }
-      bStatus := DeviceIoControl(hRootHandle, FSCTL_QUERY_USN_JOURNAL, nil, 0, @ujd, Sizeof(ujd), dwRet, nil);
-      if not bStatus then
-        Exit;
-
-      { 枚举USN日志文件中的所有记录 }
-      med.StartFileReferenceNumber := 0;
-      med.LowUsn                   := 0;
-      med.HighUsn                  := ujd.NextUsn;
-      intInt64                     := Sizeof(Int64);
-      while DeviceIoControl(hRootHandle, FSCTL_ENUM_USN_DATA, @med, Sizeof(med), @Buffer, BUF_LEN, dwRet, nil) do
+      for III := 0 to FileList.Count - 1 do
       begin
-        { 找到第一个 USN 记录 }
-        UsnRecord := PUSN(Integer(@(Buffer)) + intInt64);
-        while dwRet > 60 do
-        begin
-          { 获取文件名称 }
-          strFileName := PWideChar(Integer(UsnRecord) + UsnRecord^.FileNameOffset);
-          strFileName := Copy(strFileName, 1, UsnRecord^.FileNameLength div 2);
-          FileList.Add(strFileName);
-
-          { 添加此结构， 是为了寻找此文件的路径 }
-          // fi.strFileName               := ShortString(strFileName);
-          // fi.FileAttributes            := UsnRecord^.FileAttributes;
-          // fi.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
-          // fi.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
-          // Queue.Enqueue(fi);
-          hsl.Add(IntToStr(UsnRecord^.FileReferenceNumber) + '=' + IntToStr(UsnRecord^.ParentFileReferenceNumber));
-
-          { 获取下一个 USN 记录 }
-          if UsnRecord.RecordLength > 0 then
-            Dec(dwRet, UsnRecord.RecordLength)
-          else
-            Break;
-          UsnRecord := PUSN(Cardinal(UsnRecord) + UsnRecord.RecordLength);
-        end;
-        MyMove(Buffer, med, intInt64);
+        strList.Add(UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber));
       end;
 
-      { 获取文件全路径，包含路径和文件名 }
-      GetFileFullPathName;
-
-      { 删除USN日志文件信息 }
-      dujd.UsnJournalID := ujd.UsnJournalID;
-      dujd.DeleteFlags  := USN_DELETE_FLAG_DELETE;
-      DeviceIoControl(hRootHandle, FSCTL_DELETE_USN_JOURNAL, @dujd, Sizeof(dujd), nil, 0, dwRet, nil);
+      for III := 0 to FileList.Count - 1 do
+      begin
+        UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
+        while strList.Find(UIntToStr(UPID), intIndex) do
+        begin
+          UPID                  := PFileInfo(FileList.Objects[intIndex])^.ParentFileReferenceNumber;
+          FileList.Strings[III] := String(PFileInfo(FileList.Objects[intIndex])^.strFileName) + '\' + FileList.Strings[III];
+        end;
+        FileList.Strings[III] := chrLogiclDiskName + ':\' + FileList.Strings[III];
+      end;
     finally
-      // Queue.Free;
-      hsl.Free;
-      CloseHandle(hRootHandle);
+      strList.Free;
     end;
   end;
 
+begin
+  Result := False;
+
+  { 打开磁盘 }
+  hTempHandle := 0;
+  hRootHandle := CreateFile(PChar('\\.\' + chrLogiclDiskName + ':'), GENERIC_READ or GENERIC_WRITE, FILE_SHARE_READ or FILE_SHARE_WRITE, nil, OPEN_EXISTING, FILE_ATTRIBUTE_READONLY, hTempHandle); // 需要管理员权限
+  if hRootHandle = INVALID_HANDLE_VALUE then
+    Exit;
+
+  try
+    { 是否是NTFS磁盘格式 }
+    if not DeviceIoControl(hRootHandle, IOCTL_DISK_GET_PARTITION_INFO, nil, 0, @Info, Sizeof(Info), dwRet, nil) then
+      Exit;
+
+    if not Info.RecognizedPartition then
+      Exit;
+
+    if Info.PartitionType <> PARTITION_IFS then
+      Exit;
+
+    { 初始化USN日志文件 }
+    bStatus := DeviceIoControl(hRootHandle, FSCTL_CREATE_USN_JOURNAL, @cujd, Sizeof(cujd), nil, 0, dwRet, nil);
+    if not bStatus then
+      Exit;
+
+    { 获取USN日志基本信息 }
+    bStatus := DeviceIoControl(hRootHandle, FSCTL_QUERY_USN_JOURNAL, nil, 0, @ujd, Sizeof(ujd), dwRet, nil);
+    if not bStatus then
+      Exit;
+
+    { 枚举USN日志文件中的所有记录 }
+    med.StartFileReferenceNumber := 0;
+    med.LowUsn                   := 0;
+    med.HighUsn                  := ujd.NextUsn;
+    int64Size                    := Sizeof(Int64);
+    while DeviceIoControl(hRootHandle, FSCTL_ENUM_USN_DATA, @med, Sizeof(med), @Buffer, BUF_LEN, dwRet, nil) do
+    begin
+      { 找到第一个 USN 记录 }
+      UsnRecord := PUSN(Integer(@(Buffer)) + int64Size);
+      while dwRet > 60 do
+      begin
+        { 获取文件名称 }
+        strFileName := PWideChar(Integer(UsnRecord) + UsnRecord^.FileNameOffset);
+        strFileName := Copy(strFileName, 1, UsnRecord^.FileNameLength div 2);
+
+        { 将文件信息添加到列表 }
+        pPath                            := AllocMem(Sizeof(TFileInfo));
+        pPath^.strFileName               := ShortString(strFileName);
+        pPath^.bDirectory                := (PCardinal(Integer(UsnRecord) + 52)^) and faDirectory = 16;
+        pPath^.FileReason                := PCardinal(Integer(UsnRecord) + 40)^;
+        pPath^.FileDateTime              := Pint64(Integer(UsnRecord) + 32)^ / 3600 + 25569;
+        pPath^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
+        pPath^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
+        FileList.AddObject(string(pPath^.strFileName), TObject(pPath));
+
+        { 获取下一个 USN 记录 }
+        if UsnRecord.RecordLength > 0 then
+          Dec(dwRet, UsnRecord.RecordLength)
+        else
+          Break;
+        UsnRecord := PUSN(Cardinal(UsnRecord) + UsnRecord.RecordLength);
+      end;
+      MyMove(Buffer, med, int64Size);
+    end;
+
+    { 获取文件全路径，包含路径和文件名 }
+    GetFileFullPathName;
+
+    { 按文件名排序 }
+    FileList.CaseSensitive := True;
+    FileList.Sort;
+
+    { 删除USN日志文件信息 }
+    dujd.UsnJournalID := ujd.UsnJournalID;
+    dujd.DeleteFlags  := USN_DELETE_FLAG_DELETE;
+    DeviceIoControl(hRootHandle, FSCTL_DELETE_USN_JOURNAL, @dujd, Sizeof(dujd), nil, 0, dwRet, nil);
+  finally
+    CloseHandle(hRootHandle);
+  end;
+end;
+
 procedure TForm1.btn1Click(Sender: TObject);
 var
-  FileList    : TStringlist;
+  FileList    : TStringList;
   intST, intET: Cardinal;
 begin
-  FileList := TStringlist.Create;
+  FileList     := TStringList.Create;
+  btn1.Enabled := False;
   try
     intST := GetTickCount;
     GetLogicalDiskAllFiles('C', FileList);
     intET := GetTickCount;
-    ShowMessage(Format('C:\ 盘共计文件和文件夹： %d 个。用时： %0.2f 秒', [FileList.Count, (intET - intST) / 1000]));
-    FileList.SaveToFile('E:\temp.txt');
+    ShowMessage(Format('文件和文件夹合计： %d 个； 搜索用时： %0.2f 秒', [FileList.Count, (intET - intST) / 1000]));
+    FileList.SaveToFile('E:\AAA.txt');
   finally
+    btn1.Enabled := True;
     FileList.Free;
   end;
 end;

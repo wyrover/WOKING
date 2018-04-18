@@ -82,7 +82,6 @@ type
     tsFileSearch: TTabSheet;
     pnl1: TPanel;
     lvFiles: TListView;
-    lst1: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -113,8 +112,9 @@ type
     procedure lstTablesClick(Sender: TObject);
     procedure mniDeleteProcessFileClick(Sender: TObject);
     procedure mniCopyFileToClick(Sender: TObject);
+    procedure lvFilesDrawItem(Sender: TCustomListView; Item: TListItem; Rect: TRect; State: TOwnerDrawState);
   private
-    { Private declarations }
+    FstrsFileList: TStringList;
     procedure GetAllLogicalDisk(pnl: TPanel);
     function GetFileVersion(const strExeName: string): String;
     procedure GetOSInfo;
@@ -126,6 +126,8 @@ type
     { 获取逻辑磁盘下所有文件 }
     procedure GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
     function MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer = nil): Boolean;
+    { 加载到界面列表 }
+    procedure FillUI(lv: TListView; strs: TStringList);
   public
     { Public declarations }
   end;
@@ -264,6 +266,7 @@ begin
   EnableDebugPrivilege('SeDebugPrivilege', True);
   EnableDebugPrivilege('SeSecurityPrivilege', True);
 
+  FstrsFileList := TStringList.Create;
   GetAllLogicalDisk(pnl1);
 
   GetOSInfo;
@@ -276,6 +279,8 @@ end;
 
 procedure TfrmSystem.FormDestroy(Sender: TObject);
 begin
+  FstrsFileList.Free;
+
   with TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'config.ini') do
   begin
     WriteInteger('ActivePageIndex', 'Value', pgcAll.ActivePageIndex);
@@ -709,29 +714,83 @@ begin
   //
 end;
 
+// ---------------------------------------------------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------   光速搜索   --------------------------------------------------------------//
+// ---------------------------------------------------------------------------------------------------------------------------------------//
+
+procedure TfrmSystem.lvFilesDrawItem(Sender: TCustomListView; Item: TListItem; Rect: TRect; State: TOwnerDrawState);
+var
+  rct: TRect;
+begin
+  rct.Left   := Rect.Left;
+  rct.Top    := Rect.Top;
+  rct.Right  := rct.Left + lvFiles.Column[0].Width;
+  rct.Bottom := Rect.Bottom;
+  lvFiles.Canvas.TextRect(rct, rct.Left + 4, rct.Top + 4, IntToStr(Item.Index));
+
+  rct.Left   := Rect.Left + lvFiles.Column[0].Width;
+  rct.Top    := Rect.Top;
+  rct.Right  := rct.Left + lvFiles.Column[1].Width;
+  rct.Bottom := Rect.Bottom;
+  lvFiles.Canvas.TextRect(rct, rct.Left + +4, rct.Top + 4, FstrsFileList.Strings[Item.Index]);
+end;
+
+procedure TfrmSystem.FillUI(lv: TListView; strs: TStringList);
+var
+  III         : Integer;
+  intST, intET: Cardinal;
+begin
+  intST := GetTickCount;
+  lv.Items.Clear;
+  lv.Items.BeginUpdate;
+  for III := 0 to strs.Count - 1 do
+  begin
+    with lv.Items.Add do
+    begin
+      Caption := IntToStr(III);
+      SubItems.Add(strs[III]);
+    end;
+  end;
+  lv.Items.EndUpdate;
+  intET := GetTickCount;
+  ShowMessage(Format('界面加载用时：%d 秒', [(intET - intST) div 1000]));
+end;
 
 function TfrmSystem.MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer): Boolean;
+var
+  strFileName: String;
 begin
+  strFileName := USNRecFromPointer(AUSN).FileName;
+  TStringList(Extra).Add(strFileName);
   Result := True;
 end;
 
 { 获取逻辑磁盘下所有文件 }
 procedure TfrmSystem.GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
 var
-  Count : UInt64;
-  Buffer: Pointer;
-  Extra : Pointer;
-  hRoot : THandle;
+  Count         : UInt64;
+  Buffer        : Pointer;
+  Extra         : Pointer;
+  hRoot         : THandle;
+  intST, intET  : Cardinal;
+  chrLogicalDisk: Char;
 begin
-  Count := GetRootFRN(Char(strLogicalDiskName[1]));
+  chrLogicalDisk := Char(strLogicalDiskName[1]);
+  Count          := GetRootFRN(chrLogicalDisk);
   if Count > 0 then
   begin
-    hRoot := GetRootHandle(Char(strLogicalDiskName[1]));
+    hRoot := GetRootHandle(chrLogicalDisk);
     if hRoot <> INVALID_HANDLE_VALUE then
     begin
+      FstrsFileList.Clear;
+      intST  := GetTickCount;
       Buffer := AllocMFTEnumBuffer(hRoot);
-      Extra  := nil;
+      Extra  := FstrsFileList;
       EnumMFTEntries(hRoot, Buffer, MFTEnumCallback, Extra);
+      intET   := GetTickCount;
+      Caption := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
+      { 加载到界面列表 }
+      FillUI(lvFiles, FstrsFileList);
     end;
   end;
 end;

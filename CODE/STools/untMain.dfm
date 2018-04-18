@@ -616,15 +616,11 @@ object frmSystem: TfrmSystem
         Columns = <
           item
             Caption = #24207#21015
-            Width = 100
+            Width = 80
           end
           item
             Caption = #25991#20214#21517
-            Width = 100
-          end
-          item
-            Caption = #36335#24452
-            Width = 500
+            Width = 650
           end
           item
             Caption = #20462#25913#26102#38388
@@ -635,19 +631,13 @@ object frmSystem: TfrmSystem
             Width = 100
           end>
         GridLines = True
+        OwnerData = True
+        OwnerDraw = True
         ReadOnly = True
         RowSelect = True
         TabOrder = 1
         ViewStyle = vsReport
-      end
-      object lst1: TListBox
-        Left = 180
-        Top = 96
-        Width = 221
-        Height = 569
-        Anchors = [akLeft, akTop, akBottom]
-        ItemHeight = 13
-        TabOrder = 2
+        OnDrawItem = lvFilesDrawItem
       end
     end
   end
