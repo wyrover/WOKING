@@ -4,20 +4,25 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.IniFiles, Generics.Collections,
-  Vcl.StdCtrls, System.StrUtils, System.Math, System.DateUtils;
+  Vcl.StdCtrls, System.StrUtils, System.Math, System.DateUtils, uMFT;
 
 type
   TForm1 = class(TForm)
     btn1: TButton;
+    btn2: TButton;
     procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    function EnumCallBack(AUSN: PUSNRecord; Extra: Pointer = nil): Boolean;
   public
     { Public declarations }
   end;
 
 var
-  Form1: TForm1;
+  Form1    : TForm1;
+  FFileList: TStringList;
 
 implementation
 
@@ -27,7 +32,7 @@ type
   PFileInfo = ^TFileInfo;
 
   TFileInfo = record
-    strFileName: ShortString;
+    strFileName: String;
     bDirectory: Boolean;
     FileDateTime: TDateTime;
     FileSize: Cardinal;
@@ -38,7 +43,7 @@ type
 
 function MySort(List: TStringList; Index1, Index2: Integer): Integer;
 var
-  Int64A, Int64B: Int64;
+  Int64A, Int64B: UInt64;
 begin
   Int64A := PFileInfo(List.Objects[Index1])^.FileReferenceNumber;
   Int64B := PFileInfo(List.Objects[Index2])^.FileReferenceNumber;
@@ -113,21 +118,41 @@ type
     DeleteFlags: Cardinal;
   end;
 
+  NTFS_VOLUME_DATA_BUFFER = record
+    VolumeSerialNumber: _LARGE_INTEGER;
+    NumberSectors: _LARGE_INTEGER;
+    TotalClusters: _LARGE_INTEGER;
+    FreeClusters: _LARGE_INTEGER;
+    TotalReserved: _LARGE_INTEGER;
+    BytesPerSector: DWORD;
+    BytesPerCluster: DWORD;
+    BytesPerFileRecordSegment: DWORD;
+    ClustersPerFileRecordSegment: DWORD;
+    MftValidDataLength: _LARGE_INTEGER;
+    MftStartLcn: _LARGE_INTEGER;
+    Mft2StartLcn: _LARGE_INTEGER;
+    MftZoneStart: _LARGE_INTEGER;
+    MftZoneEnd: _LARGE_INTEGER;
+  end;
+
 var
-  Info       : PARTITION_INFORMATION;
-  bStatus    : Boolean;
-  hRootHandle: THandle;
-  hTempHandle: Cardinal;
-  cujd       : CREATE_USN_JOURNAL_DATA;
-  ujd        : USN_JOURNAL_DATA;
-  med        : MFT_ENUM_DATA;
-  dujd       : DELETE_USN_JOURNAL_DATA;
-  dwRet      : DWORD;
-  Buffer     : array [0 .. BUF_LEN - 1] of Char;
-  UsnRecord  : PUSN;
-  strFileName: String;
-  int64Size  : Integer;
-  pPath      : PFileInfo;
+  Info            : PARTITION_INFORMATION;
+  bStatus         : Boolean;
+  hRootHandle     : THandle;
+  hTempHandle     : Cardinal;
+  cujd            : CREATE_USN_JOURNAL_DATA;
+  ujd             : USN_JOURNAL_DATA;
+  med             : MFT_ENUM_DATA;
+  dujd            : DELETE_USN_JOURNAL_DATA;
+  ntfsVolData     : NTFS_VOLUME_DATA_BUFFER;
+  dwRet           : DWORD;
+  Buffer          : array [0 .. BUF_LEN - 1] of Char;
+  UsnRecord       : PUSN;
+  strFileName     : String;
+  int64Size       : Integer;
+  pPath           : PFileInfo;
+  num             : LARGE_INTEGER;
+  total_file_count: UInt64;
 
   procedure MyMove(const Source; var Dest; Count: NativeInt); assembler;
   asm
@@ -150,7 +175,10 @@ var
       for III := 0 to FileList.Count - 1 do
       begin
         strList.Add(UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber));
+        // strList.Add(UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber) + Chr(9) + UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber) + Chr(9) + FileList.Strings[III]);
       end;
+      strList.SaveToFile('e:\all.txt');
+      MessageBeep(2000);
 
       for III := 0 to FileList.Count - 1 do
       begin
@@ -187,6 +215,15 @@ begin
     if Info.PartitionType <> PARTITION_IFS then
       Exit;
 
+    if not DeviceIoControl(hRootHandle, FSCTL_GET_NTFS_VOLUME_DATA, nil, 0, @ntfsVolData, Sizeof(ntfsVolData), dwRet, nil) then
+      Exit;
+
+    num.QuadPart     := 1024;
+    total_file_count := Round(ntfsVolData.MftValidDataLength.QuadPart / num.QuadPart);
+    if total_file_count <> 0 then
+    begin
+    end;
+
     { 初始化USN日志文件 }
     bStatus := DeviceIoControl(hRootHandle, FSCTL_CREATE_USN_JOURNAL, @cujd, Sizeof(cujd), nil, 0, dwRet, nil);
     if not bStatus then
@@ -211,15 +248,19 @@ begin
         { 获取文件名称 }
         strFileName := PWideChar(Integer(UsnRecord) + UsnRecord^.FileNameOffset);
         strFileName := Copy(strFileName, 1, UsnRecord^.FileNameLength div 2);
+        if strFileName = 'globals.xml.ftl' then
+        begin
+          MessageBeep(2000);
+        end;
 
         { 将文件信息添加到列表 }
         pPath                            := AllocMem(Sizeof(TFileInfo));
-        pPath^.strFileName               := ShortString(strFileName);
+        pPath^.strFileName               := (strFileName);
         pPath^.bDirectory                := (PCardinal(Integer(UsnRecord) + 52)^) and faDirectory = 16;
         pPath^.FileReason                := PCardinal(Integer(UsnRecord) + 40)^;
-        pPath^.FileDateTime              := Pint64(Integer(UsnRecord) + 32)^ / 3600 + 25569;
-        pPath^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
-        pPath^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
+        pPath^.FileDateTime              := Pint64(Integer(UsnRecord) + 32)^;   // 3600 + 25569;
+        pPath^.FileReferenceNumber       := PUInt64(Integer(UsnRecord) + 8)^;;  // UsnRecord^.FileReferenceNumber;
+        pPath^.ParentFileReferenceNumber := PUInt64(Integer(UsnRecord) + 16)^;; // UsnRecord^.ParentFileReferenceNumber;
         FileList.AddObject(string(pPath^.strFileName), TObject(pPath));
 
         { 获取下一个 USN 记录 }
@@ -265,6 +306,92 @@ begin
     btn1.Enabled := True;
     FileList.Free;
   end;
+end;
+
+{ 获取文件全路径，包含路径和文件名 }
+procedure GetFileFullPathName(const chrLogiclDiskName: Char);
+var
+  III     : Integer;
+  strList : TStringList;
+  UPID    : UInt64;
+  intIndex: Integer;
+begin
+  FFileList.Sorted := False;
+  FFileList.CustomSort(MySort);
+  strList := TStringList.Create;
+  try
+    for III := 0 to FFileList.Count - 1 do
+    begin
+      strList.Add(UIntToStr(PFileInfo(FFileList.Objects[III])^.FileReferenceNumber));
+      // strList.Add(UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber) + Chr(9) + UIntToStr(PFileInfo(FileList.Objects[III])^.FileReferenceNumber) + Chr(9) + FileList.Strings[III]);
+    end;
+    // strList.SaveToFile('e:\all.txt');
+    // MessageBeep(2000);
+
+    for III := 0 to FFileList.Count - 1 do
+    begin
+      UPID := PFileInfo(FFileList.Objects[III])^.ParentFileReferenceNumber;
+      while strList.Find(UIntToStr(UPID), intIndex) do
+      begin
+        UPID                   := PFileInfo(FFileList.Objects[intIndex])^.ParentFileReferenceNumber;
+        FFileList.Strings[III] := String(PFileInfo(FFileList.Objects[intIndex])^.strFileName) + '\' + FFileList.Strings[III];
+      end;
+      FFileList.Strings[III] := chrLogiclDiskName + ':\' + FFileList.Strings[III];
+    end;
+  finally
+    strList.Free;
+  end;
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+var
+  hRootHandle   : UInt64;
+  UsnJournalData: TUSNJournalData;
+  med           : MFT_ENUM_DATA;
+  // intST, intET  : Cardinal;
+begin
+  // intST       := GetTickCount;
+  hRootHandle := GetRootHandle('C');
+  AdjustChangeJournal(hRootHandle);
+  if not QueryUSNJournal(hRootHandle, UsnJournalData) then
+    Exit;
+
+  med.StartFileReferenceNumber := 0;
+  med.LowUsn                   := 0;
+  med.HighUsn                  := UsnJournalData.NextUsn;
+  if EnumMFTEntries(hRootHandle, @med, EnumCallBack) then
+  begin
+    { 获取文件全路径，包含路径和文件名 }
+    GetFileFullPathName('C');
+
+    { 按文件名排序 }
+    FFileList.CaseSensitive := True;
+    FFileList.Sort;
+    // intET := GetTickCount;
+    // ShowMessage(IntToStr(intET - intST));
+    FFileList.SaveToFile('E:\AAA.txt', TEncoding.UTF8);
+  end;
+end;
+
+function TForm1.EnumCallBack(AUSN: PUSNRecord; Extra: Pointer): Boolean;
+var
+  tmp        : TUSNRecord;
+  pPath      : PFileInfo;
+  strFileName: String;
+begin
+  pPath                            := AllocMem(Sizeof(TFileInfo));
+  tmp                              := USNRecFromPointer(AUSN);
+  strFileName                      := Copy(tmp.FileName, 1, tmp.FileNameLength div 2);
+  pPath^.strFileName               := strFileName;
+  pPath^.FileReferenceNumber       := tmp.FileReferenceNumber;
+  pPath^.ParentFileReferenceNumber := tmp.ParentFileReferenceNumber;
+  FFileList.AddObject(strFileName, TObject(pPath));
+  Result := True;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  FFileList := TStringList.Create;
 end;
 
 end.

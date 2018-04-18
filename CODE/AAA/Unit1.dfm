@@ -12,15 +12,25 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object btn1: TButton
-    Left = 148
-    Top = 112
+    Left = 44
+    Top = 36
     Width = 325
     Height = 81
     Caption = 'btn1'
     TabOrder = 0
     OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 276
+    Top = 156
+    Width = 325
+    Height = 81
+    Caption = 'btn2'
+    TabOrder = 1
+    OnClick = btn2Click
   end
 end
