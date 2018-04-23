@@ -82,7 +82,7 @@ type
   end;
 
 { TStringList 按数值排序 }
-function MySort(List: TStringList; Index1, Index2: Integer): Integer;
+function Int64Sort(List: TStringList; Index1, Index2: Integer): Integer;
 var
   Int64A, Int64B: Int64;
 begin
@@ -113,9 +113,9 @@ var
 begin
   { 将 FileList 按 FileReferenceNumber 数值排序 }
   FileList.Sorted := False;
-  FileList.CustomSort(MySort);
+  FileList.CustomSort(Int64Sort);
 
-  { 将排序好的 FileReferenceNumber 复制到 UInt64 数组列表中，便于下面进行快速查找 <BinarySearch 为高效的折半查找> }
+  { 将排序好的 FileReferenceNumber 复制到 UInt64 数组列表中，便于下面进行快速查找 <TArray.BinarySearch 为高效的折半查找> }
   SetLength(UInt64List, FileList.Count);
   for III := 0 to FileList.Count - 1 do
   begin
@@ -129,7 +129,7 @@ begin
     while TArray.BinarySearch(UInt64List, UPID, intIndex) do
     begin
       UPID                  := PFileInfo(FileList.Objects[intIndex])^.ParentFileReferenceNumber;
-      FileList.Strings[III] := String(PFileInfo(FileList.Objects[intIndex])^.strFileName) + '\' + FileList.Strings[III];
+      FileList.Strings[III] := PFileInfo(FileList.Objects[intIndex])^.strFileName + '\' + FileList.Strings[III];
     end;
     FileList.Strings[III] := (chrLogiclDiskName + ':\' + FileList.Strings[III]);
   end;
@@ -156,6 +156,7 @@ var
   strFileName: String;
   int64Size  : Integer;
   pfi        : PFileInfo;
+  III        : Integer;
 
 begin
   Result := False;
@@ -203,7 +204,7 @@ begin
         strFileName := Copy(strFileName, 1, UsnRecord^.FileNameLength div 2);
 
         { 将文件信息添加到列表中 }
-        pfi                            := AllocMem(Sizeof(TFileInfo));
+        pfi                            := AllocMem(Sizeof(TFileInfo)); // 不要忘记释放内存
         pfi^.strFileName               := strFileName;
         pfi^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
         pfi^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
@@ -221,6 +222,12 @@ begin
 
     { 获取文件全路径，包含路径和文件名 }
     GetFullFileName(FileList, chrLogiclDiskName, bSort);
+
+    { 释放内存 }
+    for III := 0 to FileList.Count - 1 do
+    begin
+      FreeMem(PFileInfo(FileList.Objects[III]));
+    end;
 
     { 删除USN日志文件信息 }
     dujd.UsnJournalID := ujd.UsnJournalID;

@@ -35,7 +35,7 @@ begin
   btn1.Enabled := False;
   try
     intST := GetTickCount;
-    GetLogicalDiskAllFiles('C', FileList, True);
+    GetLogicalDiskAllFiles('C', FileList, False);
     intET := GetTickCount;
     ShowMessage(Format('文件和文件夹合计： %d 个； 搜索用时： %0.2f 秒', [FileList.Count, (intET - intST) / 1000]));
     FileList.SaveToFile('d:\temp.txt', TEncoding.UTF8);
