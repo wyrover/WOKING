@@ -22,6 +22,7 @@ const
   PARTITION_IFS          = $07;
   BUF_LEN                = 500 * 1024;
   USN_DELETE_FLAG_DELETE = $00000001;
+  c_UInt64Root           = 1407374883553285;
 
 type
   PARTITION_INFORMATION = record
@@ -80,9 +81,6 @@ type
     DeleteFlags: Cardinal;
   end;
 
-const
-  c_UInt64Root = 1407374883553285;
-
 { TStringList 按数值排序 }
 function MySort(List: TStringList; Index1, Index2: Integer): Integer;
 var
@@ -105,6 +103,7 @@ asm
   FISTP   QWORD PTR [EDX]
 end;
 
+{ 获取文件全路径，包含路径和文件名 }
 procedure GetFullFileName(var FileList: TStringList; const chrLogiclDiskName: Char; const bSort: Boolean = False);
 var
   UInt64List: TArray<UInt64>;
