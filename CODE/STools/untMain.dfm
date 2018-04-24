@@ -30,6 +30,10 @@ object frmSystem: TfrmSystem
     TabOrder = 0
     object tsSystem: TTabSheet
       Caption = #31995#32479#31616#20171
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object lbl1: TLabel
         Left = 20
         Top = 16
@@ -472,6 +476,10 @@ object frmSystem: TfrmSystem
     object tsPE: TTabSheet
       Caption = 'PE '#20998#26512
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsAutorun: TTabSheet
       Caption = #24320#26426#33258#21160#36816#34892
@@ -497,28 +505,52 @@ object frmSystem: TfrmSystem
         TabPosition = tpRight
         object ts1: TTabSheet
           Caption = '01.'#27880#20876#34920
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object ts2: TTabSheet
           Caption = '02.'#26381#21153
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object ts3: TTabSheet
           Caption = '03.'#39537#21160
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object ts4: TTabSheet
           Caption = '04.Explorer shell '
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object ts5: TTabSheet
           Caption = '05.'#35745#21010#20219#21153
           ImageIndex = 4
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
       end
     end
     object tsWebSoft: TTabSheet
       Caption = #32593#32476
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object tsDataBase: TTabSheet
       Caption = #25968#25454#24211
@@ -621,14 +653,6 @@ object frmSystem: TfrmSystem
           item
             Caption = #25991#20214#21517
             Width = 650
-          end
-          item
-            Caption = #20462#25913#26102#38388
-            Width = 100
-          end
-          item
-            Caption = #21019#24314#26102#38388
-            Width = 100
           end>
         GridLines = True
         OwnerData = True

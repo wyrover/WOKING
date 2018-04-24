@@ -7,7 +7,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Winapi.TlHelp32, System.Math, System.StrUtils, System.Win.ComObj, Winapi.ActiveX,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, System.IniFiles, Winapi.PsAPI, Winapi.ShLwApi, Winapi.ShellAPI, Winapi.ShlObj, System.Types, System.IOUtils,
   Vcl.Clipbrd, Vcl.FileCtrl, System.Win.Registry, Vcl.Menus, Data.Win.ADODB, Data.DB, Data.Win.ADOConEd,
-  Vcl.ExtCtrls, uMFT;
+  Vcl.ExtCtrls, uMFTSearchFile;
 
 type
   TfrmSystem = class(TForm)
@@ -125,7 +125,6 @@ type
     procedure OnFileSearchClick(Sender: TObject);
     { 获取逻辑磁盘下所有文件 }
     procedure GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
-    function MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer = nil): Boolean;
     { 加载到界面列表 }
     procedure FillUI(lv: TListView; strs: TStringList);
   public
@@ -266,14 +265,18 @@ begin
   EnableDebugPrivilege('SeDebugPrivilege', True);
   EnableDebugPrivilege('SeSecurityPrivilege', True);
 
+  { 光速搜索 }
   FstrsFileList := TStringList.Create;
   GetAllLogicalDisk(pnl1);
 
+  { 获取操作系统信息 }
   GetOSInfo;
 
+  { 枚举进程 }
   pgcAll.ActivePageIndex := ReadDefaultPage;
   EnumProcess(lvProcess);
 
+  { 系统搜索路径 }
   EnumSystemSearchPath(lstSystemSearchPath);
 end;
 
@@ -756,43 +759,20 @@ begin
   ShowMessage(Format('界面加载用时：%d 秒', [(intET - intST) div 1000]));
 end;
 
-function TfrmSystem.MFTEnumCallback(AUSN: PUSNRecord; Extra: Pointer): Boolean;
-var
-  strFileName: String;
-begin
-  strFileName := USNRecFromPointer(AUSN).FileName;
-  TStringList(Extra).Add(strFileName);
-  Result := True;
-end;
-
 { 获取逻辑磁盘下所有文件 }
 procedure TfrmSystem.GetLogicalAllFiles(const strLogicalDiskName: string; lvFiles: TListView);
 var
-  Count         : UInt64;
-  Buffer        : Pointer;
-  Extra         : Pointer;
-  hRoot         : THandle;
   intST, intET  : Cardinal;
   chrLogicalDisk: Char;
 begin
   chrLogicalDisk := Char(strLogicalDiskName[1]);
-  Count          := GetRootFRN(chrLogicalDisk);
-  if Count > 0 then
-  begin
-    hRoot := GetRootHandle(chrLogicalDisk);
-    if hRoot <> INVALID_HANDLE_VALUE then
-    begin
-      FstrsFileList.Clear;
-      intST  := GetTickCount;
-      Buffer := AllocMFTEnumBuffer(hRoot);
-      Extra  := FstrsFileList;
-      EnumMFTEntries(hRoot, Buffer, MFTEnumCallback, Extra);
-      intET   := GetTickCount;
-      Caption := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
-      { 加载到界面列表 }
-      FillUI(lvFiles, FstrsFileList);
-    end;
-  end;
+  FstrsFileList.Clear;
+  intST := GetTickCount;
+  GetLogicalDiskAllFiles(chrLogicalDisk, FstrsFileList);
+  intET   := GetTickCount;
+  Caption := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
+  { 加载到界面列表 }
+  FillUI(lvFiles, FstrsFileList);
 end;
 
 procedure TfrmSystem.OnFileSearchClick(Sender: TObject);

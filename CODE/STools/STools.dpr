@@ -6,8 +6,7 @@ program STools;
 
 uses
   Vcl.Forms,
-  untMain in 'untMain.pas' {frmSystem},
-  uMFT in 'uMFT.pas';
+  untMain in 'untMain.pas' {frmSystem};
 
 {$R *.res}
 
