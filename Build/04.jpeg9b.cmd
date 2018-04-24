@@ -1,22 +1,22 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼
+:: å½“å‰ç›®å½•
 set CurrentCD=%~dp0
 
-:: MSYS µÄ³ÌĞòÄ¿Â¼ 
+:: MSYS çš„ç¨‹åºç›®å½• 
 set "MSYS=F:\Green\Language\MSYS"
 set "MSYSBIN=%MSYS%\bin"
 set "IncPath=%MSYS%\local\include"
 set "LibPath=%MSYS%\local\lib"
 set "MINGWBIN=%MSYS%\mingw\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%IncPath%;%LibPath%;%Path%"
 
-:: jpeg9b Ô´ÂëÂ·¾¶
+:: jpeg9b æºç è·¯å¾„
 set "jpeg9bsrc=E:\Source\04.jpeg\9b"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼ 
+:: è¿›å…¥æºä»£ç ç›®å½• 
 set "jpeg9bDisk=%jpeg9bsrc:~0,2%"
 set "jpeg9bPath=%jpeg9bsrc:~3%"
 cd\
@@ -24,7 +24,7 @@ cd\
 cd\
 cd "%jpeg9bPath%"
 
-:: ±àÒë x64 ¾²Ì¬¿â
+:: ç¼–è¯‘ x64 é™æ€åº“
 bash -c "make clean"
 bash -c "./configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --enable-static --disable-shared"
 copy /Y "%CurrentCD%patch\jconfig.h" "%jpeg9bsrc%\jconfig.h"

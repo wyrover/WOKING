@@ -1,19 +1,19 @@
 ::@echo off
 
-:: µ±Ç°Ä¿Â¼ 
+:: å½“å‰ç›®å½• 
 set "CurrentCD=%~dp0"
 
-:: MSYS ³ÌĞòÂ·¾¶
+:: MSYS ç¨‹åºè·¯å¾„
 set "MSYSBIN=F:\Green\Language\MSYS\bin"
 set "MINGWBIN=F:\Green\Language\MSYS\mingw\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
-:: zlib 1.2.11 Ô´´úÂëÂ·¾¶
+:: zlib 1.2.11 æºä»£ç è·¯å¾„
 set "zlibsrc=E:\Source\01.zlib\1.2.11"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼
+:: è¿›å…¥æºä»£ç ç›®å½•
 set "zlibdisk=%zlibsrc:~0,2%"
 set "zlibpath=%zlibsrc:~3%"
 cd\
@@ -21,13 +21,13 @@ cd\
 cd\
 cd "%zlibpath%"
 
-:: ±àÒë
+:: ç¼–è¯‘
 copy /Y "%CurrentCD%patch\zlib.gcc" "%zlibsrc%\makefile.gcc"
 copy /Y "%CurrentCD%patch\zlib.pc.in" "%zlibsrc%\zlib.pc.in"
 bash -c "make -f Makefile.in distclean"
 bash -c "make -f Makefile.gcc"
 
-:: °²×°
+:: å®‰è£…
 set INCLUDE_PATH=/usr/local/include
 set LIBRARY_PATH=/usr/local/lib
 set BINARY_PATH=/usr/local/bin

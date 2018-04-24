@@ -1,14 +1,14 @@
-:: MSYS ³ÌĞòÂ·¾¶
+:: MSYS ç¨‹åºè·¯å¾„
 set "MSYSBIN=F:\Green\Language\MSYS\bin"
 set "MINGWBIN=F:\Green\Language\MSYS\mingw\bin"
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
-:: libiconv Ô´´úÂëÂ·¾¶
+:: libiconv æºä»£ç è·¯å¾„
 set "libiconvsrc=E:\Source\22.libiconv-1.15"
 set "libiconvsrcDisk=%libiconvsrc:~0,2%
 set "libiconvsrcPath=%libiconvsrc:~3%
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼
+:: è¿›å…¥æºä»£ç ç›®å½•
 cd\
 %libiconvsrcDisk%
 cd\

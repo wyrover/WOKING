@@ -1,4 +1,4 @@
-﻿1 下载 depot_tools
+1 下载 depot_tools
 	无论你使用什么VPN，先 git 下来 depot_tools。这步应该不难。你如果能翻墙成功，应该就能下载得下来。
 	如果你使用的是蓝灯，看一下蓝灯的代理IP和端口号。到 GIT/TortoiseGit 里面就设置一下代理IP和端口，就可以将代码拉下来了。
 	其它的VPN，原理一样。

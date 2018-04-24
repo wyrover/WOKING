@@ -1,14 +1,14 @@
-±àÒëÆ÷¹¤×÷Ô­Àí£º
+ç¼–è¯‘å™¨å·¥ä½œåŸç†ï¼š
 
 	test.c---------------------------->test.i------------------------------->test.s--------------------------->test.o--------------------------------------------------------------------------------------------------------->test.exe
-       		1.Ô¤±àÒë£¨prepressing£©            2.±àÒë£¨compliation£©                 3.»ã±à£¨assembly£©                4.Á´½Ó£¨linking£©
-  GCC     	gcc ¨CE test.c ¨Co test.i          gcc ¨CS test.i ¨Co test.s             gcc ¨Cc test.s ¨Co test.o         ld ¨Cstatic crti.o crtbeginT.o test.o ¨Cstart-group -lgcc ¨Clgcc_eh ¨Clc ¨Cend-group crtend.o ctrn.o
+       		1.é¢„ç¼–è¯‘ï¼ˆprepressingï¼‰            2.ç¼–è¯‘ï¼ˆcompliationï¼‰                 3.æ±‡ç¼–ï¼ˆassemblyï¼‰                4.é“¾æ¥ï¼ˆlinkingï¼‰
+  GCC     	gcc â€“E test.c â€“o test.i          gcc â€“S test.i â€“o test.s             gcc â€“c test.s â€“o test.o         ld â€“static crti.o crtbeginT.o test.o â€“start-group -lgcc â€“lgcc_eh â€“lc â€“end-group crtend.o ctrn.o
   VC   		cl /E test.c                       cl /PS test.i
 
 
 
 
-test.c ²âÊÔÔ´Âë£º
+test.c æµ‹è¯•æºç ï¼š
 
 #include <stdio.h>
 int main()
@@ -17,12 +17,12 @@ int main()
     return 0;
 }
 
-1  gcc ¨CE test.c ¨Co test.i
-2  gcc ¨CS test.i ¨Co test.s
-3  gcc ¨Cc test.s ¨Co test.o
-4  ld ¨Cstatic crti.o crtbeginT.o test.o ¨Cstart-group -lgcc ¨Clgcc_eh ¨Clc ¨Cend-group crtend.o ctrn.o
+1  gcc â€“E test.c â€“o test.i
+2  gcc â€“S test.i â€“o test.s
+3  gcc â€“c test.s â€“o test.o
+4  ld â€“static crti.o crtbeginT.o test.o â€“start-group -lgcc â€“lgcc_eh â€“lc â€“end-group crtend.o ctrn.o
 
 
 
-Õ¹¿ªºê¶¨Òå
-É¾³ı×¢ÊÍ
+å±•å¼€å®å®šä¹‰
+åˆ é™¤æ³¨é‡Š

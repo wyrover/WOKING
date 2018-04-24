@@ -1,4 +1,4 @@
 1  PE
 2  HOOK
-3  C++Àà ÄÚ´æ½á¹¹
+3  C++ç±» å†…å­˜ç»“æž„
 4  Dll ---> static library

@@ -1,9 +1,9 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼
+:: å½“å‰ç›®å½•
 set CurrentCD=%~dp0
 
-:: MSYS µÄ³ÌĞòÄ¿Â¼ 
+:: MSYS çš„ç¨‹åºç›®å½• 
 set "MSYS=F:\Green\Language\MSYS"
 set "MSYSBIN=%MSYS%\bin"
 
@@ -15,13 +15,13 @@ set "LibPath=%LibPath:\=/%"
 
 set "MINGWBIN=%MSYS%\mingw\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
-:: libtiff Ô´ÂëÂ·¾¶
+:: libtiff æºç è·¯å¾„
 set "libtiffsrc=E:\Source\07.libtiff"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼ 
+:: è¿›å…¥æºä»£ç ç›®å½• 
 set "libtiffDisk=%libtiffsrc:~0,2%"
 set "libtiffPath=%libtiffsrc:~3%"
 cd\
@@ -29,7 +29,7 @@ cd\
 cd\
 cd "%libtiffPath%"
 
-:: ±àÒë x64 ¾²Ì¬¿â
+:: ç¼–è¯‘ x64 é™æ€åº“
 bash -c "make clean"
 bash -c "./configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --enable-static --disable-shared --with-zlib-include-dir=%IncPath% --with-zlib-lib-dir=%LibPath% --with-jpeg-include-dir=%IncPath% --with-jpeg-lib-dir=%LibPath% --with-lzma-include-dir=%IncPath% --with-lzma-lib-dir=%LibPath%"
 bash -c "make -j8"

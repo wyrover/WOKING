@@ -1,19 +1,19 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼ 
+:: å½“å‰ç›®å½• 
 set "CurrentCD=%~dp0"
 
-:: MSYS ³ÌĞòÂ·¾¶
+:: MSYS ç¨‹åºè·¯å¾„
 set "MSYSBIN=F:\Green\Language\MSYS\bin"
 set "MINGWBIN=F:\Green\Language\MSYS\mingw\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%Path%"
 
-:: bzip2 Ô´´úÂëÂ·¾¶
+:: bzip2 æºä»£ç è·¯å¾„
 set "bzip2src=E:\Source\02.bzip2"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼
+:: è¿›å…¥æºä»£ç ç›®å½•
 set "bzip2disk=%bzip2src:~0,2%"
 set "bzip2path=%bzip2src:~3%"
 cd\
@@ -21,7 +21,7 @@ cd\
 cd\
 cd "%bzip2path%"
 
-:: ±àÒë
+:: ç¼–è¯‘
 copy /Y "%CurrentCD%patch\bzip2.mk" "%bzip2src%\makefile"
 bash -c "make"
 bash -c "make install"

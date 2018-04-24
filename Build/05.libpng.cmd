@@ -1,22 +1,22 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼
+:: å½“å‰ç›®å½•
 set CurrentCD=%~dp0
 
-:: MSYS µÄ³ÌĞòÄ¿Â¼ 
+:: MSYS çš„ç¨‹åºç›®å½• 
 set "MSYS=F:\Green\Language\MSYS"
 set "MSYSBIN=%MSYS%\bin"
 set "IncPath=%MSYS%\local\include"
 set "LibPath=%MSYS%\local\lib"
 set "MINGWBIN=%MSYS%\mingw\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%IncPath%;%LibPath%;%Path%"
 
-:: libpng Ô´ÂëÂ·¾¶
+:: libpng æºç è·¯å¾„
 set "libpngsrc=E:\Source\05.libpng"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼ 
+:: è¿›å…¥æºä»£ç ç›®å½• 
 set "libpngDisk=%libpngsrc:~0,2%"
 set "libpngPath=%libpngsrc:~3%"
 cd\
@@ -24,12 +24,12 @@ cd\
 cd\
 cd "%libpngPath%"
 
-:: ±àÒë x64 ¾²Ì¬¿â
+:: ç¼–è¯‘ x64 é™æ€åº“
 copy /Y "%libpngsrc%\scripts\makefile.gcc" "%libpngsrc%\Makefile.gcc"
 copy /Y "%CurrentCD%patch\libpng.gcc" "%libpngsrc%\Makefile.gcc"
 bash -c "make -f Makefile.gcc"
 
-:: °²×°
+:: å®‰è£…
 md "%IncPath%\libpng"
 copy /Y "%libpngsrc%\png.h" "%IncPath%\libpng\png.h"
 copy /Y "%libpngsrc%\pngconf.h" "%IncPath%\libpng\pngconf.h"

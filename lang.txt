@@ -1,208 +1,208 @@
-Whitespace                                        ¿Õ¸ñ
-Comment                                           ×¢ÊÍ
-Reserved word                                     ±£Áô×Ö
-Identifier                                        ±êÊ¶·û
-Symbol                                            ·ûºÅ
-String                                            ×Ö·û´®
-Character                                         ×Ö·û
-Number                                            Êı
-Float                                             ¸¡
-Octal                                             °Ë½øÖÆ
-Hex                                               Ê®Áù½øÖÆ
-Assembler                                         »ã±à³ÌĞò
-Hot Link                                          ÈÈÁ´½Ó
-HTML/XML Tags                                     html±ê¼Ç
-HTML/XML Attrib Names                             HTML / XMLÊôĞÔÃû³Æ
-HTML/XML Attrib Values                            HTML / XMLÊôĞÔÖµ
-HTML/XML Scripts                                  HTML½Å±¾
-Brace highlight                                   Ö§³ÅÍ»³ö
-Line Highlight                                    ÏßÍ»³ö
-Preprocessor/Compiler Directive                   Ô¤´¦ÀíÆ÷/±àÒëÆ÷Ö¸Áî
-Illegal Char                                      ·Ç·¨×Ö·û
-Plain text                                        ´¿ÎÄ±¾
-Marked block                                      ±êÖ¾¿é
-Search match                                      ËÑË÷Æ¥Åä
-Execution point                                   Ö´ĞĞµã
-Enabled break                                     ÆôÓÃ´òÆÆ
-Disabled break                                    ½ûÓÃÖĞ¶Ï
-Invalid break                                     ÎŞĞ§Í»ÆÆ
-Error line                                        Îó²îÏß
-Right margin                                      ÓÒÔµ
-Code folding tree                                 ´úÂëÕÛµşÊ÷
-Folded code                                       ÕÛµş´úÂë
-Line Number                                       ÏßÊı
-Sync edit background                              Í¬²½±à¼­±³¾°
-Sync edit highlight                               Í¬²½±à¼­µÄÁÁµã
-Diff addition                                     ²»Í¬µÄ¼Ó·¨
-Diff deletion                                     ²»Í¬µÄÈ±Ê§
-Diff move                                         ²»Í¬µÄÒÆ¶¯
-Modified line                                     ¸ÄÏß
-Additional search match highlight                 ¸½¼ÓËÑË÷Æ¥Åä¸ßÁÁ
+Whitespace                                        ç©ºæ ¼
+Comment                                           æ³¨é‡Š
+Reserved word                                     ä¿ç•™å­—
+Identifier                                        æ ‡è¯†ç¬¦
+Symbol                                            ç¬¦å·
+String                                            å­—ç¬¦ä¸²
+Character                                         å­—ç¬¦
+Number                                            æ•°
+Float                                             æµ®
+Octal                                             å…«è¿›åˆ¶
+Hex                                               åå…­è¿›åˆ¶
+Assembler                                         æ±‡ç¼–ç¨‹åº
+Hot Link                                          çƒ­é“¾æ¥
+HTML/XML Tags                                     htmlæ ‡è®°
+HTML/XML Attrib Names                             HTML / XMLå±æ€§åç§°
+HTML/XML Attrib Values                            HTML / XMLå±æ€§å€¼
+HTML/XML Scripts                                  HTMLè„šæœ¬
+Brace highlight                                   æ”¯æ’‘çªå‡º
+Line Highlight                                    çº¿çªå‡º
+Preprocessor/Compiler Directive                   é¢„å¤„ç†å™¨/ç¼–è¯‘å™¨æŒ‡ä»¤
+Illegal Char                                      éæ³•å­—ç¬¦
+Plain text                                        çº¯æ–‡æœ¬
+Marked block                                      æ ‡å¿—å—
+Search match                                      æœç´¢åŒ¹é…
+Execution point                                   æ‰§è¡Œç‚¹
+Enabled break                                     å¯ç”¨æ‰“ç ´
+Disabled break                                    ç¦ç”¨ä¸­æ–­
+Invalid break                                     æ— æ•ˆçªç ´
+Error line                                        è¯¯å·®çº¿
+Right margin                                      å³ç¼˜
+Code folding tree                                 ä»£ç æŠ˜å æ ‘
+Folded code                                       æŠ˜å ä»£ç 
+Line Number                                       çº¿æ•°
+Sync edit background                              åŒæ­¥ç¼–è¾‘èƒŒæ™¯
+Sync edit highlight                               åŒæ­¥ç¼–è¾‘çš„äº®ç‚¹
+Diff addition                                     ä¸åŒçš„åŠ æ³•
+Diff deletion                                     ä¸åŒçš„ç¼ºå¤±
+Diff move                                         ä¸åŒçš„ç§»åŠ¨
+Modified line                                     æ”¹çº¿
+Additional search match highlight                 é™„åŠ æœç´¢åŒ¹é…é«˜äº®
 
-Àà
-½á¹¹
-º¯Êı
+ç±»
+ç»“æ„
+å‡½æ•°
 
-±äÁ¿¶¨Òå
-ËãÊõÔËËã
-for Ñ­»·Óï¾ä£¬while Ñ­»·Óï¾ä
-º¯Êı¶¨Òå£¬º¯Êıµ÷ÓÃ
-µİ¹é
-¾²Ì¬ÀàĞÍÏµÍ³
-ÀàĞÍÍÆµ¼
-lambda º¯Êı
-ÃæÏò¶ÔÏó
-À¬»ø»ØÊÕ
-Ö¸ÕëËãÊõ
-goto Óï¾ä
+å˜é‡å®šä¹‰
+ç®—æœ¯è¿ç®—
+for å¾ªç¯è¯­å¥ï¼Œwhile å¾ªç¯è¯­å¥
+å‡½æ•°å®šä¹‰ï¼Œå‡½æ•°è°ƒç”¨
+é€’å½’
+é™æ€ç±»å‹ç³»ç»Ÿ
+ç±»å‹æ¨å¯¼
+lambda å‡½æ•°
+é¢å‘å¯¹è±¡
+åƒåœ¾å›æ”¶
+æŒ‡é’ˆç®—æœ¯
+goto è¯­å¥
 
 Delphi:
-  ±£Áô×Ö£º
-    absolute//Ö¸Áî(±äÁ¿)
-    abstract//Ö¸Áî(·½·¨)
-    and//ÔËËã·û(²¼¶û)
-    array//ÀàĞÍ
-    as//ÔËËã·û(RTTI)
-    asm//Óï¾ä
-    assembler//Ïòºó¼æÈİ(»ã±à)
-    at//Óï¾ä(Òì³£´¦Àí)
-    automated//·ÃÎÊÀà±ğ·û(Àà)
-    begin//¿é±ê¼Ç
-    case//Óï¾ä
-    cdecl//º¯Êıµ÷ÓÃĞ­¶¨
-    class//ÀàĞÍ
-    const//ÉùÃ÷»òÖ¸Áî(²ÎÊı)
-    constructor//ÌØÊâ·½·¨
-    contains//ÔËËã·û(¼¯ºÏ)
-    default//Ö¸Áî(ÊôĞÔ)
+  ä¿ç•™å­—ï¼š
+    absolute//æŒ‡ä»¤(å˜é‡)
+    abstract//æŒ‡ä»¤(æ–¹æ³•)
+    and//è¿ç®—ç¬¦(å¸ƒå°”)
+    array//ç±»å‹
+    as//è¿ç®—ç¬¦(RTTI)
+    asm//è¯­å¥
+    assembler//å‘åå…¼å®¹(æ±‡ç¼–)
+    at//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    automated//è®¿é—®ç±»åˆ«ç¬¦(ç±»)
+    begin//å—æ ‡è®°
+    case//è¯­å¥
+    cdecl//å‡½æ•°è°ƒç”¨åå®š
+    class//ç±»å‹
+    const//å£°æ˜æˆ–æŒ‡ä»¤(å‚æ•°)
+    constructor//ç‰¹æ®Šæ–¹æ³•
+    contains//è¿ç®—ç¬¦(é›†åˆ)
+    default//æŒ‡ä»¤(å±æ€§)
     delayed
     deprecated11
-    destructor//ÌØÊâ·½·¨
-    dispid//dispinterface ½Ó¿ÚÀà±ğ·û
-    dispinterface//ÀàĞÍ
-    div//ÔËËã·û
-    do//Óï¾ä
-    downto//Óï¾ä(for)
-    dynamic//Ö¸Áî(·½·¨)
-    else//Óï¾ä(if»òcase)
-    end//¿é±ê¼Ç
-    except//Óï¾ä(Òì³£´¦Àí)
-    export//Ïòºó¼æÈİ(Àà)
-    exports//ÉùÃ÷
-    external//Ö¸Áî(º¯Êı)
-    far//Ïòºó¼æÈİ(Àà)
+    destructor//ç‰¹æ®Šæ–¹æ³•
+    dispid//dispinterface æ¥å£ç±»åˆ«ç¬¦
+    dispinterface//ç±»å‹
+    div//è¿ç®—ç¬¦
+    do//è¯­å¥
+    downto//è¯­å¥(for)
+    dynamic//æŒ‡ä»¤(æ–¹æ³•)
+    else//è¯­å¥(ifæˆ–case)
+    end//å—æ ‡è®°
+    except//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    export//å‘åå…¼å®¹(ç±»)
+    exports//å£°æ˜
+    external//æŒ‡ä»¤(å‡½æ•°)
+    far//å‘åå…¼å®¹(ç±»)
     far1
-    file//ÀàĞÍ
+    file//ç±»å‹
     final
-    finalization//µ¥Ôª½á¹¹
-    finally//Óï¾ä(Òì³£´¦Àí)
-    for//Óï¾ä
-    forward//º¯ÊıÖ¸Áî
-    function//ÉùÃ÷
-    goto//Óï¾ä
-    if//Óï¾ä
-    implementation//µ¥Ôª½á¹¹
-    implements//Ö¸Áî(ÊôĞÔ)
-    in//ÔËËã·û(¼¯ºÏ)
-    index//Ö¸Áî(dispinterface ½Ó¿Ú)
-    inherited//Óï¾ä
-    initialization//µ¥Ôª½á¹¹
-    inline//Ïòºó¼æÈİ(¼ûasm)
-    interface//ÀàĞÍ
-    is//ÔËËã·û(RTTI)
-    label//ÉùÃ÷
-    library//³ÌĞò½á¹¹
-    message//Ö¸Áî(·½·¨)
-    mod//ÔËËã·û(ÊıÑ§)
-    name//Ö¸Áî(º¯Êı)
-    near//Ïòºó¼æÈİ(Àà)
-    nil//ÊıÖµ
-    nodefault//Ö¸Áî(ÊôĞÔ)
-    not//ÔËËã·û(²¼¶û)
-    object//Ïòºó¼æÈİ(Àà)
-    of//Óï¾ä(case)
-    on//Óï¾ä(Òì³£´¦Àí)
-    or//ÔËËã·û(²¼¶û)
-    out//Ö¸Áî(²ÎÊı)
-    overload//º¯ÊıÖ¸Áî
-    override//º¯ÊıÖ¸Áî
-    package//³ÌĞò½á¹¹(¿Ø¼ş°ü)
-    packed//Ö¸Áî(¼ÇÂ¼)
-    pascal//º¯Êıµ÷ÓÃĞ­¶¨
-    private//·ÃÎÊÀà±ğ·û(class)
-    procedure//ÉùÃ÷
-    program//³ÌĞò½á¹¹
-    property//ÉùÃ÷
-    protected//·ÃÎÊÀà±ğ·û(Àà)
-    public//·ÃÎÊÀà±ğ·û(Àà)
-    published//·ÃÎÊÀà±ğ·û(Àà)
-    raise//Óï¾ä(Òì³£´¦Àí)
-    read//ÊôĞÔÀà±ğ·û
-    readonly//dispatch ½Ó¿ÚÀà±ğ·û
-    record//ÀàĞÍ
-    register//º¯Êıµ÷ÓÃĞ­¶¨
-    reintroduce//º¯ÊıÖ¸Áî
-    repeat//Óï¾ä
-    requires//³ÌĞò½á¹¹(¿Ø¼ş°ü)
-    resident//Ö¸Áî(º¯Êı)
-    resourcestring//ÀàĞÍ
-    safecall//º¯Êıµ÷ÓÃĞ­¶¨
-    set//ÀàĞÍ
-    shl//ÔËËã·û(ÊıÑ§)
-    shr//ÔËËã·û(ÊıÑ§)
-    stdcall//º¯Êıµ÷ÓÃĞ­¶¨
-    stored//Ö¸Áî(ÊôĞÔ)
-    string//ÀàĞÍ
-    then//Óï¾ä(if)
-    threadvar//ÉùÃ÷
-    to//Óï¾ä(for)
-    try//Óï¾ä(Òì³£´¦Àí)
-    type//ÉùÃ÷
-    unit//µ¥Ôª½á¹¹
-    until//Óï¾ä
-    uses//µ¥Ôª½á¹¹
-    var//ÉùÃ÷
-    virtual//Ö¸Áî(·½·¨)
-    while//Óï¾ä
-    with//Óï¾ä
-    write//ÊôĞÔÀà±ğ·û
-    writeonly//dispatch ½Ó¿ÚÀà±ğ·û
-    xor//ÔËËã·û(²¼¶û)
+    finalization//å•å…ƒç»“æ„
+    finally//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    for//è¯­å¥
+    forward//å‡½æ•°æŒ‡ä»¤
+    function//å£°æ˜
+    goto//è¯­å¥
+    if//è¯­å¥
+    implementation//å•å…ƒç»“æ„
+    implements//æŒ‡ä»¤(å±æ€§)
+    in//è¿ç®—ç¬¦(é›†åˆ)
+    index//æŒ‡ä»¤(dispinterface æ¥å£)
+    inherited//è¯­å¥
+    initialization//å•å…ƒç»“æ„
+    inline//å‘åå…¼å®¹(è§asm)
+    interface//ç±»å‹
+    is//è¿ç®—ç¬¦(RTTI)
+    label//å£°æ˜
+    library//ç¨‹åºç»“æ„
+    message//æŒ‡ä»¤(æ–¹æ³•)
+    mod//è¿ç®—ç¬¦(æ•°å­¦)
+    name//æŒ‡ä»¤(å‡½æ•°)
+    near//å‘åå…¼å®¹(ç±»)
+    nil//æ•°å€¼
+    nodefault//æŒ‡ä»¤(å±æ€§)
+    not//è¿ç®—ç¬¦(å¸ƒå°”)
+    object//å‘åå…¼å®¹(ç±»)
+    of//è¯­å¥(case)
+    on//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    or//è¿ç®—ç¬¦(å¸ƒå°”)
+    out//æŒ‡ä»¤(å‚æ•°)
+    overload//å‡½æ•°æŒ‡ä»¤
+    override//å‡½æ•°æŒ‡ä»¤
+    package//ç¨‹åºç»“æ„(æ§ä»¶åŒ…)
+    packed//æŒ‡ä»¤(è®°å½•)
+    pascal//å‡½æ•°è°ƒç”¨åå®š
+    private//è®¿é—®ç±»åˆ«ç¬¦(class)
+    procedure//å£°æ˜
+    program//ç¨‹åºç»“æ„
+    property//å£°æ˜
+    protected//è®¿é—®ç±»åˆ«ç¬¦(ç±»)
+    public//è®¿é—®ç±»åˆ«ç¬¦(ç±»)
+    published//è®¿é—®ç±»åˆ«ç¬¦(ç±»)
+    raise//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    read//å±æ€§ç±»åˆ«ç¬¦
+    readonly//dispatch æ¥å£ç±»åˆ«ç¬¦
+    record//ç±»å‹
+    register//å‡½æ•°è°ƒç”¨åå®š
+    reintroduce//å‡½æ•°æŒ‡ä»¤
+    repeat//è¯­å¥
+    requires//ç¨‹åºç»“æ„(æ§ä»¶åŒ…)
+    resident//æŒ‡ä»¤(å‡½æ•°)
+    resourcestring//ç±»å‹
+    safecall//å‡½æ•°è°ƒç”¨åå®š
+    set//ç±»å‹
+    shl//è¿ç®—ç¬¦(æ•°å­¦)
+    shr//è¿ç®—ç¬¦(æ•°å­¦)
+    stdcall//å‡½æ•°è°ƒç”¨åå®š
+    stored//æŒ‡ä»¤(å±æ€§)
+    string//ç±»å‹
+    then//è¯­å¥(if)
+    threadvar//å£°æ˜
+    to//è¯­å¥(for)
+    try//è¯­å¥(å¼‚å¸¸å¤„ç†)
+    type//å£°æ˜
+    unit//å•å…ƒç»“æ„
+    until//è¯­å¥
+    uses//å•å…ƒç»“æ„
+    var//å£°æ˜
+    virtual//æŒ‡ä»¤(æ–¹æ³•)
+    while//è¯­å¥
+    with//è¯­å¥
+    write//å±æ€§ç±»åˆ«ç¬¦
+    writeonly//dispatch æ¥å£ç±»åˆ«ç¬¦
+    xor//è¿ç®—ç¬¦(å¸ƒå°”)
     
 Identifiers denote constants, variables, fields, types, properties, procedures, functions, programs, units, libraries, and packages. An identifier can be of any length, but only the first 255 characters are significant. An identifier must begin with an alphabetic character, a Unicode character, or an underscore (_) and cannot contain spaces. Alphanumeric characters, Unicode characters, digits, and underscores are allowed after the first character. Reserved words cannot be used as identifiers.
-±êÊ¶·û°üÀ¨£º        ³£Á¿£¬     ±äÁ¿£¬      ÀàĞÍ£¬  ½á¹¹£¬ ÊôĞÔ£¬       ¹ı³Ì£¬       º¯Êı£¬     ³ÌĞò£¬    µ¥Ôª£¬  ¿â£¬ºÍ         °ü¡£      Ò»¸ö±êÊ¶·û¿ÉÒÔÊÇÈÎÒâ³¤¶È£¬            but only the first 255ĞÔ×´ÊÇÖØÒªµÄ¡£±êÊ¶·û¿ªÊ¼±ØĞëalphabetic×Ö·ûÊ¶±ğÓëUnicode×Ö·û£¬»Æ½ğÄê£¬underscore£¨_£©ºÍ²»°üº¬¿Õ¼ä¡£alphanumeric Unicode×Ö·û£¬×Ö·û£¬Êı×Ö£¬and underscores are allowed after the first×Ö·û¡£±£Áô×Öcannot be used as±êÊ¶·û¡£
+æ ‡è¯†ç¬¦åŒ…æ‹¬ï¼š        å¸¸é‡ï¼Œ     å˜é‡ï¼Œ      ç±»å‹ï¼Œ  ç»“æ„ï¼Œ å±æ€§ï¼Œ       è¿‡ç¨‹ï¼Œ       å‡½æ•°ï¼Œ     ç¨‹åºï¼Œ    å•å…ƒï¼Œ  åº“ï¼Œå’Œ         åŒ…ã€‚      ä¸€ä¸ªæ ‡è¯†ç¬¦å¯ä»¥æ˜¯ä»»æ„é•¿åº¦ï¼Œ            but only the first 255æ€§çŠ¶æ˜¯é‡è¦çš„ã€‚æ ‡è¯†ç¬¦å¼€å§‹å¿…é¡»alphabeticå­—ç¬¦è¯†åˆ«ä¸Unicodeå­—ç¬¦ï¼Œé»„é‡‘å¹´ï¼Œunderscoreï¼ˆ_ï¼‰å’Œä¸åŒ…å«ç©ºé—´ã€‚alphanumeric Unicodeå­—ç¬¦ï¼Œå­—ç¬¦ï¼Œæ•°å­—ï¼Œand underscores are allowed after the firstå­—ç¬¦ã€‚ä¿ç•™å­—cannot be used asæ ‡è¯†ç¬¦ã€‚
 
-Delphi ×¢ÊÍÀàĞÍ£º
+Delphi æ³¨é‡Šç±»å‹ï¼š
 1 //
 2 (* *)
 3 { }
 
-×¢Òâ£ºÈç¹û×ó´óÀ¨ºÅ»òÔ²À¨ºÅ-ĞÇºÅºóÃæ¸úÃÀÔª·ûºÅ($)£¬ÄÇÃ´ÆäÖĞµÄÄÚÈİ¾Í³ÉÁË±àÒëÖ¸Áî£¬Èç {$X+}¡£
-Êµ¼ÊÉÏ£¬±àÒëÖ¸ÁîÈÔÊÇ×¢ÊÍ¡£ÀıÈç£¬{$X+ This is a comment} ÊÇºÏ·¨µÄ¡£Õâ¼ÈÊÇÓĞĞ§µÄ±àÒëÖ¸ÁîÓÖÊÇÒ»Ìõ×¢ÊÍ£¬¾¡¹ÜÃ÷ÖÇµÄ³ÌĞòÔ±ºÜ¿ÉÄÜ»á×¢Òâ°Ñ±àÒëÖ¸ÁîºÍ×¢ÊÍ·Ö¿ª¡£
+æ³¨æ„ï¼šå¦‚æœå·¦å¤§æ‹¬å·æˆ–åœ†æ‹¬å·-æ˜Ÿå·åé¢è·Ÿç¾å…ƒç¬¦å·($)ï¼Œé‚£ä¹ˆå…¶ä¸­çš„å†…å®¹å°±æˆäº†ç¼–è¯‘æŒ‡ä»¤ï¼Œå¦‚ {$X+}ã€‚
+å®é™…ä¸Šï¼Œç¼–è¯‘æŒ‡ä»¤ä»æ˜¯æ³¨é‡Šã€‚ä¾‹å¦‚ï¼Œ{$X+ This is a comment} æ˜¯åˆæ³•çš„ã€‚è¿™æ—¢æ˜¯æœ‰æ•ˆçš„ç¼–è¯‘æŒ‡ä»¤åˆæ˜¯ä¸€æ¡æ³¨é‡Šï¼Œå°½ç®¡æ˜æ™ºçš„ç¨‹åºå‘˜å¾ˆå¯èƒ½ä¼šæ³¨æ„æŠŠç¼–è¯‘æŒ‡ä»¤å’Œæ³¨é‡Šåˆ†å¼€ã€‚
 
 
 
 
-C++±£Áô×Ö
-»ù±¾µÄÊı¾İÀàĞÍ¹Ø¼ü×Ö£ºvoid, int, char, float, double, bool
-ÀàĞÍĞŞÊÎ¹Ø¼ü×Ö£ºlong, short, singed, unsigned 
-²¼¶ûĞÍ×ÖÃæÖµ£ºtrue, false
-·Ç³£ÖØÒªµÄ±äÁ¿ÉùÃ÷ĞŞÊÎ·û£ºconst, inline
-´æ´¢Àà±ğ¹Ø¼ü×Ö£ºauto, static, extern, , register
-¿ØÖÆ½á¹¹¹Ø¼ü×Ö£ºfor, while, if, else, do
-switchÓï¾ä¹Ø¼ü×Ö£ºswitch, case, default
-Â·¾¶Ìø×ª¹Ø¼ü×Ö£ºbreak, continue, return, goto
-¶¯Ì¬´´½¨±äÁ¿¹Ø¼ü×Ö£ºnew, delete
-³¤¶ÈÔËËã·û£ºsizeof
-¸´ºÏÀàĞÍ¹Ø¼ü×Ö£ºclass, struct, enum, union, typedef
-ÓëÀà³ÉÔ±Ïà¹Ø¹Ø¼ü×Ö£ºthis, friend, virtual, mutable, explicit, operator 
-ÅÉÉúÀà¼Ì³Ğ·½Ê½£ºprivate, protected, public
-Ä£°å£ºtemplate, typename
-ÃüÃû¿Õ¼ä£ºnamespace, using
-Òì³£´¦Àí£ºcatch, throw, try,
-¸÷ÖÖ²Ù×÷·ûµÄÌæ´úÃû£ºand, and_eq, bitand, bitor, compl, not, not_eq, or, or_eq, xor, xor_eq
-ÆäËû²»³£ÓÃµÄ£ºasm, export, typeid, volatile
+C++ä¿ç•™å­—
+åŸºæœ¬çš„æ•°æ®ç±»å‹å…³é”®å­—ï¼švoid, int, char, float, double, bool
+ç±»å‹ä¿®é¥°å…³é”®å­—ï¼šlong, short, singed, unsigned 
+å¸ƒå°”å‹å­—é¢å€¼ï¼štrue, false
+éå¸¸é‡è¦çš„å˜é‡å£°æ˜ä¿®é¥°ç¬¦ï¼šconst, inline
+å­˜å‚¨ç±»åˆ«å…³é”®å­—ï¼šauto, static, extern, , register
+æ§åˆ¶ç»“æ„å…³é”®å­—ï¼šfor, while, if, else, do
+switchè¯­å¥å…³é”®å­—ï¼šswitch, case, default
+è·¯å¾„è·³è½¬å…³é”®å­—ï¼šbreak, continue, return, goto
+åŠ¨æ€åˆ›å»ºå˜é‡å…³é”®å­—ï¼šnew, delete
+é•¿åº¦è¿ç®—ç¬¦ï¼šsizeof
+å¤åˆç±»å‹å…³é”®å­—ï¼šclass, struct, enum, union, typedef
+ä¸ç±»æˆå‘˜ç›¸å…³å…³é”®å­—ï¼šthis, friend, virtual, mutable, explicit, operator 
+æ´¾ç”Ÿç±»ç»§æ‰¿æ–¹å¼ï¼šprivate, protected, public
+æ¨¡æ¿ï¼štemplate, typename
+å‘½åç©ºé—´ï¼šnamespace, using
+å¼‚å¸¸å¤„ç†ï¼šcatch, throw, try,
+å„ç§æ“ä½œç¬¦çš„æ›¿ä»£åï¼šand, and_eq, bitand, bitor, compl, not, not_eq, or, or_eq, xor, xor_eq
+å…¶ä»–ä¸å¸¸ç”¨çš„ï¼šasm, export, typeid, volatile
 
-C++ ×¢ÊÍÀàĞÍ£º
+C++ æ³¨é‡Šç±»å‹ï¼š
 1 /*   */
 2 //

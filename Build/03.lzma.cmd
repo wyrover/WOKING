@@ -1,25 +1,25 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼ 
+:: å½“å‰ç›®å½• 
 set "CurrentCD=%~dp0"
 
-:: git ³ÌĞòÂ·¾¶
+:: git ç¨‹åºè·¯å¾„
 set "GITBIN=D:\Tools\Git\bin"
 
-:: MSYS ³ÌĞòÂ·¾¶
+:: MSYS ç¨‹åºè·¯å¾„
 set "MSYSBIN=F:\Green\Language\MSYS\bin"
 set "MINGWBIN=F:\Green\Language\MSYS\mingw\bin"
 
-:: MSYS2 ³ÌĞòÂ·¾¶
+:: MSYS2 ç¨‹åºè·¯å¾„
 set "MSYS2BIN=F:\Green\Language\MSYS2\usr\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYS2BIN%;%Path%"
 
-:: lzma Ô´´úÂëÂ·¾¶
+:: lzma æºä»£ç è·¯å¾„
 set "lzmasrc=E:\Source\03.lzma"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼
+:: è¿›å…¥æºä»£ç ç›®å½•
 set "lzmadisk=%lzmasrc:~0,2%"
 set "lzmapath=%lzmasrc:~3%"
 cd\
@@ -27,7 +27,7 @@ cd\
 cd\
 cd "%lzmapath%"
 
-:: ±àÒë
+:: ç¼–è¯‘
 %GITBIN%\git clean -xfd
 %MSYS2BIN%\bash -c "./autogen.sh"
 

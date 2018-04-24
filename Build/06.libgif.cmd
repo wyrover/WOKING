@@ -1,19 +1,19 @@
 @echo off
 
-:: µ±Ç°Ä¿Â¼
+:: å½“å‰ç›®å½•
 set CurrentCD=%~dp0
 
-:: MSYS µÄ³ÌĞòÄ¿Â¼ 
+:: MSYS çš„ç¨‹åºç›®å½• 
 set "MSYS=F:\Green\Language\MSYS"
 set "MSYSBIN=%MSYS%\bin"
 set "IncPath=%MSYS%\local\include"
 set "LibPath=%MSYS%\local\lib"
 set "MINGWBIN=%MSYS%\mingw\bin"
 
-:: libgif Ô´ÂëÂ·¾¶
+:: libgif æºç è·¯å¾„
 set "libgifsrc=E:\Source\06.libgif"
 
-:: ½øÈëÔ´´úÂëÄ¿Â¼ 
+:: è¿›å…¥æºä»£ç ç›®å½• 
 set "libgifDisk=%libgifsrc:~0,2%"
 set "libgifPath=%libgifsrc:~3%"
 cd\
@@ -21,16 +21,16 @@ cd\
 cd\
 cd "%libgifPath%"
 
-:: MSYS2 ³ÌĞòÂ·¾¶
+:: MSYS2 ç¨‹åºè·¯å¾„
 set "MSYS2BIN=F:\Green\Language\MSYS2\usr\bin"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYS2BIN%;%Path%"
 
-:: ±àÒë x64 ¾²Ì¬¿â
+:: ç¼–è¯‘ x64 é™æ€åº“
 bash -c "./autogen.sh"
 
-:: ÏµÍ³ËÑË÷Â·¾¶
+:: ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYSBIN%;%MINGWBIN%;%IncPath%;%LibPath%;%Path%"
 
 bash -c "make clean"
