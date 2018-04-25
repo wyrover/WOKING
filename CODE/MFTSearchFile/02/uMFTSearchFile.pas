@@ -6,7 +6,7 @@
 
 interface
 
-uses Windows, System.Classes, Generics.Collections, System.IniFiles, System.SysUtils;
+uses Windows, System.Classes, Generics.Collections;
 
 { 获取磁盘所有文件列表 }
 function GetLogicalDiskAllFiles(const chrLogiclDiskName: Char; var FileList: TStringList; const bSort: Boolean = False): Boolean;
