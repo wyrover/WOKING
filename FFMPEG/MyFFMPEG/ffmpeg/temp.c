@@ -15,7 +15,7 @@
 
 char *avresample_configuration(void) 
 { 
-  return *(char*)(0); 
+  return (char*)(0); 
 }
  
 unsigned avresample_version(void) 
