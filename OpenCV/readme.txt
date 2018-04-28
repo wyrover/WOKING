@@ -1,26 +1,7 @@
-﻿01 无扩展模块动态库（MT、CUDA）版；
-02 无扩展模块静态库（MT、CUDA）版；
-   强制包含这些库：Winmm.lib Netapi32.lib Userenv.lib Mincore.lib F:\Green\Language\VS2015\lib\libzlib.lib F:\Green\Language\VS2015\lib\pcre2-16.lib F:\Green\Language\VS2015\lib\libharfbuzz.lib
+﻿OpenCV 编译：
+	1 VS2017 动态库 MT 全模块 无GPU 多个DLL (单一DLL，无法编译 JAVA、MATLAB)
+	2 VS2017 动态库 MT 全模块 无GPU 单一DLL (无 JAVA、MATLAB)
+	3 VS2017 动态库 MT 全模块 有GPU 多个DLL (注：CUDA9.1 不支持 VS2017)
 
-03 有扩展模块动态库（MT、CUDA）版；
-
-
-我的编译：
-
-CPU
-  1、无扩展模块：
-	a)、动态库、单一DLL文件 MT		①
-		1
-	b)、静态库 		   	②
-  2、有扩展模块：
-	a)、动态库			③
-	b)、静态库			④
-
-
-GPU
-  1、无扩展模块：
-	a)、动态库			⑤
-	b)、静态库			⑥
-  2、有扩展模块：
-	a)、动态库			⑦
-	b)、静态库			⑧
+ 全模块时，必须强制包含这些库：
+ msvcrt.lib Winmm.lib Netapi32.lib Userenv.lib Mincore.lib F:\Green\Language\VS2015\lib\libzlib.lib F:\Green\Language\VS2015\lib\libpng.lib F:\Green\Language\VS2015\lib\pcre2-16.lib F:\Green\Language\VS2015\lib\libharfbuzz.lib

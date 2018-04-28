@@ -67,14 +67,14 @@ begin
   begin
     if (Trim(strsList.Strings[III]) <> '') and (strsList.Strings[III] <> ';') then
     begin
-      if SysUtils.DirectoryExists(strsList.Strings[III]) then
-      begin
+      //if SysUtils.DirectoryExists(strsList.Strings[III]) then
+      //begin
         strSearchPath := strSearchPath + ';' + strsList.Strings[III];
-      end
-      else
-      begin
-        ShowMessage(Format('%s 文件夹不存在', [strsList.Strings[III]]));
-      end;
+      //end
+      //else
+      //begin
+      //  ShowMessage(Format('%s 文件夹不存在', [strsList.Strings[III]]));
+      //end;
     end;
   end;
   strSearchPath := RightStr(strSearchPath, Length(strSearchPath) - 1);
