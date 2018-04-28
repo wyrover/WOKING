@@ -1,0 +1,4 @@
+﻿01 CPU + OPENCV + MT + StaticLib  < 独立使用      >
+02 CPU - OPENCV + MT + StaticLib  < 供 OpenCV 使用>
+03 GPU + OPENCV + MT + StaticLib  < 独立使用      >
+04 GPU - OPENCV + MT + StaticLib  < 供 OpenCV 使用>
