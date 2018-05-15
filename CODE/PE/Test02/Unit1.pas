@@ -77,6 +77,26 @@ type
     lbl55: TLabel;
     lbl56: TLabel;
     mmoHexView: TMemo;
+    lbl57: TLabel;
+    lbl58: TLabel;
+    lbl59: TLabel;
+    lbl60: TLabel;
+    lbl61: TLabel;
+    lbl62: TLabel;
+    lbl63: TLabel;
+    lbl64: TLabel;
+    lbl65: TLabel;
+    lbl66: TLabel;
+    lbl67: TLabel;
+    lbl68: TLabel;
+    lbl69: TLabel;
+    lbl70: TLabel;
+    lbl71: TLabel;
+    lbl72: TLabel;
+    lbl73: TLabel;
+    lbl74: TLabel;
+    lbl75: TLabel;
+    lbl76: TLabel;
     procedure srchbxPEFileNameInvokeSearch(Sender: TObject);
   private
     { 检测是否是PE文件 }
@@ -121,7 +141,7 @@ begin
       strPEFileName := FileName;
       if CheckPERight(strPEFileName, bX64, bDll) then
       begin
-        TSearchBox(Sender).Text := strPEFileName;
+        srchbxPEFileName.Text := strPEFileName;
         { 解析PE }
         AnalyzePE(strPEFileName, bX64, bDll);
       end
@@ -269,8 +289,27 @@ begin
 end;
 
 procedure TForm1.ShowNTHeaderX86(const strFileName: string);
+var
+  hPEFile: Cardinal;
+  idh    : TImageDosHeader;
+  inh    : TImageNtHeaders32;
 begin
-
+  hPEFile := FileOpen(strFileName, fmOpenRead);
+  try
+    FileRead(hPEFile, idh, SizeOf(TImageDosHeader));
+    FileSeek(hPEFile, idh._lfanew, 0);
+    FileRead(hPEFile, inh, SizeOf(TImageNtHeaders32));
+    lbl75.Caption := Format('$%0.4x', [inh.Signature]);
+    lbl68.Caption := Format('$%0.2x', [inh.FileHeader.Machine]);
+    lbl69.Caption := Format('$%0.2x', [inh.FileHeader.NumberOfSections]);
+    lbl70.Caption := Format('$%0.4x', [inh.FileHeader.TimeDateStamp]);
+    lbl71.Caption := Format('$%0.4x', [inh.FileHeader.PointerToSymbolTable]);
+    lbl72.Caption := Format('$%0.4x', [inh.FileHeader.NumberOfSymbols]);
+    lbl73.Caption := Format('$%0.2x', [inh.FileHeader.SizeOfOptionalHeader]);
+    lbl74.Caption := Format('$%0.2x', [inh.FileHeader.Characteristics]);
+  finally
+    FileClose(hPEFile);
+  end;
 end;
 
 { 读取 DOS STUB }

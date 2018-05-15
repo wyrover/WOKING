@@ -32,6 +32,7 @@ object Form1: TForm1
     ParentFont = False
     ReadOnly = True
     TabOrder = 0
+    OnDblClick = srchbxPEFileNameInvokeSearch
     OnInvokeSearch = srchbxPEFileNameInvokeSearch
   end
   object pnl1: TPanel
@@ -45,6 +46,7 @@ object Form1: TForm1
     Ctl3D = False
     ParentCtl3D = False
     TabOrder = 1
+    OnDblClick = srchbxPEFileNameInvokeSearch
     DesignSize = (
       787
       509)
@@ -53,7 +55,7 @@ object Form1: TForm1
       Top = 6
       Width = 769
       Height = 494
-      ActivePage = ts3
+      ActivePage = ts4
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -81,7 +83,6 @@ object Form1: TForm1
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
-        ExplicitLeft = 0
         object lbl1: TLabel
           Left = 20
           Top = 12
@@ -850,7 +851,6 @@ object Form1: TForm1
       object ts3: TTabSheet
         Caption = '2'#12289'DOS STUB'
         ImageIndex = 2
-        ExplicitLeft = 0
         DesignSize = (
           761
           463)
@@ -873,6 +873,271 @@ object Form1: TForm1
       object ts4: TTabSheet
         Caption = '3'#12289'NT HEADER'
         ImageIndex = 3
+        ExplicitLeft = 0
+        object lbl57: TLabel
+          Left = 24
+          Top = 16
+          Width = 72
+          Height = 15
+          Caption = 'Signature'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl58: TLabel
+          Left = 24
+          Top = 41
+          Width = 80
+          Height = 15
+          Caption = 'FileHeader'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clLime
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl59: TLabel
+          Left = 20
+          Top = 234
+          Width = 112
+          Height = 15
+          Caption = 'OptionalHeader'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clLime
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl60: TLabel
+          Left = 52
+          Top = 63
+          Width = 56
+          Height = 15
+          Caption = 'Machine'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl61: TLabel
+          Left = 52
+          Top = 86
+          Width = 128
+          Height = 15
+          Caption = 'NumberOfSections'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl62: TLabel
+          Left = 52
+          Top = 109
+          Width = 104
+          Height = 15
+          Caption = 'TimeDateStamp'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl63: TLabel
+          Left = 52
+          Top = 132
+          Width = 160
+          Height = 15
+          Caption = 'PointerToSymbolTable'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl64: TLabel
+          Left = 52
+          Top = 156
+          Width = 120
+          Height = 15
+          Caption = 'NumberOfSymbols'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl65: TLabel
+          Left = 52
+          Top = 179
+          Width = 160
+          Height = 15
+          Caption = 'SizeOfOptionalHeader'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl66: TLabel
+          Left = 52
+          Top = 202
+          Width = 120
+          Height = 15
+          Caption = 'Characteristics'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlue
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl67: TLabel
+          Left = 280
+          Top = 16
+          Width = 72
+          Height = 15
+          Caption = 'Signature'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl68: TLabel
+          Left = 280
+          Top = 63
+          Width = 56
+          Height = 15
+          Caption = 'Machine'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl69: TLabel
+          Left = 280
+          Top = 86
+          Width = 128
+          Height = 15
+          Caption = 'NumberOfSections'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl70: TLabel
+          Left = 280
+          Top = 109
+          Width = 104
+          Height = 15
+          Caption = 'TimeDateStamp'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl71: TLabel
+          Left = 280
+          Top = 132
+          Width = 160
+          Height = 15
+          Caption = 'PointerToSymbolTable'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl72: TLabel
+          Left = 280
+          Top = 156
+          Width = 120
+          Height = 15
+          Caption = 'NumberOfSymbols'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl73: TLabel
+          Left = 280
+          Top = 179
+          Width = 160
+          Height = 15
+          Caption = 'SizeOfOptionalHeader'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl74: TLabel
+          Left = 280
+          Top = 202
+          Width = 120
+          Height = 15
+          Caption = 'Characteristics'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl75: TLabel
+          Left = 20
+          Top = 28
+          Width = 726
+          Height = 19
+          Caption = 
+            #8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213 +
+            #8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clSilver
+          Font.Height = -13
+          Font.Name = #24494#36719#38597#40657
+          Font.Style = []
+          ParentFont = False
+        end
+        object lbl76: TLabel
+          Left = 20
+          Top = 216
+          Width = 726
+          Height = 19
+          Caption = 
+            #8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213 +
+            #8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213#8213
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clSilver
+          Font.Height = -13
+          Font.Name = #24494#36719#38597#40657
+          Font.Style = []
+          ParentFont = False
+        end
       end
       object ts5: TTabSheet
         Caption = '4'#12289#33410#34920
