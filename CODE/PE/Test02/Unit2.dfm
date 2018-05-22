@@ -116,8 +116,8 @@ object Form2: TForm2
       ParentFont = False
     end
     object lbl7: TLabel
-      Left = 244
-      Top = 143
+      Left = 243
+      Top = 146
       Width = 651
       Height = 13
       Caption = 
