@@ -76,7 +76,7 @@ type
     lbl54: TLabel;
     lbl55: TLabel;
     lbl56: TLabel;
-    mmoHexView: TMemo;
+    mmoDosStub: TMemo;
     lbl57: TLabel;
     lbl58: TLabel;
     lbl59: TLabel;
@@ -294,6 +294,8 @@ type
     pm6: TPopupMenu;
     mniReadSectionData: TMenuItem;
     mniSectionAttr: TMenuItem;
+    lv2: TListView;
+    mmoSection: TMemo;
     procedure srchbxPEFileNameInvokeSearch(Sender: TObject);
     procedure scrlbx1MouseWheel(Sender: TObject; Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
     procedure IMAGEFILEMACHINEAMD648664AMD64K81DrawItem(Sender: TObject; ACanvas: TCanvas; ARect: TRect; Selected: Boolean);
@@ -303,6 +305,7 @@ type
     procedure mniIMAGEDLLCHARACTERISTICSTERMINALSERVERAWARE0x80001MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
     procedure mniReadSectionDataClick(Sender: TObject);
     procedure mniSectionAttrClick(Sender: TObject);
+    procedure lv2Click(Sender: TObject);
   private
     { 检测是否是PE文件 }
     function CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
@@ -317,7 +320,7 @@ type
     { 读取 DOS STUB }
     procedure ShowDosStub(const strPEFileName: string);
     { 16进制显示 }
-    procedure ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer);
+    procedure ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer; mmo: TMemo);
     { 显示 NT HEADER 信息 }
     procedure ShowNTHeaderX64(const strFileName: string);
     procedure ShowNTHeaderX86(const strFileName: string);
@@ -346,9 +349,9 @@ end;
 
 procedure TForm1.srchbxPEFileNameInvokeSearch(Sender: TObject);
 var
-  strPEFileName: string;
   bX64         : Boolean;
   bDll         : Boolean;
+  strPEFileName: string;
 begin
   with TOpenDialog.Create(nil) do
   begin
@@ -415,6 +418,14 @@ begin
   Width := 800;
 end;
 
+procedure TForm1.lv2Click(Sender: TObject);
+begin
+  if lv2.ItemIndex = -1 then
+    Exit;
+
+  ShowHexView(srchbxPEFileName.Text, StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]), StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]) + StrToInt(lv2.Items[lv2.ItemIndex].SubItems[2]), mmoSection);
+end;
+
 procedure TForm1.mniIMAGEDLLCHARACTERISTICSTERMINALSERVERAWARE0x80001MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
 begin
   Width := 1050;
@@ -422,7 +433,12 @@ end;
 
 procedure TForm1.mniReadSectionDataClick(Sender: TObject);
 begin
-  //
+  if lv1.ItemIndex = -1 then
+    Exit;
+
+  lv2.ItemIndex        := lv1.ItemIndex;
+  pgc1.ActivePageIndex := 5;
+  ShowHexView(srchbxPEFileName.Text, StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]), StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]) + StrToInt(lv2.Items[lv2.ItemIndex].SubItems[2]), mmoSection);
 end;
 
 procedure TForm1.mniSectionAttrClick(Sender: TObject);
@@ -438,6 +454,8 @@ procedure TForm1.AnalyzePE(const strPEFileName: String; const bX64, bDll: Boolea
 begin
   pgc1.ActivePageIndex := 0;
   pgc1.Visible         := True;
+  mmoSection.Clear;
+  mmoDosStub.Clear;
 
   if not bX64 then
     AnalyzePEX86(strPEFileName, bDll)
@@ -484,7 +502,7 @@ begin
 end;
 
 { 16进制显示 }
-procedure TForm1.ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer);
+procedure TForm1.ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer; mmo: TMemo);
 var
   hPEFile   : Cardinal;
   buffer    : array of Byte;
@@ -502,7 +520,8 @@ begin
     SetLength(buffer, intLen);
     FileRead(hPEFile, buffer[0], intLen);
     strLine := '';
-    mmoHexView.Clear;
+    mmo.Lines.BeginUpdate;
+    mmo.Clear;
     JJJ     := 0;
     for III := 0 to intLen - 1 do
     begin
@@ -512,7 +531,7 @@ begin
       if III mod 16 = 15 then
       begin
         Inc(JJJ);
-        mmoHexView.Lines.Add(IntToHex(intStartPos + 16 * (JJJ - 1), 8) + '  ' + strLine + '  ' + strContent);
+        mmo.Lines.Add(IntToHex(intStartPos + 16 * (JJJ - 1), 8) + '  ' + strLine + '  ' + strContent);
         strLine    := '';
         strContent := '';
       end;
@@ -527,8 +546,9 @@ begin
       begin
         strBlank := strBlank + ' ';
       end;
-      mmoHexView.Lines.Add(IntToHex(intStartPos + 16 * JJJ, 8) + '  ' + strLine + strBlank + '  ' + strContent);
+      mmo.Lines.Add(IntToHex(intStartPos + 16 * JJJ, 8) + '  ' + strLine + strBlank + '  ' + strContent);
     end;
+    mmo.Lines.EndUpdate;
 
   finally
     FileClose(hPEFile);
@@ -719,6 +739,21 @@ begin
         SubItems.Add(Format('$%0.8x', [sts[III].Characteristics]));
       end;
     end;
+
+    lv2.Items.Clear;
+    for III := 0 to intSectionTables - 1 do
+    begin
+      with lv2.Items.Add do
+      begin
+        Caption := string(sts[III].Name);
+        SubItems.Add(Format('$%0.8x', [sts[III].Misc.PhysicalAddress]));
+        SubItems.Add(Format('$%0.8x', [sts[III].VirtualAddress]));
+        SubItems.Add(Format('$%0.8x', [sts[III].SizeOfRawData]));
+        SubItems.Add(Format('$%0.8x', [sts[III].PointerToRawData]));
+        SubItems.Add(Format('$%0.8x', [sts[III].Characteristics]));
+      end;
+    end;
+
   finally
     FileClose(hPEFile);
   end;
@@ -736,7 +771,7 @@ begin
   finally
     FileClose(hPEFile);
   end;
-  ShowHexView(strPEFileName, SizeOf(TImageDosHeader), idh._lfanew);
+  ShowHexView(strPEFileName, SizeOf(TImageDosHeader), idh._lfanew, mmoDosStub);
 end;
 
 { 解析PE x64 }

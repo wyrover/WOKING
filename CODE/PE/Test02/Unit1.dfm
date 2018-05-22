@@ -55,7 +55,7 @@ object Form1: TForm1
       Top = 6
       Width = 788
       Height = 493
-      ActivePage = ts1
+      ActivePage = ts6
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -83,10 +83,6 @@ object Form1: TForm1
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 781
-        ExplicitHeight = 508
         object lbl1: TLabel
           Left = 20
           Top = 12
@@ -863,16 +859,12 @@ object Form1: TForm1
       object ts3: TTabSheet
         Caption = '2'#12289'DOS STUB'
         ImageIndex = 2
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 781
-        ExplicitHeight = 508
         DesignSize = (
           780
           462)
-        object mmoHexView: TMemo
-          Left = 8
-          Top = 8
+        object mmoDosStub: TMemo
+          Left = 13
+          Top = 11
           Width = 764
           Height = 448
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -884,17 +876,11 @@ object Form1: TForm1
           ParentFont = False
           ReadOnly = True
           TabOrder = 0
-          ExplicitWidth = 765
-          ExplicitHeight = 494
         end
       end
       object ts4: TTabSheet
         Caption = '3'#12289'NT HEADER'
         ImageIndex = 3
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 781
-        ExplicitHeight = 508
         DesignSize = (
           780
           462)
@@ -1177,8 +1163,6 @@ object Form1: TForm1
           ParentCtl3D = False
           TabOrder = 0
           OnMouseWheel = scrlbx1MouseWheel
-          ExplicitWidth = 741
-          ExplicitHeight = 243
           object lbl77: TLabel
             Left = 31
             Top = 11
@@ -3127,10 +3111,70 @@ object Form1: TForm1
       object ts6: TTabSheet
         Caption = '5'#12289#33410#25968#25454
         ImageIndex = 5
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 781
-        ExplicitHeight = 508
+        DesignSize = (
+          780
+          462)
+        object lv2: TListView
+          Left = 12
+          Top = 12
+          Width = 752
+          Height = 157
+          Anchors = [akLeft, akTop, akRight]
+          Columns = <
+            item
+              Caption = 'Name'
+              Width = 100
+            end
+            item
+              Caption = 'VSize'
+              Width = 100
+            end
+            item
+              Caption = 'VOffset'
+              Width = 100
+            end
+            item
+              Caption = 'RSize'
+              Width = 100
+            end
+            item
+              Caption = 'ROffset'
+              Width = 100
+            end
+            item
+              Caption = 'Characteristics'
+              Width = 120
+            end>
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -14
+          Font.Name = #23435#20307
+          Font.Style = []
+          GridLines = True
+          ReadOnly = True
+          RowSelect = True
+          ParentFont = False
+          TabOrder = 0
+          ViewStyle = vsReport
+          OnClick = lv2Click
+          OnDblClick = mniSectionAttrClick
+        end
+        object mmoSection: TMemo
+          Left = 12
+          Top = 180
+          Width = 752
+          Height = 271
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 1
+        end
       end
     end
   end
