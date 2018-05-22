@@ -1,4 +1,4 @@
-unit Unit1;
+ï»¿unit Unit1;
 {$WARN UNIT_PLATFORM OFF}
 
 interface
@@ -304,24 +304,24 @@ type
     procedure mniReadSectionDataClick(Sender: TObject);
     procedure mniSectionAttrClick(Sender: TObject);
   private
-    { ¼ì²âÊÇ·ñÊÇPEÎÄ¼ş }
+    { æ£€æµ‹æ˜¯å¦æ˜¯PEæ–‡ä»¶ }
     function CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
-    { ½âÎöPE }
+    { è§£æPE }
     procedure AnalyzePE(const strPEFileName: String; const bX64, bDll: Boolean);
     procedure AnalyzePEX86(const strPEFileName: string; const bDll: Boolean);
     procedure AnalyzePEX64(const strPEFileName: string; const bDll: Boolean);
-    { PE ¼ò½é }
+    { PE ç®€ä»‹ }
     procedure PEInfo(const strPEFileName: string; const bX64, bDll: Boolean);
-    { ¶ÁÈ¡ IMAGE DOS HEADER }
+    { è¯»å– IMAGE DOS HEADER }
     procedure ReadImageDosHeader(const strPEFileName: string);
-    { ¶ÁÈ¡ DOS STUB }
+    { è¯»å– DOS STUB }
     procedure ShowDosStub(const strPEFileName: string);
-    { 16½øÖÆÏÔÊ¾ }
+    { 16è¿›åˆ¶æ˜¾ç¤º }
     procedure ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer);
-    { ÏÔÊ¾ NT HEADER ĞÅÏ¢ }
+    { æ˜¾ç¤º NT HEADER ä¿¡æ¯ }
     procedure ShowNTHeaderX64(const strFileName: string);
     procedure ShowNTHeaderX86(const strFileName: string);
-    { ÏÔÊ¾ ½Ú±í }
+    { æ˜¾ç¤º èŠ‚è¡¨ }
     procedure ShowSectionTable(const strFileName: string; const bX64: Boolean);
   public
     { Public declarations }
@@ -339,9 +339,9 @@ uses Unit2, Unit3;
 procedure TForm1.scrlbx1MouseWheel(Sender: TObject; Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
 begin
   if WheelDelta < 0 then
-    SendMessage(scrlbx1.Handle, WM_VSCROLL, SB_LINEDOWN, 0) // ÏòÏÂ¹ö
+    SendMessage(scrlbx1.Handle, WM_VSCROLL, SB_LINEDOWN, 0) // å‘ä¸‹æ»š
   else
-    SendMessage(scrlbx1.Handle, WM_VSCROLL, SB_LINEUP, 0); // ÏòÉÏ¹ö
+    SendMessage(scrlbx1.Handle, WM_VSCROLL, SB_LINEUP, 0); // å‘ä¸Šæ»š
 end;
 
 procedure TForm1.srchbxPEFileNameInvokeSearch(Sender: TObject);
@@ -352,26 +352,26 @@ var
 begin
   with TOpenDialog.Create(nil) do
   begin
-    Filter := 'PEÎÄ¼ş(*.EXE;*.OCX;*.DLL;*.AX)|*.EXE;*.OCX;*.DLL;*.AX';
+    Filter := 'PEæ–‡ä»¶(*.EXE;*.OCX;*.DLL;*.AX)|*.EXE;*.OCX;*.DLL;*.AX';
     if Execute() then
     begin
       strPEFileName := FileName;
       if CheckPERight(strPEFileName, bX64, bDll) then
       begin
         srchbxPEFileName.Text := strPEFileName;
-        { ½âÎöPE }
+        { è§£æPE }
         AnalyzePE(strPEFileName, bX64, bDll);
       end
       else
       begin
-        ShowMessage('²»ÊÇPEÎÄ¼ş£¬»òÕßÎÄ¼ş±»Õ¼ÓÃ');
+        ShowMessage('ä¸æ˜¯PEæ–‡ä»¶ï¼Œæˆ–è€…æ–‡ä»¶è¢«å ç”¨');
       end;
     end;
     Free;
   end;
 end;
 
-{ ¼ì²âÊÇ·ñÊÇPEÎÄ¼ş }
+{ æ£€æµ‹æ˜¯å¦æ˜¯PEæ–‡ä»¶ }
 function TForm1.CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
 var
   idh    : TImageDosHeader;
@@ -400,7 +400,7 @@ end;
 
 procedure TForm1.IMAGEFILEMACHINEAMD648664AMD64K81DrawItem(Sender: TObject; ACanvas: TCanvas; ARect: TRect; Selected: Boolean);
 begin
-  ACanvas.Font.Name := 'ËÎÌå';
+  ACanvas.Font.Name := 'å®‹ä½“';
   ACanvas.Font.Size := 11;
   ACanvas.TextOut(ARect.Left, ARect.Top, (Sender as TMenuItem).Caption);
 end;
@@ -433,7 +433,7 @@ begin
   ShowSectionAttrForm(StrToInt(lv1.Selected.SubItems[4]));
 end;
 
-{ ½âÎöPE }
+{ è§£æPE }
 procedure TForm1.AnalyzePE(const strPEFileName: String; const bX64, bDll: Boolean);
 begin
   pgc1.ActivePageIndex := 0;
@@ -445,10 +445,10 @@ begin
     AnalyzePEX64(strPEFileName, bDll);
 end;
 
-{ PE ¼ò½é }
+{ PE ç®€ä»‹ }
 procedure TForm1.PEInfo(const strPEFileName: string; const bX64, bDll: Boolean);
 begin
-  lblPEInfo.Caption := Format('%s%sÎÄ¼ş', [Ifthen(bX64, '64Î»', '32Î»'), Ifthen(bDll, 'dll', 'exe')]);
+  lblPEInfo.Caption := Format('%s%sæ–‡ä»¶', [Ifthen(bX64, '64ä½', '32ä½'), Ifthen(bDll, 'dll', 'exe')]);
 end;
 
 procedure TForm1.ReadImageDosHeader(const strPEFileName: string);
@@ -483,7 +483,7 @@ begin
   end;
 end;
 
-{ 16½øÖÆÏÔÊ¾ }
+{ 16è¿›åˆ¶æ˜¾ç¤º }
 procedure TForm1.ShowHexView(const strFileName: String; const intStartPos, intEndPos: Integer);
 var
   hPEFile   : Cardinal;
@@ -506,7 +506,7 @@ begin
     JJJ     := 0;
     for III := 0 to intLen - 1 do
     begin
-      { Ã¿16¸ö×Ö·ûÒ»ĞĞ }
+      { æ¯16ä¸ªå­—ç¬¦ä¸€è¡Œ }
       strLine    := strLine + ' ' + IntToHex(buffer[III]);
       strContent := strContent + Ifthen((buffer[III] >= 33) and (buffer[III] <= 128), Chr(buffer[III]), '.');
       if III mod 16 = 15 then
@@ -518,7 +518,7 @@ begin
       end;
     end;
 
-    { ×îºóÒ»ĞĞ }
+    { æœ€åä¸€è¡Œ }
     if strLine <> '' then
     begin
       strBlank := '';
@@ -660,7 +660,7 @@ begin
   end;
 end;
 
-{ ÏÔÊ¾ ½Ú±í }
+{ æ˜¾ç¤º èŠ‚è¡¨ }
 procedure TForm1.ShowSectionTable(const strFileName: string; const bX64: Boolean);
 type
   PPImageSectionHeader = ^PImageSectionHeader;
@@ -724,7 +724,7 @@ begin
   end;
 end;
 
-{ ¶ÁÈ¡ DOS STUB }
+{ è¯»å– DOS STUB }
 procedure TForm1.ShowDosStub(const strPEFileName: string);
 var
   idh    : TImageDosHeader;
@@ -739,7 +739,7 @@ begin
   ShowHexView(strPEFileName, SizeOf(TImageDosHeader), idh._lfanew);
 end;
 
-{ ½âÎöPE x64 }
+{ è§£æPE x64 }
 procedure TForm1.AnalyzePEX64(const strPEFileName: string; const bDll: Boolean);
 begin
   PEInfo(strPEFileName, True, bDll);
@@ -749,7 +749,7 @@ begin
   ShowSectionTable(strPEFileName, True);
 end;
 
-{ ½âÎöPE x86 }
+{ è§£æPE x86 }
 procedure TForm1.AnalyzePEX86(const strPEFileName: string; const bDll: Boolean);
 begin
   PEInfo(strPEFileName, False, bDll);

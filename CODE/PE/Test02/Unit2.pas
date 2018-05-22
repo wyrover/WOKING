@@ -59,7 +59,7 @@ var
 begin
   with TForm2.Create(nil) do
   begin
-    Caption := Format('±êÖ¾£º($%0.4x)', [intCharSign]);
+    Caption := Format('æ ‡å¿—ï¼š($%0.4x)', [intCharSign]);
     for III := 1 to 15 do
     begin
       chkTemp         := TCheckBox(FindComponent('chk' + IntToStr(III)));

@@ -56,7 +56,7 @@ begin
         chkTemp.Checked := intTag and intAttr = intTag;
       end;
     end;
-    Caption := Format('Characteristics/Çø¶Î±ê¼Ç ($%0.8x)', [intAttr]);
+    Caption := Format('Characteristics/åŒºæ®µæ ‡è®° ($%0.8x)', [intAttr]);
     ShowModal;
     Free;
   end;
