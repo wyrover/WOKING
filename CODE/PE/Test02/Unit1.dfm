@@ -34,7 +34,6 @@ object Form1: TForm1
     TabOrder = 0
     OnDblClick = srchbxPEFileNameInvokeSearch
     OnInvokeSearch = srchbxPEFileNameInvokeSearch
-    ExplicitWidth = 809
   end
   object pnl1: TPanel
     Left = 8
@@ -48,8 +47,6 @@ object Form1: TForm1
     ParentCtl3D = False
     TabOrder = 1
     OnDblClick = srchbxPEFileNameInvokeSearch
-    ExplicitWidth = 809
-    ExplicitHeight = 556
     DesignSize = (
       806
       508)
@@ -68,10 +65,10 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
       Visible = False
-      ExplicitWidth = 789
-      ExplicitHeight = 539
       object ts1: TTabSheet
         Caption = #31616#20171
+        ExplicitLeft = 0
+        ExplicitTop = 0
         ExplicitWidth = 781
         ExplicitHeight = 508
         object lblPEInfo: TLabel
@@ -90,6 +87,8 @@ object Form1: TForm1
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
         ExplicitWidth = 781
         ExplicitHeight = 508
         object lbl1: TLabel
@@ -868,6 +867,8 @@ object Form1: TForm1
       object ts3: TTabSheet
         Caption = '2'#12289'DOS STUB'
         ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 0
         ExplicitWidth = 781
         ExplicitHeight = 508
         DesignSize = (
@@ -894,6 +895,8 @@ object Form1: TForm1
       object ts4: TTabSheet
         Caption = '3'#12289'NT HEADER'
         ImageIndex = 3
+        ExplicitLeft = 0
+        ExplicitTop = 0
         ExplicitWidth = 781
         ExplicitHeight = 508
         DesignSize = (
@@ -3076,8 +3079,6 @@ object Form1: TForm1
       object ts5: TTabSheet
         Caption = '4'#12289#33410#34920
         ImageIndex = 4
-        ExplicitWidth = 781
-        ExplicitHeight = 508
         DesignSize = (
           780
           462)
@@ -3125,13 +3126,13 @@ object Form1: TForm1
           TabOrder = 0
           ViewStyle = vsReport
           OnDblClick = mniSectionAttrClick
-          ExplicitWidth = 753
-          ExplicitHeight = 485
         end
       end
       object ts6: TTabSheet
         Caption = '5'#12289#33410#25968#25454
         ImageIndex = 5
+        ExplicitLeft = 0
+        ExplicitTop = 0
         ExplicitWidth = 781
         ExplicitHeight = 508
       end
