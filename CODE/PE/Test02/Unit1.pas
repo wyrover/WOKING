@@ -306,6 +306,9 @@ type
     procedure mniReadSectionDataClick(Sender: TObject);
     procedure mniSectionAttrClick(Sender: TObject);
     procedure lv2Click(Sender: TObject);
+    procedure lbl154Click(Sender: TObject);
+    procedure lbl156Click(Sender: TObject);
+    procedure lbl158Click(Sender: TObject);
   private
     { 检测是否是PE文件 }
     function CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
@@ -335,7 +338,7 @@ var
 
 implementation
 
-uses Unit2, Unit3;
+uses Unit2, Unit3, Unit4;
 
 {$R *.dfm}
 
@@ -797,6 +800,31 @@ end;
 procedure TForm1.btn3Click(Sender: TObject);
 begin
   ShowCharSignForm(StrToInt(lbl74.Caption));
+end;
+
+{ 导出表 }
+procedure TForm1.lbl154Click(Sender: TObject);
+begin
+  if StrToInt(TLabel(Sender).Caption) = 0 then
+    Exit;
+
+  ShowExportFuncList(srchbxPEFileName.Text);
+end;
+
+{ 导入表 }
+procedure TForm1.lbl156Click(Sender: TObject);
+begin
+  if StrToInt(TLabel(Sender).Caption) = 0 then
+    Exit;
+
+end;
+
+{ 资源表 }
+procedure TForm1.lbl158Click(Sender: TObject);
+begin
+  if StrToInt(TLabel(Sender).Caption) = 0 then
+    Exit;
+
 end;
 
 end.

@@ -55,7 +55,7 @@ object Form1: TForm1
       Top = 6
       Width = 788
       Height = 493
-      ActivePage = ts6
+      ActivePage = ts5
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -1153,6 +1153,7 @@ object Form1: TForm1
           Top = 248
           Width = 740
           Height = 197
+          VertScrollBar.Position = 628
           VertScrollBar.Smooth = True
           VertScrollBar.Tracking = True
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -1165,7 +1166,7 @@ object Form1: TForm1
           OnMouseWheel = scrlbx1MouseWheel
           object lbl77: TLabel
             Left = 31
-            Top = 11
+            Top = -617
             Width = 40
             Height = 15
             Caption = 'Magic'
@@ -1178,7 +1179,7 @@ object Form1: TForm1
           end
           object lbl78: TLabel
             Left = 31
-            Top = 34
+            Top = -594
             Width = 144
             Height = 15
             Caption = 'MajorLinkerVersion'
@@ -1191,7 +1192,7 @@ object Form1: TForm1
           end
           object lbl79: TLabel
             Left = 31
-            Top = 57
+            Top = -571
             Width = 144
             Height = 15
             Caption = 'MinorLinkerVersion'
@@ -1204,7 +1205,7 @@ object Form1: TForm1
           end
           object lbl80: TLabel
             Left = 31
-            Top = 80
+            Top = -548
             Width = 80
             Height = 15
             Caption = 'SizeOfCode'
@@ -1217,7 +1218,7 @@ object Form1: TForm1
           end
           object lbl81: TLabel
             Left = 31
-            Top = 103
+            Top = -525
             Width = 168
             Height = 15
             Caption = 'SizeOfInitializedData'
@@ -1230,7 +1231,7 @@ object Form1: TForm1
           end
           object lbl82: TLabel
             Left = 31
-            Top = 126
+            Top = -502
             Width = 184
             Height = 15
             Caption = 'SizeOfUninitializedData'
@@ -1243,7 +1244,7 @@ object Form1: TForm1
           end
           object lbl83: TLabel
             Left = 31
-            Top = 150
+            Top = -478
             Width = 152
             Height = 15
             Caption = 'AddressOfEntryPoint'
@@ -1256,7 +1257,7 @@ object Form1: TForm1
           end
           object lbl84: TLabel
             Left = 31
-            Top = 173
+            Top = -455
             Width = 80
             Height = 15
             Caption = 'BaseOfCode'
@@ -1269,7 +1270,7 @@ object Form1: TForm1
           end
           object lbl85: TLabel
             Left = 31
-            Top = 196
+            Top = -432
             Width = 80
             Height = 15
             Caption = 'BaseOfData'
@@ -1282,7 +1283,7 @@ object Form1: TForm1
           end
           object lbl86: TLabel
             Left = 31
-            Top = 219
+            Top = -409
             Width = 72
             Height = 15
             Caption = 'ImageBase'
@@ -1295,7 +1296,7 @@ object Form1: TForm1
           end
           object lbl87: TLabel
             Left = 31
-            Top = 242
+            Top = -386
             Width = 128
             Height = 15
             Caption = 'SectionAlignment'
@@ -1308,7 +1309,7 @@ object Form1: TForm1
           end
           object lbl88: TLabel
             Left = 31
-            Top = 265
+            Top = -363
             Width = 104
             Height = 15
             Caption = 'FileAlignment'
@@ -1321,7 +1322,7 @@ object Form1: TForm1
           end
           object lbl89: TLabel
             Left = 31
-            Top = 289
+            Top = -339
             Width = 216
             Height = 15
             Caption = 'MajorOperatingSystemVersion'
@@ -1334,7 +1335,7 @@ object Form1: TForm1
           end
           object lbl90: TLabel
             Left = 31
-            Top = 312
+            Top = -316
             Width = 216
             Height = 15
             Caption = 'MinorOperatingSystemVersion'
@@ -1347,7 +1348,7 @@ object Form1: TForm1
           end
           object lbl91: TLabel
             Left = 31
-            Top = 335
+            Top = -293
             Width = 136
             Height = 15
             Caption = 'MajorImageVersion'
@@ -1360,7 +1361,7 @@ object Form1: TForm1
           end
           object lbl92: TLabel
             Left = 31
-            Top = 358
+            Top = -270
             Width = 136
             Height = 15
             Caption = 'MinorImageVersion'
@@ -1373,7 +1374,7 @@ object Form1: TForm1
           end
           object lbl93: TLabel
             Left = 31
-            Top = 381
+            Top = -247
             Width = 168
             Height = 15
             Caption = 'MajorSubsystemVersion'
@@ -1386,7 +1387,7 @@ object Form1: TForm1
           end
           object lbl94: TLabel
             Left = 31
-            Top = 404
+            Top = -224
             Width = 168
             Height = 15
             Caption = 'MinorSubsystemVersion'
@@ -1399,7 +1400,7 @@ object Form1: TForm1
           end
           object lbl95: TLabel
             Left = 31
-            Top = 428
+            Top = -200
             Width = 136
             Height = 15
             Caption = 'Win32VersionValue'
@@ -1412,7 +1413,7 @@ object Form1: TForm1
           end
           object lbl96: TLabel
             Left = 31
-            Top = 451
+            Top = -177
             Width = 88
             Height = 15
             Caption = 'SizeOfImage'
@@ -1425,7 +1426,7 @@ object Form1: TForm1
           end
           object lbl97: TLabel
             Left = 31
-            Top = 474
+            Top = -154
             Width = 104
             Height = 15
             Caption = 'SizeOfHeaders'
@@ -1438,7 +1439,7 @@ object Form1: TForm1
           end
           object lbl98: TLabel
             Left = 31
-            Top = 497
+            Top = -131
             Width = 64
             Height = 15
             Caption = 'CheckSum'
@@ -1451,7 +1452,7 @@ object Form1: TForm1
           end
           object lbl99: TLabel
             Left = 31
-            Top = 520
+            Top = -108
             Width = 72
             Height = 15
             Caption = 'Subsystem'
@@ -1464,7 +1465,7 @@ object Form1: TForm1
           end
           object lbl100: TLabel
             Left = 31
-            Top = 543
+            Top = -85
             Width = 144
             Height = 15
             Caption = 'DllCharacteristics'
@@ -1477,7 +1478,7 @@ object Form1: TForm1
           end
           object lbl101: TLabel
             Left = 31
-            Top = 567
+            Top = -61
             Width = 144
             Height = 15
             Caption = 'SizeOfStackReserve'
@@ -1490,7 +1491,7 @@ object Form1: TForm1
           end
           object lbl102: TLabel
             Left = 31
-            Top = 590
+            Top = -38
             Width = 136
             Height = 15
             Caption = 'SizeOfStackCommit'
@@ -1503,7 +1504,7 @@ object Form1: TForm1
           end
           object lbl103: TLabel
             Left = 31
-            Top = 613
+            Top = -15
             Width = 136
             Height = 15
             Caption = 'SizeOfHeapReserve'
@@ -1516,7 +1517,7 @@ object Form1: TForm1
           end
           object lbl104: TLabel
             Left = 31
-            Top = 636
+            Top = 8
             Width = 128
             Height = 15
             Caption = 'SizeOfHeapCommit'
@@ -1529,7 +1530,7 @@ object Form1: TForm1
           end
           object lbl105: TLabel
             Left = 31
-            Top = 659
+            Top = 31
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -1542,7 +1543,7 @@ object Form1: TForm1
           end
           object lbl106: TLabel
             Left = 31
-            Top = 682
+            Top = 54
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -1555,7 +1556,7 @@ object Form1: TForm1
           end
           object lbl107: TLabel
             Left = 31
-            Top = 706
+            Top = 78
             Width = 104
             Height = 15
             Caption = 'DataDirectory'
@@ -1568,7 +1569,7 @@ object Form1: TForm1
           end
           object lbl108: TLabel
             Left = 92
-            Top = 728
+            Top = 100
             Width = 32
             Height = 15
             Caption = '[00]'
@@ -1581,7 +1582,7 @@ object Form1: TForm1
           end
           object lbl109: TLabel
             Left = 92
-            Top = 801
+            Top = 173
             Width = 32
             Height = 15
             Caption = '[03]'
@@ -1594,7 +1595,7 @@ object Form1: TForm1
           end
           object lbl110: TLabel
             Left = 92
-            Top = 777
+            Top = 149
             Width = 32
             Height = 15
             Caption = '[02]'
@@ -1607,7 +1608,7 @@ object Form1: TForm1
           end
           object lbl111: TLabel
             Left = 92
-            Top = 752
+            Top = 124
             Width = 32
             Height = 15
             Caption = '[01]'
@@ -1620,7 +1621,7 @@ object Form1: TForm1
           end
           object lbl112: TLabel
             Left = 92
-            Top = 826
+            Top = 198
             Width = 32
             Height = 15
             Caption = '[04]'
@@ -1633,7 +1634,7 @@ object Form1: TForm1
           end
           object lbl113: TLabel
             Left = 92
-            Top = 851
+            Top = 223
             Width = 32
             Height = 15
             Caption = '[05]'
@@ -1646,7 +1647,7 @@ object Form1: TForm1
           end
           object lbl114: TLabel
             Left = 92
-            Top = 875
+            Top = 247
             Width = 32
             Height = 15
             Caption = '[06]'
@@ -1659,7 +1660,7 @@ object Form1: TForm1
           end
           object lbl115: TLabel
             Left = 92
-            Top = 900
+            Top = 272
             Width = 32
             Height = 15
             Caption = '[07]'
@@ -1672,7 +1673,7 @@ object Form1: TForm1
           end
           object lbl116: TLabel
             Left = 92
-            Top = 924
+            Top = 296
             Width = 32
             Height = 15
             Caption = '[08]'
@@ -1685,7 +1686,7 @@ object Form1: TForm1
           end
           object lbl117: TLabel
             Left = 92
-            Top = 949
+            Top = 321
             Width = 32
             Height = 15
             Caption = '[08]'
@@ -1698,7 +1699,7 @@ object Form1: TForm1
           end
           object lbl118: TLabel
             Left = 92
-            Top = 974
+            Top = 346
             Width = 32
             Height = 15
             Caption = '[10]'
@@ -1711,7 +1712,7 @@ object Form1: TForm1
           end
           object lbl119: TLabel
             Left = 92
-            Top = 998
+            Top = 370
             Width = 32
             Height = 15
             Caption = '[11]'
@@ -1724,7 +1725,7 @@ object Form1: TForm1
           end
           object lbl120: TLabel
             Left = 92
-            Top = 1023
+            Top = 395
             Width = 32
             Height = 15
             Caption = '[12]'
@@ -1737,7 +1738,7 @@ object Form1: TForm1
           end
           object lbl121: TLabel
             Left = 92
-            Top = 1047
+            Top = 419
             Width = 32
             Height = 15
             Caption = '[13]'
@@ -1750,7 +1751,7 @@ object Form1: TForm1
           end
           object lbl122: TLabel
             Left = 92
-            Top = 1072
+            Top = 444
             Width = 32
             Height = 15
             Caption = '[14]'
@@ -1763,7 +1764,7 @@ object Form1: TForm1
           end
           object lbl123: TLabel
             Left = 92
-            Top = 1097
+            Top = 469
             Width = 32
             Height = 15
             Caption = '[15]'
@@ -1776,7 +1777,7 @@ object Form1: TForm1
           end
           object lbl124: TLabel
             Left = 280
-            Top = 11
+            Top = -617
             Width = 45
             Height = 15
             Caption = 'Magic'
@@ -1789,7 +1790,7 @@ object Form1: TForm1
           end
           object lbl125: TLabel
             Left = 280
-            Top = 34
+            Top = -594
             Width = 144
             Height = 15
             Caption = 'MajorLinkerVersion'
@@ -1802,7 +1803,7 @@ object Form1: TForm1
           end
           object lbl126: TLabel
             Left = 280
-            Top = 57
+            Top = -571
             Width = 144
             Height = 15
             Caption = 'MinorLinkerVersion'
@@ -1815,7 +1816,7 @@ object Form1: TForm1
           end
           object lbl127: TLabel
             Left = 280
-            Top = 80
+            Top = -548
             Width = 80
             Height = 15
             Caption = 'SizeOfCode'
@@ -1828,7 +1829,7 @@ object Form1: TForm1
           end
           object lbl128: TLabel
             Left = 280
-            Top = 103
+            Top = -525
             Width = 168
             Height = 15
             Caption = 'SizeOfInitializedData'
@@ -1841,7 +1842,7 @@ object Form1: TForm1
           end
           object lbl129: TLabel
             Left = 280
-            Top = 126
+            Top = -502
             Width = 184
             Height = 15
             Caption = 'SizeOfUninitializedData'
@@ -1854,7 +1855,7 @@ object Form1: TForm1
           end
           object lbl130: TLabel
             Left = 280
-            Top = 150
+            Top = -478
             Width = 171
             Height = 15
             Caption = 'AddressOfEntryPoint'
@@ -1867,7 +1868,7 @@ object Form1: TForm1
           end
           object lbl131: TLabel
             Left = 280
-            Top = 173
+            Top = -455
             Width = 80
             Height = 15
             Caption = 'BaseOfCode'
@@ -1880,7 +1881,7 @@ object Form1: TForm1
           end
           object lbl132: TLabel
             Left = 280
-            Top = 196
+            Top = -432
             Width = 80
             Height = 15
             Caption = 'BaseOfData'
@@ -1893,7 +1894,7 @@ object Form1: TForm1
           end
           object lbl133: TLabel
             Left = 280
-            Top = 219
+            Top = -409
             Width = 81
             Height = 15
             Caption = 'ImageBase'
@@ -1906,7 +1907,7 @@ object Form1: TForm1
           end
           object lbl134: TLabel
             Left = 280
-            Top = 242
+            Top = -386
             Width = 144
             Height = 15
             Caption = 'SectionAlignment'
@@ -1919,7 +1920,7 @@ object Form1: TForm1
           end
           object lbl135: TLabel
             Left = 280
-            Top = 265
+            Top = -363
             Width = 117
             Height = 15
             Caption = 'FileAlignment'
@@ -1932,7 +1933,7 @@ object Form1: TForm1
           end
           object lbl136: TLabel
             Left = 280
-            Top = 289
+            Top = -339
             Width = 216
             Height = 15
             Caption = 'MajorOperatingSystemVersion'
@@ -1945,7 +1946,7 @@ object Form1: TForm1
           end
           object lbl137: TLabel
             Left = 280
-            Top = 312
+            Top = -316
             Width = 216
             Height = 15
             Caption = 'MinorOperatingSystemVersion'
@@ -1958,7 +1959,7 @@ object Form1: TForm1
           end
           object lbl138: TLabel
             Left = 280
-            Top = 335
+            Top = -293
             Width = 136
             Height = 15
             Caption = 'MajorImageVersion'
@@ -1971,7 +1972,7 @@ object Form1: TForm1
           end
           object lbl139: TLabel
             Left = 280
-            Top = 358
+            Top = -270
             Width = 136
             Height = 15
             Caption = 'MinorImageVersion'
@@ -1984,7 +1985,7 @@ object Form1: TForm1
           end
           object lbl140: TLabel
             Left = 280
-            Top = 381
+            Top = -247
             Width = 168
             Height = 15
             Caption = 'MajorSubsystemVersion'
@@ -1997,7 +1998,7 @@ object Form1: TForm1
           end
           object lbl141: TLabel
             Left = 280
-            Top = 404
+            Top = -224
             Width = 168
             Height = 15
             Caption = 'MinorSubsystemVersion'
@@ -2010,7 +2011,7 @@ object Form1: TForm1
           end
           object lbl142: TLabel
             Left = 280
-            Top = 428
+            Top = -200
             Width = 136
             Height = 15
             Caption = 'Win32VersionValue'
@@ -2023,7 +2024,7 @@ object Form1: TForm1
           end
           object lbl143: TLabel
             Left = 280
-            Top = 451
+            Top = -177
             Width = 88
             Height = 15
             Caption = 'SizeOfImage'
@@ -2036,7 +2037,7 @@ object Form1: TForm1
           end
           object lbl144: TLabel
             Left = 280
-            Top = 474
+            Top = -154
             Width = 104
             Height = 15
             Caption = 'SizeOfHeaders'
@@ -2049,7 +2050,7 @@ object Form1: TForm1
           end
           object lbl145: TLabel
             Left = 280
-            Top = 497
+            Top = -131
             Width = 64
             Height = 15
             Caption = 'CheckSum'
@@ -2062,7 +2063,7 @@ object Form1: TForm1
           end
           object lbl146: TLabel
             Left = 280
-            Top = 520
+            Top = -108
             Width = 81
             Height = 15
             Caption = 'Subsystem'
@@ -2075,7 +2076,7 @@ object Form1: TForm1
           end
           object lbl147: TLabel
             Left = 280
-            Top = 543
+            Top = -85
             Width = 162
             Height = 15
             Caption = 'DllCharacteristics'
@@ -2088,7 +2089,7 @@ object Form1: TForm1
           end
           object lbl148: TLabel
             Left = 280
-            Top = 567
+            Top = -61
             Width = 144
             Height = 15
             Caption = 'SizeOfStackReserve'
@@ -2101,7 +2102,7 @@ object Form1: TForm1
           end
           object lbl149: TLabel
             Left = 280
-            Top = 590
+            Top = -38
             Width = 136
             Height = 15
             Caption = 'SizeOfStackCommit'
@@ -2114,7 +2115,7 @@ object Form1: TForm1
           end
           object lbl150: TLabel
             Left = 280
-            Top = 613
+            Top = -15
             Width = 136
             Height = 15
             Caption = 'SizeOfHeapReserve'
@@ -2127,7 +2128,7 @@ object Form1: TForm1
           end
           object lbl151: TLabel
             Left = 280
-            Top = 636
+            Top = 8
             Width = 128
             Height = 15
             Caption = 'SizeOfHeapCommit'
@@ -2140,7 +2141,7 @@ object Form1: TForm1
           end
           object lbl152: TLabel
             Left = 280
-            Top = 657
+            Top = 29
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2153,7 +2154,7 @@ object Form1: TForm1
           end
           object lbl153: TLabel
             Left = 280
-            Top = 682
+            Top = 54
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2166,72 +2167,82 @@ object Form1: TForm1
           end
           object lbl154: TLabel
             Left = 280
-            Top = 728
-            Width = 88
+            Top = 100
+            Width = 99
             Height = 15
+            Cursor = crHandPoint
             Caption = 'LoaderFlags'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl154Click
           end
           object lbl155: TLabel
             Left = 396
-            Top = 728
-            Width = 152
+            Top = 100
+            Width = 171
             Height = 15
+            Cursor = crHandPoint
             Caption = 'NumberOfRvaAndSizes'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl154Click
           end
           object lbl156: TLabel
             Left = 280
-            Top = 752
-            Width = 88
+            Top = 124
+            Width = 99
             Height = 15
+            Cursor = crHandPoint
             Caption = 'LoaderFlags'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl156Click
           end
           object lbl157: TLabel
             Left = 396
-            Top = 752
-            Width = 152
+            Top = 124
+            Width = 171
             Height = 15
+            Cursor = crHandPoint
             Caption = 'NumberOfRvaAndSizes'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl156Click
           end
           object lbl158: TLabel
             Left = 280
-            Top = 777
-            Width = 88
+            Top = 149
+            Width = 99
             Height = 15
+            Cursor = crHandPoint
             Caption = 'LoaderFlags'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl158Click
           end
           object lbl160: TLabel
             Left = 280
-            Top = 801
+            Top = 173
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2244,20 +2255,22 @@ object Form1: TForm1
           end
           object lbl159: TLabel
             Left = 396
-            Top = 777
-            Width = 152
+            Top = 149
+            Width = 171
             Height = 15
+            Cursor = crHandPoint
             Caption = 'NumberOfRvaAndSizes'
             Font.Charset = GB2312_CHARSET
-            Font.Color = clBlack
+            Font.Color = clRed
             Font.Height = -15
             Font.Name = #23435#20307
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
+            OnClick = lbl158Click
           end
           object lbl161: TLabel
             Left = 396
-            Top = 801
+            Top = 173
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2270,7 +2283,7 @@ object Form1: TForm1
           end
           object lbl162: TLabel
             Left = 280
-            Top = 826
+            Top = 198
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2283,7 +2296,7 @@ object Form1: TForm1
           end
           object lbl164: TLabel
             Left = 280
-            Top = 850
+            Top = 222
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2296,7 +2309,7 @@ object Form1: TForm1
           end
           object lbl166: TLabel
             Left = 280
-            Top = 875
+            Top = 247
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2309,7 +2322,7 @@ object Form1: TForm1
           end
           object lbl168: TLabel
             Left = 280
-            Top = 899
+            Top = 271
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2322,7 +2335,7 @@ object Form1: TForm1
           end
           object lbl163: TLabel
             Left = 396
-            Top = 826
+            Top = 198
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2335,7 +2348,7 @@ object Form1: TForm1
           end
           object lbl165: TLabel
             Left = 396
-            Top = 850
+            Top = 222
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2348,7 +2361,7 @@ object Form1: TForm1
           end
           object lbl167: TLabel
             Left = 396
-            Top = 875
+            Top = 247
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2361,7 +2374,7 @@ object Form1: TForm1
           end
           object lbl169: TLabel
             Left = 396
-            Top = 899
+            Top = 271
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2374,7 +2387,7 @@ object Form1: TForm1
           end
           object lbl170: TLabel
             Left = 280
-            Top = 924
+            Top = 296
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2387,7 +2400,7 @@ object Form1: TForm1
           end
           object lbl172: TLabel
             Left = 280
-            Top = 948
+            Top = 320
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2400,7 +2413,7 @@ object Form1: TForm1
           end
           object lbl174: TLabel
             Left = 280
-            Top = 973
+            Top = 345
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2413,7 +2426,7 @@ object Form1: TForm1
           end
           object lbl176: TLabel
             Left = 280
-            Top = 997
+            Top = 369
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2426,7 +2439,7 @@ object Form1: TForm1
           end
           object lbl178: TLabel
             Left = 280
-            Top = 1022
+            Top = 394
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2439,7 +2452,7 @@ object Form1: TForm1
           end
           object lbl180: TLabel
             Left = 280
-            Top = 1047
+            Top = 419
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2452,7 +2465,7 @@ object Form1: TForm1
           end
           object lbl182: TLabel
             Left = 280
-            Top = 1071
+            Top = 443
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2465,7 +2478,7 @@ object Form1: TForm1
           end
           object lbl184: TLabel
             Left = 280
-            Top = 1095
+            Top = 467
             Width = 88
             Height = 15
             Caption = 'LoaderFlags'
@@ -2478,7 +2491,7 @@ object Form1: TForm1
           end
           object lbl171: TLabel
             Left = 396
-            Top = 924
+            Top = 296
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2491,7 +2504,7 @@ object Form1: TForm1
           end
           object lbl173: TLabel
             Left = 396
-            Top = 948
+            Top = 320
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2504,7 +2517,7 @@ object Form1: TForm1
           end
           object lbl175: TLabel
             Left = 396
-            Top = 973
+            Top = 345
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2517,7 +2530,7 @@ object Form1: TForm1
           end
           object lbl177: TLabel
             Left = 396
-            Top = 997
+            Top = 369
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2530,7 +2543,7 @@ object Form1: TForm1
           end
           object lbl179: TLabel
             Left = 396
-            Top = 1022
+            Top = 394
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2543,7 +2556,7 @@ object Form1: TForm1
           end
           object lbl181: TLabel
             Left = 396
-            Top = 1046
+            Top = 418
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2556,7 +2569,7 @@ object Form1: TForm1
           end
           object lbl183: TLabel
             Left = 396
-            Top = 1071
+            Top = 443
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2569,7 +2582,7 @@ object Form1: TForm1
           end
           object lbl185: TLabel
             Left = 396
-            Top = 1095
+            Top = 467
             Width = 152
             Height = 15
             Caption = 'NumberOfRvaAndSizes'
@@ -2582,7 +2595,7 @@ object Form1: TForm1
           end
           object lbl186: TLabel
             Left = 56
-            Top = 739
+            Top = 111
             Width = 636
             Height = 19
             Caption = 
@@ -2597,7 +2610,7 @@ object Form1: TForm1
           end
           object lbl187: TLabel
             Left = 56
-            Top = 764
+            Top = 136
             Width = 636
             Height = 19
             Caption = 
@@ -2612,7 +2625,7 @@ object Form1: TForm1
           end
           object lbl188: TLabel
             Left = 56
-            Top = 813
+            Top = 185
             Width = 636
             Height = 19
             Caption = 
@@ -2627,7 +2640,7 @@ object Form1: TForm1
           end
           object lbl189: TLabel
             Left = 56
-            Top = 788
+            Top = 160
             Width = 636
             Height = 19
             Caption = 
@@ -2642,7 +2655,7 @@ object Form1: TForm1
           end
           object lbl190: TLabel
             Left = 56
-            Top = 911
+            Top = 283
             Width = 636
             Height = 19
             Caption = 
@@ -2657,7 +2670,7 @@ object Form1: TForm1
           end
           object lbl191: TLabel
             Left = 56
-            Top = 886
+            Top = 258
             Width = 636
             Height = 19
             Caption = 
@@ -2672,7 +2685,7 @@ object Form1: TForm1
           end
           object lbl192: TLabel
             Left = 56
-            Top = 862
+            Top = 234
             Width = 636
             Height = 19
             Caption = 
@@ -2687,7 +2700,7 @@ object Form1: TForm1
           end
           object lbl193: TLabel
             Left = 56
-            Top = 837
+            Top = 209
             Width = 636
             Height = 19
             Caption = 
@@ -2702,7 +2715,7 @@ object Form1: TForm1
           end
           object lbl195: TLabel
             Left = 56
-            Top = 1082
+            Top = 454
             Width = 636
             Height = 19
             Caption = 
@@ -2717,7 +2730,7 @@ object Form1: TForm1
           end
           object lbl196: TLabel
             Left = 56
-            Top = 1058
+            Top = 430
             Width = 636
             Height = 19
             Caption = 
@@ -2732,7 +2745,7 @@ object Form1: TForm1
           end
           object lbl197: TLabel
             Left = 56
-            Top = 1033
+            Top = 405
             Width = 636
             Height = 19
             Caption = 
@@ -2747,7 +2760,7 @@ object Form1: TForm1
           end
           object lbl198: TLabel
             Left = 56
-            Top = 1009
+            Top = 381
             Width = 636
             Height = 19
             Caption = 
@@ -2762,7 +2775,7 @@ object Form1: TForm1
           end
           object lbl199: TLabel
             Left = 56
-            Top = 984
+            Top = 356
             Width = 636
             Height = 19
             Caption = 
@@ -2777,7 +2790,7 @@ object Form1: TForm1
           end
           object lbl200: TLabel
             Left = 56
-            Top = 960
+            Top = 332
             Width = 636
             Height = 19
             Caption = 
@@ -2792,7 +2805,7 @@ object Form1: TForm1
           end
           object lbl201: TLabel
             Left = 56
-            Top = 935
+            Top = 307
             Width = 636
             Height = 19
             Caption = 
@@ -2807,7 +2820,7 @@ object Form1: TForm1
           end
           object lbl194: TLabel
             Left = 576
-            Top = 728
+            Top = 100
             Width = 93
             Height = 15
             Caption = '// 00 '#23548#20986#34920
@@ -2820,7 +2833,7 @@ object Form1: TForm1
           end
           object lbl202: TLabel
             Left = 576
-            Top = 752
+            Top = 124
             Width = 93
             Height = 15
             Caption = '// 01 '#23548#20837#34920
@@ -2833,7 +2846,7 @@ object Form1: TForm1
           end
           object lbl203: TLabel
             Left = 576
-            Top = 776
+            Top = 148
             Width = 108
             Height = 15
             Caption = '// 02 '#36164#28304#30446#24405
@@ -2846,7 +2859,7 @@ object Form1: TForm1
           end
           object lbl204: TLabel
             Left = 576
-            Top = 801
+            Top = 173
             Width = 108
             Height = 15
             Caption = '// 03 '#24322#24120#30446#24405
@@ -2859,7 +2872,7 @@ object Form1: TForm1
           end
           object lbl205: TLabel
             Left = 576
-            Top = 825
+            Top = 197
             Width = 108
             Height = 15
             Caption = '// 04 '#23433#20840#30446#24405
@@ -2872,7 +2885,7 @@ object Form1: TForm1
           end
           object lbl206: TLabel
             Left = 576
-            Top = 850
+            Top = 222
             Width = 138
             Height = 15
             Caption = '// 05 '#37325#23450#20301#22522#26412#34920
@@ -2885,7 +2898,7 @@ object Form1: TForm1
           end
           object lbl207: TLabel
             Left = 576
-            Top = 874
+            Top = 246
             Width = 108
             Height = 15
             Caption = '// 06 '#35843#35797#30446#24405
@@ -2898,7 +2911,7 @@ object Form1: TForm1
           end
           object lbl208: TLabel
             Left = 576
-            Top = 899
+            Top = 271
             Width = 108
             Height = 15
             Caption = '// 07 '#25551#26415#23383#20018
@@ -2911,7 +2924,7 @@ object Form1: TForm1
           end
           object lbl209: TLabel
             Left = 576
-            Top = 923
+            Top = 295
             Width = 93
             Height = 15
             Caption = '// 08 '#26426#22120#20540
@@ -2924,7 +2937,7 @@ object Form1: TForm1
           end
           object lbl210: TLabel
             Left = 576
-            Top = 948
+            Top = 320
             Width = 102
             Height = 15
             Caption = '// 09 TLS'#30446#24405
@@ -2937,7 +2950,7 @@ object Form1: TForm1
           end
           object lbl211: TLabel
             Left = 576
-            Top = 972
+            Top = 344
             Width = 138
             Height = 15
             Caption = '// 10 '#36733#20837#37197#20540#30446#24405
@@ -2950,7 +2963,7 @@ object Form1: TForm1
           end
           object lbl212: TLabel
             Left = 576
-            Top = 997
+            Top = 369
             Width = 123
             Height = 15
             Caption = '// 11 '#32465#23450#36755#20837#34920
@@ -2963,7 +2976,7 @@ object Form1: TForm1
           end
           object lbl213: TLabel
             Left = 576
-            Top = 1021
+            Top = 393
             Width = 123
             Height = 15
             Caption = '// 12 '#23548#20837#22320#22336#34920
@@ -2976,7 +2989,7 @@ object Form1: TForm1
           end
           object lbl214: TLabel
             Left = 576
-            Top = 1046
+            Top = 418
             Width = 138
             Height = 15
             Caption = '// 13 '#24310#36831#36733#20837#25551#36848
@@ -2989,7 +3002,7 @@ object Form1: TForm1
           end
           object lbl215: TLabel
             Left = 576
-            Top = 1070
+            Top = 442
             Width = 102
             Height = 15
             Caption = '// 14 COM'#20449#24687
@@ -3002,7 +3015,7 @@ object Form1: TForm1
           end
           object lbl216: TLabel
             Left = 576
-            Top = 1095
+            Top = 467
             Width = 78
             Height = 15
             Caption = '// 15 '#20445#30041
@@ -3015,7 +3028,7 @@ object Form1: TForm1
           end
           object btn4: TRzMenuButton
             Left = 464
-            Top = 3
+            Top = -625
             Width = 89
             Caption = #21487#33021#20540
             TabOrder = 0
@@ -3023,7 +3036,7 @@ object Form1: TForm1
           end
           object btn5: TRzMenuButton
             Left = 464
-            Top = 509
+            Top = -119
             Width = 89
             Caption = #21487#33021#20540
             TabOrder = 1
@@ -3031,7 +3044,7 @@ object Form1: TForm1
           end
           object btn6: TRzMenuButton
             Left = 464
-            Top = 540
+            Top = -88
             Width = 89
             Caption = #26631#24535#32452#21512
             TabOrder = 2
@@ -3162,7 +3175,7 @@ object Form1: TForm1
         object mmoSection: TMemo
           Left = 12
           Top = 180
-          Width = 752
+          Width = 770
           Height = 271
           Anchors = [akLeft, akTop, akRight, akBottom]
           Font.Charset = GB2312_CHARSET
