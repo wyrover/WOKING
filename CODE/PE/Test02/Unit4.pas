@@ -1,4 +1,4 @@
-unit Unit4;
+锘縰nit Unit4;
 
 interface
 
@@ -59,9 +59,8 @@ var
   stsArr         : array of TImageSectionHeader;
   eft            : TImageExportDirectory;
   strDllFileName : array [0 .. 255] of AnsiChar;
-  strFunctionName: array [0 .. 255] of Char;
+  strFunctionName: array [0 .. 255] of AnsiChar;
   III            : Integer;
-  intFuncVA      : Cardinal;
   intFuncRA      : Cardinal;
 begin
   with TForm4.Create(nil) do
@@ -70,7 +69,7 @@ begin
     hPEFile  := FileOpen(strPEFileName, fmOpenRead);
     if hPEFile = INVALID_HANDLE_VALUE then
     begin
-      ShowMessage('文件无法打开，请确认是否被其它程序占用了');
+      ShowMessage('鏂囦欢鏃犳硶鎵撳紑锛岃纭鏄惁琚叾瀹冪▼搴忓崰鐢ㄤ簡');
       Exit;
     end;
 
@@ -116,15 +115,15 @@ begin
         lvFunc.Items.Clear;
         for III := 0 to eft.NumberOfNames - 1 do
         begin
-          intFuncVA := eft.AddressOfNames + DWORD(4 * III);
-          intFuncRA := intFuncVA - intVA + intRA;
-          FileSeek(hPEFile, intFuncRA, 0);
+          FileSeek(hPEFile, eft.AddressOfNames - intVA + intRA + DWORD(4 * III), 0);
+          FileRead(hPEFile, intFuncRA, 4);
+          FileSeek(hPEFile, intFuncRA - intVA + intRA, 0);
           FileRead(hPEFile, strFunctionName, 256);
           with lvFunc.Items.Add do
           begin
             Caption := Format('%0.2d', [III]);
-            SubItems.Add('');
-            SubItems.Add('');
+            SubItems.Add(Format('$%0.8x', [eft.AddressOfNames - intVA + intRA + DWORD(4 * III)]));
+            SubItems.Add(Format('$%0.8x', [intFuncRA - intVA + intRA]));
             SubItems.Add(string(strFunctionName));
           end;
         end;

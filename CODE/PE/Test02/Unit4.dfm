@@ -28,16 +28,16 @@ object Form4: TForm4
         Caption = #24207#21015
       end
       item
-        Caption = #22320#22336
+        Caption = #22320#22336'(VA)'
         Width = 100
       end
       item
-        Caption = #20559#31227
+        Caption = #20559#31227'(RA)'
         Width = 100
       end
       item
         Caption = #21517#31216
-        Width = 200
+        Width = 300
       end>
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
@@ -50,8 +50,6 @@ object Form4: TForm4
     ParentFont = False
     TabOrder = 0
     ViewStyle = vsReport
-    ExplicitWidth = 693
-    ExplicitHeight = 238
   end
   object grp1: TGroupBox
     Left = 8
@@ -61,7 +59,6 @@ object Form4: TForm4
     Anchors = [akLeft, akTop, akRight]
     Caption = #36755#20986#20449#24687#65306
     TabOrder = 1
-    ExplicitWidth = 693
     object lbl62: TLabel
       Left = 12
       Top = 19

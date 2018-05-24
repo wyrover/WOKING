@@ -309,6 +309,7 @@ type
     procedure lbl154Click(Sender: TObject);
     procedure lbl156Click(Sender: TObject);
     procedure lbl158Click(Sender: TObject);
+    procedure IMAGEDOSSIGNATURE5A4DMZ1MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
   private
     { 检测是否是PE文件 }
     function CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
@@ -402,6 +403,11 @@ begin
   finally
     FileClose(hPEFile);
   end;
+end;
+
+procedure TForm1.IMAGEDOSSIGNATURE5A4DMZ1MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
+begin
+  Width := 300;
 end;
 
 procedure TForm1.IMAGEFILEMACHINEAMD648664AMD64K81DrawItem(Sender: TObject; ACanvas: TCanvas; ARect: TRect; Selected: Boolean);
