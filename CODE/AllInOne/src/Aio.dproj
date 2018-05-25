@@ -105,6 +105,7 @@
         <DCC_ExeOutput>..\bin\x86</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>SYS3.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -112,6 +113,7 @@
         <DCC_ExeOutput>..\bin\x64</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>SYS3.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>

@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = #31243#24207#21592#24037#20855#31665
+  Caption = 'Test'
   ClientHeight = 510
   ClientWidth = 846
   Color = clBtnFace
@@ -61,7 +61,6 @@ object Form1: TForm1
     end
     object mniConfig: TMenuItem
       Caption = #37197#32622
-      OnClick = mniConfigClick
     end
     object mniLine0ne: TMenuItem
       Caption = '-'

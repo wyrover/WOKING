@@ -19,7 +19,6 @@ type
     mniShowForm: TMenuItem;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mniExitClick(Sender: TObject);
-    procedure mniConfigClick(Sender: TObject);
     procedure mniShowFormClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -43,7 +42,7 @@ var
 type
   TShowDllForm = procedure(var strTitle: PChar; var frm: TFormClass); stdcall;
 
-{解决 dll 中，当控件获取焦点，主窗体变成非激活状态 }
+{ 解决 dll 中，当控件获取焦点，主窗体变成非激活状态 }
 function NewDllFormProc(hwnd: THandle; msg: UINT; wparam: wparam; lParam: lParam): Integer; stdcall;
 begin
   if msg = WM_ACTIVATE then
@@ -69,15 +68,18 @@ var
   tmpfrm        : TFormClass;
   DllForm       : TForm;
 begin
+  { 插件目录是否存在 }
   strDllPath := ExtractFilePath(ParamStr(0)) + 'plugin';
   if not DirectoryExists(strDllPath) then
     Exit;
 
+  { 枚举所有 DLL 插件文件 }
   dllModuleList := TDirectory.GetFiles(strDllPath);
   Count         := High(dllModuleList) - Low(dllModuleList) + 1;
   if Count = 0 then
     Exit;
 
+  { 加载 DLL 插件文件 }
   for III := 0 to Count - 1 do
   begin
     strDllFileName := dllModuleList[III];
@@ -94,9 +96,9 @@ begin
       DllForm.BorderStyle := bsNone;
       DllForm.Align       := alClient;
       DllForm.Color       := clWhite;
-      FoldWNDPROC         := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));
-      SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc));
-      Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);
+      FoldWNDPROC         := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC)); // 拦截 DLL 窗体消息
+      SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc));       // 指向新的窗体过程
+      Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);                     // 解决 DLL 窗体 TAB 键不能用的问题
       DllForm.Show;
     end;
   end;
@@ -127,11 +129,6 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   FbExit := False;
   AddAllModule;
-end;
-
-procedure TForm1.mniConfigClick(Sender: TObject);
-begin
-  //
 end;
 
 procedure TForm1.mniExitClick(Sender: TObject);
