@@ -2,7 +2,7 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899-12-30 00:00:00.000.144,=E:\dbyoung\CODE\AllInOne\plugin\peinfo\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.305,E:\dbyoung\CODE\AllInOne\plugin\peinfo\peinfo.dproj=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.305,C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\dbyoung\CODE\AllInOne\plugin\peinfo\peinfo.dproj</Transaction>
     <Transaction>1899-12-30 00:00:00.000.663,=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
