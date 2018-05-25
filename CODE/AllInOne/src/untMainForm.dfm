@@ -29,8 +29,6 @@ object Form1: TForm1
     TabOrder = 0
     object tsConfig: TTabSheet
       Caption = #37197#32622
-      ExplicitWidth = 281
-      ExplicitHeight = 165
       object chkTrayIco: TCheckBox
         Left = 20
         Top = 16
