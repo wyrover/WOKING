@@ -55,7 +55,7 @@ object Form1: TForm1
       Top = 6
       Width = 788
       Height = 493
-      ActivePage = ts4
+      ActivePage = ts1
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -83,6 +83,10 @@ object Form1: TForm1
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object lbl1: TLabel
           Left = 20
           Top = 12
