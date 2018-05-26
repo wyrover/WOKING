@@ -1,4 +1,4 @@
-unit untMainForm;
+ï»¿unit untMainForm;
 
 interface
 
@@ -42,7 +42,7 @@ var
 type
   TShowDllForm = procedure(var strTitle: PChar; var frm: TFormClass); stdcall;
 
-{ ½â¾ö dll ÖĞ£¬µ±¿Ø¼ş»ñÈ¡½¹µã£¬Ö÷´°Ìå±ä³É·Ç¼¤»î×´Ì¬ }
+  { è§£å†³ dll ä¸­ï¼Œå½“æ§ä»¶è·å–ç„¦ç‚¹ï¼Œä¸»çª—ä½“å˜æˆéæ¿€æ´»çŠ¶æ€ }
 function NewDllFormProc(hwnd: THandle; msg: UINT; wparam: wparam; lParam: lParam): Integer; stdcall;
 begin
   if msg = WM_ACTIVATE then
@@ -68,40 +68,50 @@ var
   tmpfrm        : TFormClass;
   DllForm       : TForm;
 begin
-  { ²å¼şÄ¿Â¼ÊÇ·ñ´æÔÚ }
+  { æ’ä»¶ç›®å½•æ˜¯å¦å­˜åœ¨ }
   strDllPath := ExtractFilePath(ParamStr(0)) + 'plugin';
   if not DirectoryExists(strDllPath) then
     Exit;
 
-  { Ã¶¾ÙËùÓĞ DLL ²å¼şÎÄ¼ş }
-  dllModuleList := TDirectory.GetFiles(strDllPath);
-  Count         := High(dllModuleList) - Low(dllModuleList) + 1;
+  { æšä¸¾æ‰€æœ‰ DLL æ’ä»¶æ–‡ä»¶ }
+  dllModuleList := TDirectory.GetFiles(strDllPath, '*.dll');
+  Count         := Length(dllModuleList);
   if Count = 0 then
     Exit;
 
-  { ¼ÓÔØ DLL ²å¼şÎÄ¼ş }
+  { åŠ è½½ DLL æ’ä»¶æ–‡ä»¶ }
   for III := 0 to Count - 1 do
   begin
     strDllFileName := dllModuleList[III];
     hDllFileHandle := LoadLibrary(PChar(strDllFileName));
-    if hDllFileHandle <> INVALID_HANDLE_VALUE then
-    begin
-      tmpFunc := GetProcAddress(hDllFileHandle, 'ShowDllForm');
-      tmpFunc(strTitle, tmpfrm);
-      tmpts               := TTabSheet.Create(Self);
-      tmpts.PageControl   := pgcAll;
-      tmpts.Caption       := strTitle;
-      DllForm             := tmpfrm.Create(Application);
-      DllForm.WindowState := wsMaximized;
-      DllForm.BorderStyle := bsNone;
-      DllForm.Align       := alClient;
-      DllForm.Color       := clWhite;
-      FoldWNDPROC         := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC)); // À¹½Ø DLL ´°ÌåÏûÏ¢
-      SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc));       // Ö¸ÏòĞÂµÄ´°Ìå¹ı³Ì
-      Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);                     // ½â¾ö DLL ´°Ìå TAB ¼ü²»ÄÜÓÃµÄÎÊÌâ
-      DllForm.Show;
-    end;
+    if hDllFileHandle = 0 then
+      Continue;
+
+    { åˆ¤æ–­ DLL ä¸­æ˜¯å¦æœ‰æŒ‡å®šçš„å¯¼å‡ºå‡½æ•° }
+    tmpFunc := GetProcAddress(hDllFileHandle, 'ShowDllForm');
+    if not Assigned(tmpFunc) then
+      Continue;
+
+    { åˆ›å»º TAB é¡µæ”¾ç½® DLL çª—ä½“ }
+    tmpFunc(strTitle, tmpfrm);
+    tmpts               := TTabSheet.Create(pgcAll);
+    tmpts.PageControl   := pgcAll;
+    tmpts.Caption       := strTitle;
+    tmpts.PageIndex     := 0;
+    DllForm             := tmpfrm.Create(Application);
+    DllForm.WindowState := wsMaximized;
+    DllForm.BorderStyle := bsNone;
+    DllForm.Align       := alClient;
+    DllForm.Color       := clWhite;
+    DllForm.Show;
+
+    { è§£å†³ DLL çª—ä½“è·å–ç„¦ç‚¹æ—¶ï¼Œä¸»çª—ä½“ä¸¢å¤±ç„¦ç‚¹çš„é—®é¢˜ }
+    FoldWNDPROC := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));   // æ‹¦æˆª DLL çª—ä½“æ¶ˆæ¯
+    SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // æŒ‡å‘æ–°çš„çª—ä½“è¿‡ç¨‹
+    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // è§£å†³ DLL çª—ä½“ TAB é”®ä¸èƒ½ç”¨çš„é—®é¢˜
   end;
+
+  pgcAll.ActivePageIndex := 0;
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
