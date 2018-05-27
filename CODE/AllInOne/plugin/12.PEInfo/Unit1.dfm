@@ -23,6 +23,7 @@ object frmPEInfo: TfrmPEInfo
     Top = 8
     Width = 953
     Height = 24
+    Hint = #21452#20987#36873#25321#25991#20214
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
@@ -30,26 +31,28 @@ object frmPEInfo: TfrmPEInfo
     Font.Name = #23435#20307
     Font.Style = []
     ParentFont = False
+    ParentShowHint = False
     ReadOnly = True
+    ShowHint = True
     TabOrder = 0
     OnDblClick = srchbxPEFileNameInvokeSearch
     OnInvokeSearch = srchbxPEFileNameInvokeSearch
-    ExplicitWidth = 1030
   end
   object pnl1: TPanel
     Left = 8
     Top = 38
     Width = 953
     Height = 565
+    Hint = #21452#20987#36873#25321#25991#20214
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     BorderStyle = bsSingle
     Ctl3D = False
     ParentCtl3D = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     OnDblClick = srchbxPEFileNameInvokeSearch
-    ExplicitWidth = 1030
-    ExplicitHeight = 614
     DesignSize = (
       951
       563)
@@ -58,7 +61,7 @@ object frmPEInfo: TfrmPEInfo
       Top = 6
       Width = 933
       Height = 548
-      ActivePage = ts6
+      ActivePage = ts1
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -68,12 +71,8 @@ object frmPEInfo: TfrmPEInfo
       ParentFont = False
       TabOrder = 0
       Visible = False
-      ExplicitWidth = 1010
-      ExplicitHeight = 597
       object ts1: TTabSheet
         Caption = #31616#20171
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         object lblPEInfo: TLabel
           Left = 40
           Top = 32
@@ -90,8 +89,6 @@ object frmPEInfo: TfrmPEInfo
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         object lbl1: TLabel
           Left = 20
           Top = 12
@@ -868,8 +865,6 @@ object frmPEInfo: TfrmPEInfo
       object ts3: TTabSheet
         Caption = '2'#12289'DOS STUB'
         ImageIndex = 2
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         DesignSize = (
           925
           517)
@@ -887,15 +882,11 @@ object frmPEInfo: TfrmPEInfo
           ParentFont = False
           ReadOnly = True
           TabOrder = 0
-          ExplicitWidth = 986
-          ExplicitHeight = 552
         end
       end
       object ts4: TTabSheet
         Caption = '3'#12289'NT HEADER'
         ImageIndex = 3
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         DesignSize = (
           925
           517)
@@ -1178,8 +1169,6 @@ object frmPEInfo: TfrmPEInfo
           ParentCtl3D = False
           TabOrder = 0
           OnMouseWheel = scrlbx1MouseWheel
-          ExplicitWidth = 962
-          ExplicitHeight = 301
           object lbl77: TLabel
             Left = 31
             Top = 11
@@ -3088,8 +3077,6 @@ object frmPEInfo: TfrmPEInfo
       object ts5: TTabSheet
         Caption = '4'#12289#33410#34920
         ImageIndex = 4
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         DesignSize = (
           925
           517)
@@ -3136,7 +3123,6 @@ object frmPEInfo: TfrmPEInfo
           TabOrder = 0
           ViewStyle = vsReport
           OnClick = lv1Click
-          ExplicitWidth = 615
         end
         object pnl2: TPanel
           Left = 611
@@ -3390,8 +3376,6 @@ object frmPEInfo: TfrmPEInfo
       object ts6: TTabSheet
         Caption = '5'#12289#33410#25968#25454
         ImageIndex = 5
-        ExplicitWidth = 1002
-        ExplicitHeight = 566
         DesignSize = (
           925
           517)
@@ -3438,7 +3422,6 @@ object frmPEInfo: TfrmPEInfo
           TabOrder = 0
           ViewStyle = vsReport
           OnClick = lv2Click
-          ExplicitWidth = 974
         end
         object mmoSection: TMemo
           Left = 12
@@ -3455,8 +3438,6 @@ object frmPEInfo: TfrmPEInfo
           ReadOnly = True
           ScrollBars = ssVertical
           TabOrder = 1
-          ExplicitWidth = 992
-          ExplicitHeight = 375
         end
       end
     end
