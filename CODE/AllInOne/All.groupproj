@@ -9,6 +9,9 @@
         <Projects Include="plugin\12.PEInfo\PEInfo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="plugin\02.SysSP\SysSP.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="PEInfo:Make">
         <MSBuild Projects="plugin\12.PEInfo\PEInfo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="SysSP">
+        <MSBuild Projects="plugin\02.SysSP\SysSP.dproj"/>
+    </Target>
+    <Target Name="SysSP:Clean">
+        <MSBuild Projects="plugin\02.SysSP\SysSP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SysSP:Make">
+        <MSBuild Projects="plugin\02.SysSP\SysSP.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aio;PEInfo"/>
+        <CallTarget Targets="Aio;PEInfo;SysSP"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aio:Clean;PEInfo:Clean"/>
+        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aio:Make;PEInfo:Make"/>
+        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

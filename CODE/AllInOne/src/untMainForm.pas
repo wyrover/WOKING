@@ -38,7 +38,7 @@ implementation
 {$R *.dfm}
 
 var
-  FoldWNDPROC: Pointer;
+  FOldWNDPROC: Pointer;
 
 type
   TShowDllForm = procedure(var strTitle: PChar; var frm: TFormClass); stdcall;
@@ -53,7 +53,7 @@ begin
       SendMessage(Application.MainForm.Handle, WM_NCACTIVATE, Integer(True), 0);
     end;
   end;
-  Result := CallWindowProc(FoldWNDPROC, hwnd, msg, wparam, lParam);
+  Result := CallWindowProc(FOldWNDPROC, hwnd, msg, wparam, lParam);
 end;
 
 procedure TForm1.AddAllModule;
@@ -102,7 +102,6 @@ begin
     tmpts.PageIndex   := 0;
 
     DllForm             := tmpfrm.Create(Application);
-    DllForm.Name        := 'PEInfo';
     DllForm.Position    := poDesigned;
     DllForm.BorderStyle := bsNone;
     DllForm.Color       := clWhite;
@@ -112,8 +111,8 @@ begin
 
     { 解决 DLL 窗体获取焦点时，主窗体丢失焦点的问题 }
     Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // 解决 DLL 窗体 TAB 键不能用的问题
-    FoldWNDPROC := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));   // 拦截 DLL 窗体消息
-    SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
+//    FOldWNDPROC := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));   // 拦截 DLL 窗体消息
+//    SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
   end;
 
   pgcAll.ActivePageIndex := 0;

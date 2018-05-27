@@ -6,7 +6,7 @@
         <MainSource>Aio.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -129,6 +129,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>SYS3.ico</Icon_MainIcon>
         <DCC_UnitSearchPath>E:\BaiduYun\Code\Delphi\VCL\Raize\6.2.2\Source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <AppExecutionLevel>highestAvailable</AppExecutionLevel>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>

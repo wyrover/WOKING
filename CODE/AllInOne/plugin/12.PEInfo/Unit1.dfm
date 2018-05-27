@@ -2,8 +2,8 @@ object frmPEInfo: TfrmPEInfo
   Left = 0
   Top = 0
   Caption = 'PEInfo('#38745#24577#30913#30424#25991#20214#20998#26512#27861#65292#38750#20869#23384')'
-  ClientHeight = 660
-  ClientWidth = 1046
+  ClientHeight = 611
+  ClientWidth = 969
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -14,14 +14,14 @@ object frmPEInfo: TfrmPEInfo
   OldCreateOrder = False
   Position = poDesigned
   DesignSize = (
-    1046
-    660)
+    969
+    611)
   PixelsPerInch = 96
   TextHeight = 13
   object srchbxPEFileName: TSearchBox
     Left = 8
     Top = 8
-    Width = 1030
+    Width = 953
     Height = 24
     Anchors = [akLeft, akTop, akRight]
     Font.Charset = GB2312_CHARSET
@@ -34,12 +34,13 @@ object frmPEInfo: TfrmPEInfo
     TabOrder = 0
     OnDblClick = srchbxPEFileNameInvokeSearch
     OnInvokeSearch = srchbxPEFileNameInvokeSearch
+    ExplicitWidth = 1030
   end
   object pnl1: TPanel
     Left = 8
     Top = 38
-    Width = 1030
-    Height = 614
+    Width = 953
+    Height = 565
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     BorderStyle = bsSingle
@@ -47,15 +48,17 @@ object frmPEInfo: TfrmPEInfo
     ParentCtl3D = False
     TabOrder = 1
     OnDblClick = srchbxPEFileNameInvokeSearch
+    ExplicitWidth = 1030
+    ExplicitHeight = 614
     DesignSize = (
-      1028
-      612)
+      951
+      563)
     object pgc1: TPageControl
       Left = 9
       Top = 6
-      Width = 1010
-      Height = 597
-      ActivePage = ts1
+      Width = 933
+      Height = 548
+      ActivePage = ts6
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -65,8 +68,12 @@ object frmPEInfo: TfrmPEInfo
       ParentFont = False
       TabOrder = 0
       Visible = False
+      ExplicitWidth = 1010
+      ExplicitHeight = 597
       object ts1: TTabSheet
         Caption = #31616#20171
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         object lblPEInfo: TLabel
           Left = 40
           Top = 32
@@ -83,10 +90,8 @@ object frmPEInfo: TfrmPEInfo
       object ts2: TTabSheet
         Caption = '1'#12289'DOS '#25991#20214#22836
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         object lbl1: TLabel
           Left = 20
           Top = 12
@@ -863,14 +868,16 @@ object frmPEInfo: TfrmPEInfo
       object ts3: TTabSheet
         Caption = '2'#12289'DOS STUB'
         ImageIndex = 2
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         DesignSize = (
-          1002
-          566)
+          925
+          517)
         object mmoDosStub: TMemo
           Left = 13
           Top = 11
-          Width = 986
-          Height = 552
+          Width = 909
+          Height = 503
           Anchors = [akLeft, akTop, akRight, akBottom]
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
@@ -880,14 +887,18 @@ object frmPEInfo: TfrmPEInfo
           ParentFont = False
           ReadOnly = True
           TabOrder = 0
+          ExplicitWidth = 986
+          ExplicitHeight = 552
         end
       end
       object ts4: TTabSheet
         Caption = '3'#12289'NT HEADER'
         ImageIndex = 3
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         DesignSize = (
-          1002
-          566)
+          925
+          517)
         object lbl57: TLabel
           Left = 24
           Top = 16
@@ -1155,8 +1166,8 @@ object frmPEInfo: TfrmPEInfo
         object scrlbx1: TScrollBox
           Left = 24
           Top = 248
-          Width = 962
-          Height = 301
+          Width = 885
+          Height = 252
           VertScrollBar.Smooth = True
           VertScrollBar.Tracking = True
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -1167,6 +1178,8 @@ object frmPEInfo: TfrmPEInfo
           ParentCtl3D = False
           TabOrder = 0
           OnMouseWheel = scrlbx1MouseWheel
+          ExplicitWidth = 962
+          ExplicitHeight = 301
           object lbl77: TLabel
             Left = 31
             Top = 11
@@ -3075,23 +3088,25 @@ object frmPEInfo: TfrmPEInfo
       object ts5: TTabSheet
         Caption = '4'#12289#33410#34920
         ImageIndex = 4
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         DesignSize = (
-          1002
-          566)
+          925
+          517)
         object lv1: TListView
           Left = 12
           Top = 12
-          Width = 974
-          Height = 543
+          Width = 600
+          Height = 494
           Anchors = [akLeft, akTop, akRight, akBottom]
           Columns = <
             item
               Caption = 'Name'
-              Width = 100
+              Width = 80
             end
             item
               Caption = 'VSize'
-              Width = 100
+              Width = 80
             end
             item
               Caption = 'VOffset'
@@ -3118,32 +3133,282 @@ object frmPEInfo: TfrmPEInfo
           ReadOnly = True
           RowSelect = True
           ParentFont = False
-          PopupMenu = pm6
           TabOrder = 0
           ViewStyle = vsReport
-          OnDblClick = mniSectionAttrClick
+          OnClick = lv1Click
+          ExplicitWidth = 615
+        end
+        object pnl2: TPanel
+          Left = 611
+          Top = 12
+          Width = 298
+          Height = 494
+          Anchors = [akTop, akRight, akBottom]
+          BevelOuter = bvNone
+          BorderStyle = bsSingle
+          Caption = 'pnl2'
+          ShowCaption = False
+          TabOrder = 1
+          object pnl3: TPanel
+            Left = 11
+            Top = 9
+            Width = 277
+            Height = 421
+            BevelOuter = bvNone
+            Caption = 'pnl1'
+            Enabled = False
+            ShowCaption = False
+            TabOrder = 0
+            object chk1: TCheckBox
+              Tag = 268435456
+              Left = 52
+              Top = 8
+              Width = 160
+              Height = 17
+              Caption = #20869#23384#20013#21487#20849#20139
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object chk2: TCheckBox
+              Tag = 536870912
+              Left = 52
+              Top = 35
+              Width = 160
+              Height = 17
+              Caption = #20316#20026#20195#30721#25191#34892
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object chk3: TCheckBox
+              Tag = 1073741824
+              Left = 52
+              Top = 62
+              Width = 160
+              Height = 17
+              Caption = #21487#35835#21462
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 2
+            end
+            object chk4: TCheckBox
+              Tag = 2147483647
+              Left = 52
+              Top = 90
+              Width = 160
+              Height = 17
+              Caption = #21487#20889#20837
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 3
+            end
+            object chk5: TCheckBox
+              Tag = 16777216
+              Left = 52
+              Top = 117
+              Width = 160
+              Height = 17
+              Caption = #21253#21547#25193#23637#37325#23450#20301
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 4
+            end
+            object chk6: TCheckBox
+              Tag = 33554432
+              Left = 52
+              Top = 145
+              Width = 160
+              Height = 17
+              Caption = #38656#35201#26102#21487#24223#24323
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 5
+            end
+            object chk7: TCheckBox
+              Tag = 67108864
+              Left = 52
+              Top = 172
+              Width = 160
+              Height = 17
+              Caption = #19981#21487#32531#23384
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 6
+            end
+            object chk8: TCheckBox
+              Tag = 134217728
+              Left = 52
+              Top = 200
+              Width = 160
+              Height = 17
+              Caption = #19981#21487#20998#39029
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 7
+            end
+            object chk9: TCheckBox
+              Tag = 4096
+              Left = 52
+              Top = 227
+              Width = 160
+              Height = 17
+              Caption = #21253#21547' COMDAT '#25968#25454
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 8
+            end
+            object chk10: TCheckBox
+              Tag = 512
+              Left = 52
+              Top = 254
+              Width = 160
+              Height = 17
+              Caption = #21253#21547#27880#37322#25110#20854#20182#20449#24687
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 9
+            end
+            object chk11: TCheckBox
+              Tag = 2048
+              Left = 52
+              Top = 282
+              Width = 160
+              Height = 17
+              Caption = #19981#20250#25104#20026#38236#20687#19968#37096#20998
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 10
+            end
+            object chk12: TCheckBox
+              Tag = 32
+              Left = 52
+              Top = 309
+              Width = 160
+              Height = 17
+              Caption = #21253#21547#21487#25191#34892#20195#30721
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 11
+            end
+            object chk13: TCheckBox
+              Tag = 64
+              Left = 52
+              Top = 337
+              Width = 160
+              Height = 17
+              Caption = #21253#21547#24050#21021#22987#21270#25968#25454
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 12
+            end
+            object chk14: TCheckBox
+              Tag = 128
+              Left = 52
+              Top = 364
+              Width = 160
+              Height = 17
+              Caption = #21253#21547#26410#21021#22987#21270#20449#24687
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 13
+            end
+            object chk15: TCheckBox
+              Tag = 8
+              Left = 52
+              Top = 392
+              Width = 160
+              Height = 17
+              Caption = #19981#20250#34987#22635#34917#21040#19979#19968#36793#30028
+              Font.Charset = GB2312_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = #23435#20307
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 14
+            end
+          end
         end
       end
       object ts6: TTabSheet
         Caption = '5'#12289#33410#25968#25454
         ImageIndex = 5
+        ExplicitWidth = 1002
+        ExplicitHeight = 566
         DesignSize = (
-          1002
-          566)
+          925
+          517)
         object lv2: TListView
           Left = 12
           Top = 12
-          Width = 974
+          Width = 897
           Height = 157
           Anchors = [akLeft, akTop, akRight]
           Columns = <
             item
               Caption = 'Name'
-              Width = 100
+              Width = 80
             end
             item
               Caption = 'VSize'
-              Width = 100
+              Width = 80
             end
             item
               Caption = 'VOffset'
@@ -3173,13 +3438,13 @@ object frmPEInfo: TfrmPEInfo
           TabOrder = 0
           ViewStyle = vsReport
           OnClick = lv2Click
-          OnDblClick = mniSectionAttrClick
+          ExplicitWidth = 974
         end
         object mmoSection: TMemo
           Left = 12
           Top = 180
-          Width = 992
-          Height = 375
+          Width = 915
+          Height = 326
           Anchors = [akLeft, akTop, akRight, akBottom]
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText
@@ -3190,6 +3455,8 @@ object frmPEInfo: TfrmPEInfo
           ReadOnly = True
           ScrollBars = ssVertical
           TabOrder = 1
+          ExplicitWidth = 992
+          ExplicitHeight = 375
         end
       end
     end
@@ -3464,19 +3731,6 @@ object frmPEInfo: TfrmPEInfo
       Caption = 'IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE     = $8000  '
       OnDrawItem = IMAGEFILEMACHINEAMD648664AMD64K81DrawItem
       OnMeasureItem = mniIMAGEDLLCHARACTERISTICSTERMINALSERVERAWARE0x80001MeasureItem
-    end
-  end
-  object pm6: TPopupMenu
-    AutoHotkeys = maManual
-    Left = 756
-    Top = 4
-    object mniReadSectionData: TMenuItem
-      Caption = #35835#21462#25968#25454
-      OnClick = mniReadSectionDataClick
-    end
-    object mniSectionAttr: TMenuItem
-      Caption = #26631#35760#23646#24615
-      OnClick = mniSectionAttrClick
     end
   end
 end

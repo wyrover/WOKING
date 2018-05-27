@@ -4,9 +4,7 @@
 interface
 
 uses
-  Windows, Messages, SysUtils, System.StrUtils, Variants, Classes, Graphics,
-  Controls, Forms, System.Win.Registry, System.Types, Dialogs, System.IOUtils,
-  Vcl.FileCtrl, Vcl.Clipbrd, Vcl.StdCtrls;
+  Windows, Messages, SysUtils, System.StrUtils, Variants, Classes, Graphics, Controls, Forms, System.Win.Registry, System.Types, Dialogs, System.IOUtils, Vcl.FileCtrl, Vcl.Clipbrd, Vcl.StdCtrls;
 
 type
   TfrmSysSearch = class(TForm)
@@ -38,12 +36,17 @@ type
     { Public declarations }
   end;
 
-var
-  frmSysSearch: TfrmSysSearch;
+procedure ShowDllForm(var strTitle: PChar; var frm: TFormClass); stdcall;
 
 implementation
 
 {$R *.dfm}
+
+procedure ShowDllForm(var strTitle: PChar; var frm: TFormClass); stdcall;
+begin
+  strTitle := '系统搜索路径';
+  frm      := TfrmSysSearch;
+end;
 
 function GetSysSearchPath: TStringDynArray;
 begin
@@ -67,14 +70,14 @@ begin
   begin
     if (Trim(strsList.Strings[III]) <> '') and (strsList.Strings[III] <> ';') then
     begin
-      //if SysUtils.DirectoryExists(strsList.Strings[III]) then
-      //begin
-        strSearchPath := strSearchPath + ';' + strsList.Strings[III];
-      //end
-      //else
-      //begin
-      //  ShowMessage(Format('%s 文件夹不存在', [strsList.Strings[III]]));
-      //end;
+      // if SysUtils.DirectoryExists(strsList.Strings[III]) then
+      // begin
+      strSearchPath := strSearchPath + ';' + strsList.Strings[III];
+      // end
+      // else
+      // begin
+      // ShowMessage(Format('%s 文件夹不存在', [strsList.Strings[III]]));
+      // end;
     end;
   end;
   strSearchPath := RightStr(strSearchPath, Length(strSearchPath) - 1);

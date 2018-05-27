@@ -2,9 +2,11 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #31243#24207#21592#24037#20855#31665' v2.0'
-  ClientHeight = 644
-  ClientWidth = 1022
+  ClientHeight = 611
+  ClientWidth = 984
   Color = clBtnFace
+  Constraints.MinHeight = 650
+  Constraints.MinWidth = 1000
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,20 +18,24 @@ object Form1: TForm1
   OnCreate = FormCreate
   OnResize = FormResize
   DesignSize = (
-    1022
-    644)
+    984
+    611)
   PixelsPerInch = 96
   TextHeight = 13
   object pgcAll: TPageControl
     Left = 8
     Top = 8
-    Width = 1006
-    Height = 628
+    Width = 968
+    Height = 595
     ActivePage = tsConfig
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
+    ExplicitWidth = 1006
+    ExplicitHeight = 628
     object tsConfig: TTabSheet
       Caption = #37197#32622
+      ExplicitWidth = 998
+      ExplicitHeight = 600
       object chkTrayIco: TCheckBox
         Left = 20
         Top = 16

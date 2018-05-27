@@ -291,11 +291,25 @@ type
     N0x4000Reserved1: TMenuItem;
     mniIMAGEDLLCHARACTERISTICSTERMINALSERVERAWARE0x80001: TMenuItem;
     lv1: TListView;
-    pm6: TPopupMenu;
-    mniReadSectionData: TMenuItem;
-    mniSectionAttr: TMenuItem;
     lv2: TListView;
     mmoSection: TMemo;
+    pnl2: TPanel;
+    pnl3: TPanel;
+    chk1: TCheckBox;
+    chk2: TCheckBox;
+    chk3: TCheckBox;
+    chk4: TCheckBox;
+    chk5: TCheckBox;
+    chk6: TCheckBox;
+    chk7: TCheckBox;
+    chk8: TCheckBox;
+    chk9: TCheckBox;
+    chk10: TCheckBox;
+    chk11: TCheckBox;
+    chk12: TCheckBox;
+    chk13: TCheckBox;
+    chk14: TCheckBox;
+    chk15: TCheckBox;
     procedure srchbxPEFileNameInvokeSearch(Sender: TObject);
     procedure scrlbx1MouseWheel(Sender: TObject; Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
     procedure IMAGEFILEMACHINEAMD648664AMD64K81DrawItem(Sender: TObject; ACanvas: TCanvas; ARect: TRect; Selected: Boolean);
@@ -304,12 +318,12 @@ type
     procedure IMAGESUBSYSTEMWINDOWSBOOTAPPLICATION161MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
     procedure mniIMAGEDLLCHARACTERISTICSTERMINALSERVERAWARE0x80001MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
     procedure mniReadSectionDataClick(Sender: TObject);
-    procedure mniSectionAttrClick(Sender: TObject);
     procedure lv2Click(Sender: TObject);
     procedure lbl154Click(Sender: TObject);
     procedure lbl156Click(Sender: TObject);
     procedure lbl158Click(Sender: TObject);
     procedure IMAGEDOSSIGNATURE5A4DMZ1MeasureItem(Sender: TObject; ACanvas: TCanvas; var Width, Height: Integer);
+    procedure lv1Click(Sender: TObject);
   private
     { 检测是否是PE文件 }
     function CheckPERight(const strPEFileName: string; var bX64: Boolean; var bDll: Boolean): Boolean;
@@ -432,6 +446,33 @@ begin
   Width := 800;
 end;
 
+procedure TfrmPEInfo.lv1Click(Sender: TObject);
+var
+  III    : Integer;
+  intTag : int64;
+  chkTemp: TCheckBox;
+  intAttr: Integer;
+begin
+  if lv1.ItemIndex = -1 then
+    Exit;
+
+  intAttr := StrToInt(lv1.Selected.SubItems[4]);
+  for III := 1 to 15 do
+  begin
+    chkTemp := TCheckBox(FindComponent('chk' + IntToStr(III)));
+    if III <> 4 then
+    begin
+      chkTemp.Checked := chkTemp.Tag and intAttr = chkTemp.Tag;
+    end
+    else
+    begin
+      intTag          := chk4.Tag + 1;
+      chkTemp.Checked := intTag and intAttr = intTag;
+    end;
+  end;
+
+end;
+
 procedure TfrmPEInfo.lv2Click(Sender: TObject);
 begin
   if lv2.ItemIndex = -1 then
@@ -453,14 +494,6 @@ begin
   lv2.ItemIndex        := lv1.ItemIndex;
   pgc1.ActivePageIndex := 5;
   ShowHexView(srchbxPEFileName.Text, StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]), StrToInt(lv2.Items[lv2.ItemIndex].SubItems[3]) + StrToInt(lv2.Items[lv2.ItemIndex].SubItems[2]), mmoSection);
-end;
-
-procedure TfrmPEInfo.mniSectionAttrClick(Sender: TObject);
-begin
-  if lv1.ItemIndex = -1 then
-    Exit;
-
-  ShowSectionAttrForm(StrToInt(lv1.Selected.SubItems[4]));
 end;
 
 { 解析PE }
