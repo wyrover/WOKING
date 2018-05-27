@@ -3,10 +3,10 @@
         <ProjectGuid>{70F5941E-0F8E-4E48-8B92-C98828C8F931}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="plugin\peinfo\peinfo.dproj">
+        <Projects Include="src\Aio.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="src\Aio.dproj">
+        <Projects Include="plugin\12.PEInfo\PEInfo.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="peinfo">
-        <MSBuild Projects="plugin\peinfo\peinfo.dproj"/>
-    </Target>
-    <Target Name="peinfo:Clean">
-        <MSBuild Projects="plugin\peinfo\peinfo.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="peinfo:Make">
-        <MSBuild Projects="plugin\peinfo\peinfo.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Aio">
         <MSBuild Projects="src\Aio.dproj"/>
     </Target>
@@ -35,14 +26,23 @@
     <Target Name="Aio:Make">
         <MSBuild Projects="src\Aio.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PEInfo">
+        <MSBuild Projects="plugin\12.PEInfo\PEInfo.dproj"/>
+    </Target>
+    <Target Name="PEInfo:Clean">
+        <MSBuild Projects="plugin\12.PEInfo\PEInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PEInfo:Make">
+        <MSBuild Projects="plugin\12.PEInfo\PEInfo.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="peinfo;Aio"/>
+        <CallTarget Targets="Aio;PEInfo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="peinfo:Clean;Aio:Clean"/>
+        <CallTarget Targets="Aio:Clean;PEInfo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="peinfo:Make;Aio:Make"/>
+        <CallTarget Targets="Aio:Make;PEInfo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

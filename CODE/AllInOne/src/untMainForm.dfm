@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = #31243#24207#21592#24037#20855#31665' v2.0'
-  ClientHeight = 510
-  ClientWidth = 846
+  ClientHeight = 644
+  ClientWidth = 1022
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,16 +14,17 @@ object Form1: TForm1
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnResize = FormResize
   DesignSize = (
-    846
-    510)
+    1022
+    644)
   PixelsPerInch = 96
   TextHeight = 13
   object pgcAll: TPageControl
     Left = 8
     Top = 8
-    Width = 830
-    Height = 494
+    Width = 1006
+    Height = 628
     ActivePage = tsConfig
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0

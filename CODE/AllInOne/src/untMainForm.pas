@@ -21,6 +21,7 @@ type
     procedure mniExitClick(Sender: TObject);
     procedure mniShowFormClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
     FbExit: Boolean;
@@ -62,10 +63,10 @@ var
   dllModuleList : TStringDynArray;
   III, Count    : Integer;
   hDllFileHandle: Cardinal;
-  tmpts         : TTabSheet;
   tmpFunc       : TShowDllForm;
   strTitle      : PChar;
   tmpfrm        : TFormClass;
+  tmpts         : TTabSheet;
   DllForm       : TForm;
 begin
   { 插件目录是否存在 }
@@ -94,21 +95,25 @@ begin
 
     { 创建 TAB 页放置 DLL 窗体 }
     tmpFunc(strTitle, tmpfrm);
-    tmpts               := TTabSheet.Create(pgcAll);
-    tmpts.PageControl   := pgcAll;
-    tmpts.Caption       := strTitle;
-    tmpts.PageIndex     := 0;
+    tmpts             := TTabSheet.Create(pgcAll);
+    tmpts.PageControl := pgcAll;
+    tmpts.Name        := strTitle;
+    tmpts.Caption     := strTitle;
+    tmpts.PageIndex   := 0;
+
     DllForm             := tmpfrm.Create(Application);
-    DllForm.WindowState := wsMaximized;
+    DllForm.Name        := 'PEInfo';
+    DllForm.Position    := poDesigned;
     DllForm.BorderStyle := bsNone;
-    DllForm.Align       := alClient;
     DllForm.Color       := clWhite;
+    DllForm.Anchors     := [akLeft, akTop, akRight, akBottom];
+    SetWindowPos(DllForm.Handle, tmpts.Handle, 0, 0, tmpts.Width - 4, tmpts.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
     DllForm.Show;
 
     { 解决 DLL 窗体获取焦点时，主窗体丢失焦点的问题 }
+    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // 解决 DLL 窗体 TAB 键不能用的问题
     FoldWNDPROC := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));   // 拦截 DLL 窗体消息
     SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
-    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // 解决 DLL 窗体 TAB 键不能用的问题
   end;
 
   pgcAll.ActivePageIndex := 0;
@@ -139,6 +144,30 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   FbExit := False;
   AddAllModule;
+end;
+
+function EnumChildFunc(hDllForm: THandle; hTabSheetHandle: THandle): Boolean; stdcall;
+var
+  rct: TRect;
+begin
+  { 判断是否是 DLL 的窗体句柄，不是子窗体的句柄 }
+  if GetParent(hDllForm) = 0 then
+  begin
+    GetWindowRect(hTabSheetHandle, rct);
+    SetWindowPos(hDllForm, hTabSheetHandle, 0, 0, rct.Width - 4, rct.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
+  end;
+  Result := True;
+end;
+
+procedure TForm1.FormResize(Sender: TObject);
+var
+  III: Integer;
+begin
+  { 枚举每个 TABSHEET 的子窗体 }
+  for III := 0 to pgcAll.PageCount - 2 do
+  begin
+    EnumChildWindows(pgcAll.Pages[III].Handle, @EnumChildFunc, pgcAll.Pages[III].Handle);
+  end;
 end;
 
 procedure TForm1.mniExitClick(Sender: TObject);

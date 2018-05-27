@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899-12-30 00:00:00.000.144,=E:\dbyoung\CODE\AllInOne\plugin\peinfo\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.305,C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\dbyoung\CODE\AllInOne\plugin\peinfo\peinfo.dproj</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.663,=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018-05-26 22:27:14.000.477,D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\PEInfo.dproj=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018-05-26 22:27:30.000.979,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit3.pas</Transaction>
+    <Transaction>2018-05-26 22:27:30.000.826,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit1.pas</Transaction>
+    <Transaction>2018-05-26 22:27:30.000.921,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit2.pas</Transaction>
+    <Transaction>2018-05-26 22:27:31.000.064,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit4.pas</Transaction>
   </Transactions>
 </BorlandProject>
