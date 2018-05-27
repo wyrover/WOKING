@@ -3,8 +3,8 @@
 	<Transactions>
     <Transaction>2018-05-26 22:27:14.000.477,D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\PEInfo.dproj=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2018-05-26 22:27:30.000.979,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit3.pas</Transaction>
-    <Transaction>2018-05-26 22:27:30.000.921,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit2.pas</Transaction>
     <Transaction>2018-05-26 22:27:30.000.826,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit1.pas</Transaction>
+    <Transaction>2018-05-26 22:27:30.000.921,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit2.pas</Transaction>
     <Transaction>2018-05-26 22:27:31.000.064,=D:\Working\dbyoung\CODE\AllInOne\plugin\12.PEInfo\Unit4.pas</Transaction>
   </Transactions>
 </BorlandProject>
