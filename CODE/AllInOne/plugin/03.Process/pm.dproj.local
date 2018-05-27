@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2018-05-27 19:58:12.000.072,D:\Working\dbyoung\CODE\AllInOne\plugin\03.Process\pm.dproj=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2018-05-27 19:59:00.000.338,=D:\Working\dbyoung\CODE\AllInOne\plugin\03.Process\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.338,=D:\Working\dbyoung\CODE\AllInOne\plugin\03.Process\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.072,C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Working\dbyoung\CODE\AllInOne\plugin\03.Process\pm.dproj</Transaction>
   </Transactions>
 </BorlandProject>

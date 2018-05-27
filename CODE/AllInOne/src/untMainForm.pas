@@ -22,6 +22,7 @@ type
     procedure mniShowFormClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     FbExit: Boolean;
@@ -37,15 +38,27 @@ implementation
 
 {$R *.dfm}
 
-var
-  FOldWNDPROC: Pointer;
-
 type
   TShowDllForm = procedure(var strTitle: PChar; var frm: TFormClass); stdcall;
 
+  PDllFormInfo = ^TDllFormInfo;
+
+  TDllFormInfo = record
+    hFormHandle: THandle;
+    OldWndProc: Pointer;
+  end;
+
+var
+  FOldWndProcList: TList;
+
   { 解决 dll 中，当控件获取焦点，主窗体变成非激活状态 }
-function NewDllFormProc(hwnd: THandle; msg: UINT; wparam: wparam; lParam: lParam): Integer; stdcall;
+function NewDllFormProc(hWnd: THandle; msg: UINT; wParam: Cardinal; lParam: Cardinal): Integer; stdcall;
+var
+  III: Integer;
 begin
+  Result := 1;
+
+  { 如果子窗体获取焦点时，激活主窗体 }
   if msg = WM_ACTIVATE then
   begin
     if Application.MainForm <> nil then
@@ -53,7 +66,15 @@ begin
       SendMessage(Application.MainForm.Handle, WM_NCACTIVATE, Integer(True), 0);
     end;
   end;
-  Result := CallWindowProc(FOldWNDPROC, hwnd, msg, wparam, lParam);
+
+  { 调用原来的回调过程 }
+  for III := 0 to FOldWndProcList.Count - 1 do
+  begin
+    if PDllFormInfo(FOldWndProcList[III])^.hFormHandle = hWnd then
+    begin
+      Result := CallWindowProc(PDllFormInfo(FOldWndProcList[III])^.OldWndProc, hWnd, msg, wParam, lParam);
+    end;
+  end;
 end;
 
 procedure TForm1.AddAllModule;
@@ -68,6 +89,8 @@ var
   tmpfrm        : TFormClass;
   tmpts         : TTabSheet;
   DllForm       : TForm;
+  DllInfo       : PDllFormInfo;
+  OldWndProc    : Pointer;
 begin
   { 插件目录是否存在 }
   strDllPath := ExtractFilePath(ParamStr(0)) + 'plugin';
@@ -81,7 +104,8 @@ begin
     Exit;
 
   { 加载 DLL 插件文件 }
-  for III := 0 to Count - 1 do
+  FOldWndProcList := TList.Create;
+  for III         := 0 to Count - 1 do
   begin
     strDllFileName := dllModuleList[III];
     hDllFileHandle := LoadLibrary(PChar(strDllFileName));
@@ -111,8 +135,14 @@ begin
 
     { 解决 DLL 窗体获取焦点时，主窗体丢失焦点的问题 }
     Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // 解决 DLL 窗体 TAB 键不能用的问题
-//    FOldWNDPROC := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));   // 拦截 DLL 窗体消息
-//    SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
+    OldWndProc := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));    // 拦截 DLL 窗体消息
+    SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
+
+    { 记录下 DLL 窗体回调过程信息 }
+    DllInfo              := AllocMem(SizeOf(TDllFormInfo)); // 注意释放内存
+    DllInfo^.hFormHandle := DllForm.Handle;                 // 记录下窗体句柄
+    DllInfo^.OldWndProc  := OldWndProc;                     // 记录下窗体回调过程地址
+    FOldWndProcList.Add(DllInfo);                           // 添加到列表
   end;
 
   pgcAll.ActivePageIndex := 0;
@@ -143,6 +173,23 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   FbExit := False;
   AddAllModule;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+var
+  III: Integer;
+begin
+  if FOldWndProcList <> nil then
+  begin
+    if FOldWndProcList.Count > 0 then
+    begin
+      for III := 0 to FOldWndProcList.Count - 1 do
+      begin
+        FreeMem(FOldWndProcList[III]);
+      end;
+    end;
+    FOldWndProcList.Free;
+  end;
 end;
 
 function EnumChildFunc(hDllForm: THandle; hTabSheetHandle: THandle): Boolean; stdcall;

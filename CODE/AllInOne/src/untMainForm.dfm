@@ -16,6 +16,7 @@ object Form1: TForm1
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnResize = FormResize
   DesignSize = (
     984
@@ -30,12 +31,8 @@ object Form1: TForm1
     ActivePage = tsConfig
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
-    ExplicitWidth = 1006
-    ExplicitHeight = 628
     object tsConfig: TTabSheet
       Caption = #37197#32622
-      ExplicitWidth = 998
-      ExplicitHeight = 600
       object chkTrayIco: TCheckBox
         Left = 20
         Top = 16
