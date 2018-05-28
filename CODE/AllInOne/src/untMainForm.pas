@@ -169,9 +169,30 @@ begin
   end;
 end;
 
+function EnableDebugPrivilege(PrivName: string; CanDebug: Boolean): Boolean;
+var
+  TP    : Winapi.Windows.TOKEN_PRIVILEGES;
+  Dummy : Cardinal;
+  hToken: THandle;
+begin
+  OpenProcessToken(GetCurrentProcess, TOKEN_ADJUST_PRIVILEGES, hToken);
+  TP.PrivilegeCount := 1;
+  LookupPrivilegeValue(nil, PChar(PrivName), TP.Privileges[0].Luid);
+  if CanDebug then
+    TP.Privileges[0].Attributes := SE_PRIVILEGE_ENABLED
+  else
+    TP.Privileges[0].Attributes := 0;
+  Result                        := AdjustTokenPrivileges(hToken, False, TP, SizeOf(TP), nil, Dummy);
+  hToken                        := 0;
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   FbExit := False;
+
+  EnableDebugPrivilege('SeDebugPrivilege', True);
+  EnableDebugPrivilege('SeSecurityPrivilege', True);
+
   AddAllModule;
 end;
 
