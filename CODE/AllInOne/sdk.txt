@@ -26,8 +26,9 @@
   13
      Image View
   14 
+     DBPlay
+  15 
      PDF View
      
     函数说明:
-      输出函数 ：exportdll
-      07名称：名称、需要一开始就需要的初始化的回调、0700000
+      输出函数 ：ShowDllForm
