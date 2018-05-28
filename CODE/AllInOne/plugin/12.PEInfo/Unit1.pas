@@ -850,7 +850,10 @@ end;
 procedure TfrmPEInfo.lbl154Click(Sender: TObject);
 begin
   if StrToInt(TLabel(Sender).Caption) = 0 then
+  begin
+    ShowMessage(TLabel(Sender).Caption);
     Exit;
+  end;
 
   ShowExportFuncList(srchbxPEFileName.Text);
 end;

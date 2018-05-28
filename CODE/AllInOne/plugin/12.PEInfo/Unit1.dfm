@@ -61,7 +61,7 @@ object frmPEInfo: TfrmPEInfo
       Top = 6
       Width = 933
       Height = 548
-      ActivePage = ts1
+      ActivePage = ts6
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = GB2312_CHARSET
       Font.Color = clWindowText
@@ -3383,7 +3383,7 @@ object frmPEInfo: TfrmPEInfo
           Left = 12
           Top = 12
           Width = 897
-          Height = 157
+          Height = 205
           Anchors = [akLeft, akTop, akRight]
           Columns = <
             item
@@ -3425,9 +3425,9 @@ object frmPEInfo: TfrmPEInfo
         end
         object mmoSection: TMemo
           Left = 12
-          Top = 180
+          Top = 228
           Width = 915
-          Height = 326
+          Height = 278
           Anchors = [akLeft, akTop, akRight, akBottom]
           Font.Charset = GB2312_CHARSET
           Font.Color = clWindowText

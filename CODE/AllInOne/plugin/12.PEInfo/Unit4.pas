@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.ComCtrls, Vcl.StdCtrls;
+  Vcl.ComCtrls, Vcl.StdCtrls, System.Math;
 
 type
   TForm4 = class(TForm)
@@ -35,7 +35,7 @@ type
     procedure CreateParams(var Params: TCreateParams); override;
   private
     { Private declarations }
-    procedure FindExportTablePos(const sts: array of TImageSectionHeader; const intVA, intSize: Cardinal; var intRA: Cardinal); overload;
+    procedure FindExportTablePos(const sts: array of TImageSectionHeader; const intVA: Cardinal; var intRA: Cardinal); overload;
   public
     { Public declarations }
   end;
@@ -54,7 +54,6 @@ var
   inhX64         : TImageNtHeaders64;
   bX64           : Boolean;
   intVA          : Cardinal;
-  intSize        : Cardinal;
   intRA          : Cardinal;
   stsArr         : array of TImageSectionHeader;
   eft            : TImageExportDirectory;
@@ -77,26 +76,24 @@ begin
       FileRead(hPEFile, idh, SizeOf(TImageDosHeader));
       FileSeek(hPEFile, idh._lfanew, 0);
       FileRead(hPEFile, inhX86, SizeOf(TImageNtHeaders32));
-      bX64 := inhX86.Signature = IMAGE_FILE_MACHINE_AMD64;
+      bX64 := inhX86.FileHeader.Machine = IMAGE_FILE_MACHINE_AMD64;
       if bX64 then
       begin
         FileSeek(hPEFile, idh._lfanew, 0);
         FileRead(hPEFile, inhX64, SizeOf(TImageNtHeaders64));
-        intVA   := inhX64.OptionalHeader.DataDirectory[0].VirtualAddress;
-        intSize := inhX64.OptionalHeader.DataDirectory[0].Size;
+        intVA := inhX64.OptionalHeader.DataDirectory[0].VirtualAddress;
         SetLength(stsArr, inhX64.FileHeader.NumberOfSections);
         FileRead(hPEFile, stsArr[0], inhX64.FileHeader.NumberOfSections * SizeOf(TImageSectionHeader));
       end
       else
       begin
-        intVA   := inhX86.OptionalHeader.DataDirectory[0].VirtualAddress;
-        intSize := inhX86.OptionalHeader.DataDirectory[0].Size;
+        intVA := inhX86.OptionalHeader.DataDirectory[0].VirtualAddress;
         SetLength(stsArr, inhX86.FileHeader.NumberOfSections);
         FileRead(hPEFile, stsArr[0], inhX86.FileHeader.NumberOfSections * SizeOf(TImageSectionHeader));
       end;
 
-      FindExportTablePos(stsArr, intVA, intSize, intRA);
-      if intRA <> 0 then
+      FindExportTablePos(stsArr, intVA, intRA);
+      if intRA > 0 then
       begin
         FileSeek(hPEFile, intRA, 0);
         FileRead(hPEFile, eft, SizeOf(TImageExportDirectory));
@@ -145,27 +142,19 @@ begin
   Params.WndParent := 0;
 end;
 
-procedure TForm4.FindExportTablePos(const sts: array of TImageSectionHeader; const intVA, intSize: Cardinal; var intRA: Cardinal);
+procedure TForm4.FindExportTablePos(const sts: array of TImageSectionHeader; const intVA: Cardinal; var intRA: Cardinal);
 var
   III, Count: Integer;
-  intIndex  : Integer;
 begin
   intRA := 0;
 
-  Count    := High(sts) - Low(sts) + 1;
-  intIndex := -1;
-  for III  := 0 to Count - 1 do
+  Count   := Length(sts);
+  for III := 0 to Count - 2 do
   begin
-    if (sts[III].VirtualAddress < intVA) and (sts[III].VirtualAddress + sts[III].SizeOfRawData >= intVA + intSize) then
+    if (intVA >= sts[III + 0].VirtualAddress) and (intVA < sts[III + 1].VirtualAddress) then
     begin
-      intIndex := III;
-      Break;
+      intRA := (intVA - sts[III].VirtualAddress) + sts[III].PointerToRawData;
     end;
-  end;
-
-  if intIndex <> -1 then
-  begin
-    intRA := intVA - sts[intIndex].VirtualAddress + sts[intIndex].PointerToRawData;
   end;
 end;
 
