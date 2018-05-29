@@ -2,3 +2,4 @@ Win64
 __recovery
 Win32
 *.stat
+*.rsm
