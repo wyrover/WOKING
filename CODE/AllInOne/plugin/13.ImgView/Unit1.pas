@@ -91,12 +91,19 @@ end;
 
 procedure TfrmImageView.FormResize(Sender: TObject);
 begin
-  imgView.Left := (imgView.Parent.Width - imgView.Width) div 2;
-  imgView.Top  := (imgView.Parent.Height - imgView.Height) div 2;
-  if imgView.Left < 0 then
-    imgView.Left := 0;
-  if imgView.Top < 0 then
-    imgView.Top := 0;
+  if FbAutoSize then
+  begin
+    imgView.Left := (imgView.Parent.Width - imgView.Width) div 2;
+    imgView.Top  := (imgView.Parent.Height - imgView.Height) div 2;
+    if imgView.Left < 0 then
+      imgView.Left := 0;
+    if imgView.Top < 0 then
+      imgView.Top := 0;
+  end
+  else
+  begin
+    CenterStretchShowImage;
+  end;
 end;
 
 procedure TfrmImageView.mniFileOpenClick(Sender: TObject);

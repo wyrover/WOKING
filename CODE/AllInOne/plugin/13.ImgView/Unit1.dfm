@@ -5,6 +5,7 @@ object frmImageView: TfrmImageView
   ClientHeight = 510
   ClientWidth = 741
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -36,7 +37,6 @@ object frmImageView: TfrmImageView
     TabOrder = 0
     OnDblClick = mniFileOpenClick
     OnMouseWheel = scrlbx1MouseWheel
-    ExplicitWidth = 726
     object imgView: TImage
       Left = 0
       Top = 0

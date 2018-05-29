@@ -73,6 +73,7 @@ begin
     if PDllFormInfo(FOldWndProcList[III])^.hFormHandle = hWnd then
     begin
       Result := CallWindowProc(PDllFormInfo(FOldWndProcList[III])^.OldWndProc, hWnd, msg, wParam, lParam);
+      Break;
     end;
   end;
 end;
@@ -131,10 +132,10 @@ begin
     DllForm.Color       := clWhite;
     DllForm.Anchors     := [akLeft, akTop, akRight, akBottom];
     SetWindowPos(DllForm.Handle, tmpts.Handle, 0, 0, tmpts.Width - 4, tmpts.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
+    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle); // 解决 DLL 窗体 TAB 键不能用的问题
     DllForm.Show;
 
     { 解决 DLL 窗体获取焦点时，主窗体丢失焦点的问题 }
-    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);               // 解决 DLL 窗体 TAB 键不能用的问题
     OldWndProc := Pointer(GetWindowLong(DllForm.Handle, GWL_WNDPROC));    // 拦截 DLL 窗体消息
     SetWindowLong(DllForm.Handle, GWL_WNDPROC, LongInt(@NewDllFormProc)); // 指向新的窗体过程
 
