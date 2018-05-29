@@ -285,7 +285,7 @@ end;
 
 procedure TfrmProcessManager.FormResize(Sender: TObject);
 begin
-  lvProcess.Column[4].Width := Width - 774;
+  lvProcess.Column[4].Width := Width - 830;
   lvModule.Column[2].Width  := Width - 740;
 end;
 

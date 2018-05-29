@@ -6,7 +6,7 @@
         <MainSource>pm.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Library</AppType>
     </PropertyGroup>
@@ -135,6 +135,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
+        <Debugger_HostApplication>D:\Working\dbyoung\CODE\AllInOne\bin\x64\Aio.exe</Debugger_HostApplication>
+        <Debugger_CWD>D:\Working\dbyoung\CODE\AllInOne\bin\x64</Debugger_CWD>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <DCC_ExeOutput>..\..\bin\x64\plugin</DCC_ExeOutput>

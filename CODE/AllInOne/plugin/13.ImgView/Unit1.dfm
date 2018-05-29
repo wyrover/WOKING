@@ -30,7 +30,7 @@ object frmImageView: TfrmImageView
     VertScrollBar.Smooth = True
     VertScrollBar.Tracking = True
     Anchors = [akLeft, akTop, akRight, akBottom]
-    Color = clBlack
+    Color = clWhite
     Ctl3D = False
     ParentColor = False
     ParentCtl3D = False

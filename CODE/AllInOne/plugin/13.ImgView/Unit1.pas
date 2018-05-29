@@ -1,4 +1,4 @@
-unit Unit1;
+ï»¿unit Unit1;
 
 interface
 
@@ -46,7 +46,7 @@ implementation
 
 procedure ShowDllForm(var strTitle: PChar; var frm: TFormClass); stdcall;
 begin
-  strTitle := 'Í¼Æ¬²é¿´Æ÷';
+  strTitle := 'å›¾ç‰‡æŸ¥çœ‹å™¨';
   frm      := TfrmImageView;
 end;
 
@@ -125,6 +125,8 @@ begin
     imgView.AutoSize := FbAutoSize;
     imgView.Stretch  := not FbAutoSize;
     imgView.Picture.Bitmap.Assign(bmp);
+    scrlbx1.HorzScrollBar.Position := 0;
+    scrlbx1.VertScrollBar.Position := 0;
     if FbAutoSize then
       CenterActualSizeShowImage
     else
@@ -167,7 +169,7 @@ end;
 
 procedure TImage.WMMOUSEWHEEL(var msg: TWMMouseWheel);
 begin
-  { ½«¹öÂÖÏûÏ¢Í¨Öª¸ø¸¸¿Ø¼ş Scrolbox µÄ¹öÂÖÊÂ¼ş }
+  { å°†æ»šè½®æ¶ˆæ¯é€šçŸ¥ç»™çˆ¶æ§ä»¶ Scrolbox çš„æ»šè½®äº‹ä»¶ }
   PostMessage(TScrollBox(Parent).Handle, CM_MOUSEWHEEL, msg.WheelDelta, 0);
 end;
 

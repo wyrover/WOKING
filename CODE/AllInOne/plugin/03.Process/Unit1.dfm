@@ -46,7 +46,7 @@ object frmProcessManager: TfrmProcessManager
       end
       item
         Caption = #25551#36848
-        Width = 250
+        Width = 340
       end
       item
         Caption = #20844#21496
@@ -115,6 +115,7 @@ object frmProcessManager: TfrmProcessManager
     PopupMenu = pmModule
     TabOrder = 1
     ViewStyle = vsReport
+    OnColumnClick = lvProcessColumnClick
   end
   object pmProcess: TPopupMenu
     AutoHotkeys = maManual
