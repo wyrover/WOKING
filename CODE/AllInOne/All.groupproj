@@ -15,6 +15,9 @@
         <Projects Include="plugin\03.Process\pm.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="plugin\13.ImgView\imgView.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -59,14 +62,23 @@
     <Target Name="pm:Make">
         <MSBuild Projects="plugin\03.Process\pm.dproj" Targets="Make"/>
     </Target>
+    <Target Name="imgView">
+        <MSBuild Projects="plugin\13.ImgView\imgView.dproj"/>
+    </Target>
+    <Target Name="imgView:Clean">
+        <MSBuild Projects="plugin\13.ImgView\imgView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="imgView:Make">
+        <MSBuild Projects="plugin\13.ImgView\imgView.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aio;PEInfo;SysSP;pm"/>
+        <CallTarget Targets="Aio;PEInfo;SysSP;pm;imgView"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean"/>
+        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean;imgView:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make;pm:Make"/>
+        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make;pm:Make;imgView:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
