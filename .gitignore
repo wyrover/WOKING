@@ -1,7 +1,9 @@
 *.rsm
 *.stat
-Win64
-__recovery
-Thumbs.db
+*.dcu
 *.identcache
 *.local
+Thumbs.db
+Win64
+Win32
+__recovery
