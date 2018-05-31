@@ -3,3 +3,5 @@
 Win64
 __recovery
 Thumbs.db
+*.identcache
+*.local
