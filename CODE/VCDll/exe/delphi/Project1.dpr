@@ -2,8 +2,7 @@ program Project1;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
-  MemLibrary in 'MemLibrary.pas';
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 

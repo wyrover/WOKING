@@ -28,7 +28,7 @@ type
   private
     FhDllHandle: THandle;
     FListFunc  : TList;
-    procedure GetDllFuncList;
+    procedure InitCPlusPlusFunc;
     function GetVCDllOffsetFuncAddress(const strFuncName: string): Cardinal;
   public
     constructor Create(const strDllFileName: String);
@@ -66,7 +66,7 @@ constructor Cvcdll01.Create(const strDllFileName: String);
 begin
   FListFunc   := TList.Create;
   FhDllHandle := LoadLibrary(PChar(strDllFileName));
-  GetDllFuncList;
+  InitCPlusPlusFunc;
 end;
 
 destructor Cvcdll01.Destroy;
@@ -91,12 +91,11 @@ begin
   inherited;
 end;
 
-procedure Cvcdll01.GetDllFuncList;
+procedure Cvcdll01.InitCPlusPlusFunc;
 var
   idh               : PImageDosHeader;
   inh               : PImageNtHeaders32;
   intExportTableRVA : Cardinal;
-  sts               : array of TImageSectionHeader;
   eft               : PImageExportDirectory;
   strFunctionName   : array [0 .. 255] of AnsiChar;
   intFunctionAddress: Cardinal;
@@ -122,11 +121,9 @@ var
   end;
 
 begin
-  idh := PImageDosHeader(FhDllHandle);                                                                                                          // 读取文件头
-  inh := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                                                                                 // 读取 TImageNtHeaders32
-  SetLength(sts, inh.FileHeader.NumberOfSections);                                                                                              // 节的个数
-  CopyMemory(sts, Pointer(FhDllHandle + Cardinal(idh^._lfanew) + SizeOf(inh)), inh^.FileHeader.NumberOfSections * SizeOf(TImageSectionHeader)); // 读取节表
-  intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress;                                           // 导出表虚拟地址
+  idh               := PImageDosHeader(FhDllHandle);                                                  // 读取文件头
+  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders32
+  intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // 导出表虚拟地址
 
   { 运行 dll 初始化函数 }
   // DllMain := Pointer(FhDllHandle + inh.OptionalHeader.AddressOfEntryPoint); // dll 的入口函数地址
