@@ -154,6 +154,7 @@ begin
     if (intVA >= sts[III + 0].VirtualAddress) and (intVA < sts[III + 1].VirtualAddress) then
     begin
       intRA := (intVA - sts[III].VirtualAddress) + sts[III].PointerToRawData;
+      Break;
     end;
   end;
 end;

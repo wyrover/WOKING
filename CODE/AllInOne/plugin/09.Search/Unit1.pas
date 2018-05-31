@@ -11,6 +11,8 @@ type
     lvFileList: TListView;
     pnl1: TPanel;
     procedure FormCreate(Sender: TObject);
+    procedure lvFileListDrawItem(Sender: TCustomListView; Item: TListItem; Rect: TRect; State: TOwnerDrawState);
+    procedure lvFileListData(Sender: TObject; Item: TListItem);
   private
     { Private declarations }
     FstrsFileList: TStringList;
@@ -63,24 +65,24 @@ begin
 end;
 
 procedure TfrmFileSearch.FillUI(lv: TListView; strs: TStringList);
-var
-  III         : Integer;
-  intST, intET: Cardinal;
+// var
+// III         : Integer;
+// intST, intET: Cardinal;
 begin
-  intST := GetTickCount;
-  lv.Items.Clear;
-  lv.Items.BeginUpdate;
-  for III := 0 to strs.Count - 1 do
-  begin
-    with lv.Items.Add do
-    begin
-      Caption := IntToStr(III);
-      SubItems.Add(strs[III]);
-    end;
-  end;
-  lv.Items.EndUpdate;
-  intET := GetTickCount;
-  ShowMessage(Format('界面加载用时：%d 秒', [(intET - intST) div 1000]));
+  // intST := GetTickCount;
+  // lv.Items.Clear;
+  // lv.Items.BeginUpdate;
+  // for III := 0 to strs.Count - 1 do
+  // begin
+  // with lv.Items.Add do
+  // begin
+  // Caption := IntToStr(III);
+  // SubItems.Add(strs[III]);
+  // end;
+  // end;
+  // lv.Items.EndUpdate;
+  // intET := GetTickCount;
+  // ShowMessage(Format('界面加载用时：%d 秒', [(intET - intST) div 1000]));
 end;
 
 { 获取逻辑磁盘下所有文件 }
@@ -92,11 +94,36 @@ begin
   chrLogicalDisk := Char(strLogicalDiskName[1]);
   FstrsFileList.Clear;
   intST := GetTickCount;
-  GetLogicalDiskAllFiles(chrLogicalDisk, FstrsFileList, True);
-  intET   := GetTickCount;
-  Caption := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
+  GetLogicalDiskAllFiles(chrLogicalDisk, FstrsFileList, False);
+  intET               := GetTickCount;
+  Caption             := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
+  lvFiles.Items.Count := FstrsFileList.Count;
+
   { 加载到界面列表 }
   FillUI(lvFiles, FstrsFileList);
+end;
+
+procedure TfrmFileSearch.lvFileListData(Sender: TObject; Item: TListItem);
+begin
+  Item.Caption     := IntToStr(Item.Index);
+  Item.SubItems[0] := FstrsFileList[Item.Index];
+end;
+
+procedure TfrmFileSearch.lvFileListDrawItem(Sender: TCustomListView; Item: TListItem; Rect: TRect; State: TOwnerDrawState);
+var
+  rct: TRect;
+begin
+  rct.Left   := Rect.Left;
+  rct.Top    := Rect.Top;
+  rct.Right  := rct.Left + lvFileList.Column[0].Width;
+  rct.Bottom := Rect.Bottom;
+  lvFileList.Canvas.TextRect(rct, rct.Left + 4, rct.Top + 4, IntToStr(Item.Index));
+
+  rct.Left   := Rect.Left + lvFileList.Column[0].Width;
+  rct.Top    := Rect.Top;
+  rct.Right  := rct.Left + lvFileList.Column[1].Width;
+  rct.Bottom := Rect.Bottom;
+  lvFileList.Canvas.TextRect(rct, rct.Left + +4, rct.Top + 4, FstrsFileList.Strings[Item.Index]);
 end;
 
 procedure TfrmFileSearch.OnFileSearchClick(Sender: TObject);

@@ -38,11 +38,15 @@ object frmFileSearch: TfrmFileSearch
     Font.Name = 'SimSun'
     Font.Style = []
     GridLines = True
+    OwnerData = True
+    OwnerDraw = True
     ReadOnly = True
     RowSelect = True
     ParentFont = False
     TabOrder = 0
     ViewStyle = vsReport
+    OnData = lvFileListData
+    OnDrawItem = lvFileListDrawItem
   end
   object pnl1: TPanel
     Left = 8
