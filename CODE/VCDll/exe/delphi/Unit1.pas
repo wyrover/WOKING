@@ -1,4 +1,4 @@
-unit Unit1;
+ï»¿unit Unit1;
 
 interface
 
@@ -23,7 +23,7 @@ type
     intEntryAddress: Cardinal;
   end;
 
-  { C++ Dll µ¼³öÀà³ÉÔ±º¯Êı·â×° }
+  { C++ Dll å¯¼å‡ºç±»æˆå‘˜å‡½æ•°å°è£… }
   Cvcdll01 = class(TObject)
   private
     FhDllHandle: THandle;
@@ -77,7 +77,7 @@ begin
 
   if FListFunc <> nil then
   begin
-    { ÊÍ·ÅÄÚ´æ }
+    { é‡Šæ”¾å†…å­˜ }
     if FListFunc.Count > 0 then
     begin
       for III := FListFunc.Count - 1 downto 0 do
@@ -103,7 +103,7 @@ var
   III               : Integer;
   // DllMain          : function(dwHandle, dwReason, dwReserved: DWord): DWord; stdcall;
 
-  { »ñÈ¡º¯ÊıµÄÈë¿ÚµØÖ· }
+  { è·å–å‡½æ•°çš„å…¥å£åœ°å€ }
   function GetFuncEntryAddress(const intIndex: Integer): Cardinal;
   var
     JJJ: Integer;
@@ -121,24 +121,24 @@ var
   end;
 
 begin
-  idh               := PImageDosHeader(FhDllHandle);                                                  // ¶ÁÈ¡ÎÄ¼şÍ·
-  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // ¶ÁÈ¡ TImageNtHeaders32
-  intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // µ¼³ö±íĞéÄâµØÖ·
+  idh               := PImageDosHeader(FhDllHandle);                                                  // è¯»å–æ–‡ä»¶å¤´
+  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // è¯»å– TImageNtHeaders32
+  intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // å¯¼å‡ºè¡¨è™šæ‹Ÿåœ°å€
 
-  { ÔËĞĞ dll ³õÊ¼»¯º¯Êı }
-  // DllMain := Pointer(FhDllHandle + inh.OptionalHeader.AddressOfEntryPoint); // dll µÄÈë¿Úº¯ÊıµØÖ·
-  // DllMain(FhDllHandle, DLL_PROCESS_ATTACH, 0);                              // dll ³õÊ¼»¯º¯Êı
+  { è¿è¡Œ dll åˆå§‹åŒ–å‡½æ•° }
+  // DllMain := Pointer(FhDllHandle + inh.OptionalHeader.AddressOfEntryPoint); // dll çš„å…¥å£å‡½æ•°åœ°å€
+  // DllMain(FhDllHandle, DLL_PROCESS_ATTACH, 0);                              // dll åˆå§‹åŒ–å‡½æ•°
 
-  { Ã¶¾Ùµ¼³öº¯ÊıÃû³Æ }
-  eft     := PImageExportDirectory(FhDllHandle + intExportTableRVA);                                 // º¯Êıµ¼³ö±í
+  { æšä¸¾å¯¼å‡ºå‡½æ•°åç§° }
+  eft     := PImageExportDirectory(FhDllHandle + intExportTableRVA);                                 // å‡½æ•°å¯¼å‡ºè¡¨
   for III := 0 to eft^.NumberOfNames - 1 do                                                          //
   begin                                                                                              //
-    CopyMemory(@intFunctionAddress, Pointer(FhDllHandle + eft^.AddressOfNames + DWord(4 * III)), 4); // È¡µÃµ¼³öº¯ÊıµØÖ·
-    CopyMemory(@strFunctionName[0], Pointer(FhDllHandle + intFunctionAddress), 256);                 // È¡µÃº¯ÊıÃû³Æ
-    tmpFuncInfo                  := AllocMem(SizeOf(TDllFuncInfo));                                  // ×¢ÒâÊÍ·ÅÄÚ´æ
-    tmpFuncInfo^.strName         := ShortString(strFunctionName);                                    // Ìí¼Óº¯ÊıÃû³Æ
-    tmpFuncInfo^.intEntryAddress := GetFuncEntryAddress(III);                                        // Ìí¼Óº¯ÊıÈë¿ÚµØÖ·
-    FListFunc.Add(tmpFuncInfo);                                                                      // Ìí¼Óµ½ÁĞ±í
+    CopyMemory(@intFunctionAddress, Pointer(FhDllHandle + eft^.AddressOfNames + DWord(4 * III)), 4); // å–å¾—å¯¼å‡ºå‡½æ•°åœ°å€
+    CopyMemory(@strFunctionName[0], Pointer(FhDllHandle + intFunctionAddress), 256);                 // å–å¾—å‡½æ•°åç§°
+    tmpFuncInfo                  := AllocMem(SizeOf(TDllFuncInfo));                                  // æ³¨æ„é‡Šæ”¾å†…å­˜
+    tmpFuncInfo^.strName         := ShortString(strFunctionName);                                    // æ·»åŠ å‡½æ•°åç§°
+    tmpFuncInfo^.intEntryAddress := GetFuncEntryAddress(III);                                        // æ·»åŠ å‡½æ•°å…¥å£åœ°å€
+    FListFunc.Add(tmpFuncInfo);                                                                      // æ·»åŠ åˆ°åˆ—è¡¨
   end;
 end;
 
