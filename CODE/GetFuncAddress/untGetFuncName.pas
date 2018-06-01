@@ -12,16 +12,22 @@ function GetCurrentFuncName(const frm: TObject): string;
 
 implementation
 
+{ 当前运行地址 }
 var
-  { 当前运行地址 }
-  g_CurrentFuncEIP: Cardinal;
+  g_CurrentFuncEIP: NativeUInt;
 
-  { 获取当前函数的当前 EIP 当前运行地址 }
+{ 获取当前函数的当前 EIP 当前运行地址 }
 procedure GetEIP(); stdcall;
 asm
+  {$IFDEF WIN32}
   POP EAX;
   MOV g_CurrentFuncEIP,EAX;
   PUSH EAX;
+  {$ELSE}
+  POP RAX;
+  MOV g_CurrentFuncEIP,RAX;
+  PUSH RAX;
+  {$ENDIF}
 end;
 
 { TStringList 按整数排序 }
