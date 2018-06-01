@@ -32,7 +32,7 @@ begin
   Result := Index1 - Index2;
 end;
 
-{ 枚举 frm 所以函数名称和函数入口地址，与 intEIP 对比，从而得到函数名称 }
+{ 枚举 frm 所有函数名称和函数入口地址，与 intEIP 对比，从而得到函数名称 }
 function CheckEIP(const intEIP: Cardinal; const frm: TObject): string;
 type
   PMethodInfo = ^TMethodInfo;
