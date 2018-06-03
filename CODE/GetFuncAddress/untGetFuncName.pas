@@ -1,22 +1,22 @@
-unit untGetFuncName;
+ï»¿unit untGetFuncName;
 
 interface
 
 uses System.Classes, System.SysUtils, System.Rtti;
 
-{ »ñÈ¡µ±Ç°º¯ÊıµÄµ±Ç° EIP µ±Ç°ÔËĞĞµØÖ· }
+{ è·å–å½“å‰å‡½æ•°çš„å½“å‰ EIP å½“å‰è¿è¡Œåœ°å€ }
 procedure GetEIP(); stdcall;
 
-{ »ñÈ¡µ±Ç°º¯ÊıÃû³Æ }
+{ è·å–å½“å‰å‡½æ•°åç§° }
 function GetCurrentFuncName(const frm: TObject): string;
 
 implementation
 
-{ µ±Ç°ÔËĞĞµØÖ· }
+{ å½“å‰è¿è¡Œåœ°å€ }
 var
   g_CurrentFuncEIP: NativeUInt;
 
-{ »ñÈ¡µ±Ç°º¯ÊıµÄµ±Ç° EIP µ±Ç°ÔËĞĞµØÖ· }
+{ è·å–å½“å‰å‡½æ•°çš„å½“å‰ EIP å½“å‰è¿è¡Œåœ°å€ }
 procedure GetEIP(); stdcall;
 asm
   {$IFDEF WIN32}
@@ -30,7 +30,7 @@ asm
   {$ENDIF}
 end;
 
-{ TStringList °´ÕûÊıÅÅĞò }
+{ TStringList æŒ‰æ•´æ•°æ’åº }
 function cmpint(List: TStringList; Index1, Index2: Integer): Integer;
 begin
   Index1 := StrToIntDef(List[Index1], 0);
@@ -38,7 +38,7 @@ begin
   Result := Index1 - Index2;
 end;
 
-{ Ã¶¾Ù frm ËùÓĞº¯ÊıÃû³ÆºÍº¯ÊıÈë¿ÚµØÖ·£¬Óë intEIP ¶Ô±È£¬´Ó¶øµÃµ½º¯ÊıÃû³Æ }
+{ æšä¸¾ frm æ‰€æœ‰å‡½æ•°åç§°å’Œå‡½æ•°å…¥å£åœ°å€ï¼Œä¸ intEIP å¯¹æ¯”ï¼Œä»è€Œå¾—åˆ°å‡½æ•°åç§° }
 function CheckEIP(const intEIP: Cardinal; const frm: TObject): string;
 type
   PMethodInfo = ^TMethodInfo;
@@ -69,22 +69,22 @@ begin
       sl.AddObject(String(pmi.strAddress), TObject(pmi));
     end;
 
-    { ¼Óµ½ÁĞ±íÖĞ }
+    { åŠ åˆ°åˆ—è¡¨ä¸­ }
     sl.Append(IntToStr(intEIP));
 
-    { °´ÕûÊıÅÅĞò }
+    { æŒ‰æ•´æ•°æ’åº }
     sl.CustomSort(cmpint);
 
-    { ¼ìË÷¸Õ¼ÓÈëµÄÔÚÊ²Ã´Î»ÖÃ }
+    { æ£€ç´¢åˆšåŠ å…¥çš„åœ¨ä»€ä¹ˆä½ç½® }
     intIndex := sl.IndexOf(IntToStr(intEIP));
 
-    { ·µ»Øº¯ÊıÃû³Æ }
+    { è¿”å›å‡½æ•°åç§° }
     if intIndex = 0 then
       Result := string(PMethodInfo(sl.Objects[intIndex + 1])^.strFunName)
     else
       Result := string(PMethodInfo(sl.Objects[intIndex - 1])^.strFunName);
 
-    { ÊÍ·ÅÄÚ´æ }
+    { é‡Šæ”¾å†…å­˜ }
     for III := 0 to sl.Count - 1 do
     begin
       FreeMem(PMethodInfo(sl.Objects[III]));
@@ -95,7 +95,7 @@ begin
   end;
 end;
 
-{ »ñÈ¡µ±Ç°º¯ÊıÃû³Æ }
+{ è·å–å½“å‰å‡½æ•°åç§° }
 function GetCurrentFuncName(const frm: TObject): string;
 begin
   Result := CheckEIP(g_CurrentFuncEIP, frm);
