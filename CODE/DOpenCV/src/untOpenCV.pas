@@ -126,15 +126,15 @@ var
   tmpFuncInfo       : PDllFuncInfo;
   III               : Integer;
 begin
-  idh               := PImageDosHeader(FhDllHandle);                                                  // 读取文件头
-  inh               := PImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders64
-  intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // 导出表虚拟地址
+  idh               := PImageDosHeader(FhDllHandle);                                                   // 读取文件头
+  inh               := PImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                          // 读取 TImageNtHeaders64
+  intExportTableRVA := inh^.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // 导出表虚拟地址
 
   { 枚举导出函数名称 }
   eft     := PImageExportDirectory(FhDllHandle + intExportTableRVA);                                 // 函数导出表
   for III := 0 to eft^.NumberOfNames - 1 do                                                          //
   begin                                                                                              //
-    CopyMemory(@intFunctionAddress, Pointer(FhDllHandle + eft^.AddressOfNames + DWord(4 * III)), 4); // 取得导出函数地址
+    CopyMemory(@intFunctionAddress, Pointer(FhDllHandle + eft^.AddressOfNames + DWORD(4 * III)), 4); // 取得导出函数地址
     CopyMemory(@strFunctionName[0], Pointer(FhDllHandle + intFunctionAddress), 256);                 // 取得函数名称
     tmpFuncInfo                  := AllocMem(SizeOf(TDllFuncInfo));                                  // 注意释放内存
     tmpFuncInfo^.strFunctionName := ShortString(strFunctionName);                                    // 添加函数名称
