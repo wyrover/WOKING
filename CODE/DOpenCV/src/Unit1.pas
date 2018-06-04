@@ -12,11 +12,6 @@ type
     btn1: TButton;
     btn2: TButton;
     btn3: TButton;
-    btn4: TButton;
-    btn5: TButton;
-    btn6: TButton;
-    btn7: TButton;
-    btn8: TButton;
     dlgOpenPic1: TOpenPictureDialog;
     mmo1: TMemo;
     procedure btn1Click(Sender: TObject);

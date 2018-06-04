@@ -127,7 +127,7 @@ var
   III               : Integer;
 begin
   idh               := PImageDosHeader(FhDllHandle);                                                  // 读取文件头
-  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders32
+  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders64
   intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // 导出表虚拟地址
 
   { 枚举导出函数名称 }
@@ -253,9 +253,7 @@ begin
   Result          := '';
   tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
   if Assigned(tmpFunc) then
-  begin
     Result := PChar(Pointer(tmpFunc)^);
-  end;
 end;
 
 end.
