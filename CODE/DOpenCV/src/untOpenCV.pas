@@ -14,8 +14,8 @@ type
     { 获取函数列表 }
     procedure InitCPlusPlusFunc;
     { 获取函数的入口地址 }
-    function GetFuncEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer; overload;
-    function GetFuncEntryAddress(const strFunctionName: string): Pointer; overload;
+    function GetFunctionEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer; overload;
+    function GetFunctionEntryAddress(const strFunctionName: string): Pointer; overload;
     { Dll 导出的函数名称 }
     function GetFunctionName: String;
   public
@@ -66,7 +66,7 @@ begin
 end;
 
 { 获取函数的入口地址 }
-function TOpenCV.GetFuncEntryAddress(const strFunctionName: string): Pointer;
+function TOpenCV.GetFunctionEntryAddress(const strFunctionName: string): Pointer;
 var
   III: Integer;
 begin
@@ -99,7 +99,7 @@ begin
 end;
 
 { 获取函数的入口地址 }
-function TOpenCV.GetFuncEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer;
+function TOpenCV.GetFunctionEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer;
 var
   JJJ: Integer;
 begin
@@ -121,13 +121,13 @@ var
   inh               : PImageNtHeaders64;
   intExportTableRVA : Cardinal;
   eft               : PImageExportDirectory;
-  strFunctionName   : array [0 .. 255] of ansichar;
+  strFunctionName   : array [0 .. 255] of Ansichar;
   intFunctionAddress: Cardinal;
   tmpFuncInfo       : PDllFuncInfo;
   III               : Integer;
 begin
   idh               := PImageDosHeader(FhDllHandle);                                                  // 读取文件头
-  inh               := pImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders64
+  inh               := PImageNtHeaders(FhDllHandle + Cardinal(idh^._lfanew));                         // 读取 TImageNtHeaders64
   intExportTableRVA := inh.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT].VirtualAddress; // 导出表虚拟地址
 
   { 枚举导出函数名称 }
@@ -138,7 +138,7 @@ begin
     CopyMemory(@strFunctionName[0], Pointer(FhDllHandle + intFunctionAddress), 256);                 // 取得函数名称
     tmpFuncInfo                  := AllocMem(SizeOf(TDllFuncInfo));                                  // 注意释放内存
     tmpFuncInfo^.strFunctionName := ShortString(strFunctionName);                                    // 添加函数名称
-    tmpFuncInfo^.intEntryAddress := GetFuncEntryAddress(III, eft);                                   // 添加函数入口地址
+    tmpFuncInfo^.intEntryAddress := GetFunctionEntryAddress(III, eft);                               // 添加函数入口地址
     FListFunc.Add(tmpFuncInfo);                                                                      // 添加到列表
   end;
 end;
@@ -163,7 +163,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   if Assigned(tmpFunc) then
     tmpFunc(name);
 end;
@@ -177,7 +177,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   Result          := nil;
   if Assigned(tmpFunc) then
     Result := tmpFunc(strFileName, iscolor);
@@ -192,7 +192,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   Result          := -1;
   if Assigned(tmpFunc) then
     Result := tmpFunc(strTitle, flags);
@@ -207,7 +207,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   if Assigned(tmpFunc) then
     tmpFunc(image);
 end;
@@ -221,7 +221,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   if Assigned(tmpFunc) then
     tmpFunc(name, image);
 end;
@@ -235,7 +235,7 @@ var
 begin
   GetEIP;
   strTempFuncName := GetFunctionName;
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   Result          := -1;
   if Assigned(tmpFunc) then
     Result := tmpFunc(delay);
@@ -251,7 +251,7 @@ begin
   GetEIP;
   strTempFuncName := GetFunctionName;
   Result          := '';
-  tmpFunc         := Pointer(GetFuncEntryAddress(strTempFuncName));
+  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
   if Assigned(tmpFunc) then
     Result := PChar(Pointer(tmpFunc)^);
 end;
