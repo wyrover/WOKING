@@ -141,6 +141,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
         <DCC_UnitSearchPath>E:\BaiduYun\Code\Delphi\VCL\Raize\6.2.2\Source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Debugger_HostApplication>E:\dbyoung\CODE\AllInOne\bin\x64\Aio.exe</Debugger_HostApplication>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

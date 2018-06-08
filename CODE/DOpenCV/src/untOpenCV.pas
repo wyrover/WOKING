@@ -6,6 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.Classes, System.SysUtils, System.StrUtils, Winapi.ImageHlp, untOpenCVType, untGetFuncName;
 
 type
+  TOpenCV       = class; { OpenCV 基类 }
+  Tcv           = class; { OpenCV 子类: cv 类 }
+  TVideoCapture = class; { cv     子类: VideoCapture 类 }
+
   { OpenCV 基类 }
   TOpenCV = Class
   private
@@ -17,8 +21,10 @@ type
     function GetFunctionEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer; overload;
     function GetFunctionEntryAddress(const strFunctionName: string): Pointer; overload;
     { Dll 导出的函数名称 }
-    function GetFunctionName: String;
+    function GetFunctionName(const strClassName: string = ''): String;
   public
+    { OpenCV 子类: cv 类 }
+    cv: Tcv;
     constructor Create;
     destructor Destroy; override;
     { OpenCV 基类的 C 函数 }
@@ -28,8 +34,24 @@ type
     function cvWaitKey(const delay: Integer = 0): Integer; cdecl;
     procedure cvReleaseImage(var image: PIplImage); cdecl;
     procedure cvDestroyWindow(const name: PChar); cdecl;
-    { OpenCV 子类 cv 类的成员函数 }
-    function cvClass___getBuildInformation: PChar; cdecl;
+  end;
+
+  { OpenCV 子类: cv 类 }
+  Tcv = class(TOpenCV)
+  public
+    VideoCapture: TVideoCapture;
+    constructor Create(hDllHandle: THandle; ListFunc: TList);
+    destructor Destroy; override;
+    function getBuildInformation: PChar; cdecl;
+  end;
+
+  { OpenCV 子类: VideoCapture 类 }
+  TVideoCapture = class(Tcv)
+  public
+    function set_(intWH: Integer; intValue: Double): Boolean; cdecl;
+    function get_(intWH: Integer): Double; cdecl;
+    function grab(): Boolean; cdecl;
+    function isOpened(): Boolean; cdecl;
   end;
 
 implementation
@@ -41,6 +63,8 @@ begin
   FListFunc   := TList.Create;
   FhDllHandle := LoadLibrary(PWideChar(c_strOpenCVDll));
   InitCPlusPlusFunc;
+
+  cv := Tcv.Create(FhDllHandle, FListFunc);
 end;
 
 destructor TOpenCV.Destroy;
@@ -144,14 +168,13 @@ begin
 end;
 
 { Dll 导出的函数名称 }
-function TOpenCV.GetFunctionName: String;
-var
-  intIndex: Integer;
+function TOpenCV.GetFunctionName(const strClassName: string = ''): String;
 begin
-  Result   := GetCurrentFuncName(Self);
-  intIndex := Pos('Class___', Result);
-  if intIndex > 0 then
-    Result := Format('?%s@%s@@', [RightStr(Result, Length(Result) - intIndex - 8 + 1), LeftStr(Result, intIndex - 1)]);
+  Result := GetCurrentFuncName(Self);
+  if strClassName <> '' then
+  begin
+    Result := Format('?%s@%s@@', [Result, RightStr(strClassName, Length(strClassName) - 1)]);
+  end;
 end;
 
 procedure TOpenCV.cvDestroyWindow(const name: PChar);
@@ -241,7 +264,21 @@ begin
     Result := tmpFunc(delay);
 end;
 
-function TOpenCV.cvClass___getBuildInformation: PChar;
+{ TCV }
+
+constructor Tcv.Create(hDllHandle: THandle; ListFunc: TList);
+begin
+  FhDllHandle := hDllHandle;
+  FListFunc   := ListFunc;
+end;
+
+destructor Tcv.Destroy;
+begin
+
+  inherited;
+end;
+
+function Tcv.getBuildInformation: PChar;
 type
   TgetBuildInformation = function(): PChar; cdecl;
 var
@@ -249,11 +286,34 @@ var
   tmpFunc        : TgetBuildInformation;
 begin
   GetEIP;
-  strTempFuncName := GetFunctionName;
-  Result          := '';
-  tmpFunc         := GetFunctionEntryAddress(strTempFuncName);
+  strTempFuncName := GetFunctionName(ClassName);
+
+  Result  := '';
+  tmpFunc := GetFunctionEntryAddress(strTempFuncName);
   if Assigned(tmpFunc) then
     Result := PChar(Pointer(tmpFunc)^);
+end;
+
+{ TVideoCapture }
+
+function TVideoCapture.get_(intWH: Integer): Double;
+begin
+
+end;
+
+function TVideoCapture.grab: Boolean;
+begin
+
+end;
+
+function TVideoCapture.isOpened: Boolean;
+begin
+
+end;
+
+function TVideoCapture.set_(intWH: Integer; intValue: Double): Boolean;
+begin
+
 end;
 
 end.

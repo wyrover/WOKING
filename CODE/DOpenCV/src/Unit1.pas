@@ -79,7 +79,7 @@ procedure TForm1.btn3Click(Sender: TObject);
 var
   strTemp: String;
 begin
-  strTemp := string(OpenCV.cvClass___getBuildInformation);
+  strTemp := string(OpenCV.cv.getBuildInformation);
   strTemp := StringReplace(strTemp, #$A, #$D#$A, [rfReplaceAll]);
   mmo1.Lines.Add(strTemp);
   img1.Visible := False;
