@@ -12,11 +12,6 @@ type
     btn1: TButton;
     btn2: TButton;
     btn3: TButton;
-    btn4: TButton;
-    btn5: TButton;
-    btn6: TButton;
-    btn7: TButton;
-    btn8: TButton;
     dlgOpenPic1: TOpenPictureDialog;
     mmo1: TMemo;
     procedure btn1Click(Sender: TObject);
@@ -84,7 +79,7 @@ procedure TForm1.btn3Click(Sender: TObject);
 var
   strTemp: String;
 begin
-  strTemp := string(OpenCV.cvClass___getBuildInformation);
+  strTemp := string(OpenCV.cv.getBuildInformation);
   strTemp := StringReplace(strTemp, #$A, #$D#$A, [rfReplaceAll]);
   mmo1.Lines.Add(strTemp);
   img1.Visible := False;

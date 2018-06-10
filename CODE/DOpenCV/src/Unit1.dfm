@@ -57,51 +57,6 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = btn3Click
   end
-  object btn4: TButton
-    Left = 720
-    Top = 132
-    Width = 113
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = 'btn1'
-    TabOrder = 3
-  end
-  object btn5: TButton
-    Left = 720
-    Top = 174
-    Width = 113
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = 'btn1'
-    TabOrder = 4
-  end
-  object btn6: TButton
-    Left = 720
-    Top = 215
-    Width = 113
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = 'btn1'
-    TabOrder = 5
-  end
-  object btn7: TButton
-    Left = 720
-    Top = 257
-    Width = 113
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = 'btn1'
-    TabOrder = 6
-  end
-  object btn8: TButton
-    Left = 720
-    Top = 299
-    Width = 113
-    Height = 33
-    Anchors = [akTop, akRight]
-    Caption = 'btn1'
-    TabOrder = 7
-  end
   object mmo1: TMemo
     Left = 8
     Top = 8
@@ -115,7 +70,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     ScrollBars = ssVertical
-    TabOrder = 8
+    TabOrder = 3
     WordWrap = False
   end
   object dlgOpenPic1: TOpenPictureDialog

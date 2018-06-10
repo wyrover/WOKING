@@ -1,0 +1,43 @@
+object frmWaitting: TfrmWaitting
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'frmWaitting'
+  ClientHeight = 94
+  ClientWidth = 727
+  Color = clBlue
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbl1: TLabel
+    Left = 280
+    Top = 20
+    Width = 192
+    Height = 16
+    Caption = #35831#31245#31561#65292#27491#22312#25628#32034#20013#8226#8226#8226#8226#8226#8226
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+  end
+  object btn1: TButton
+    Left = 280
+    Top = 48
+    Width = 177
+    Height = 33
+    Caption = #30830#23450
+    Enabled = False
+    TabOrder = 0
+    OnClick = btn1Click
+  end
+end
