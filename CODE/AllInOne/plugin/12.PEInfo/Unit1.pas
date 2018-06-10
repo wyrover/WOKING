@@ -378,7 +378,7 @@ var
 begin
   with TOpenDialog.Create(nil) do
   begin
-    Filter := 'PE文件(*.EXE;*.OCX;*.DLL;*.AX)|*.EXE;*.OCX;*.DLL;*.AX';
+    Filter := 'PE文件(*.EXE;*.OCX;*.DLL;*.AX;*.PYD)|*.EXE;*.OCX;*.DLL;*.AX;*.PYD';
     if Execute() then
     begin
       strPEFileName := FileName;

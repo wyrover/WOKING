@@ -21,6 +21,9 @@
         <Projects Include="plugin\09.Search\FileSearch.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="plugin\15.TextEdit\txtedit.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +86,23 @@
     <Target Name="FileSearch:Make">
         <MSBuild Projects="plugin\09.Search\FileSearch.dproj" Targets="Make"/>
     </Target>
+    <Target Name="txtedit">
+        <MSBuild Projects="plugin\15.TextEdit\txtedit.dproj"/>
+    </Target>
+    <Target Name="txtedit:Clean">
+        <MSBuild Projects="plugin\15.TextEdit\txtedit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="txtedit:Make">
+        <MSBuild Projects="plugin\15.TextEdit\txtedit.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aio;PEInfo;SysSP;pm;imgView;FileSearch"/>
+        <CallTarget Targets="Aio;PEInfo;SysSP;pm;imgView;FileSearch;txtedit"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean;imgView:Clean;FileSearch:Clean"/>
+        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean;imgView:Clean;FileSearch:Clean;txtedit:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make;pm:Make;imgView:Make;FileSearch:Make"/>
+        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make;pm:Make;imgView:Make;FileSearch:Make;txtedit:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
