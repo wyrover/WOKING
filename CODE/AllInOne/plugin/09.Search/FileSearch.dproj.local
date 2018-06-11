@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>1899-12-30 00:00:00.000.778,=D:\Working\dbyoung\CODE\AllInOne\plugin\09.Search\uMFTSearchFile.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.980,=E:\dbyoung\CODE\AllInOne\plugin\09.Search\Unit5.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.695,=D:\Working\dbyoung\CODE\AllInOne\plugin\09.Search\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.265,D:\Working\dbyoung\CODE\AllInOne\plugin\09.Search\FileSearch.dproj=C:\Users\dbyoung\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-  </Transactions>
-</BorlandProject>
