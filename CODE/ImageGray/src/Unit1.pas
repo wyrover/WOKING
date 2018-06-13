@@ -20,6 +20,7 @@ type
     btnOpenImageFile: TButton;
     dlgOpenPic1: TOpenPictureDialog;
     btnReset: TButton;
+    btn8: TButton;
     procedure FormCreate(Sender: TObject);
     procedure btnOpenImageFileClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -31,6 +32,7 @@ type
     procedure btn5Click(Sender: TObject);
     procedure btn6Click(Sender: TObject);
     procedure btn7Click(Sender: TObject);
+    procedure btn8Click(Sender: TObject);
   private
     { Private declarations }
     FBMP: TBitmap;
@@ -290,6 +292,109 @@ end;
 procedure TForm1.btn7Click(Sender: TObject);
 begin
   //
+end;
+
+// const
+// kARGBToGray: array [0 .. 15] of Integer = (14, 76, 38, 0, 14, 76, 38, 0, 14, 76, 38, 0, 14, 76, 38, 0);
+//
+// procedure ARGBGrayRow_SSSE3(const src_argb, dst_argb: PByte; const Width: Integer);
+// asm
+// mov        eax, [esp + 4]   // src_argb */
+// mov        edx, [esp + 8]   // dst_argb */
+// mov        ecx, [esp + 12]  // width */
+// movdqa     xmm4, kARGBToGray
+// sub        edx, eax
+// convertloop:
+// movdqa     xmm0, [eax]  // G
+// movdqa     xmm1, [eax + 16]
+// pmaddubsw  xmm0, xmm4
+// pmaddubsw  xmm1, xmm4
+// phaddw     xmm0, xmm1
+// psrlw      xmm0, 7
+// packuswb   xmm0, xmm0   // 8 G bytes
+// movdqa     xmm2, [eax]  // A
+// movdqa     xmm3, [eax + 16]
+// psrld      xmm2, 24
+// psrld      xmm3, 24
+// packuswb   xmm2, xmm3
+// packuswb   xmm2, xmm2   // 8 A bytes
+// movdqa     xmm3, xmm0   // Weave into GG, GA, then GGGA
+// punpcklbw  xmm0, xmm0   // 8 GG words
+// punpcklbw  xmm3, xmm2   // 8 GA words
+// movdqa     xmm1, xmm0
+// punpcklwd  xmm0, xmm3   // GGGA first 4
+// punpckhwd  xmm1, xmm3   // GGGA next 4
+// sub        ecx, 8
+// movdqa     [eax + edx], xmm0
+// movdqa     [eax + edx + 16], xmm1
+// lea        eax, [eax + 32]
+// jg         convertloop
+// ret
+// end;
+
+// procedure InvertRedBlueChannels(ImagePtr: PColor; ImageSize: Integer);
+// asm
+// pcmpeqb   mm0, mm0                         // 成组数据的相等比较；目标操作数和源操作数如果相等则目标寄存器的对应数据元素被置为全1,否则置为全0 Set all bits of RedBlueMask to 1
+// pcmpeqb   mm1, mm1                         // 成组数据的相等比较；目标操作数和源操作数如果相等则目标寄存器的对应数据元素被置为全1,否则置为全0 Set all bits of GreenMask to 1
+// mov       ECX, ImageSize                   // 循环计数 ECX = ImageSize
+// mov       EAX, ImagePtr                    // 颜色地址 EAX = ImagePtr
+// psrlw     mm0, 8                           // 成组数据的逻辑右移: Shift RedBlueMask right by 8
+// psllw     mm1, 8                           // 成组数据的逻辑左移: Shift GreenMask   left  by 8
+// shr ECX,3                                  // 每 8 字节一循环 8 bytes per loop
+// @Loop:
+// movq      mm2, mm0                         // Result = RedBlueMask
+// movq      mm3, [EAX]                       // load data
+// movq      mm4, mm3                         // GreenData = Data
+// pand      mm3, mm0                         // RedBlueData = RedBlueData AND RedBlueMask
+// psubb     mm2, mm3                         // Result = Result - RedBlueData
+// pand      mm4, mm1                         // GreenData = GreenData AND GreenMask
+// por       mm2, mm4                         // Result = Result OR GreenData
+// movq      [EAX], mm2                       // memory[EAX] = Result
+// add       EAX, 8                           // Add 8 to EAX
+// sub       ECX, 1                           // Decrease ECX
+// jnz       @Loop                            // Jump to InvertRedBlueLoop if ECX is not zero
+// emms                                       // Empty MMX state
+// end;
+
+const
+  c_intMask: UInt64 = $FFFFFFFFFFFFFFFF; // 64位，8个字节，两个像素
+
+procedure InvertMMX(pSource: PByte; nNumberOfLoops: Integer);
+asm
+  EMMS
+  MOV         ESI, pSource                    // 起始地址
+  MOV         ECX, nNumberOfLoops             // 循环次数
+  SHR         ECX, 3                          // 循环次数除以 8，每64位，8字节，两个像素，一循环
+@START_LOOP:                                  // 循环
+  MOVQ        MM0, c_intMask                  // MM0 = 0XFFFFFFFFFFFFFFFF
+  PSUBUSB     MM0, [ESI]                      // 源存储器与目的寄存器按字节对齐无符号饱和相减(目的减去源),内存变量必须对齐内存16字节
+  MOVQ        [ESI], MM0                      // 在原有的地址返回结果，两个像素
+  ADD         ESI, 8                          // 下一个64位，8字节
+  DEC         ECX                             // 循环次数减一
+  JNZ         @START_LOOP                     // 重复
+  EMMS
+end;
+
+procedure TForm1.btn8Click(Sender: TObject);
+var
+  Count       : Integer;
+  pBmp        : array of UInt64; // Byte;
+  intST, intET: Integer;
+  III         : Integer;
+begin
+  Count := FBMP.Width * FBMP.Height;
+  SetLength(pBmp, Count);
+  GetBitmapBits(FBMP.Handle, Count * 4, pBmp);
+  intST := GetTickCount;
+  // InvertMMX(@pBmp[0], Count);
+  for III := 0 to Count - 1 do
+  begin
+    pBmp[III] := c_intMask - pBmp[III];
+  end;
+  intET := GetTickCount;
+  SetBitmapBits(FBMP.Handle, Count * 4, pBmp);
+  Caption := Format('%s，用时 %d 毫秒；图像大小：%d*%d', [TButton(Sender).Caption, intET - intST, FBMP.Width, FBMP.Height]);
+  img1.Picture.Bitmap.Assign(FBMP);
 end;
 
 end.

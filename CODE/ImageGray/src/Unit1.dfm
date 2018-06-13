@@ -120,6 +120,15 @@ object Form1: TForm1
     TabOrder = 8
     OnClick = btnResetClick
   end
+  object btn8: TButton
+    Left = 763
+    Top = 306
+    Width = 95
+    Height = 35
+    Caption = 'btn8'
+    TabOrder = 9
+    OnClick = btn8Click
+  end
   object dlgOpenPic1: TOpenPictureDialog
     Left = 800
     Top = 408
