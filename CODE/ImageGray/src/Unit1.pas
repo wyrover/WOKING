@@ -116,8 +116,32 @@ begin
   img1.Picture.Bitmap.Assign(FBMP);
 end;
 
-{ 2、ScanLine }
+{ 2、 API }
 procedure TForm1.btn2Click(Sender: TObject);
+var
+  III, Count  : Integer;
+  pBmp        : TArray<TRGBQuad>;
+  byeGray     : Byte;
+  intST, intET: Integer;
+begin
+  intST := GetTickCount;
+  Count := FBMP.Width * FBMP.Height;
+  SetLength(pBmp, Count);
+  GetBitmapBits(FBMP.Handle, Count * 4, pBmp);
+  for III := 0 to Count - 1 do
+  begin
+    byeGray   := Round(pBmp[III].rgbRed * 0.299 + pBmp[III].rgbGreen * 0.587 + pBmp[III].rgbBlue * 0.114);
+    pBmp[III] := TRGBQuad(RGB(byeGray, byeGray, byeGray));
+  end;
+  SetBitmapBits(FBMP.Handle, Count * 4, pBmp);
+  intET   := GetTickCount;
+  Caption := Format('%s，用时 %d 毫秒；图像大小：%d*%d', [TButton(Sender).Caption, intET - intST, FBMP.Width, FBMP.Height]);
+
+  img1.Picture.Bitmap.Assign(FBMP);
+end;
+
+{ 3、 ScanLine }
+procedure TForm1.btn3Click(Sender: TObject);
 var
   pLine       : PRGBQuad;
   intRow      : Integer;
@@ -142,31 +166,7 @@ begin
   img1.Picture.Bitmap.Assign(FBMP);
 end;
 
-{ 3、API }
-procedure TForm1.btn3Click(Sender: TObject);
-var
-  III, Count  : Integer;
-  pBmp        : TArray<TRGBQuad>;
-  byeGray     : Byte;
-  intST, intET: Integer;
-begin
-  intST := GetTickCount;
-  Count := FBMP.Width * FBMP.Height;
-  SetLength(pBmp, Count);
-  GetBitmapBits(FBMP.Handle, Count * 4, pBmp);
-  for III := 0 to Count - 1 do
-  begin
-    byeGray   := Round(pBmp[III].rgbRed * 0.299 + pBmp[III].rgbGreen * 0.587 + pBmp[III].rgbBlue * 0.114);
-    pBmp[III] := TRGBQuad(RGB(byeGray, byeGray, byeGray));
-  end;
-  SetBitmapBits(FBMP.Handle, Count * 4, pBmp);
-  intET   := GetTickCount;
-  Caption := Format('%s，用时 %d 毫秒；图像大小：%d*%d', [TButton(Sender).Caption, intET - intST, FBMP.Width, FBMP.Height]);
-
-  img1.Picture.Bitmap.Assign(FBMP);
-end;
-
-{ 4、浮点优化，在 2：ScanLine 的基础上；比 2 性能提高 30% 左右 }
+{ 4、浮点优化，在 3：ScanLine 的基础上；比 2 性能提高 30% 左右 }
 procedure TForm1.btn4Click(Sender: TObject);
 var
   pLine       : PRGBQuad;
@@ -182,7 +182,7 @@ begin
     for intCol := 0 to FBMP.Width - 1 do
     begin
       byeGray := (pLine^.rgbRed * 38 + pLine^.rgbGreen * 75 + pLine^.rgbBlue * 15) shr 7; // 1
-      { byeGray := (pLine^.rgbRed + pLine^.rgbGreen shl 1 + pLine^.rgbBlue) shr 2; // 2 不太在意精度的情况下，可使用此代码，效率略有提高 }
+      { byeGray := (pLine^.rgbRed + pLine^.rgbGreen shl 1 + pLine^.rgbBlue) shr 2;        // 2 不太在意精度的情况下，可使用此代码，效率略有提高 }
       pLine^ := TRGBQuad(RGB(byeGray, byeGray, byeGray));
       Inc(pLine);
     end;

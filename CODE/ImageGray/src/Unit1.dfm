@@ -46,17 +46,17 @@ object Form1: TForm1
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
-    Caption = '2.ScanLine'
+    Caption = '2.API'
     TabOrder = 1
     OnClick = btn2Click
   end
   object btn3: TButton
     Left = 763
-    Top = 94
+    Top = 98
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
-    Caption = '3.API'
+    Caption = '3.ScanLine'
     TabOrder = 2
     OnClick = btn3Click
   end
