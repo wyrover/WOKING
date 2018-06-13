@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.0"
+	Name="OpenCVTests"
+	ProjectGUID="{7D313A2A-B99B-488F-8024-578ACCDEF768}"
+	VCNestedProjectGUID="{A967C699-B843-42ED-9E76-44B42CBC6B30}"
+	VCNestedProjectFileName="OpenCVTests.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				GlobalOptimizations="true"
+				OptimizeForWindowsApplication="true"
+				GenerateAlternateCodePaths="0"
+				UseProcessorExtensions="0"
+				Parallelization="true"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>
