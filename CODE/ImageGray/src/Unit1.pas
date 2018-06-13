@@ -1,10 +1,11 @@
 ﻿unit Unit1;
+{$CODEALIGN 16}
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Imaging.GIFImg, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtDlgs;
+  Vcl.Imaging.GIFImg, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtDlgs, Winapi.D3DX9, System.Math, System.Math.Vectors, Vcl.OleCtrls;
 
 type
   TForm1 = class(TForm)
@@ -218,13 +219,74 @@ begin
   //
 end;
 
-{ 6、SSE 优化； }
-procedure TForm1.btn6Click(Sender: TObject);
-begin
-  //
+{
+  Intel SSE指令集支持的处理器有8个128位的寄存器，每一个寄存器可以存放4个（32位）单精度的浮点数
+
+  将4个32位浮点数放进一个128位的存储单元。 movss 和 shufps _mm_set_ps1
+  将4对32位浮点数同时进行相乘操作。这4对32位浮点数来自两个128位的存储单元，再把计算结果（乘积）赋给一个128位的存储单元。 mulps _mm_mul_ps
+  将4对32位浮点数同时进行相加操作。这4对32位浮点数来自两个128位的存储单元，再把计算结果（相加之和）赋给一个128位的存储单元。 addps _mm_add_ps
+  对一个128位存储单元中的4个32位浮点数同时进行求平方根操作。 sqrtps _mm_sqrt_ps
+}
+type
+  TFourDWORD = array [0 .. 3] of DWORD;
+
+const
+  c_intRGBARate: TFourDWORD = (38, 75, 15, 1);
+
+function SSEASM(const P1: TFourDWORD): TFourDWORD;
+asm
+  MOVUPS   XMM0, [P1]
+  MOVUPS   XMM1, [C_INTRGBARATE]
+  MULPS    XMM0, XMM1
+  CVTPS2DQ XMM0, XMM1
+  MOVUPS  [Result], XMM0
 end;
 
-{ 7、并行 优化； }
+procedure SSEScanLine(pLine: PRGBQuad; bmp: TBitmap);
+var
+  III     : Integer;
+  tmp     : TFourDWORD;
+  tmpPV   : TFourDWORD;
+  intValue: Cardinal;
+  byeGray : Byte;
+begin
+  for III := 0 to bmp.Width - 1 do
+  begin
+    tmpPV[0] := pLine^.rgbRed;
+    tmpPV[1] := pLine^.rgbGreen;
+    tmpPV[2] := pLine^.rgbBlue;
+    tmpPV[3] := pLine^.rgbReserved;
+    tmp      := SSEASM(tmpPV);
+    intValue := (tmp[3]) or (tmp[0] shl 8) or (tmp[1] shl 16) or (tmp[2] shl 32);
+    byeGray  := intValue shr 7;
+    pLine^   := TRGBQuad(RGB(byeGray, byeGray, byeGray));
+    Inc(pLine);
+  end;
+end;
+
+{ 6、SSE 优化 }
+procedure TForm1.btn6Click(Sender: TObject);
+var
+  pLine       : PRGBQuad;
+  intRow      : Integer;
+  intST, intET: Integer;
+begin
+  if TestSSE = 0 then
+    Exit;
+
+  intST      := GetTickCount;
+  for intRow := 0 to FBMP.Height - 1 do
+  begin
+    pLine := FBMP.ScanLine[intRow];
+    SSEScanLine(pLine, FBMP);
+  end;
+  intET   := GetTickCount;
+  Caption := Format('%s，用时 %d 毫秒；图像大小：%d*%d', [TButton(Sender).Caption, intET - intST, FBMP.Width, FBMP.Height]);
+
+  img1.Picture.Bitmap.Assign(FBMP);
+end;
+
+{ 7、并行 优化 }
 procedure TForm1.btn7Click(Sender: TObject);
 begin
   //
