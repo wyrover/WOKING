@@ -35,14 +35,17 @@ object Form1: TForm1
     Top = 8
     Width = 95
     Height = 33
+    Hint = #22823#22270#20687#26102#65292#26368#22909#19981#35201#28857#20987
     Anchors = [akTop, akRight]
     Caption = '1.Pixel'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 0
     OnClick = btn1Click
   end
   object btn2: TButton
     Left = 763
-    Top = 51
+    Top = 49
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -52,7 +55,7 @@ object Form1: TForm1
   end
   object btn3: TButton
     Left = 763
-    Top = 98
+    Top = 91
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -62,7 +65,7 @@ object Form1: TForm1
   end
   object btn4: TButton
     Left = 763
-    Top = 137
+    Top = 132
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -72,7 +75,7 @@ object Form1: TForm1
   end
   object btn5: TButton
     Left = 763
-    Top = 180
+    Top = 174
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -82,7 +85,7 @@ object Form1: TForm1
   end
   object btn6: TButton
     Left = 763
-    Top = 223
+    Top = 215
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -92,7 +95,7 @@ object Form1: TForm1
   end
   object btn7: TButton
     Left = 763
-    Top = 267
+    Top = 257
     Width = 95
     Height = 33
     Anchors = [akTop, akRight]
@@ -120,17 +123,18 @@ object Form1: TForm1
     TabOrder = 8
     OnClick = btnResetClick
   end
-  object btn8: TButton
+  object btnInvert: TButton
     Left = 763
-    Top = 306
+    Top = 453
     Width = 95
     Height = 35
-    Caption = 'btn8'
+    Anchors = [akRight, akBottom]
+    Caption = #21453#33394'MMX'
     TabOrder = 9
-    OnClick = btn8Click
+    OnClick = btnInvertClick
   end
   object dlgOpenPic1: TOpenPictureDialog
-    Left = 800
-    Top = 408
+    Left = 796
+    Top = 360
   end
 end
