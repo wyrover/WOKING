@@ -76,14 +76,14 @@ begin
 end;
 
 procedure TForm1.btn3Click(Sender: TObject);
-var
-  strTemp: String;
+// var
+// strTemp: String;
 begin
-  strTemp := string(OpenCV.cv.getBuildInformation);
-  strTemp := StringReplace(strTemp, #$A, #$D#$A, [rfReplaceAll]);
-  mmo1.Lines.Add(strTemp);
-  img1.Visible := False;
-  mmo1.Visible := True;
+  // strTemp := string(OpenCV.cv.getBuildInformation);
+  // strTemp := StringReplace(strTemp, #$A, #$D#$A, [rfReplaceAll]);
+  // mmo1.Lines.Add(strTemp);
+  // img1.Visible := False;
+  // mmo1.Visible := True;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
