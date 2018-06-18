@@ -91,16 +91,7 @@ end;
 
 procedure TfrmImageView.FormResize(Sender: TObject);
 begin
-  if FbAutoSize then
-  begin
-    imgView.Left := (imgView.Parent.Width - imgView.Width) div 2;
-    imgView.Top  := (imgView.Parent.Height - imgView.Height) div 2;
-    if imgView.Left < 0 then
-      imgView.Left := 0;
-    if imgView.Top < 0 then
-      imgView.Top := 0;
-  end
-  else
+  if not FbAutoSize then
   begin
     CenterStretchShowImage;
   end;

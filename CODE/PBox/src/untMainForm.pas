@@ -3,7 +3,7 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus,
   System.IOUtils, System.Types, System.IniFiles;
 
 type
@@ -41,6 +41,7 @@ implementation
 {$R *.dfm}
 
 type
+  { 每个 Dll 的导出函数定义 }
   TShowDllForm = procedure(var strTitle: PChar; var frm: TFormClass); stdcall;
 
   PDllFormInfo = ^TDllFormInfo;
@@ -53,7 +54,7 @@ type
 var
   FOldWndProcList: TList;
 
-  { 解决 dll 中，当控件获取焦点，主窗体变成非激活状态 }
+  { 解决 dll 中，当 Dll 窗体获取焦点，主窗体变成非激活状态 }
 function NewDllFormProc(hWnd: THandle; msg: UINT; wParam: Cardinal; lParam: Cardinal): Integer; stdcall;
 var
   III: Integer;
@@ -83,18 +84,18 @@ end;
 { 加载所有 DLL 模块 }
 procedure TForm1.AddAllModule;
 var
-  strDllPath    : String;
+  strDllPath: String;
   strDllFileName: String;
-  dllModuleList : TStringDynArray;
-  III, Count    : Integer;
+  dllModuleList: TStringDynArray;
+  III, Count: Integer;
   hDllFileHandle: Cardinal;
-  tmpFunc       : TShowDllForm;
-  strTitle      : PChar;
-  tmpfrm        : TFormClass;
-  tmpts         : TTabSheet;
-  DllForm       : TForm;
-  DllInfo       : PDllFormInfo;
-  OldWndProc    : Pointer;
+  tmpFunc: TShowDllForm;
+  strTitle: PChar;
+  tmpfrm: TFormClass;
+  tmpts: TTabSheet;
+  DllForm: TForm;
+  DllInfo: PDllFormInfo;
+  OldWndProc: Pointer;
 begin
   { 插件目录是否存在 }
   strDllPath := ExtractFilePath(ParamStr(0)) + 'plugin';
@@ -134,8 +135,8 @@ begin
     DllForm.BorderStyle := bsNone;
     DllForm.Color       := clWhite;
     DllForm.Anchors     := [akLeft, akTop, akRight, akBottom];
-    SetWindowPos(DllForm.Handle, tmpts.Handle, 0, 0, tmpts.Width - 4, tmpts.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
-    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle); // 解决 DLL 窗体 TAB 键不能用的问题
+    SetWindowPos(DllForm.Handle, tmpts.Handle, 0, 0, tmpts.Width - 4, tmpts.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE); // 最大化 Dll 子窗体
+    Winapi.Windows.SetParent(DllForm.Handle, tmpts.Handle);                                                             // 设置父窗体为 TabSheet <解决 DLL 窗体 TAB 键不能用的问题>
     DllForm.Show;
 
     { 解决 DLL 窗体获取焦点时，主窗体丢失焦点的问题 }
@@ -148,8 +149,6 @@ begin
     DllInfo^.OldWndProc  := OldWndProc;                     // 记录下窗体回调过程地址
     FOldWndProcList.Add(DllInfo);                           // 添加到列表
   end;
-
-  pgcAll.ActivePageIndex := 0;
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -176,8 +175,8 @@ end;
 { 提升权限 }
 function TForm1.EnableDebugPrivilege(PrivName: string; CanDebug: Boolean): Boolean;
 var
-  TP    : Winapi.Windows.TOKEN_PRIVILEGES;
-  Dummy : Cardinal;
+  TP: Winapi.Windows.TOKEN_PRIVILEGES;
+  Dummy: Cardinal;
   hToken: THandle;
 begin
   OpenProcessToken(GetCurrentProcess, TOKEN_ADJUST_PRIVILEGES, hToken);
@@ -236,13 +235,14 @@ end;
 
 function EnumChildFunc(hDllForm: THandle; hTabSheetHandle: THandle): Boolean; stdcall;
 var
-  rct: TRect;
+  rctClient: TRect;
 begin
-  { 判断是否是 DLL 的窗体句柄，不是子窗体的句柄 }
+  { 判断是否是 DLL 的窗体句柄，不是 Dll 控件的句柄 }
   if GetParent(hDllForm) = 0 then
   begin
-    GetWindowRect(hTabSheetHandle, rct);
-    SetWindowPos(hDllForm, hTabSheetHandle, 0, 0, rct.Width - 4, rct.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
+    { 最大化 Dll 子窗体 }
+    GetWindowRect(hTabSheetHandle, rctClient);
+    SetWindowPos(hDllForm, hTabSheetHandle, 0, 0, rctClient.Width - 4, rctClient.Height - 4, SWP_NOZORDER + SWP_NOACTIVATE);
   end;
   Result := True;
 end;
@@ -251,9 +251,10 @@ procedure TForm1.FormResize(Sender: TObject);
 var
   III: Integer;
 begin
-  { 枚举每个 TABSHEET 的子窗体 }
+  { 窗体大小改变时，每个 Dll 窗体最大化 }
   for III := 0 to pgcAll.PageCount - 2 do
   begin
+    { 枚举每个 TabSheet 的子窗体，Dll 窗体 }
     EnumChildWindows(pgcAll.Pages[III].Handle, @EnumChildFunc, pgcAll.Pages[III].Handle);
   end;
 end;
