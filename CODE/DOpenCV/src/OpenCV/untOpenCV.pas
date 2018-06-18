@@ -1,7 +1,7 @@
 ﻿unit untOpenCV;
 {
   OpenCV for Delphi
-  Delphi 10.2.3 测试通过
+  Delphi 10.2.3 test finish
   dbyoung@sina.com
   2018-06-01
 }
@@ -12,11 +12,8 @@ uses
   Winapi.Windows, System.Classes, System.SysUtils, Winapi.ImageHlp, System.Rtti, System.TypInfo, untOpenCVType;
 
 type
-  Tcv     = class;
-  TString = class;
-
-  { OpenCV 基类 <包含 Dll 导出的 C 类型函数> }
-  TOpenCV = class
+  { Delphi 封装的 OpenCV 基类，不是 OpenCV 的基类。OpenCV 的基类是 cv 类；<此类包含 Dll 导出函数的所有 C 类型函数> }
+  TOpenCV = class(TObject)
   private
     FhDllHandle: THandle;
     FListFunc  : TList;
@@ -32,27 +29,18 @@ type
     function GetFuncEntryAddressFromName(const strFunctionName: string): Pointer;
     { 获取导出函数全名 C++ 类型函数 }
     function GetFullFuncNameCpp(const strFuncName: string): String;
-  protected
-    cv: Tcv;
   public
     { Dll 导出的 C 类型函数 }
-    cvLoadImage    : TcvLoadImage;
-    cvNamedWindow  : TcvNamedWindow;
-    cvShowImage    : TcvShowImage;
-    cvWaitKey      : TcvWaitKey;
-    cvReleaseImage : TcvReleaseImage;
-    cvDestroyWindow: TcvDestroyWindow;
+    cv2DRotationMatrix: Tcv2DRotationMatrix;
+    cvLoadImage       : TcvLoadImage;
+    cvNamedWindow     : TcvNamedWindow;
+    cvShowImage       : TcvShowImage;
+    cvWaitKey         : TcvWaitKey;
+    cvReleaseImage    : TcvReleaseImage;
+    cvDestroyWindow   : TcvDestroyWindow;
+    { Add other function }
     constructor Create;
     destructor Destroy; override;
-  end;
-
-  Tcv = class(TOpenCV)
-  public
-    function getBuildInformation: TString;
-  end;
-
-  TString = class(Tcv)
-
   end;
 
 implementation
@@ -89,36 +77,6 @@ begin
   inherited;
 end;
 
-{ 设置 Public 成员变量的函数入口地址 }
-procedure TOpenCV.SetPublicFieldVarAddress(const pFuncEntryAddress: Pointer; const intOffset: Integer); assembler;
-asm
-  MOV [RCX + RAX], RDX
-end;
-
-{ 获取所有 Public 成员变量的函数入口地址 }
-procedure TOpenCV.InitPublicFieldVarAddress;
-var
-  rc               : TRttiContext;
-  rt               : TRttiType;
-  rf               : TRttiField;
-  pFuncEntryAddress: Pointer;
-begin
-  rc := TRttiContext.Create;
-  try
-    rt := rc.GetType(ClassInfo);
-    for rf in rt.GetFields do
-    begin
-      if rf.Visibility = mvPublic then
-      begin
-        pFuncEntryAddress := GetFuncEntryAddressFromName(rf.Name); // 根据成员变量名称，获取函数的入口地址
-        SetPublicFieldVarAddress(pFuncEntryAddress, rf.Offset);    // 将函数入口地址赋给成员变量
-      end;
-    end;
-  finally
-    rc.Free;
-  end;
-end;
-
 { 根据函数名称获取函数入口地址 }
 function TOpenCV.GetFuncEntryAddressFromName(const strFunctionName: string): Pointer;
 var
@@ -138,14 +96,14 @@ end;
 { 获取函数的入口地址 }
 function TOpenCV.GetFunctionEntryAddress(const intIndex: Integer; eft: PImageExportDirectory): Pointer;
 var
-  JJJ: Integer;
+  III: Integer;
 begin
   Result  := nil;
-  for JJJ := 0 to eft^.NumberOfFunctions - 1 do
+  for III := 0 to eft^.NumberOfFunctions - 1 do
   begin
-    if JJJ = intIndex then
+    if III = intIndex then
     begin
-      Result := Pointer(FhDllHandle + PCardinal(FhDllHandle + eft^.AddressOfFunctions + Cardinal(4 * JJJ))^);
+      Result := Pointer(FhDllHandle + PCardinal(FhDllHandle + eft^.AddressOfFunctions + Cardinal(4 * III))^);
       Break;
     end;
   end;
@@ -190,11 +148,34 @@ begin
   end;
 end;
 
-{ Tcv }
+{ 设置 Public 成员变量的函数入口地址 }
+procedure TOpenCV.SetPublicFieldVarAddress(const pFuncEntryAddress: Pointer; const intOffset: Integer); assembler;
+asm
+  MOV [RCX + RAX], RDX
+end;
 
-function Tcv.getBuildInformation: TString;
+{ 获取所有 Public 成员变量的函数入口地址 }
+procedure TOpenCV.InitPublicFieldVarAddress;
+var
+  rc               : TRttiContext;
+  rt               : TRttiType;
+  rf               : TRttiField;
+  pFuncEntryAddress: Pointer;
 begin
-  Result := nil;
+  rc := TRttiContext.Create;
+  try
+    rt := rc.GetType(ClassInfo);
+    for rf in rt.GetFields do
+    begin
+      if rf.Visibility = mvPublic then
+      begin
+        pFuncEntryAddress := GetFuncEntryAddressFromName(rf.name); // 根据成员变量名称，获取函数的入口地址
+        SetPublicFieldVarAddress(pFuncEntryAddress, rf.Offset);    // 将函数入口地址赋给成员变量
+      end;
+    end;
+  finally
+    rc.Free;
+  end;
 end;
 
 end.
