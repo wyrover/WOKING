@@ -6,7 +6,7 @@
 
 interface
 
-uses Windows, System.Classes, Generics.Collections;
+uses Windows, System.Classes, System.Diagnostics, Generics.Collections;
 
 { 获取磁盘所有文件列表 }
 function GetLogicalDiskAllFiles(const chrLogiclDiskName: Char; var FileList: TStringList; const bSort: Boolean = False): Boolean;
@@ -18,7 +18,6 @@ type
 
   TFileInfo = record
     strFileName: String;               // 文件名称
-    bDirectory: Boolean;               // 是否是目录
     FileReferenceNumber: UInt64;       // 文件的ID
     ParentFileReferenceNumber: UInt64; // 文件的父ID
   end;
@@ -109,87 +108,140 @@ asm
 end;
 
 { 获取文件全路径，包含路径和文件名 }
-procedure GetFullFileName(var FileList: TStringList; const chrLogiclDiskName: Char; const bSort: Boolean = False);
+procedure GetFullFileName(var FileList, DirList: TStringList; const chrLogiclDiskName: Char; const bSort: Boolean = False);
 var
-  UInt64DirList    : TArray<UInt64>;
-  III              : Integer;
-  UPID             : UInt64;
-  intIndex         : Integer;
-  dirList          : TStringList;
-  intDirectoryCount: Integer;
+  III          : Integer;
+  UPID         : UInt64;
+  intIndex     : Integer;
+  UInt64DirList: TArray<UInt64>;
 begin
-  { 将 FileList 按 FileReferenceNumber 数值排序 }
-  FileList.Sorted := False;
-  FileList.CustomSort(Int64Sort);
+  { 将 DirList 按 FileReferenceNumber 数值排序 }
+  DirList.Sorted := False;
+  DirList.CustomSort(Int64Sort);
 
-  { 先处理目录，获取路径的全路径名称 }
-  dirList := TStringList.Create;
-  try
-    { 获取目录的总数 }
-    intDirectoryCount := 0;
-    for III           := 0 to FileList.Count - 1 do
-    begin
-      if PFileInfo(FileList.Objects[III])^.bDirectory then
-      begin
-        Inc(intDirectoryCount);
-      end;
-    end;
-    SetLength(UInt64DirList, intDirectoryCount);
-
-    { 将所有目录信息添加到目录列表 }
-    intDirectoryCount := 0;
-    for III           := 0 to FileList.Count - 1 do
-    begin
-      if PFileInfo(FileList.Objects[III])^.bDirectory then
-      begin
-        dirList.AddObject(PFileInfo(FileList.Objects[III])^.strFileName, FileList.Objects[III]);
-        UInt64DirList[intDirectoryCount] := PFileInfo(FileList.Objects[III])^.FileReferenceNumber;
-        Inc(intDirectoryCount);
-      end;
-    end;
-
-    { 获取目录的全路径名称 }
-    intDirectoryCount := 0;
-    for III           := 0 to FileList.Count - 1 do
-    begin
-      if PFileInfo(FileList.Objects[III])^.bDirectory then
-      begin
-        UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
-        while TArray.BinarySearch(UInt64DirList, UPID, intIndex) do
-        begin
-          UPID                  := PFileInfo(dirList.Objects[intIndex])^.ParentFileReferenceNumber;
-          FileList.Strings[III] := PFileInfo(dirList.Objects[intIndex])^.strFileName + '\' + FileList.Strings[III];
-        end;
-        FileList.Strings[III]              := (chrLogiclDiskName + ':\' + FileList.Strings[III]);
-        dirList.Strings[intDirectoryCount] := FileList.Strings[III];
-        Inc(intDirectoryCount);
-      end;
-    end;
-
-    { 再获取每个文件的全路径 }
-    for III := 0 to FileList.Count - 1 do
-    begin
-      if not PFileInfo(FileList.Objects[III])^.bDirectory then
-      begin
-        UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
-        if TArray.BinarySearch(UInt64DirList, UPID, intIndex) then
-        begin
-          FileList.Strings[III] := dirList.Strings[intIndex] + '\' + FileList.Strings[III];
-        end
-        else
-        begin
-          FileList.Strings[III] := chrLogiclDiskName + '\' + FileList.Strings[III];
-        end;
-      end;
-    end;
-
-    { 将所有文件按文件名排序 }
-    if bSort then
-      FileList.Sort;
-  finally
-    dirList.Free;
+  { 将目录添加到数组中，为了高效的二分查找 }
+  SetLength(UInt64DirList, DirList.Count);
+  for III := 0 to DirList.Count - 1 do
+  begin
+    UInt64DirList[III] := PFileInfo(DirList.Objects[III])^.FileReferenceNumber;
   end;
+
+  { 获取目录的全路径名称 }
+  for III := 0 to DirList.Count - 1 do
+  begin
+    UPID := PFileInfo(DirList.Objects[III])^.ParentFileReferenceNumber;
+    while TArray.BinarySearch(UInt64DirList, UPID, intIndex) do
+    begin
+      UPID                 := PFileInfo(DirList.Objects[intIndex])^.ParentFileReferenceNumber;
+      DirList.Strings[III] := PFileInfo(DirList.Objects[intIndex])^.strFileName + '\' + DirList.Strings[III];
+    end;
+    DirList.Strings[III] := (chrLogiclDiskName + ':\' + DirList.Strings[III]);
+  end;
+
+  { 再获取每个文件的全路径 }
+  for III := 0 to FileList.Count - 1 do
+  begin
+    UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
+    if TArray.BinarySearch(UInt64DirList, UPID, intIndex) then
+    begin
+      FileList.Strings[III] := DirList.Strings[intIndex] + '\' + FileList.Strings[III];
+    end
+    else
+    begin
+      FileList.Strings[III] := chrLogiclDiskName + '\' + FileList.Strings[III];
+    end;
+  end;
+
+  { 何并 DirList 和 FileList }
+  FileList.AddStrings(DirList);
+
+  { 是否排序 }
+  if bSort then
+    FileList.Sort;
 end;
+
+{ 获取文件全路径，包含路径和文件名 }
+// procedure GetFullFileName2(var FileList: TStringList; const chrLogiclDiskName: Char; const bSort: Boolean = False);
+// var
+// UInt64DirList    : TArray<UInt64>;
+// III              : Integer;
+// UPID             : UInt64;
+// intIndex         : Integer;
+// DirList          : TStringList;
+// intDirectoryCount: Integer;
+// begin
+// { 将 FileList 按 FileReferenceNumber 数值排序 }
+// FileList.Sorted := False;
+// FileList.CustomSort(Int64Sort);
+//
+// { 先处理目录，获取路径的全路径名称 }
+// DirList := TStringList.Create;
+// try
+// { 获取目录的总数 }
+// intDirectoryCount := 0;
+// for III           := 0 to FileList.Count - 1 do
+// begin
+// if PFileInfo(FileList.Objects[III])^.bDirectory then
+// begin
+// Inc(intDirectoryCount);
+// end;
+// end;
+// SetLength(UInt64DirList, intDirectoryCount);
+//
+// { 将所有目录信息添加到目录列表 }
+// intDirectoryCount := 0;
+// for III           := 0 to FileList.Count - 1 do
+// begin
+// if PFileInfo(FileList.Objects[III])^.bDirectory then
+// begin
+// DirList.AddObject(PFileInfo(FileList.Objects[III])^.strFileName, FileList.Objects[III]);
+// UInt64DirList[intDirectoryCount] := PFileInfo(FileList.Objects[III])^.FileReferenceNumber;
+// Inc(intDirectoryCount);
+// end;
+// end;
+//
+// { 获取目录的全路径名称 }
+// intDirectoryCount := 0;
+// for III           := 0 to FileList.Count - 1 do
+// begin
+// if PFileInfo(FileList.Objects[III])^.bDirectory then
+// begin
+// UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
+// while TArray.BinarySearch(UInt64DirList, UPID, intIndex) do
+// begin
+// UPID                  := PFileInfo(DirList.Objects[intIndex])^.ParentFileReferenceNumber;
+// FileList.Strings[III] := PFileInfo(DirList.Objects[intIndex])^.strFileName + '\' + FileList.Strings[III];
+// end;
+// FileList.Strings[III]              := (chrLogiclDiskName + ':\' + FileList.Strings[III]);
+// DirList.Strings[intDirectoryCount] := FileList.Strings[III];
+// Inc(intDirectoryCount);
+// end;
+// end;
+//
+// { 再获取每个文件的全路径 }
+// for III := 0 to FileList.Count - 1 do
+// begin
+// if not PFileInfo(FileList.Objects[III])^.bDirectory then
+// begin
+// UPID := PFileInfo(FileList.Objects[III])^.ParentFileReferenceNumber;
+// if TArray.BinarySearch(UInt64DirList, UPID, intIndex) then
+// begin
+// FileList.Strings[III] := DirList.Strings[intIndex] + '\' + FileList.Strings[III];
+// end
+// else
+// begin
+// FileList.Strings[III] := chrLogiclDiskName + '\' + FileList.Strings[III];
+// end;
+// end;
+// end;
+//
+// { 将所有文件按文件名排序 }
+// if bSort then
+// FileList.Sort;
+// finally
+// DirList.Free;
+// end;
+// end;
 
 { 获取磁盘所有文件列表 }
 function GetLogicalDiskAllFiles(const chrLogiclDiskName: Char; var FileList: TStringList; const bSort: Boolean = False): Boolean;
@@ -209,6 +261,7 @@ var
   int64Size  : Integer;
   pfi        : PFileInfo;
   III        : Integer;
+  DirList    : TStringList;
 begin
   Result := False;
 
@@ -218,6 +271,7 @@ begin
   if hRootHandle = INVALID_HANDLE_VALUE then
     Exit;
 
+  DirList := TStringList.Create;
   try
     { 是否是NTFS磁盘格式 }
     if not DeviceIoControl(hRootHandle, IOCTL_DISK_GET_PARTITION_INFO, nil, 0, @Info, Sizeof(Info), dwRet, nil) then
@@ -255,25 +309,35 @@ begin
         strFileName := Copy(strFileName, 1, UsnRecord^.FileNameLength div 2);
 
         { 将文件信息添加到列表中 }
-        pfi                            := AllocMem(Sizeof(TFileInfo)); // 不要忘记释放内存
-        pfi^.strFileName               := strFileName;
-        pfi^.bDirectory                := UsnRecord^.FileAttributes and FILE_ATTRIBUTE_DIRECTORY = FILE_ATTRIBUTE_DIRECTORY;
-        pfi^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
-        pfi^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
-        FileList.AddObject(strFileName, TObject(pfi));
+        pfi := AllocMem(Sizeof(TFileInfo)); // 不要忘记释放内存
+        if UsnRecord^.FileAttributes and FILE_ATTRIBUTE_DIRECTORY = FILE_ATTRIBUTE_DIRECTORY then
+        begin
+          pfi^.strFileName               := strFileName;
+          pfi^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
+          pfi^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
+          DirList.AddObject(strFileName, TObject(pfi));
+        end
+        else
+        begin
+          pfi^.strFileName               := strFileName;
+          pfi^.FileReferenceNumber       := UsnRecord^.FileReferenceNumber;
+          pfi^.ParentFileReferenceNumber := UsnRecord^.ParentFileReferenceNumber;
+          FileList.AddObject(strFileName, TObject(pfi));
+        end;
 
         { 获取下一个 USN 记录 }
         if UsnRecord.RecordLength > 0 then
           Dec(dwRet, UsnRecord.RecordLength)
         else
           Break;
+
         UsnRecord := PUSN(Cardinal(UsnRecord) + UsnRecord.RecordLength);
       end;
       MyMove(Buffer, med, int64Size);
     end;
 
     { 获取文件全路径，包含路径和文件名 }
-    GetFullFileName(FileList, chrLogiclDiskName, bSort);
+    GetFullFileName(FileList, DirList, chrLogiclDiskName, bSort);
 
     { 释放内存 }
     for III := 0 to FileList.Count - 1 do
@@ -286,6 +350,7 @@ begin
     dujd.DeleteFlags  := USN_DELETE_FLAG_DELETE;
     DeviceIoControl(hRootHandle, FSCTL_DELETE_USN_JOURNAL, @dujd, Sizeof(dujd), nil, 0, dwRet, nil);
   finally
+    DirList.Free;
     CloseHandle(hRootHandle);
   end;
 end;

@@ -39,7 +39,7 @@ type
   PMyRec = ^TMyRec;
 
   TMyRec = record
-    intIndex: Integer;
+    intIndex: Cardinal;
     Caption: WideString;
   end;
 
@@ -94,9 +94,9 @@ begin
   intST := GetTickCount;
   GetLogicalDiskAllFiles(chrLogicalDisk, FstrsFileList, chk1.Checked);
   intET  := GetTickCount;
-  strTip := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST) div 1000]);
+  strTip := Format('扫描 %s:\ , 共计：%d 个文件和文件夹。用时：%d 毫秒', [chrLogicalDisk, FstrsFileList.Count, (intET - intST)]);
   EnableWaittingForm(strTip);
-  lvFiles.RootNodeCount := FstrsFileList.Count;
+  // lvFiles.RootNodeCount := FstrsFileList.Count;
 end;
 
 procedure DelayTime(const intTime: Cardinal);
@@ -117,11 +117,16 @@ procedure TfrmFileSearch.OnFileSearchClick(Sender: TObject);
 var
   strLogicalDisk: String;
 begin
-  ShowWaittingForm;
-  DelayTime(200);
-  lvFileList.Clear;
-  strLogicalDisk := TButton(Sender).Caption;
-  GetLogicalAllFiles(strLogicalDisk, lvFileList);
+  pnl1.Enabled := False;
+  try
+    ShowWaittingForm;
+    DelayTime(200);
+    lvFileList.Clear;
+    strLogicalDisk := TButton(Sender).Caption;
+    GetLogicalAllFiles(strLogicalDisk, lvFileList);
+  finally
+    pnl1.Enabled := True;
+  end;
 end;
 
 procedure TfrmFileSearch.lvFileListGetText(Sender: TBaseVirtualTree; Node: PVirtualNode; Column: TColumnIndex; TextType: TVSTTextType; var CellText: string);
