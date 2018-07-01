@@ -3,7 +3,7 @@
         <ProjectGuid>{70F5941E-0F8E-4E48-8B92-C98828C8F931}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="src\Aio.dproj">
+        <Projects Include="src\PBox.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="plugin\12.PEInfo\PEInfo.dproj">
@@ -32,14 +32,14 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="Aio">
-        <MSBuild Projects="src\Aio.dproj"/>
+    <Target Name="PBox">
+        <MSBuild Projects="src\PBox.dproj"/>
     </Target>
-    <Target Name="Aio:Clean">
-        <MSBuild Projects="src\Aio.dproj" Targets="Clean"/>
+    <Target Name="PBox:Clean">
+        <MSBuild Projects="src\PBox.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Aio:Make">
-        <MSBuild Projects="src\Aio.dproj" Targets="Make"/>
+    <Target Name="PBox:Make">
+        <MSBuild Projects="src\PBox.dproj" Targets="Make"/>
     </Target>
     <Target Name="PEInfo">
         <MSBuild Projects="plugin\12.PEInfo\PEInfo.dproj"/>
@@ -96,13 +96,13 @@
         <MSBuild Projects="plugin\15.TextEdit\txtedit.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Aio;PEInfo;SysSP;pm;imgView;FileSearch;txtedit"/>
+        <CallTarget Targets="PBox;PEInfo;SysSP;pm;imgView;FileSearch;txtedit"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Aio:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean;imgView:Clean;FileSearch:Clean;txtedit:Clean"/>
+        <CallTarget Targets="PBox:Clean;PEInfo:Clean;SysSP:Clean;pm:Clean;imgView:Clean;FileSearch:Clean;txtedit:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Aio:Make;PEInfo:Make;SysSP:Make;pm:Make;imgView:Make;FileSearch:Make;txtedit:Make"/>
+        <CallTarget Targets="PBox:Make;PEInfo:Make;SysSP:Make;pm:Make;imgView:Make;FileSearch:Make;txtedit:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
