@@ -1,0 +1,14 @@
+gtest
+glog
+gflags
+eigen
+lept
+Tesst
+Ceres Solver
+Caffe
+Protobuf
+Glog
+freetype2
+harfbuzz
+hdf5
+

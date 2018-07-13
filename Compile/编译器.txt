@@ -1,9 +1,9 @@
-编译器工作原理：
+﻿编译器工作原理：
 
 	test.c---------------------------->test.i------------------------------->test.s--------------------------->test.o--------------------------------------------------------------------------------------------------------->test.exe
        		1.预编译（prepressing）            2.编译（compliation）                 3.汇编（assembly）                4.链接（linking）
   GCC     	gcc –E test.c –o test.i          gcc –S test.i –o test.s             gcc –c test.s –o test.o         ld –static crti.o crtbeginT.o test.o –start-group -lgcc –lgcc_eh –lc –end-group crtend.o ctrn.o
-  VC   		cl /E test.c                       cl /PS test.i
+  VC   		cl /P test.c                       cl  /FA  test.c
 
 
 
