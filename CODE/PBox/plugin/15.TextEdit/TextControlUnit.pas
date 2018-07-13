@@ -181,7 +181,7 @@ begin
   begin
     J := pos(S, MyStringList[I]);
     if J <> 0 then
-      MyStringList[I] := RightBStr(MyStringList[I], Length(MyStringList[I]) - J - Length(S));
+      MyStringList[I] := RightStr(MyStringList[I], Length(MyStringList[I]) - J - Length(S));
   end;
   MyStringList.SaveToFile(FileName);
   MessageBox(application.Handle, '操作完成！', '系统提示：                   dbyoung@sina.com', 64);
@@ -214,7 +214,7 @@ begin
   begin
     J := pos(S, MyStringList[I]);
     if J <> 0 then
-      MyStringList[I] := RightBStr(MyStringList[I], Length(MyStringList[I]) - J - 1);
+      MyStringList[I] := RightStr(MyStringList[I], Length(MyStringList[I]) - J - 1);
   end;
   MyStringList.SaveToFile(FileName);
   MessageBox(application.Handle, '操作完成！', '系统提示：                   dbyoung@sina.com', 64);
@@ -247,7 +247,7 @@ begin
   begin
     J := pos(S, MyStringList[I]);
     if J <> 0 then
-      MyStringList[I] := LeftBStr(MyStringList[I], J - 1);
+      MyStringList[I] := LeftStr(MyStringList[I], J - 1);
   end;
   MyStringList.SaveToFile(FileName);
   MessageBox(application.Handle, '操作完成！', '系统提示：                   dbyoung@sina.com', 64);
@@ -280,7 +280,7 @@ begin
   begin
     J := pos(S, MyStringList[I]);
     if J <> 0 then
-      MyStringList[I] := LeftBStr(MyStringList[I], J + Length(S) - 1);
+      MyStringList[I] := LeftStr(MyStringList[I], J + Length(S) - 1);
   end;
   MyStringList.SaveToFile(FileName);
   MessageBox(application.Handle, '操作完成！', '系统提示：                   dbyoung@sina.com', 64);
