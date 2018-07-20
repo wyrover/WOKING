@@ -1,0 +1,36 @@
+BLAS
+  Netlib公司用fortran实现
+  Basic Linear Algebra Subprograms
+	基础线性代数子程序
+  只是一般性地实现了基本功能，并没有对运算做过多的优化
+   向量之间的乘法、矩阵之间的乘法等，一系列初级操作的规范
+ 
+LAPACK
+  Netlib公司用fortran实现
+  底层是BLAS
+  在此基础上定义了很多矩阵和向量高级运算的函数，如矩阵分解、求逆和求奇异值等。
+  该库的运行效率比BLAS库高
+  矩阵运算的接口规范
+  
+CBLAS/LAPACK
+  Netlib公司实现
+  增加了c的调用方式
+ 
+第三方组织、个人和公司
+
+  Atlas
+    能根据硬件，在运行时，自动调整运行参数
+    
+  OpenBLAS
+    在编译时根据目标硬件进行优化，生成运行效率很高的程序或者库
+    Openblas的优化是在编译时进行的，所以其运行效率一般比atlas要高
+    但这也决定了openblas对硬件依赖性高，换了机器，可能就要重新编译了
+    
+    MKL (Intel)
+    
+    ACML (AMD)
+    
+    CuBLAS (NVIDIA)
+	
+	
+	
