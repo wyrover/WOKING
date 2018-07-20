@@ -39,7 +39,8 @@ CBLAS/LAPACK
     扩展的且针对intel cpu优化的库
     包括BLAS、LAPACK、稀疏矩阵解算器、快速傅立叶变换（FFT）、矢量数学库、矢量随机数生成器
     
-    ACML (AMD)
+    ACML    (AMD，已废弃)
+    CLBLAS  (AMD，OPENCL版本)
     
     CuBLAS (NVIDIA)
 	
