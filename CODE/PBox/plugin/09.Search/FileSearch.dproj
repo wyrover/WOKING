@@ -6,7 +6,7 @@
         <MainSource>FileSearch.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Library</AppType>
     </PropertyGroup>
@@ -148,7 +148,7 @@
         <Manifest_File>(None)</Manifest_File>
         <Debugger_HostApplication>D:\Working\dbyoung\CODE\AllInOne\bin\x64\Aio.exe</Debugger_HostApplication>
         <Debugger_CWD>D:\Working\dbyoung\CODE\AllInOne\bin\x64</Debugger_CWD>
-        <DCC_UnitSearchPath>E:\Source\Virtual-TreeView\Source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>D:\Source\Virtual-TreeView\Source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
