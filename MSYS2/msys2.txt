@@ -1,0 +1,110 @@
+pacman -S --noconfirm mingw-w64-x86_64-binutils  
+pacman -S --noconfirm mingw-w64-x86_64-crt-git
+pacman -S --noconfirm mingw-w64-x86_64-gcc  
+pacman -S --noconfirm mingw-w64-x86_64-gcc-ada
+pacman -S --noconfirm mingw-w64-x86_64-gcc-fortran
+pacman -S --noconfirm mingw-w64-x86_64-gcc-libgfortran
+pacman -S --noconfirm mingw-w64-x86_64-gcc-libs
+pacman -S --noconfirm mingw-w64-x86_64-gcc-objc
+pacman -S --noconfirm mingw-w64-x86_64-gdb
+pacman -S --noconfirm mingw-w64-x86_64-headers-git
+pacman -S --noconfirm mingw-w64-x86_64-libmangle-git
+pacman -S --noconfirm mingw-w64-x86_64-libwinpthread-git
+pacman -S --noconfirm mingw-w64-x86_64-make
+pacman -S --noconfirm mingw-w64-x86_64-pkg-config
+pacman -S --noconfirm mingw-w64-x86_64-tools-git
+pacman -S --noconfirm mingw-w64-x86_64-winpthreads-git
+pacman -S --noconfirm mingw-w64-x86_64-winstorecompat-git
+
+
+pacman -S --noconfirm mingw-w64-x86_64-gtk3
+pacman -S --noconfirm mingw-w64-x86_64-glade
+pacman -S --noconfirm mingw-w64-x86_64-devhelp
+pacman -S --noconfirm mingw-w64-x86_64-python3-gobject
+pacman -S --noconfirm mingw-w64-x86_64-python2-gobject
+pacman -S --noconfirm mingw-w64-x86_64-toolchain base-devel
+
+
+ATK
+broti
+bzip2
+cairo
+cairo
+cmake
+ctex
+doxygen
+eigen
+epoxy
+expat
+ffi
+fftw
+fontconfig
+freetype2
+gdk
+gdk-pixbuf
+gettext-runtime
+gflags
+gif
+gio
+git
+glib
+GLib
+glog
+gmock
+gobject
+gtest
+gthread
+gtk3
+harfbuzz
+hdf5
+iconv
+intl
+jpeg9b
+libcurl
+libpng
+libwebp
+libxml2
+lua
+luajit
+lzma
+nasm
+ninja
+nuget
+ogre3d
+openh264
+openjpeg
+pango
+Pango
+pixman
+png
+protobuf
+python2
+python3
+ragel
+sdl2
+snappy
+svn
+tiff
+turbojpeg
+vpx
+vtk
+x264
+x265
+yasm
+zenlib
+zlib
+QT
+ant
+ipp
+tbb
+cuda
+pylint
+gstreamer
+mfx
+opencl
+opengl
+openal
+openni2
+opencv
+tinydnn
+Tesseract
