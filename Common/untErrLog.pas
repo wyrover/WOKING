@@ -1,4 +1,4 @@
-unit untErrLog;
+ï»¿unit untErrLog;
 
 interface
 
@@ -15,24 +15,24 @@ var
   strLogDirPath : String;
   strList       : TStringList;
 begin
-  { ´´½¨ÈÕÖ¾Ä¿Â¼ }
+  { åˆ›å»ºæ—¥å¿—ç›®å½• }
   strLogDirPath := ExtractFilePath(ParamStr(0)) + 'log\';
   if not DirectoryExists(strLogDirPath) then
     CreateDir(strLogDirPath);
 
-  { ÈÕÖ¾ÎÄ¼şÊÇ·ñ´æÔÚ£¬²»´æÔÚ£¬Ôò´´½¨ }
+  { æ—¥å¿—æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨ï¼Œåˆ™åˆ›å»º }
   strLogFileName := strLogDirPath + FormatDateTime('YYYY-MM-DD', Now) + '.log';
   if not FileExists(strLogFileName) then
     FileClose(FileCreate(strLogFileName));
 
-  { ÈÕÖ¾±£´æµ½ÎÄ¼ş }
+  { æ—¥å¿—ä¿å­˜åˆ°æ–‡ä»¶ }
   strList := TStringList.Create;
   try
     strList.LoadFromFile(strLogFileName, TEncoding.UTF8);
     if not bInsert then
-      strList.Add(Format('%s%s%s', [FormatDateTime('YYYY-MM-DD hh:mm:ss', Now), Char(9), strTemp]))        // ×·¼ÓÄ£Ê½
+      strList.Add(Format('%s%s%s', [FormatDateTime('YYYY-MM-DD hh:mm:ss', Now), Char(9), strTemp]))        // è¿½åŠ æ¨¡å¼
     else                                                                                                   //
-      strList.Insert(0, Format('%s%s%s', [FormatDateTime('YYYY-MM-DD hh:mm:ss', Now), Char(9), strTemp])); // ²åÈëÄ£Ê½
+      strList.Insert(0, Format('%s%s%s', [FormatDateTime('YYYY-MM-DD hh:mm:ss', Now), Char(9), strTemp])); // æ’å…¥æ¨¡å¼
     strList.SaveToFile(strLogFileName, TEncoding.UTF8);
   finally
     strList.Free;
