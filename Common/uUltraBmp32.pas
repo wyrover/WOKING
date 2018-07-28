@@ -701,8 +701,48 @@ end;
 }
 
 procedure Rotate_ScanLine01(bmp: TBitmap; const Angle: Integer);
+var
+  rx0, ry0            : Integer;
+  RAngle              : Double;
+  dst                 : TBitmap;
+  iCosTheta, iSinTheta: Double;
+  Xnew, Ynew          : Integer;
+  pDstLine            : PDWORDArray;
+  Xori, Yori          : Integer;
+  pSrcData            : array of DWORD;
 begin
+  rx0    := bmp.Width div 2;
+  ry0    := bmp.Height div 2;
+  RAngle := (-Angle mod 360) * PI / 180;
+  SinCos(RAngle, iSinTheta, iCosTheta);
+  dst := TBitmap.Create;
+  SetLength(pSrcData, bmp.Width * bmp.Height);
+  try
+    dst.PixelFormat := pf32bit;
+    dst.Width       := Round(bmp.Width * Abs(iCosTheta) + bmp.Height * Abs(iSinTheta));
+    dst.Height      := Round(bmp.Width * Abs(iSinTheta) + bmp.Height * Abs(iCosTheta));
+    GetBitmapBits(bmp.Handle, bmp.Width * bmp.Height * 4, pSrcData);
 
+    for Ynew := 0 to dst.Height - 1 do
+    begin
+      pDstLine := dst.ScanLine[Ynew];
+      for Xnew := 0 to dst.Width - 1 do
+      begin
+        Xori := Round((Xnew - rx0) * cos(RAngle) - (Ynew - ry0) * sin(RAngle) + rx0);
+        Yori := Round((Xnew - rx0) * sin(RAngle) + (Ynew - ry0) * cos(RAngle) + ry0);
+        if (Xori >= 0) and (Xori < bmp.Width) and (Yori >= 0) and (Yori < bmp.Height) then
+        begin
+          pDstLine[Xnew] := pSrcData[bmp.Width * Yori + Xori];
+        end;
+      end;
+    end;
+
+    bmp.Height := dst.Height;
+    bmp.Width  := dst.Width;
+    bmp.Assign(dst);
+  finally
+    dst.Free;
+  end;
 end;
 
 procedure Rotate_ScanLine02(bmp: TBitmap; const Angle: Integer);
