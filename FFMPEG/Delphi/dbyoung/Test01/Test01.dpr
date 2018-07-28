@@ -10,7 +10,9 @@ uses
   ffmpeg.Avutil in '..\Head\ffmpeg.Avutil.pas',
   ffmpeg.Common in '..\Head\ffmpeg.Common.pas',
   ffmpeg.Swresample in '..\Head\ffmpeg.Swresample.pas',
-  ffmpeg.Swscale in '..\Head\ffmpeg.Swscale.pas';
+  ffmpeg.Swscale in '..\Head\ffmpeg.Swscale.pas',
+  ffmpeg.Postproc in '..\Head\ffmpeg.Postproc.pas',
+  ffmpeg.sdl2 in '..\Head\ffmpeg.sdl2.pas';
 
 {$R *.res}
 

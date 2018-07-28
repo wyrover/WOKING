@@ -85,7 +85,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>D:\Working\dbyoung\FFMPEG\VC\ffdll\x64\Release\ffdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Psapi.lib;D:\Working\dbyoung\FFMPEG\VC\ffdll\x64\Release\ffdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
