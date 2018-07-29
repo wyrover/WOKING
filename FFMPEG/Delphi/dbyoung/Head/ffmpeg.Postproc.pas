@@ -24,7 +24,8 @@ const
   PP_PICT_TYPE_QP2    = $00000010;
   PP_QUALITY_MAX      = 6;
 
-  pp_help = 'Available postprocessing filters:' + #$D#$A +                                       //
+  pp_help =                                                                                      //
+    'Available postprocessing filters:' + #$D#$A +                                               //
     'Filters                        Options' + #$D#$A +                                          //
     'short  long name       short   long option     Description' + #$D#$A +                      //
     '*      *               a       autoq           CPU power dependent enabler' + #$D#$A +      //
@@ -67,8 +68,8 @@ const
     '' + #$D#$A;
 
 type
-  pp_context   = Pointer;
-  pp_mode      = Pointer;
+  pp_context    = Pointer;
+  pp_mode       = Pointer;
   ArrThreePByte = array [0 .. 2] of puint8_t;
   ArrThreeInt   = array [0 .. 2] of Integer;
 
