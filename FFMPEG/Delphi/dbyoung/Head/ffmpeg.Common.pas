@@ -7,6 +7,7 @@ const
 
 type
   UINT        = Cardinal;
+  size_t      = Cardinal;
   Int         = Integer;
   puint8_t    = PShortInt;
   pint8_t     = PByte;
