@@ -9,12 +9,6 @@ const
   LIBAVDEVICE_VERSION_MINOR = 4;
   LIBAVDEVICE_VERSION_MICRO = 101;
 
-var
-  LIBAVDEVICE_VERSION_INT: Integer;
-  LIBAVDEVICE_VERSION    : PAnsiChar;
-  LIBAVDEVICE_BUILD      : Integer;
-  LIBAVDEVICE_IDENT      : PAnsiChar;
-
 type
   AVDeviceRect = record
     x: Integer;
@@ -71,6 +65,12 @@ function avdevice_list_input_sources(device: PAVInputFormat; device_name: pchar;
 function avdevice_list_output_sinks(device: pAVOutputFormat; device_name: pchar; device_options: pAVDictionary; var device_list: PAVDeviceInfoList): Integer; cdecl; external c_strFFmpegDllX64Name;
 procedure avdevice_register_all(); cdecl; external c_strFFmpegDllX64Name;
 function avdevice_version(): UINT; cdecl; cdecl; external c_strFFmpegDllX64Name;
+
+var
+  LIBAVDEVICE_VERSION_INT: Integer;
+  LIBAVDEVICE_VERSION    : PAnsiChar;
+  LIBAVDEVICE_BUILD      : Integer;
+  LIBAVDEVICE_IDENT      : PAnsiChar;
 
 implementation
 

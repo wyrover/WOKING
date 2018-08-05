@@ -8,6 +8,8 @@ const
 type
   UINT        = Cardinal;
   size_t      = Cardinal;
+  unsigned    = Cardinal;
+  Psize_t     = ^size_t;
   Int         = Integer;
   puint8_t    = PShortInt;
   pint8_t     = PByte;

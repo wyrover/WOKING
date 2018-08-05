@@ -4,10 +4,6 @@ interface
 
 uses ffmpeg.Common, ffmpeg.Avutil, ffmpeg.Avcodec;
 
-{
-  avfilter_all_channel_layouts   ***
-}
-
 const
   AVFILTER_FLAG_DYNAMIC_INPUTS            = (1 shl 0);
   AVFILTER_FLAG_DYNAMIC_OUTPUTS           = (1 shl 1);
