@@ -34,6 +34,10 @@ type
     mniHelp: TMenuItem;
     mniHelpAbout: TMenuItem;
     mniEffectAdjustSaturation: TMenuItem;
+    mniCameraAddIPCamera_HK: TMenuItem;
+    mniCameraAddIPCamera_DH: TMenuItem;
+    mniCameraAddIPCamera_Other: TMenuItem;
+    mniRecognizeNo: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure mniHelpAboutClick(Sender: TObject);
     procedure mniRecognizeFaceClick(Sender: TObject);
@@ -42,6 +46,10 @@ type
   private
     { 读取相机配置 }
     function ReadCameraConfig: Boolean;
+    { 确定当前目录下，是否存在海康相机的SDK开发包 }
+    function CheckHKIPCamera: Boolean;
+    { 确定当前目录下，是否存在大华相机的SDK开发包 }
+    function CheckDHIPCamera: Boolean;
   public
     { Public declarations }
   end;
@@ -114,10 +122,25 @@ begin
   end;
 end;
 
+{ 确定当前目录下，是否存在海康相机的SDK开发包 }
+function TfrmCamera.CheckHKIPCamera: Boolean;
+begin
+  Result := FileExists(ExtractFilePath(ParamStr(0)) + '相机\海康\HCNetSDK.dll');
+end;
+
+{ 确定当前目录下，是否存在大华相机的SDK开发包 }
+function TfrmCamera.CheckDHIPCamera: Boolean;
+begin
+  Result := FileExists(ExtractFilePath(ParamStr(0)) + '相机\大华\dhnetsdk.dll');
+end;
+
 procedure TfrmCamera.FormCreate(Sender: TObject);
 begin
   grdpnlVideo.ColumnCollection.Items[1].Value := 0;
   grdpnlVideo.RowCollection.Items[1].Value    := 0;
+
+  mniCameraAddIPCamera_HK.Enabled := CheckHKIPCamera;
+  mniCameraAddIPCamera_DH.Enabled := CheckDHIPCamera;
 
   { 读取相机配置 }
   if not ReadCameraConfig then
