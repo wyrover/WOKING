@@ -151,6 +151,7 @@ object frmCamera: TfrmCamera
       end
       object mniRecognizeNo: TMenuItem
         Caption = #26080
+        OnClick = mniRecognizeNoClick
       end
     end
     object mniEffect: TMenuItem

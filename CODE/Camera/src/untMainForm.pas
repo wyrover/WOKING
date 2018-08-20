@@ -43,6 +43,7 @@ type
     procedure mniRecognizeFaceClick(Sender: TObject);
     procedure mniRecognizeCarClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure mniRecognizeNoClick(Sender: TObject);
   private
     { 读取相机配置 }
     function ReadCameraConfig: Boolean;
@@ -161,12 +162,21 @@ procedure TfrmCamera.mniRecognizeCarClick(Sender: TObject);
 begin
   mniRecognizeCar.Checked  := True;
   mniRecognizeFace.Checked := False;
+  mniRecognizeNo.Checked   := False;
 end;
 
 procedure TfrmCamera.mniRecognizeFaceClick(Sender: TObject);
 begin
-  mniRecognizeCar.Checked  := False;
   mniRecognizeFace.Checked := True;
+  mniRecognizeCar.Checked  := False;
+  mniRecognizeNo.Checked   := False;
+end;
+
+procedure TfrmCamera.mniRecognizeNoClick(Sender: TObject);
+begin
+  mniRecognizeFace.Checked := False;
+  mniRecognizeCar.Checked  := False;
+  mniRecognizeNo.Checked   := True;
 end;
 
 { 读取相机配置 }
