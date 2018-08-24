@@ -125,6 +125,17 @@ object frmCamera: TfrmCamera
       end
       object mniCameraAddIPCamera: TMenuItem
         Caption = #28155#21152'IP'#30456#26426
+        object mniCameraAddIPCamera_HK: TMenuItem
+          Caption = #28023#24247'IP'#30456#26426
+          Enabled = False
+        end
+        object mniCameraAddIPCamera_DH: TMenuItem
+          Caption = #22823#21326'IP'#30456#26426
+          Enabled = False
+        end
+        object mniCameraAddIPCamera_Other: TMenuItem
+          Caption = #20854#23427#20844#21496#30456#26426
+        end
       end
     end
     object mniRecognize: TMenuItem
@@ -137,6 +148,10 @@ object frmCamera: TfrmCamera
       object mniRecognizeFace: TMenuItem
         Caption = #20154#33080#35782#21035
         OnClick = mniRecognizeFaceClick
+      end
+      object mniRecognizeNo: TMenuItem
+        Caption = #26080
+        OnClick = mniRecognizeNoClick
       end
     end
     object mniEffect: TMenuItem

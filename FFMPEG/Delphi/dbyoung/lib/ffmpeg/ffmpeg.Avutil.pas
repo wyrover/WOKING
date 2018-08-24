@@ -127,8 +127,9 @@ type
   PTAVPixelFormat      = ^TAVPixelFormat;
   PAVPixelFormat       = ^TAVPixelFormat;
   PAVDictionaryEntry   = ^TAVDictionaryEntry;
-  PPAVDictionary       = ^PAVDictionary;
   PAVDictionary        = ^AVDictionary;
+  PPAVDictionary       = ^PAVDictionary;
+  PPPAVDictionary      = ^PPAVDictionary;
   PAVSampleFormatArray = ^TAVSampleFormatArray;
   PAVFile              = Pointer;
   PAVRational          = ^TAVRational;
@@ -865,20 +866,113 @@ const
   AV_PIX_FMT_P016   = AV_PIX_FMT_P016LE;
 {$ENDIF}
 
-function AV_VERSION_INT(a, b, c: Cardinal): Cardinal;
-function AV_VERSION_DOT(a, b, c: Integer): PAnsiChar;
-function AV_VERSION(a, b, c: Integer): PAnsiChar;
-function AV_TOSTRING(s: PAnsiChar): PAnsiChar;
-function AV_STRINGIFY(s: PAnsiChar): PAnsiChar;
-function MKTAG(a, b, c, d: AnsiChar): Integer; {$IFDEF HasInline}inline; {$ENDIF}
-function MKBETAG(a, b, c, d: AnsiChar): Integer; {$IFDEF HasInline}inline; {$ENDIF}
-function av_x_if_null(P: Pointer; x: Pointer): Pointer; {$IFDEF HasInline}inline; {$ENDIF}
-function av_make_error_string(errbuf: PAnsiChar; errbuf_size: size_t; errnum: cint): PAnsiChar; {$IFDEF HasInline}inline; {$ENDIF}
-function AVERROR(e: Integer): Integer;
-function av_err2str(errnum: cint): PAnsiChar; {$IFDEF HasInline}inline; {$ENDIF}
-function av_int_list_length(list: Pointer; term: cuint64): cuint;
+const
+  AV_INTEGER_SIZE = 8;
+  AES_BLOCK_SIZE  = 16;
+  AV_BF_ROUNDS    = 16;
 
+type
+  PAVAES         = ^AVAES;
+  PAVAESCTR      = ^AVAESCTR;
+  PAVAudioFifo   = ^AVAudioFifo;
+  PPAVFifoBuffer = ^PAVFifoBuffer;
+  PAVFifoBuffer  = ^AVFifoBuffer;
+  PAVBlowfish    = ^AVBlowfish;
+  PAVLFG         = ^AVLFG;
+
+  AVInteger = record
+    v: array [0 .. AV_INTEGER_SIZE - 1] of uint16_t;
+  end;
+
+  av_aes_block = record
+    u64: array [0 .. 1] of UInt64;
+    u32: array [0 .. 3] of UInt32;
+    u8x4: array [0 .. 3, 0 .. 3] of uint8_t;
+    u8: array [0 .. 15] of UInt8;
+  end;
+
+  AVAES = record
+    round_key: array [0 .. 14] of av_aes_block;
+    state: array [0 .. 1] of av_aes_block;
+  end;
+
+  AVAESCTR = record
+    aes: PAVAES;
+    counter: array [0 .. AES_BLOCK_SIZE - 1] of uint8_t;
+    encrypted_counter: array [0 .. AES_BLOCK_SIZE - 1] of uint8_t;
+    block_offset: int;
+  end;
+
+  AVFifoBuffer = record
+    buffer: puint8_t;
+    rptr, wptr, _end: puint8_t;
+    rndx, wndx: uint32_t;
+  end;
+
+  AVAudioFifo = record
+    buf: PPAVFifoBuffer;
+    nb_buffers: int;
+    nb_samples: int;
+    allocated_samples: int;
+    channels: int;
+    sample_fmt: TAVSampleFormat;
+    sample_size: int;
+  end;
+
+  AVBlowfish = record
+    P: array [0 .. AV_BF_ROUNDS + 1] of uint32_t;
+    s: array [0 .. 3, 0 .. 255] of uint32_t;
+  end;
+
+  AVLFG = record
+    state: array [0 .. 63] of unsigned_int;
+    index: int;
+  end;
+
+
+  // procedure av_bprint_channel_layout(bp: PAVBPrint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
+  // function av_channel_layout_extract_channel(channel_layout: cuint64; index: cint): cuint64; cdecl; external c_strFFmpegDllX64Name;
+
+function av_add_i(a, b: AVInteger): AVInteger; cdecl; external c_strFFmpegDllX64Name;
+function av_add_q(b, c: TAVRational): TAVRational; cdecl; external c_strFFmpegDllX64Name;
 function av_add_stable(ts_tb: TAVRational; ts: cint64; inc_tb: TAVRational; inc: cint64): cint64; cdecl; external c_strFFmpegDllX64Name;
+function av_adler32_update(adler: unsigned; const buf: puint8_t; len: unsigned_int): unsigned; cdecl; external c_strFFmpegDllX64Name;
+function av_aes_alloc(): PAVAES; cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_crypt(a: PAVAES; dst: puint8_t; const src: puint8_t; count: int; iv: puint8_t; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+function av_aes_ctr_alloc(): PAVAESCTR; cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_crypt(a: PAVAESCTR; dst: puint8_t; const src: puint8_t; count: int); cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_free(a: PAVAESCTR); cdecl; external c_strFFmpegDllX64Name;
+function av_aes_ctr_get_iv(a: PAVAESCTR): puint8_t; cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_increment_iv(a: PAVAESCTR); cdecl; external c_strFFmpegDllX64Name;
+function av_aes_ctr_init(a: PAVAESCTR; const key: puint8_t): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_set_full_iv(a: PAVAESCTR; const iv: puint8_t); cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_set_iv(a: PAVAESCTR; const iv: puint8_t); cdecl; external c_strFFmpegDllX64Name;
+procedure av_aes_ctr_set_random_iv(a: PAVAESCTR); cdecl; external c_strFFmpegDllX64Name;
+function av_aes_init(a: PAVAES; const key: puint8_t; key_bits: int; decrypt: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_aes_size: int; cdecl; external c_strFFmpegDllX64Name;
+function av_append_path_component(const path: PAnsiChar; const component: PAnsiChar): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_asprintf(const fmt: array of const): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+procedure av_assert0_fpu; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_alloc(sample_fmt: TAVSampleFormat; channels: int; nb_samples: int): PAVAudioFifo; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_drain(af: PAVAudioFifo; nb_samples: int): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_audio_fifo_free(af: PAVAudioFifo); cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_peek(af: PAVAudioFifo; data: PPointer; nb_samples: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_peek_at(af: PAVAudioFifo; data: PPointer; nb_samples, offset: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_read(af: PAVAudioFifo; data: PPointer; nb_samples: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_realloc(af: PAVAudioFifo; nb_samples: int): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_audio_fifo_reset(af: PAVAudioFifo); cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_size(af: PAVAudioFifo): int; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_space(af: PAVAudioFifo): int; cdecl; external c_strFFmpegDllX64Name;
+function av_audio_fifo_write(af: PAVAudioFifo; data: PPointer; nb_samples: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_base64_decode(_out: puint8_t; const in_str: PAnsiChar; out_size: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_base64_encode(_out: PAnsiChar; out_size: int; const _in: puint8_t; in_size: int): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_basename(const path: PAnsiChar): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_blowfish_alloc(): PAVBlowfish; cdecl; external c_strFFmpegDllX64Name;
+procedure av_blowfish_crypt(ctx: PAVBlowfish; dst: puint8_t; const src: puint8_t; count: int; iv: puint8_t; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+procedure av_blowfish_crypt_ecb(ctx: PAVBlowfish; xl: pcuint32; xr: pcuint32; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+procedure av_blowfish_init(ctx: PAVBlowfish; const key: puint8_t; key_len: int); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bmg_get(lfg: PAVLFG); cdecl; external c_strFFmpegDllX64Name;
+
 function av_buffer_alloc(size: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_allocz(size: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_create(data: pbyte; size: cint; free: TFree; opaque: Pointer; flags: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
@@ -907,7 +1001,6 @@ function av_dict_set_int(var pm: PAVDictionary; key: PAnsiChar; value: cint64; f
 function av_dynarray_add_nofree(tab_ptr: Pointer; nb_ptr: Pcint; elem: Pointer): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_dynarray2_add(tab_ptr: Pointer; nb_ptr: Pcint; elem_size: size_t; elem_data: Pcuint8): Pointer; cdecl; external c_strFFmpegDllX64Name;
 function av_fast_realloc(ptr: Pointer; size: PCuint; min_size: size_t): Pointer; cdecl; external c_strFFmpegDllX64Name;
-function av_fopen_utf8(path: Pchar; mode: Pchar): PAVFile; cdecl; external c_strFFmpegDllX64Name;
 function av_fourcc_make_string(buf: PAnsiChar; fourcc: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_fourcc2str(fourcc: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_frame_alloc(): PAVFrame; cdecl; external c_strFFmpegDllX64Name;
@@ -940,6 +1033,15 @@ function av_gcd(a, b: cint64): cint64; cdecl; external c_strFFmpegDllX64Name;
 function av_get_alt_sample_fmt(sample_fmt: TAVSampleFormat; planar: cint): TAVSampleFormat; cdecl; external c_strFFmpegDllX64Name;
 function av_get_bytes_per_sample(sample_fmt: TAVSampleFormat): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_get_colorspace_name(val: TAVColorSpace): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_get_channel_description(channel: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_get_channel_layout(name: PAnsiChar): cuint64; cdecl; external c_strFFmpegDllX64Name;
+function av_get_channel_layout_channel_index(channel_layout: cuint64; channel: cuint64): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_channel_layout_nb_channels(channel_layout: cuint64): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_channel_name(channel: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+procedure av_get_channel_layout_string(buf: PAnsiChar; buf_size: cint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
+function av_get_default_channel_layout(nb_channels: cint): cint64; cdecl; external c_strFFmpegDllX64Name;
+function av_get_standard_channel_layout(index: cuint; layout: PCuint64; name: PPAnsiChar): cint; cdecl; external c_strFFmpegDllX64Name;
+
 function av_get_cpu_flags(): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_get_media_type_string(media_type: TAVMediaType): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_get_packed_sample_fmt(sample_fmt: TAVSampleFormat): TAVSampleFormat; cdecl; external c_strFFmpegDllX64Name;
@@ -1064,6 +1166,19 @@ procedure av_force_cpu_flags(flags: cint); cdecl; external c_strFFmpegDllX64Name
 procedure av_set_cpu_flags_mask(mask: cint); cdecl; external c_strFFmpegDllX64Name;
 procedure av_dict_free(var m: PAVDictionary); cdecl; external c_strFFmpegDllX64Name;
 procedure av_log_format_line(ptr: Pointer; level: cint; fmt: PAnsiChar; vl: va_list; line: PAnsiChar; line_size: cint; print_prefix: Pcint); cdecl; external c_strFFmpegDllX64Name;
+
+function AV_VERSION_INT(a, b, c: Cardinal): Cardinal;
+function AV_VERSION_DOT(a, b, c: Integer): PAnsiChar;
+function AV_VERSION(a, b, c: Integer): PAnsiChar;
+function AV_TOSTRING(s: PAnsiChar): PAnsiChar;
+function AV_STRINGIFY(s: PAnsiChar): PAnsiChar;
+function MKTAG(a, b, c, d: AnsiChar): Integer; {$IFDEF HasInline}inline; {$ENDIF}
+function MKBETAG(a, b, c, d: AnsiChar): Integer; {$IFDEF HasInline}inline; {$ENDIF}
+function av_x_if_null(P: Pointer; x: Pointer): Pointer; {$IFDEF HasInline}inline; {$ENDIF}
+function av_make_error_string(errbuf: PAnsiChar; errbuf_size: size_t; errnum: cint): PAnsiChar; {$IFDEF HasInline}inline; {$ENDIF}
+function AVERROR(e: Integer): Integer;
+function av_err2str(errnum: cint): PAnsiChar; {$IFDEF HasInline}inline; {$ENDIF}
+function av_int_list_length(list: Pointer; term: cuint64): cuint;
 
 implementation
 
