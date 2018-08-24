@@ -3,10 +3,10 @@ unit untMainForm;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, System.IniFiles, untUSBCamera;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, System.IniFiles, Winapi.DirectShow9, untUSBCamera;
 
 type
-  TfrmCamera = class(TForm)
+  TfrmCamera = class(TForm, ISampleGrabberCB)
     grdpnlVideo: TGridPanel;
     pnlVideo01: TPanel;
     pnlVideo02: TPanel;
@@ -39,6 +39,8 @@ type
     procedure mniRecognizeFaceClick(Sender: TObject);
     procedure mniRecognizeCarClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    function SampleCB(SampleTime: Double; pSample: IMediaSample): HResult; stdcall;
+    function BufferCB(SampleTime: Double; pBuffer: PByte; BufferLen: longint): HResult; stdcall;
   private
     { 读取相机配置 }
     function ReadCameraConfig: Boolean;
@@ -114,6 +116,16 @@ begin
   end;
 end;
 
+function TfrmCamera.BufferCB(SampleTime: Double; pBuffer: PByte; BufferLen: longint): HResult;
+begin
+  //
+end;
+
+function TfrmCamera.SampleCB(SampleTime: Double; pSample: IMediaSample): HResult;
+begin
+  //
+end;
+
 procedure TfrmCamera.FormCreate(Sender: TObject);
 begin
   grdpnlVideo.ColumnCollection.Items[1].Value := 0;
@@ -121,12 +133,12 @@ begin
 
   { 读取相机配置 }
   if not ReadCameraConfig then
-    PreviewNativeUSBCamera(pnlVideo01);
+    PreviewNativeUSBCamera();
 end;
 
 procedure TfrmCamera.FormResize(Sender: TObject);
 begin
-  VideoResize(pnlVideo01);
+ // VideoResize(pnlVideo01);
 end;
 
 procedure TfrmCamera.mniHelpAboutClick(Sender: TObject);
