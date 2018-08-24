@@ -67,6 +67,79 @@ const
   MAX_DWT_LEVELS              = 5;
   DV_PROFILE_BYTES            = (6 * 80);
 
+  avpriv_ac3_channel_layout_tab: array [0 .. 7] of UInt16 = ( //
+    AV_CH_LAYOUT_STEREO,                                      //
+    AV_CH_LAYOUT_MONO,                                        //
+    AV_CH_LAYOUT_STEREO,                                      //
+    AV_CH_LAYOUT_SURROUND,                                    //
+    AV_CH_LAYOUT_2_1,                                         //
+    AV_CH_LAYOUT_4POINT0,                                     //
+    AV_CH_LAYOUT_2_2,                                         //
+    AV_CH_LAYOUT_5POINT0);
+
+  avpriv_dca_sample_rates: array [0 .. 16 - 1] of uint32_t  = (0, 8000, 16000, 32000, 0, 0, 11025, 22050, 44100, 0, 0, 12000, 24000, 48000, 96000, 192000);
+  avpriv_mjpeg_bits_ac_chrominance: array [0 .. 16] of Byte = (0, 0, 2, 1, 2, 4, 4, 3, 4, 7, 5, 4, 4, 0, 1, 2, $77);
+  avpriv_mjpeg_bits_ac_luminance: array [0 .. 16] of Byte   = (0, 0, 2, 1, 3, 3, 2, 4, 3, 5, 5, 4, 4, 0, 0, 1, $7D);
+  avpriv_mjpeg_bits_dc_chrominance: array [0 .. 16] of Byte = (0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0);
+  avpriv_mjpeg_bits_dc_luminance: array [0 .. 16] of Byte   = (0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0);
+  avpriv_mjpeg_val_ac_chrominance: array [0 .. 161] of Byte = ( //
+    $00, $01, $02, $03, $11, $04, $05, $21,                     //
+    $31, $06, $12, $41, $51, $07, $61, $71,                     //
+    $13, $22, $32, $81, $08, $14, $42, $91,                     //
+    $A1, $B1, $C1, $09, $23, $33, $52, $F0,                     //
+    $15, $62, $72, $D1, $0A, $16, $24, $34,                     //
+    $E1, $25, $F1, $17, $18, $19, $1A, $26,                     //
+    $27, $28, $29, $2A, $35, $36, $37, $38,                     //
+    $39, $3A, $43, $44, $45, $46, $47, $48,                     //
+    $49, $4A, $53, $54, $55, $56, $57, $58,                     //
+    $59, $5A, $63, $64, $65, $66, $67, $68,                     //
+    $69, $6A, $73, $74, $75, $76, $77, $78,                     //
+    $79, $7A, $82, $83, $84, $85, $86, $87,                     //
+    $88, $89, $8A, $92, $93, $94, $95, $96,                     //
+    $97, $98, $99, $9A, $A2, $A3, $A4, $A5,                     //
+    $A6, $A7, $A8, $A9, $AA, $B2, $B3, $B4,                     //
+    $B5, $B6, $B7, $B8, $B9, $BA, $C2, $C3,                     //
+    $C4, $C5, $C6, $C7, $C8, $C9, $CA, $D2,                     //
+    $D3, $D4, $D5, $D6, $D7, $D8, $D9, $DA,                     //
+    $E2, $E3, $E4, $E5, $E6, $E7, $E8, $E9,                     //
+    $EA, $F2, $F3, $F4, $F5, $F6, $F7, $F8,                     //
+    $F9, $FA                                                    //
+    );
+  avpriv_mjpeg_val_ac_luminance: array [0 .. 161] of Byte = ( //
+    $01, $02, $03, $00, $04, $11, $05, $12,                   //
+    $21, $31, $41, $06, $13, $51, $61, $07,                   //
+    $22, $71, $14, $32, $81, $91, $A1, $08,                   //
+    $23, $42, $B1, $C1, $15, $52, $D1, $F0,                   //
+    $24, $33, $62, $72, $82, $09, $0A, $16,                   //
+    $17, $18, $19, $1A, $25, $26, $27, $28,                   //
+    $29, $2A, $34, $35, $36, $37, $38, $39,                   //
+    $3A, $43, $44, $45, $46, $47, $48, $49,                   //
+    $4A, $53, $54, $55, $56, $57, $58, $59,                   //
+    $5A, $63, $64, $65, $66, $67, $68, $69,                   //
+    $6A, $73, $74, $75, $76, $77, $78, $79,                   //
+    $7A, $83, $84, $85, $86, $87, $88, $89,                   //
+    $8A, $92, $93, $94, $95, $96, $97, $98,                   //
+    $99, $9A, $A2, $A3, $A4, $A5, $A6, $A7,                   //
+    $A8, $A9, $AA, $B2, $B3, $B4, $B5, $B6,                   //
+    $B7, $B8, $B9, $BA, $C2, $C3, $C4, $C5,                   //
+    $C6, $C7, $C8, $C9, $CA, $D2, $D3, $D4,                   //
+    $D5, $D6, $D7, $D8, $D9, $DA, $E1, $E2,                   //
+    $E3, $E4, $E5, $E6, $E7, $E8, $E9, $EA,                   //
+    $F1, $F2, $F3, $F4, $F5, $F6, $F7, $F8,                   //
+    $F9, $FA                                                  //
+    );
+  avpriv_mjpeg_val_dc: array [0 .. 11] of Byte                      = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+  avpriv_mpa_bitrate_tab: array [0 .. 1, 0 .. 2, 0 .. 14] of UInt16 = (      //
+    ((0, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384, 416, 448), //
+    (0, 32, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 384),     //
+    (0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320)),     //
+    ((0, 32, 48, 56, 64, 80, 96, 112, 128, 144, 160, 176, 192, 224, 256),    //
+    (0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160),          //
+    (0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160)));
+  avpriv_mpa_freq_tab: array [0 .. 2] of UInt16          = (44100, 48000, 32000);
+  avpriv_mpeg4audio_sample_rates: array [0 .. 12] of int = (96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, 16000, 12000, 11025, 8000, 7350);
+  avpriv_pix_fmt_bps_mov: array [0 .. 8] of int          = (1, 2, 4, 8, 16, 24, 32, 33, 0);
+
 type
   PAVClass                  = ^TAVClass;
   PAVPacket                 = ^TAVPacket;
@@ -106,6 +179,21 @@ type
   PAVAudioConvert           = ^TAVAudioConvert;
   PAVBSFInternal            = ^TAVBSFInternal;
   PAVD3D11VAContext         = ^TAVD3D11VAContext;
+  PAVQSVContext             = ^AVQSVContext;
+  PmfxExtBuffer             = ^mfxExtBuffer;
+  PPmfxExtBuffer            = ^PmfxExtBuffer;
+  PAVVorbisParseContext     = ^AVVorbisParseContext;
+  PPAVVorbisParseContext    = ^PAVVorbisParseContext;
+  PAVDCT                    = ^AV_DCT;
+  PAC3HeaderInfo            = ^AC3HeaderInfo;
+  PPAC3HeaderInfo           = ^PAC3HeaderInfo;
+  PPutBitContext            = ^PutBitContext;
+  PDCACoreFrameHeader       = ^DCACoreFrameHeader;
+  PPixelFormatTag           = ^PixelFormatTag;
+  PFITSHeader               = ^FITSHeader;
+  PMPEG4AudioConfig         = ^MPEG4AudioConfig;
+  PMPADecodeHeader          = ^MPADecodeHeader;
+  PTAKStreamInfo            = ^TAKStreamInfo;
 
   TAVAudioConvert = record
     in_channels, out_channels: cint;
@@ -115,7 +203,7 @@ type
   TAVBPrint = record
     case Integer of
       0:
-        (paddedRecord: array [1 .. 1024] of byte);
+        (paddedRecord: array [1 .. 1024] of Byte);
       1:
         (str: PAnsiChar;
           len: cuint;
@@ -177,7 +265,9 @@ type
 
   TAVClass = record
     class_name: PAnsiChar;
-    item_name: function(ctx: Pointer): PAnsiChar; cdecl;
+    item_name:
+
+      function(ctx: Pointer): PAnsiChar; cdecl;
     option: PAVOption;
     version: cint;
     log_level_offset_offset: cint;
@@ -788,7 +878,9 @@ type
     coded_width, coded_height: cint;
     gop_size: cint;
     pix_fmt: TAVPixelFormat;
-    draw_horiz_band: procedure(s: PAVCodecContext; src: PAVFrame; offset: PAVNDPArray; y: cint; type_: cint; height: cint); cdecl;
+    draw_horiz_band:
+
+      procedure(s: PAVCodecContext; src: PAVFrame; offset: PAVNDPArray; y: cint; type_: cint; height: cint); cdecl;
     get_format: function(s: PAVCodecContext; fmt: PAVPixelFormat): TAVPixelFormat; cdecl;
     max_b_frames: cint;
     b_quant_factor: cfloat;
@@ -1026,7 +1118,7 @@ type
     supported_samplerates: PCint;
     sample_fmts: PAVSampleFormatArray;
     channel_layouts: PCuint64;
-    max_lowres: byte;
+    max_lowres: Byte;
     priv_class: PAVClass;
     profiles: PAVProfile;
     wrapper_name: PAnsiChar;
@@ -1039,7 +1131,9 @@ type
     init: function(avctx: PAVCodecContext): cint; cdecl;
     encode_sub: function(avctx: PAVCodecContext; buf: PByteArray; buf_size: cint; sub: PAVSubtitle): cint; cdecl;
     encode2: function(avctx: PAVCodecContext; avpkt: PAVPacket; frame: PAVFrame; got_packet_ptr: PCint): cint; cdecl;
-    decode: function(avctx: PAVCodecContext; outdata: Pointer; var outdata_size: cint; avpkt: PAVPacket): cint; cdecl;
+    decode: function(avctx: PAVCodecContext; outdata: Pointer;
+
+      var outdata_size: cint; avpkt: PAVPacket): cint; cdecl;
     close: function(avctx: PAVCodecContext): cint; cdecl;
     send_frame: function(avctx: PAVCodecContext; frame: PAVFrame): cint; cdecl;
     receive_packet: function(avctx: PAVCodecContext; avpkt: PAVPacket): cint; cdecl;
@@ -1200,35 +1294,41 @@ type
   end;
 
   FFTContext = record
-    nbits: Int;
-    inverse: Int;
+    nbits: int;
+    inverse: int;
     revtab: pcuint16;
     tmp_buf: PFFTComplex;
-    mdct_size: Int;
-    mdct_bits: Int;
+    mdct_size: int;
+    mdct_bits: int;
     tcos: PFFTSample;
     tsin: PFFTSample;
   end;
 
   RDFTContext = record
-    nbits: Int;
-    inverse: Int;
-    sign_convention: Int;
+    nbits: int;
+    inverse: int;
+    sign_convention: int;
     tcos: PFFTSample;
     tsin: PFFTSample;
-    negative_sin: Int;
+    negative_sin: int;
     fft: FFTContext;
-    rdft_calc: function(s: PRDFTContext; z: PFFTSample): Pointer; cdecl;
+    rdft_calc:
+
+      function(s: PRDFTContext; z: PFFTSample): Pointer; cdecl;
   end;
 
   DCTContext = record
-    nbits: Int;
-    inverse: Int;
+    nbits: int;
+    inverse: int;
     rdft: RDFTContext;
     costab: float;
     csc2: PFFTSample;
-    dct_calc: function(s: PDCTContext; data: PFFTSample): Pointer; cdecl;
-    dct32: function(_out: FFTSample; const _in: PFFTSample): Pointer; cdecl;
+    dct_calc:
+
+      function(s: PDCTContext; data: PFFTSample): Pointer; cdecl;
+    dct32: function(_out: FFTSample;
+
+      const _in: PFFTSample): Pointer; cdecl;
   end;
 
   DCTTransformType = ( //
@@ -1328,91 +1428,6 @@ type
     surface: Pointer;
   end;
 
-{$IFDEF  FF_API_OLD_BSF}
-
-function av_ac3_parse_header(const buf: puint8_t; size: size_t; bitstream_id: puint8_t; frame_size: pcuint16): Integer; cdecl; external c_strFFmpegDllX64Name;
-function av_adts_header_parse(const buf: puint8_t; samples: pcuint32; frames: puint8_t): Integer; cdecl; external c_strFFmpegDllX64Name;
-procedure av_bitstream_filter_close(bsf: PAVBitStreamFilterContext); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_bitstream_filter_filter(bsfc: PAVBitStreamFilterContext; avctx: PAVCodecContext; const args: PAnsiChar; poutbuf: ppuint8_t; poutbuf_size: PInteger; const buf: puint8_t; bufsize: Integer; keyframe: Integer); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure AVBitStreamFilterContext(const name: PAnsiChar); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_bitstream_filter_next(const f: PAVBitStreamFilter); cdecl; external c_strFFmpegDllX64Name; deprecated;
-{$ENDIF}
-function av_bsf_alloc(filter: PAVBitStreamFilter; ctx: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-procedure av_bsf_free(ctx: PPAVBSFContext); cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_get_by_name(name: PAnsiChar): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_get_class(): PAVClass; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_get_null_filter(bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_init(ctx: PAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_iterate(opaque: Pointer): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_list_alloc(): PAVBSFList; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_list_append(lst: PAVBSFList; bsf: PAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_list_append2(lst: PAVBSFList; bsf_name: Pcchar; options: PPAVDictionary): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_list_finalize(lst: PPAVBSFList; bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-procedure av_bsf_list_free(lst: PPAVBSFList); cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_list_parse_str(str: Pcchar; bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_next(opaque: Pointer): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_bsf_receive_packet(ctx: PAVBSFContext; pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_bsf_send_packet(ctx: PAVBSFContext; pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_codec_get_chroma_intra_matrix(avctx: PAVCodecContext): PWord; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_codec_descriptor(avctx: PAVCodecContext): PAVCodecDescriptor; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_codec_properties(avctx: PAVCodecContext): cuint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_lowres(avctx: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_max_lowres(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_pkt_timebase(avctx: PAVCodecContext): TAVRational; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_get_seek_preroll(avctx: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_codec_is_decoder(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_codec_is_encoder(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_codec_iterate(opaque: Pointer): PAVCodec; cdecl; external c_strFFmpegDllX64Name;
-function av_codec_next(c: PAVCodec): PAVCodec; cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_codec_set_chroma_intra_matrix(avctx: PAVCodecContext; val: PWord); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_codec_set_codec_descriptor(avctx: PAVCodecContext; desc: PAVCodecDescriptor); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_codec_set_lowres(avctx: PAVCodecContext; val: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_codec_set_pkt_timebase(avctx: PAVCodecContext; val: TAVRational); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_codec_set_seek_preroll(avctx: PAVCodecContext; val: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_copy_packet(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_copy_packet_side_data(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_cpb_properties_alloc(size: Psize_t): PAVCPBProperties; cdecl; external c_strFFmpegDllX64Name;
-function av_d3d11va_alloc_context(): PAVD3D11VAContext; cdecl; external c_strFFmpegDllX64Name;
-procedure av_dct_calc(s: PDCTContext; data: PFFTSample); cdecl; external c_strFFmpegDllX64Name;
-procedure av_dct_end(s: PDCTContext); cdecl; external c_strFFmpegDllX64Name;
-function av_dct_init(nbits: Integer; _type: DCTTransformType): PDCTContext; cdecl; external c_strFFmpegDllX64Name;
-function av_dirac_parse_sequence_header(var dsh: PAVDiracSeqHeader; const buf: puint8_t; buffer_size: size_t; log_ctx: Pointer): Integer; external c_strFFmpegDllX64Name name 'av_dirac_parse_sequence_header';
-function av_dup_packet(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_dv_frame_profile(sys: PAVDVProfile; frame: puint8_t; buf_size: UINT): PAVDVProfile; external c_strFFmpegDllX64Name;
-function av_dv_codec_profile(width: Integer; height: Integer; pix_fmt: TAVPixelFormat): PAVDVProfile; external c_strFFmpegDllX64Name;
-function av_dv_codec_profile2(width: Integer; height: Integer; pix_fmt: TAVPixelFormat; frame_rate: TAVRational): PAVDVProfile; external c_strFFmpegDllX64Name;
-procedure av_fast_padded_malloc(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
-procedure av_fast_padded_mallocz(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
-function av_fft_init(nbits: Integer; inverse: Integer): PFFTContext; external c_strFFmpegDllX64Name;
-procedure av_fft_permute(s: PFFTContext; z: PFFTComplex); external c_strFFmpegDllX64Name;
-procedure av_fft_calc(s: PFFTContext; z: PFFTComplex); external c_strFFmpegDllX64Name;
-procedure av_fft_end(s: PFFTContext); external c_strFFmpegDllX64Name;
-function av_rdft_init(nbits: Integer; trans: RDFTransformType): PRDFTContext; external c_strFFmpegDllX64Name;
-procedure av_rdft_calc(s: PRDFTContext; data: PFFTSample); external c_strFFmpegDllX64Name;
-procedure av_rdft_end(s: PRDFTContext); external c_strFFmpegDllX64Name;
-procedure av_free_packet(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_get_audio_frame_duration(avctx: PAVCodecContext; frame_bytes: cint): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_audio_frame_duration2(par: PAVCodecParameters; frame_bytes: cint): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_bits_per_sample(codec_id: TAVCodecID): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_codec_tag_string(buf: PAnsiChar; buf_size: size_t; codec_tag: cuint): size_t; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_get_exact_bits_per_sample(codec_id: TAVCodecID): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_pcm_codec(fmt: TAVSampleFormat; be: cint): TAVCodecID; cdecl; external c_strFFmpegDllX64Name;
-function av_get_profile_name(codec: PAVCodec; profile: cint): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
-function av_grow_packet(pkt: PAVPacket; grow_by: cint): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_hwaccel_next(hwaccel: PAVHWAccel): PAVHWAccel; cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_imdct_calc(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
-procedure av_imdct_half(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
-procedure av_init_packet(var pkt: TAVPacket); cdecl; external c_strFFmpegDllX64Name;
-function av_jni_get_java_vm(log_ctx: Pointer): Pointer; cdecl; external c_strFFmpegDllX64Name;
-function av_jni_set_java_vm(vm: Pointer; log_ctx: Pointer): Int; cdecl; external c_strFFmpegDllX64Name;
-procedure av_mdct_calc(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
-procedure av_mdct_end(s: PFFTContext); external c_strFFmpegDllX64Name;
-function av_mdct_init(nbits: Integer; inverse: Integer; scale: double): PFFTContext; external c_strFFmpegDllX64Name;
-function av_mediacodec_alloc_context(): PAVMediaCodecContext; cdecl; external c_strFFmpegDllX64Name;
-function av_mediacodec_default_init(avctx: PAVCodecContext; ctx: PAVMediaCodecContext; surface: Pointer): Int; cdecl; external c_strFFmpegDllX64Name;
-procedure av_mediacodec_default_free(avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
-
-type
   PMediaCodecBuffer = ^MediaCodecBuffer;
   intptr_t          = pcint32;
 
@@ -1458,56 +1473,319 @@ type
     index: ssize_t;
     pts: int64_t;
     released: atomic_int;
-    serial: Int;
+    serial: int;
   end;
 
   AVMediaCodecBuffer = MediaCodecBuffer;
 
-function av_mediacodec_release_buffer(): Int; cdecl; external c_strFFmpegDllX64Name;
+  mfxSession = record
 
-// DCTContext *av_dct_init(int nbits, enum DCTTransformType type);
+  end;
 
-function av_audio_convert_alloc(out_fmt: TAVSampleFormat; out_channels: cint; in_fmt: TAVSampleFormat; in_channels: cint; matrix: Pcfloat; flags: cint): PAVAudioConvert; cdecl; external c_strFFmpegDllX64Name;
+  mfxExtBuffer = record
+    BufferId: mfxU32;
+    BufferSz: mfxU32;
+  end;
+
+  AVQSVContext = record
+    session: mfxSession;
+    iopattern: Integer;
+    ext_buffers: PPmfxExtBuffer;
+    nb_ext_buffers: Integer;
+    opaque_alloc: Integer;
+    nb_opaque_surfaces: Integer;
+    opaque_surfaces: PAVBufferRef;
+    opaque_alloc_type: Integer;
+  end;
+
+  AVVorbisParseContext = record
+
+  end;
+
+  AV_DCT = record
+    av_class: PAVClass;
+    idct:
+
+      function(block: pcint16): Pointer; cdecl;
+    idct_permutation: array [0 .. 63] of uint8_t;
+    fdct: function(block: pcint16): Pointer; cdecl;
+    dct_algo: Integer;
+    get_pixels: function(block: pcint16;
+
+      const pixels: puint8_t): Pointer; cdecl;
+    bits_per_sample: Integer;
+  end;
+
+  AC3HeaderInfo = record
+    sync_word: uint16_t;
+    crc1: uint16_t;
+    sr_code: uint8_t;
+    bitstream_id: uint8_t;
+    bitstream_mode: uint8_t;
+    channel_mode: uint8_t;
+    lfe_on: uint8_t;
+    frame_type: uint8_t;
+    substreamid: int;
+    center_mix_level: int;
+    surround_mix_level: int;
+    channel_map: uint16_t;
+    num_blocks: int;
+    dolby_surround_mode: int;
+
+    sr_shift: uint8_t;
+    sample_rate: uint16_t;
+    bit_rate: uint32_t;
+    channels: uint8_t;
+    frame_size: uint16_t;
+    channel_layout: uint64_t;
+  end;
+
+  PutBitContext = record
+    bit_buf: UInt32;
+    bit_left: int;
+    buf, buf_ptr, buf_end: puint8_t;
+    size_in_bits: int;
+  end;
+
+  DCACoreFrameHeader = record
+    normal_frame: uint8_t;
+    deficit_samples: uint8_t;
+    crc_present: uint8_t;
+    npcmblocks: uint8_t;
+    frame_size: uint16_t;
+    audio_mode: uint8_t;
+    sr_code: uint8_t;
+    br_code: uint8_t;
+    drc_present: uint8_t;
+    ts_present: uint8_t;
+    aux_present: uint8_t;
+    hdcd_master: uint8_t;
+    ext_audio_type: uint8_t;
+    ext_audio_present: uint8_t;
+    sync_ssf: uint8_t;
+    lfe_present: uint8_t;
+    predictor_history: uint8_t;
+    filter_perfect: uint8_t;
+    encoder_rev: uint8_t;
+    copy_hist: uint8_t;
+    pcmr_code: uint8_t;
+    sumdiff_front: uint8_t;
+    sumdiff_surround: uint8_t;
+    dn_code: uint8_t;
+  end;
+
+  PixelFormatTag = record
+    pix_fmt: TAVPixelFormat;
+    fourcc: unsigned_int;
+  end;
+
+  FITSHeaderState = (STATE_SIMPLE, STATE_XTENSION, STATE_BITPIX, STATE_NAXIS, STATE_NAXIS_N, STATE_PCOUNT, STATE_GCOUNT, STATE_REST);
+
+  FITSHeader = record
+    state: FITSHeaderState;
+    naxis_index: unsigned;
+    bitpix: int;
+    blank: int64_t;
+    blank_found: int;
+    naxis: int;
+    naxisn: array [0 .. 998] of int;
+    pcount: int;
+    gcount: int;
+    groups: int;
+    rgb: int;
+    image_extension: int;
+    bscale: double;
+    bzero: double;
+    data_min_found: int;
+    data_min: double;
+    data_max_found: int;
+    data_max: double;
+  end;
+
+  EigthShort = array [0 .. 79] of Uint8;
+
+  MPEG4AudioConfig = record
+    object_type: int;
+    sampling_index: int;
+    sample_rate: int;
+    chan_config: int;
+    sbr: int;
+    ext_object_type: int;
+    ext_sampling_index: int;
+    ext_sample_rate: int;
+    ext_chan_config: int;
+    channels: int;
+    ps: int;
+    frame_length_short: int;
+  end;
+
+  MPADecodeHeader = record
+    frame_size: int;
+    error_protection: int;
+    layer: int;
+    sample_rate: int;
+    sample_rate_index: int;
+    bit_rate: int;
+    nb_channels: int;
+    mode: int;
+    mode_ext: int;
+    lsf: int;
+  end;
+
+  FourArrByte = array [0 .. 3] of Byte;
+  ThreeArrInt = array [0 .. 2] of int;
+
+  TAKCodecType = (TAK_CODEC_MONO_STEREO = 2, TAK_CODEC_MULTICHANNEL = 4);
+
+  TAKStreamInfo = record
+    flags: int;
+    codec: TAKCodecType;
+    data_type: int;
+    sample_rate: int;
+    channels: int;
+    bps: int;
+    frame_num: int;
+    frame_samples: int;
+    last_frame_samples: int;
+    ch_layout: uint64_t;
+    samples: int64_t;
+  end;
+
+function av_ac3_parse_header(const buf: puint8_t; size: size_t; bitstream_id: puint8_t; frame_size: pcuint16): Integer; cdecl; external c_strFFmpegDllX64Name;
+function av_adts_header_parse(const buf: puint8_t; samples: pcuint32; frames: puint8_t): Integer; cdecl; external c_strFFmpegDllX64Name;
+procedure av_bitstream_filter_close(bsf: PAVBitStreamFilterContext); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_bitstream_filter_filter(bsfc: PAVBitStreamFilterContext; avctx: PAVCodecContext; args: PAnsiChar; poutbuf: PPointer; poutbuf_size: PCint; buf: PByte; buf_size: cint; keyframe: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_bitstream_filter_init(name: PAnsiChar): PAVBitStreamFilterContext; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_bitstream_filter_next(f: PAVBitStreamFilter): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name; deprecated;
-function av_channel_layout_extract_channel(channel_layout: cuint64; index: cint): cuint64; cdecl; external c_strFFmpegDllX64Name;
-function av_get_channel_description(channel: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
-function av_get_channel_layout(name: PAnsiChar): cuint64; cdecl; external c_strFFmpegDllX64Name;
-function av_get_channel_layout_channel_index(channel_layout: cuint64; channel: cuint64): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_channel_layout_nb_channels(channel_layout: cuint64): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_get_channel_name(channel: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
-function av_get_default_channel_layout(nb_channels: cint): cint64; cdecl; external c_strFFmpegDllX64Name;
-function av_get_standard_channel_layout(index: cuint; layout: PCuint64; name: PPAnsiChar): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_alloc(filter: PAVBitStreamFilter; ctx: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_bsf_free(ctx: PPAVBSFContext); cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_get_by_name(name: PAnsiChar): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_get_class(): PAVClass; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_get_null_filter(bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_init(ctx: PAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_iterate(opaque: Pointer): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_list_alloc(): PAVBSFList; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_list_append(lst: PAVBSFList; bsf: PAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_list_append2(lst: PAVBSFList; bsf_name: Pcchar; options: PPAVDictionary): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_list_finalize(lst: PPAVBSFList; bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_bsf_list_free(lst: PPAVBSFList); cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_list_parse_str(str: Pcchar; bsf: PPAVBSFContext): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_next(opaque: Pointer): PAVBitStreamFilter; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_bsf_receive_packet(ctx: PAVBSFContext; pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_bsf_send_packet(ctx: PAVBSFContext; pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_codec_ffversion(): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_codec_get_chroma_intra_matrix(avctx: PAVCodecContext): PWord; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_codec_descriptor(avctx: PAVCodecContext): PAVCodecDescriptor; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_codec_properties(avctx: PAVCodecContext): cuint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_lowres(avctx: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_max_lowres(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_pkt_timebase(avctx: PAVCodecContext): TAVRational; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_get_seek_preroll(avctx: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_codec_is_decoder(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_codec_is_encoder(codec: PAVCodec): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_codec_iterate(opaque: Pointer): PAVCodec; cdecl; external c_strFFmpegDllX64Name;
+function av_codec_next(c: PAVCodec): PAVCodec; cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_codec_set_chroma_intra_matrix(avctx: PAVCodecContext; val: PWord); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_codec_set_codec_descriptor(avctx: PAVCodecContext; desc: PAVCodecDescriptor); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_codec_set_lowres(avctx: PAVCodecContext; val: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_codec_set_pkt_timebase(avctx: PAVCodecContext; val: TAVRational); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_codec_set_seek_preroll(avctx: PAVCodecContext; val: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_copy_packet(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_copy_packet_side_data(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_cpb_properties_alloc(size: Psize_t): PAVCPBProperties; cdecl; external c_strFFmpegDllX64Name;
+function av_d3d11va_alloc_context(): PAVD3D11VAContext; cdecl; external c_strFFmpegDllX64Name;
+procedure av_dct_calc(s: PDCTContext; data: PFFTSample); cdecl; external c_strFFmpegDllX64Name;
+procedure av_dct_end(s: PDCTContext); cdecl; external c_strFFmpegDllX64Name;
+function av_dct_init(nbits: Integer; _type: DCTTransformType): PDCTContext; cdecl; external c_strFFmpegDllX64Name;
+function av_dirac_parse_sequence_header(var dsh: PAVDiracSeqHeader; const buf: puint8_t; buffer_size: size_t; log_ctx: Pointer): Integer; external c_strFFmpegDllX64Name name 'av_dirac_parse_sequence_header';
+function av_dup_packet(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_dv_frame_profile(sys: PAVDVProfile; frame: puint8_t; buf_size: UINT): PAVDVProfile; external c_strFFmpegDllX64Name;
+function av_dv_codec_profile(width: Integer; height: Integer; pix_fmt: TAVPixelFormat): PAVDVProfile; external c_strFFmpegDllX64Name;
+function av_dv_codec_profile2(width: Integer; height: Integer; pix_fmt: TAVPixelFormat; frame_rate: TAVRational): PAVDVProfile; external c_strFFmpegDllX64Name;
+procedure av_fast_padded_malloc(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
+procedure av_fast_padded_mallocz(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
+function av_fft_init(nbits: Integer; inverse: Integer): PFFTContext; external c_strFFmpegDllX64Name;
+procedure av_fft_calc(s: PFFTContext; z: PFFTComplex); external c_strFFmpegDllX64Name;
+procedure av_fft_end(s: PFFTContext); external c_strFFmpegDllX64Name;
+procedure av_fft_permute(s: PFFTContext; z: PFFTComplex); external c_strFFmpegDllX64Name;
+function av_fopen_utf8(path: Pchar; mode: Pchar): PAVFile; cdecl; external c_strFFmpegDllX64Name;
+procedure av_free_packet(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_get_audio_frame_duration(avctx: PAVCodecContext; frame_bytes: cint): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_audio_frame_duration2(par: PAVCodecParameters; frame_bytes: cint): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_bits_per_sample(codec_id: TAVCodecID): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_codec_tag_string(buf: PAnsiChar; buf_size: size_t; codec_tag: cuint): size_t; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_get_exact_bits_per_sample(codec_id: TAVCodecID): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_get_pcm_codec(fmt: TAVSampleFormat; be: cint): TAVCodecID; cdecl; external c_strFFmpegDllX64Name;
+function av_get_profile_name(codec: PAVCodec; profile: cint): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_grow_packet(pkt: PAVPacket; grow_by: cint): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_hwaccel_next(hwaccel: PAVHWAccel): PAVHWAccel; cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_imdct_calc(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
+procedure av_imdct_half(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
+procedure av_init_packet(var pkt: TAVPacket); cdecl; external c_strFFmpegDllX64Name;
+function av_jni_get_java_vm(log_ctx: Pointer): Pointer; cdecl; external c_strFFmpegDllX64Name;
+function av_jni_set_java_vm(vm: Pointer; log_ctx: Pointer): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_mdct_calc(s: PFFTContext; output: PFFTSample; input: PFFTSample); external c_strFFmpegDllX64Name;
+procedure av_mdct_end(s: PFFTContext); external c_strFFmpegDllX64Name;
+function av_mdct_init(nbits: Integer; inverse: Integer; scale: double): PFFTContext; external c_strFFmpegDllX64Name;
+function av_mediacodec_alloc_context(): PAVMediaCodecContext; cdecl; external c_strFFmpegDllX64Name;
+function av_mediacodec_default_init(avctx: PAVCodecContext; ctx: PAVMediaCodecContext; surface: Pointer): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_mediacodec_default_free(avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
+function av_mediacodec_release_buffer(): int; cdecl; external c_strFFmpegDllX64Name;
 function av_new_packet(pkt: PAVPacket; size: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_add_side_data(pkt: PAVPacket; type_: TAVPacketSideDataType; data: Pcuint8; size: size_t): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_alloc(): PAVPacket; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_clone(src: PAVPacket): PAVPacket; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_copy_props(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_packet_free(pkt: PPAVPacket); cdecl; external c_strFFmpegDllX64Name;
+procedure av_packet_free_side_data(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
 function av_packet_from_data(pkt: PAVPacket; data: PByte; size: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_get_side_data(pkt: PAVPacket; type_: TAVPacketSideDataType; size: PCint): PByte; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_make_refcounted(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_make_writable(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_merge_side_data(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_packet_move_ref(dst: PAVPacket; src: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
 function av_packet_new_side_data(pkt: PAVPacket; type_: TAVPacketSideDataType; size: cint): PByte; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_pack_dictionary(dict: PAVDictionary; size: PCuint): PByte; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_ref(dst: PAVPacket; src: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_packet_rescale_ts(pkt: PAVPacket; tb_src, tb_dst: TAVRational); cdecl; external c_strFFmpegDllX64Name;
 function av_packet_shrink_side_data(pkt: PAVPacket; type_: TAVPacketSideDataType; size: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_side_data_name(type_: TAVPacketSideDataType): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_packet_split_side_data(pkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_packet_unpack_dictionary(data: PByte; size: cint; dict: PPAVDictionary): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_packet_unref(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
 function av_parser_change(s: PAVCodecParserContext; avctx: PAVCodecContext; poutbuf: PPointer; poutbuf_size: PCint; buf: PByteArray; buf_size: cint; keyframe: cint): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_parser_close(s: PAVCodecParserContext); cdecl; external c_strFFmpegDllX64Name;
 function av_parser_init(codec_id: cint): PAVCodecParserContext; cdecl; external c_strFFmpegDllX64Name;
 function av_parser_iterate(opaque: Pointer): PAVCodecParser; cdecl; external c_strFFmpegDllX64Name;
 function av_parser_next(c: PAVCodecParser): PAVCodecParser; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_parser_parse2(s: PAVCodecParserContext; avctx: PAVCodecContext; poutbuf: PPointer; poutbuf_size: PCint; buf: PByteArray; buf_size: cint; pts: cint64; dts: cint64; pos: cint64): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_picture_copy(dst: PAVPicture; src: PAVPicture; pix_fmt: TAVPixelFormat; width: cint; height: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_picture_crop(dst: PAVPicture; src: PAVPicture; pix_fmt: TAVPixelFormat; top_band: cint; left_band: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function av_picture_pad(dst: PAVPicture; src: PAVPicture; height: cint; width: cint; pix_fmt: TAVPixelFormat; padtop: cint; padbottom: cint; padleft: cint; padright: cint; color: PCint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function av_qsv_alloc_context: PAVQSVContext; cdecl; external c_strFFmpegDllX64Name;
+procedure av_rdft_calc(s: PRDFTContext; data: PFFTSample); external c_strFFmpegDllX64Name;
+function av_rdft_init(nbits: Integer; trans: RDFTransformType): PRDFTContext; external c_strFFmpegDllX64Name;
+procedure av_rdft_end(s: PRDFTContext); external c_strFFmpegDllX64Name;
+procedure av_register_bitstream_filter(bsf: PAVBitStreamFilter); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_register_codec_parser(parser: PAVCodecParser); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_register_hwaccel(hwaccel: PAVHWAccel)cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure av_shrink_packet(pkt: PAVPacket; size: cint); cdecl; external c_strFFmpegDllX64Name;
+function av_vorbis_parse_frame(s: PAVVorbisParseContext; const buf: puint8_t; buf_size: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function av_vorbis_parse_frame_flags(s: PAVVorbisParseContext; const buf: puint8_t; buf_size: Integer; var flags: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+procedure av_vorbis_parse_free(s: PPAVVorbisParseContext); cdecl; external c_strFFmpegDllX64Name;
+function av_vorbis_parse_init(const extradata: puint8_t; extradata_size: Integer): PAVVorbisParseContext; cdecl; external c_strFFmpegDllX64Name;
+procedure av_vorbis_parse_reset(s: PAVVorbisParseContext); cdecl; external c_strFFmpegDllX64Name;
 function av_xiphlacing(s: PByte; v: cuint): cuint; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_align_dimensions(s: PAVCodecContext; width: PCint; height: PCint); cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_align_dimensions2(s: PAVCodecContext; width: PCint; height: PCint; linesize_align: PAVNDPArray); cdecl; external c_strFFmpegDllX64Name;
 function avcodec_alloc_context3(codec: PAVCodec): PAVCodecContext; cdecl; external c_strFFmpegDllX64Name;
+function avcodec_chroma_pos_to_enum(xpos, ypos: Integer): TAVChromaLocation; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_close(avctx: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_configuration(): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_copy_context(dest: PAVCodecContext; src: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function avcodec_dct_alloc(): PAVDCT; cdecl; external c_strFFmpegDllX64Name;
+function avcodec_dct_get_class(): PAVClass; cdecl; external c_strFFmpegDllX64Name;
+function avcodec_dct_init(P: PAVDCT): Integer; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_decode_audio4(avctx: PAVCodecContext; frame: PAVFrame; got_frame_ptr: PCint; avpkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_decode_subtitle2(avctx: PAVCodecContext; sub: PAVSubtitle; var got_sub_ptr: cint; avpkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_decode_video2(avctx: PAVCodecContext; picture: PAVFrame; var got_picture_ptr: cint; avpkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
@@ -1521,6 +1799,7 @@ function avcodec_descriptor_next(prev: PAVCodecDescriptor): PAVCodecDescriptor; 
 function avcodec_encode_audio2(avctx: PAVCodecContext; avpkt: PAVPacket; frame: PAVFrame; got_packet_ptr: PCint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_encode_subtitle(avctx: PAVCodecContext; buf: PByteArray; buf_size: cint; sub: PAVSubtitle): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_encode_video2(avctx: PAVCodecContext; avpkt: PAVPacket; frame: PAVFrame; got_packet_ptr: PCint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+function avcodec_enum_to_chroma_pos(var xpos: Integer; var ypos: Integer; pos: TAVChromaLocation): Integer; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_fill_audio_frame(frame: PAVFrame; nb_channels: cint; sample_fmt: TAVSampleFormat; buf: PByte; buf_size: cint; align: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_find_best_pix_fmt_of_2(dst_pix_fmt1: TAVPixelFormat; dst_pix_fmt2: TAVPixelFormat; src_pix_fmt: TAVPixelFormat; has_alpha: cint; loss_ptr: PCint): TAVPixelFormat; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_find_best_pix_fmt_of_list(pix_fmt_list: PAVPixelFormat; src_pix_fmt: TAVPixelFormat; has_alpha: cint; loss_ptr: PCint): TAVPixelFormat; cdecl; external c_strFFmpegDllX64Name;
@@ -1529,7 +1808,11 @@ function avcodec_find_decoder(id: TAVCodecID): PAVCodec; cdecl; external c_strFF
 function avcodec_find_decoder_by_name(name: PAnsiChar): PAVCodec; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_find_encoder(id: TAVCodecID): PAVCodec; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_find_encoder_by_name(name: PAnsiChar): PAVCodec; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_flush_buffers(avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_free_context(var avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_get_chroma_sub_sample(pix_fmt: TAVPixelFormat; var h_shift: cint; var v_shift: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_get_class(): PAVClass; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_get_context_defaults3(s: PAVCodecContext; codec: PAVCodec); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_get_frame_class(): PAVClass; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_get_hw_config(codec: PAVCodec; index: cint): PAVCodecHWConfig; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_get_hw_frames_parameters(avctx: PAVCodecContext; device_ref: PAVBufferRef; hw_pix_fmt: TAVPixelFormat; out_frames_ref: PPAVBufferRef): cint; cdecl; external c_strFFmpegDllX64Name;
@@ -1542,54 +1825,53 @@ function avcodec_license(): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_open2(avctx: PAVCodecContext; codec: PAVCodec; options: PPAVDictionary): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_parameters_alloc(): PAVCodecParameters; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_parameters_copy(dst: PAVCodecParameters; src: PAVCodecParameters): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_parameters_free(par: PPAVCodecParameters); cdecl; external c_strFFmpegDllX64Name;
 function avcodec_parameters_from_context(par: PAVCodecParameters; codec: PAVCodecContext): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_parameters_to_context(codec: PAVCodecContext; par: PAVCodecParameters): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_pix_fmt_to_codec_tag(pix_fmt: TAVPixelFormat): cuint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_profile_name(codec_id: TAVCodecID; profile: cint): Pchar; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_receive_frame(avctx: PAVCodecContext; frame: PAVFrame): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_receive_packet(avctx: PAVCodecContext; avpkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_register(codec: PAVCodec); cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure avcodec_register_all(); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avcodec_send_frame(avctx: PAVCodecContext; frame: PAVFrame): cint; cdecl; external c_strFFmpegDllX64Name;
 function avcodec_send_packet(avctx: PAVCodecContext; avpkt: PAVPacket): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure avcodec_string(buf: PAnsiChar; buf_size: cint; enc: PAVCodecContext; encode: cint); cdecl; external c_strFFmpegDllX64Name;
 function avcodec_version(): cuint; cdecl; external c_strFFmpegDllX64Name;
 function avpicture_alloc(picture: PAVPicture; pix_fmt: TAVPixelFormat; width: cint; height: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avpicture_fill(picture: PAVPicture; ptr: Pcuint8; pix_fmt: TAVPixelFormat; width: cint; height: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
+procedure avpicture_free(picture: PAVPicture); cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avpicture_get_size(pix_fmt: TAVPixelFormat; width: cint; height: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
 function avpicture_layout(src: PAVPicture; pix_fmt: TAVPixelFormat; width: cint; height: cint; dest: PByteArray; dest_size: cint): cint; cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_audio_convert_free(ctx: PAVAudioConvert); cdecl; external c_strFFmpegDllX64Name;
-procedure av_bitstream_filter_close(bsf: PAVBitStreamFilterContext); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_bprint_channel_layout(bp: PAVBPrint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
-procedure av_get_channel_layout_string(buf: PAnsiChar; buf_size: cint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
-procedure av_packet_free(pkt: PPAVPacket); cdecl; external c_strFFmpegDllX64Name;
-procedure av_packet_free_side_data(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
-procedure av_packet_move_ref(dst: PAVPacket; src: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
-procedure av_packet_rescale_ts(pkt: PAVPacket; tb_src, tb_dst: TAVRational); cdecl; external c_strFFmpegDllX64Name;
-procedure av_packet_unref(pkt: PAVPacket); cdecl; external c_strFFmpegDllX64Name;
-procedure av_parser_close(s: PAVCodecParserContext); cdecl; external c_strFFmpegDllX64Name;
-procedure av_picture_copy(dst: PAVPicture; src: PAVPicture; pix_fmt: TAVPixelFormat; width: cint; height: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_register_bitstream_filter(bsf: PAVBitStreamFilter); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_register_codec_parser(parser: PAVCodecParser); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_register_hwaccel(hwaccel: PAVHWAccel)cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure av_shrink_packet(pkt: PAVPacket; size: cint); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_align_dimensions(s: PAVCodecContext; width: PCint; height: PCint); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_align_dimensions2(s: PAVCodecContext; width: PCint; height: PCint; linesize_align: PAVNDPArray); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_flush_buffers(avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_free_context(var avctx: PAVCodecContext); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_get_chroma_sub_sample(pix_fmt: TAVPixelFormat; var h_shift: cint; var v_shift: cint); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure avcodec_get_context_defaults3(s: PAVCodecContext; codec: PAVCodec); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure avcodec_parameters_free(par: PPAVCodecParameters); cdecl; external c_strFFmpegDllX64Name;
-procedure avcodec_register(codec: PAVCodec); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure avcodec_register_all(); cdecl; external c_strFFmpegDllX64Name; deprecated;
-procedure avcodec_string(buf: PAnsiChar; buf_size: cint; enc: PAVCodecContext; encode: cint); cdecl; external c_strFFmpegDllX64Name;
-procedure avpicture_free(picture: PAVPicture); cdecl; external c_strFFmpegDllX64Name; deprecated;
+function avpriv_ac3_parse_header(hdr: PPAC3HeaderInfo; const buf: puint8_t; size: size_t): Integer; cdecl; external c_strFFmpegDllX64Name;
+procedure avpriv_align_put_bits(s: PPutBitContext); cdecl; external c_strFFmpegDllX64Name;
+function avpriv_bprint_to_extradata(avctx: PAVCodecContext; buf: PAVBPrint): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_codec2_mode_bit_rate(logctx: Pointer; mode: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_codec2_mode_block_align(logctx: Pointer; mode: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_codec2_mode_frame_size(logctx: Pointer; mode: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_codec_get_cap_skip_frame_fill_param(const codec: PAVCodec): Integer; cdecl; external c_strFFmpegDllX64Name;
+procedure avpriv_copy_bits(pb: PPutBitContext; const src: puint8_t; length: Integer); cdecl; external c_strFFmpegDllX64Name;
+function avpriv_dca_convert_bitstream(const src: puint8_t; src_size: Integer; dst: puint8_t; max_size: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_dca_parse_core_frame_header(h: PDCACoreFrameHeader; const buf: puint8_t; size: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_dnxhd_get_frame_size(cid: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_dnxhd_get_interlaced(cid: Integer): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_do_elbg(points: pint; dim: int; numpoints: int; codebook: pint; numCB: int; num_steps: int; closest_cb: pint; rand_state: PAVLFG): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_exif_decode_ifd(logctx: Pointer; const buf: puint8_t; size: Integer; le: Integer; depth: int; metadata: PPAVDictionary): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_find_pix_fmt(const tags: PPixelFormatTag; fourcc: unsigned_int): TAVPixelFormat; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_find_start_code(const P: puint8_t; const _end: puint8_t; state: pcuint32): puint8_t; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_fits_header_init(header: PFITSHeader; state: FITSHeaderState): Integer; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_fits_header_parse_line(avcl: Pointer; header: PFITSHeader; const line: EigthShort; metadata: PPPAVDictionary): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_get_raw_pix_fmt_tags(): PPixelFormatTag; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_h264_has_num_reorder_frames(avctx: PAVCodecContext): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_init_elbg(points: pint; dim: int; numpoints: int; codebook: pint; numCB: int; max_steps: int; closest_cb: pint; rand_state: PAVLFG): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_mpeg4audio_get_config(c: PMPEG4AudioConfig; const buf: puint8_t; bit_size: int; sync_extersion: int): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_mpegaudio_decode_header(s: PMPADecodeHeader; header: UInt32): int; cdecl; external c_strFFmpegDllX64Name;
+procedure avpriv_put_string(pb: PPutBitContext; const _string: PAnsiChar; terminate_string: int); cdecl; external c_strFFmpegDllX64Name;
+function avpriv_split_xiph_headers(const extradata: puint8_t; extradata_size, first_header_size: int; const header_start: FourArrByte; header_len: ThreeArrInt): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_tak_parse_streaminfo(s: PTAKStreamInfo; const buf: puint8_t; size: int): int; cdecl; external c_strFFmpegDllX64Name;
+function avpriv_toupper4(x: Cardinal): Cardinal; cdecl; external c_strFFmpegDllX64Name;
 procedure avsubtitle_free(sub: PAVSubtitle); cdecl; external c_strFFmpegDllX64Name;
 
-function av_codec_ffversion(): PAnsiChar;
-
 implementation
-
-function av_codec_ffversion(): PAnsiChar;
-begin
-  Result := 'FFmpeg version' + FFMPEG_VERSION;
-end;
 
 end.

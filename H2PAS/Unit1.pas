@@ -117,13 +117,14 @@ begin
     strList.Add('unit ' + ChangeFileExt(ExtractFileName(FstrTempFileName), '') + ';');
     strList.Add('');
     strList.Add('uses Windows, Classes;');
-    intIndex1 := strList.Add('');
+    intIndex1 := strList.Add('') + 1;
     if Trim(Edit1.Text) <> '' then
     begin
       strList.Add('const');
       strList.Add('  c_strDllFileName = ' + QuotedStr(Edit1.Text) + ';');
-      intIndex1 := strList.Add('');
+      intIndex1 := strList.Add('') + 1;
     end;
+    strList.Add('');
     intIndex2 := strList.Add('implementation');
     strList.Add('');
     strList.Add('end.');
