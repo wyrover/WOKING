@@ -3,21 +3,28 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls, System.IOUtils;
+  Winapi.Windows, System.SysUtils, System.StrUtils, System.Classes, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.WinXCtrls,
+  SynEditHighlighter, SynHighlighterCpp, SynEdit, SynEditCodeFolding, SynHighlighterPas;
 
 type
   TForm1 = class(TForm)
-    Memo1: TMemo;
-    Memo2: TMemo;
     SearchBox1: TSearchBox;
     Edit1: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    SynEdit1: TSynEdit;
+    SynCppSyn1: TSynCppSyn;
+    SynEdit2: TSynEdit;
+    SynPasSyn1: TSynPasSyn;
+    btnSaveToFile: TButton;
+    btnTrans: TButton;
     procedure FormResize(Sender: TObject);
     procedure SearchBox1InvokeSearch(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnSaveToFileClick(Sender: TObject);
+    procedure btnTransClick(Sender: TObject);
   private
+    FstrTempFileName: String;
     { C头文件翻译到 PASCAL 语法 }
     procedure TransCHeader2Pascal(const strFileName: string);
   public
@@ -31,7 +38,7 @@ implementation
 
 {$R *.dfm}
 
-uses uH2Pascal;
+uses uDelCNote, uC2P;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -40,15 +47,15 @@ end;
 
 procedure TForm1.FormResize(Sender: TObject);
 begin
-  Memo1.Left   := 8;
-  Memo1.Top    := 68;
-  Memo1.Height := Height - 114;
-  Memo1.Width  := (Width - 8 - 12 - 22) div 2;
+  SynEdit1.Left   := 8;
+  SynEdit1.Top    := 68;
+  SynEdit1.Height := Height - 114;
+  SynEdit1.Width  := (Width - 8 - 12 - 22) div 2;
 
-  Memo2.Left   := Memo1.Left + Memo1.Width + 8;
-  Memo2.Top    := Memo1.Top;
-  Memo2.Width  := Memo1.Width;
-  Memo2.Height := Memo1.Height;
+  SynEdit2.Left   := SynEdit1.Left + SynEdit1.Width + 8;
+  SynEdit2.Top    := SynEdit1.Top;
+  SynEdit2.Width  := SynEdit1.Width;
+  SynEdit2.Height := SynEdit1.Height;
 end;
 
 procedure TForm1.SearchBox1InvokeSearch(Sender: TObject);
@@ -69,34 +76,81 @@ begin
     Exit;
   end;
 
-  Memo1.Lines.LoadFromFile(SearchBox1.Text);
+  if Trim(Edit1.Text) = '' then
+  begin
+    Edit1.Text := ChangeFileExt(ExtractFileName(SearchBox1.Text), '.dll');
+  end;
 
   { C头文件翻译到 PASCAL 语法 }
   TransCHeader2Pascal(SearchBox1.Text);
+
+  SynEdit1.SetFocus;
 end;
 
 { C头文件翻译到 PASCAL 语法 }
 procedure TForm1.TransCHeader2Pascal(const strFileName: string);
-var
-  strTempFileName: String;
-  strList        : TStringList;
 begin
-  strTempFileName := ExtractFilePath(ParamStr(0)) + ExtractFileName(strFileName);
-  if FileExists(strTempFileName) then
-    DeleteFile(strTempFileName);
+  FstrTempFileName := ExtractFilePath(ParamStr(0)) + ExtractFileName(strFileName);
+  if FileExists(FstrTempFileName) then
+    DeleteFile(FstrTempFileName);
 
   { 复制到当前目录 }
-  CopyFile(PChar(strFileName), PChar(strTempFileName), True);
+  CopyFile(PChar(strFileName), PChar(FstrTempFileName), True);
 
   { 删除注释 }
-  DeleteCHeadFileNote(strTempFileName);
+  DeleteCHeadFileNote(FstrTempFileName);
+
+  SynEdit1.Lines.LoadFromFile(FstrTempFileName);
+  btnTrans.Enabled := True;
+end;
+
+procedure TForm1.btnTransClick(Sender: TObject);
+var
+  strList  : TStringList;
+  intIndex1: Integer;
+  intIndex2: Integer;
+begin
+  SynEdit2.Clear;
 
   strList := TStringList.Create;
   try
-    CHeader2Pascal(strTempFileName, strList);
-    Memo2.Lines.AddStrings(strList);
+    strList.Add('unit ' + ChangeFileExt(ExtractFileName(FstrTempFileName), '') + ';');
+    strList.Add('');
+    strList.Add('uses Windows, Classes;');
+    intIndex1 := strList.Add('');
+    if Trim(Edit1.Text) <> '' then
+    begin
+      strList.Add('const');
+      strList.Add('  c_strDllFileName = ' + QuotedStr(Edit1.Text) + ';');
+      intIndex1 := strList.Add('');
+    end;
+    intIndex2 := strList.Add('implementation');
+    strList.Add('');
+    strList.Add('end.');
+    CHeader2Pascal(FstrTempFileName, strList, intIndex1, intIndex2);
+    SynEdit2.Lines.AddStrings(strList);
+    btnSaveToFile.Enabled := True;
   finally
     strList.Free;
+  end;
+end;
+
+procedure TForm1.btnSaveToFileClick(Sender: TObject);
+var
+  I, J       : Integer;
+  strFileName: String;
+begin
+  with TSaveDialog.Create(nil) do
+  begin
+    Filter      := 'Pas(*.pas)|*.pas';
+    I           := Pos(' ', SynEdit2.Lines.Strings[0]);
+    J           := Pos(';', SynEdit2.Lines.Strings[0]);
+    strFileName := Midstr(SynEdit2.Lines.Strings[0], I + 1, J - I - 1);
+    FileName    := strFileName + '.pas';
+    if Execute then
+    begin
+      SynEdit2.Lines.SaveToFile(FileName);
+    end;
   end;
 end;
 

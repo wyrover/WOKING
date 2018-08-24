@@ -1,9 +1,12 @@
 program H2PAS;
+{$IF CompilerVersion >= 21.0}
+{$WEAKLINKRTTI ON}
+{$RTTI EXPLICIT METHODS([]) PROPERTIES([]) FIELDS([])}
+{$IFEND}
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
-  uH2Pascal in 'uH2Pascal.pas';
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 
