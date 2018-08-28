@@ -4,11 +4,12 @@ interface
 
 uses Windows, Classes, SysUtils, StrUtils, Types;
 
-procedure CHeader2Pascal(const strFileName: String; var strList: TStringList; const intIndexConst, intIndex2: Integer);
+procedure CHeader2Pascal(const strFileName, strDllFileName: String; var strList: TStringList);
 
 implementation
 
-procedure CHeader2Pascal_Const(const strTemp: String; const intStart: Integer; var strList: TStringList; const intNewIndex: Integer);
+{ 常量 }
+procedure CHeader2Pascal_Const(const strTemp: String; const intIndex: Integer; var strList: TStringList);
 var
   strArr     : String;
   I          : Integer;
@@ -41,12 +42,12 @@ begin
             end
             else
             begin
-              strList.Insert(intNewIndex, Format('  %s = %s', [strLineList.Strings[1], strLineList.Strings[2]]));
+              strList.Add(Format('  %s = %s', [strLineList.Strings[1], strLineList.Strings[2]]));
             end;
           end
           else
           begin
-            strList.Insert(intNewIndex, Format('  %s = %s', [strLineList.Strings[1], strLineList.Strings[2]]));
+            strList.Add(Format('  %s = %s', [strLineList.Strings[1], strLineList.Strings[2]]));
           end;
         end;
       end;
@@ -61,7 +62,19 @@ begin
   end;
 end;
 
-procedure CHeader2Pascal(const strFileName: String; var strList: TStringList; const intIndexConst, intIndex2: Integer);
+{ 枚举 }
+procedure CHeader2Pascal_Enum(const strTemp: String; const intIndex: Integer; var strList: TStringList);
+begin
+
+end;
+
+{ 结构 }
+procedure CHeader2Pascal_struct(const strTemp: String; const intIndex: Integer; var strList: TStringList);
+begin
+
+end;
+
+procedure AddCHead2Pascal(const strFileName: String; var strList: TStringList);
 var
   I, J        : Integer;
   strcHeadList: TStringList;
@@ -70,7 +83,7 @@ begin
   strcHeadList := TStringList.Create;
   try
     strcHeadList.LoadFromFile(strFileName);
-    for I := strcHeadList.Count - 1 downto 0 do
+    for I := 0 to strcHeadList.Count - 1 do
     begin
       strTemp := strcHeadList.Strings[I];
       if Trim(strTemp) = '' then
@@ -84,12 +97,22 @@ begin
       J := Pos('#define ', strTemp);
       if J > 0 then
       begin
-        CHeader2Pascal_Const(strTemp, I, strList, intIndexConst);
+        CHeader2Pascal_Const(strTemp, I, strList);
       end;
 
       { 枚举 }
+      J := Pos('enum ', strTemp);
+      if J > 0 then
+      begin
+        CHeader2Pascal_Enum(strTemp, I, strList);
+      end;
 
       { 结构 }
+      J := Pos('typedef struct ', strTemp);
+      if J > 0 then
+      begin
+        CHeader2Pascal_struct(strTemp, I, strList);
+      end;
 
       { 输出函数 }
 
@@ -99,6 +122,25 @@ begin
   finally
     strcHeadList.Free;
   end;
+end;
+
+procedure CHeader2Pascal(const strFileName, strDllFileName: String; var strList: TStringList);
+begin
+  strList.Add('unit ' + ChangeFileExt(ExtractFileName(strFileName), '') + ';');
+  strList.Add('');
+  strList.Add('uses Windows, Classes;');
+  strList.Add('');
+  if Trim(strDllFileName) <> '' then
+  begin
+    strList.Add('const');
+    strList.Add('  c_strDllFileName = ' + QuotedStr(strDllFileName) + ';');
+    strList.Add('');
+    AddCHead2Pascal(strFileName, strList);
+  end;
+  strList.Add('');
+  strList.Add('implementation');
+  strList.Add('');
+  strList.Add('end.');
 end;
 
 end.

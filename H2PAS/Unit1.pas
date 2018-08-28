@@ -106,29 +106,30 @@ end;
 
 procedure TForm1.btnTransClick(Sender: TObject);
 var
-  strList  : TStringList;
-  intIndex1: Integer;
-  intIndex2: Integer;
+  strList: TStringList;
+  // intIndex1: Integer;
+  // intIndex2: Integer;
 begin
   SynEdit2.Clear;
 
   strList := TStringList.Create;
   try
-    strList.Add('unit ' + ChangeFileExt(ExtractFileName(FstrTempFileName), '') + ';');
-    strList.Add('');
-    strList.Add('uses Windows, Classes;');
-    intIndex1 := strList.Add('') + 1;
-    if Trim(Edit1.Text) <> '' then
-    begin
-      strList.Add('const');
-      strList.Add('  c_strDllFileName = ' + QuotedStr(Edit1.Text) + ';');
-      intIndex1 := strList.Add('') + 1;
-    end;
-    strList.Add('');
-    intIndex2 := strList.Add('implementation');
-    strList.Add('');
-    strList.Add('end.');
-    CHeader2Pascal(FstrTempFileName, strList, intIndex1, intIndex2);
+    // strList.Add('unit ' + ChangeFileExt(ExtractFileName(FstrTempFileName), '') + ';');
+    // strList.Add('');
+    // strList.Add('uses Windows, Classes;');
+    // intIndex1 := strList.Add('') + 1;
+    // if Trim(Edit1.Text) <> '' then
+    // begin
+    // strList.Add('const');
+    // strList.Add('  c_strDllFileName = ' + QuotedStr(Edit1.Text) + ';');
+    // intIndex1 := strList.Add('') + 1;
+    // end;
+    // strList.Add('');
+    // intIndex2 := strList.Add('implementation');
+    // strList.Add('');
+    // strList.Add('end.');
+    // CHeader2Pascal(FstrTempFileName, strList, intIndex1, intIndex2);
+    CHeader2Pascal(FstrTempFileName, Edit1.Text, strList);
     SynEdit2.Lines.AddStrings(strList);
     btnSaveToFile.Enabled := True;
   finally
