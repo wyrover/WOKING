@@ -1,77 +1,62 @@
 @ECHO OFF
 color 2F
 Cls
-Title VS2015 ±àÒë X64Î»¾²Ì¬MT FFMPEG 
+Title VS2015 ç¼–è¯‘ X64ä½é™æ€MT FFMPEG 
 
-:: ÉèÖÃ µ±Ç°Ä¿Â¼
+:: è®¾ç½® å½“å‰ç›®å½•
 set "CurrentCD=%~dp0"
 
-:: ÉèÖÃ ffmpeg Ô´´úÂëÄ¿Â¼
-set "FFmpegSource=E:\Source\ffmpeg\src"
+:: è®¾ç½® ffmpeg æºä»£ç ç›®å½•
+set "FFmpegSource=E:\Source\ffmpeg\GIT"
 
-:: ÉèÖÃ MSYS µÄÎ»ÖÃ
+:: è®¾ç½® MSYS çš„ä½ç½®
 set "MSYS=F:\Green\Language\MSYS\bin"
 
-:: ÉèÖÃ GIT µÄÎ»ÖÃ
-set "GIT=D:\Tools\Git\bin"
+:: è®¾ç½® GIT çš„ä½ç½®
+set "GIT=F:\Green\Language\GIT\Git\bin"
 
-:: ÉèÖÃ PKG_CONFIG.EXE µÄÎ»ÖÃ
-set "PKG_CONFIG=%CurrentCD%PKG"
+:: è®¾ç½® PKG_CONFIG.EXE çš„ä½ç½®
+set "PKG_CONFIG=F:\Green\Language\CMake\3.11.1\bin"
 
-:: ÉèÖÃ PKG_CONFIG_PATH Î»ÖÃ 
-set "PKG_CONFIG_PATH=%CurrentCD%Install\pkgpc"
+:: è®¾ç½® PKG_CONFIG_PATH ä½ç½® 
+set "PKG_CONFIG_PATH=F:\Green\Language\MSYS2\mingw64\lib\pkgconfig"
 
-:: ĞŞ¸ÄËùÓĞ PC ÎÄ¼şµÚÒ»ĞĞµÄÂ·¾¶
-set "InstallPC=%CurrentCD%Install"
-set "PCFirstTe=%InstallPC:\=/%"
-set "StrValue=prefix=%PCFirstTe%"
-for /r %PKG_CONFIG_PATH% %%i in (*.pc) do (
-  for /f "tokens=1* delims=:" %%j in ('Type %%i^|Findstr /n ".*"') do (
-    If "%%j"=="1" (
-    echo %StrValue%>tmp.txt
-    ) else (
-    echo %%k>>tmp.txt
-    )
-  )
-  move /y tmp.txt %%i
-)
+:: è®¾ç½® CUDA9.0 SDK çš„ä½ç½®
+set "CudaInc=F:\Green\Language\NVIDIA\CUDA9.1\SDK\include"
+set "CudaLib=F:\Green\Language\NVIDIA\CUDA9.1\SDK\lib\x64"
+set "CudaBin=F:\Green\Language\NVIDIA\CUDA9.1\SDK\bin"
 
-:: ÉèÖÃ CUDA9.0 SDK µÄÎ»ÖÃ
-set "CudaInc=D:\Language\NVIDIA\CUDA9.0\SDK\include"
-set "CudaLib=D:\Language\NVIDIA\CUDA9.0\SDK\lib\x64"
-set "CudaBin=D:\Language\NVIDIA\CUDA9.0\SDK\bin"
-
-:: ÉèÖÃ VS2015 »·¾³±äÁ¿£¬Ìí¼ÓµÚÈı·½µÄÍ·ÎÄ¼ş¡¢¿âÎÄ¼şËÑË÷Â·¾¶
+:: è®¾ç½® VS2015 ç¯å¢ƒå˜é‡ï¼Œæ·»åŠ ç¬¬ä¸‰æ–¹çš„å¤´æ–‡ä»¶ã€åº“æ–‡ä»¶æœç´¢è·¯å¾„
 call "%VS140COMNTOOLS%..\..\VC\vcvarsall.bat" amd64
-set "include=%CurrentCD%Install\include;%CurrentCD%Install\include\libxml2;%CudaInc%;%include%"
-set "lib=%CurrentCD%Install\lib;%CudaLib%;%lib%"
+set "include=%CurrentCD%Install\include;%CurrentCD%Install\include\libxml2;E:\Source\ffmpeg\20180702\include;%CudaInc%;%include%"
+set "lib=%CurrentCD%Install\lib;%CudaLib%;E:\Source\ffmpeg\20180702\lib;E:\Source\gtk\zb\gtk01\gtk\x64\release\lib;%lib%"
 
-:: ÉèÖÃ ÏµÍ³ËÑË÷Â·¾¶
+:: è®¾ç½® ç³»ç»Ÿæœç´¢è·¯å¾„
 set "Path=%MSYS%;%GIT%;%PKG_CONFIG%;%PKG_CONFIG_PATH%;%CudaBin%;%Path%"
 
-:: ÉèÖÃ °²×°Ä¿Â¼ <×¢ÒâÏµÍ³ÈÕÆÚÓ¦¸ÃĞŞ¸ÄÎª - ¸ñÊ½(ÀıÈç£º2017-12-12)£¬²»ÄÜÊÇ \ ¸ñÊ½(2017\12\12),ÒòÎª \ ÊÇÄ¿Â¼Â·¾¶£¬²»ÊÇÄ¿Â¼Ãû³Æ>
+:: è®¾ç½® å®‰è£…ç›®å½• <æ³¨æ„ç³»ç»Ÿæ—¥æœŸåº”è¯¥ä¿®æ”¹ä¸º - æ ¼å¼(ä¾‹å¦‚ï¼š2017-12-12)ï¼Œä¸èƒ½æ˜¯ \ æ ¼å¼(2017\12\12),å› ä¸º \ æ˜¯ç›®å½•è·¯å¾„ï¼Œä¸æ˜¯ç›®å½•åç§°>
 set "TempInstallPath=%CurrentCD%ffmpeg\%date%"
 set "InstallPath=%TempInstallPath:\=/%"
 
-:: ÇĞ»»µ½ ffmpeg Ô´´úÂëÄ¿Â¼¡£ÏÈÇĞ»»µ½¸ùÄ¿Â¼£¬ÔÙ½øÈë×ÓÄ¿Â¼
+:: åˆ‡æ¢åˆ° ffmpeg æºä»£ç ç›®å½•ã€‚å…ˆåˆ‡æ¢åˆ°æ ¹ç›®å½•ï¼Œå†è¿›å…¥å­ç›®å½•
 set "TempFFmpegSourceDisk=%FFmpegSource%"
 set "FFmpegSourceDisk=%TempFFmpegSourceDisk:~0,2%"
 %FFmpegSourceDisk%
 cd %FFmpegSource%
 
-:: VS2015 ¾²Ì¬±àÒë x64 °æ±¾
+:: VS2015 é™æ€ç¼–è¯‘ x64 ç‰ˆæœ¬
 git clean -xdf
 bash -c "make clean"
-bash -c "./configure --arch=x86_64 --enable-gpl --enable-version3 --enable-static --enable-nonfree --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libfdk-aac --enable-libfribidi --enable-libfreetype --enable-libxml2 --enable-libfontconfig --enable-libass --enable-libopenh264 --enable-libwebp --enable-opengl --enable-libmfx --enable-cuda-sdk --toolchain=msvc --prefix=%InstallPath%"
-::                                  --enable-gpl --enable-version3                                  --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libmodplug --enable-libsoxr --enable-libfreetype --enable-fontconfig --enable-libfribidi --enable-libass --enable-libxml2 --enable-gnutls --disable-schannel --enable-gmp --enable-libssh --enable-libcdio --enable-libbluray --enable-opengl --enable-libmfx --toolchain=msvc"
+:: bash -c "./configure --arch=x86_64 --enable-gpl --enable-version3 --enable-static --enable-nonfree --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libfdk-aac --enable-libfribidi --enable-libfreetype --enable-libxml2 --enable-libfontconfig --enable-libass --enable-libopenh264 --enable-libwebp --enable-opengl --enable-libmfx --enable-cuda-sdk --toolchain=msvc --prefix=%InstallPath%"
+bash -c "./configure --extra-cflags='-DMODPLUG_STATIC -DLIBSSH_STATIC' --extra-libs='User32.lib Advapi32.lib shell32.lib' --enable-gpl --enable-version3 --enable-nonfree --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libsoxr --enable-libmodplug --enable-libfreetype --enable-fontconfig --enable-libfribidi --enable-libass --enable-libxml2 --enable-gnutls --disable-schannel --enable-gmp --enable-libssh --enable-libcdio --enable-libbluray --enable-opengl --enable-libmfx --toolchain=msvc  --prefix=%InstallPath%"
 
-:: ÔİÍ£Ò»ÏÂ£¬²é¿´ÊÇ·ñÓĞ´íÎó£¬Èç¹ûÓĞ£¬´ò¿ª ffmpeg Ô´´úÂëÄ¿Â¼ ffbuild\config.log ²é¿´´íÎó
+:: æš‚åœä¸€ä¸‹ï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰é”™è¯¯ï¼Œå¦‚æœæœ‰ï¼Œæ‰“å¼€ ffmpeg æºä»£ç ç›®å½• ffbuild\config.log æŸ¥çœ‹é”™è¯¯
 pause
 
-:: ¸ù¾İ×Ô¼ºµÄ»úÆ÷µÄÏß³ÌÊıĞŞ¸Ä -j8¡£Èç¹ûÄãµÄ»úÆ÷ÊÇ8ºË16Ïß³Ì£¬ĞŞ¸ÄÎª "make -j16"¡£¼«´óÌá¸ß±àÒëËÙ¶È¡£
-bash -c "make -j8"
+:: æ ¹æ®è‡ªå·±çš„æœºå™¨çš„çº¿ç¨‹æ•°ä¿®æ”¹ -j8ã€‚å¦‚æœä½ çš„æœºå™¨æ˜¯8æ ¸16çº¿ç¨‹ï¼Œä¿®æ”¹ä¸º "make -j16"ã€‚æå¤§æé«˜ç¼–è¯‘é€Ÿåº¦ã€‚
+bash -c "make -j16"
 
-:: °²×°£¬±¾Ä¿Â¼ÏÂ£¬ÒÔ½ñÌìµÄÈÕÆÚÎªÄ¿Â¼
+:: å®‰è£…ï¼Œæœ¬ç›®å½•ä¸‹ï¼Œä»¥ä»Šå¤©çš„æ—¥æœŸä¸ºç›®å½•
 bash -c "make install"
 
 pause
