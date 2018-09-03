@@ -1,0 +1,10 @@
+ OldAEMask := GetExceptionMask;
+  try
+    AEMask := OldAEMask;
+    Include(AEMask, exInvalidOp);
+    SetExceptionMask(AEMask);
+    Result := AFR_FSDK_ExtractFRFeature(FFaceRecognitionEngine, @AFaceInput,
+      @AFaceRegion, @tmpFaceModels) = MOK;
+  finally
+    SetExceptionMask(OldAEMask);
+  end

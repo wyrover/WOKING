@@ -28,14 +28,14 @@ set "CudaBin=F:\Green\Language\NVIDIA\CUDA9.1\SDK\bin"
 
 :: 设置 VS2015 环境变量，添加第三方的头文件、库文件搜索路径
 call "%VS140COMNTOOLS%..\..\VC\vcvarsall.bat" amd64
-set "include=%CurrentCD%Install\include;%CurrentCD%Install\include\libxml2;E:\Source\ffmpeg\20180702\include;%CudaInc%;%include%"
+set "include=%CurrentCD%Install\include;%CurrentCD%Install\include\libxml2;E:\Source\ffmpeg\20180702\include;E:\Source\ffmpeg\20180702\include\SDL;E:\Source\ffmpeg\20180702\include\openjpeg-2.3;%CudaInc%;%include%"
 set "lib=%CurrentCD%Install\lib;%CudaLib%;E:\Source\ffmpeg\20180702\lib;E:\Source\gtk\zb\gtk01\gtk\x64\release\lib;%lib%"
 
 :: 设置 系统搜索路径
 set "Path=%MSYS%;%GIT%;%PKG_CONFIG%;%PKG_CONFIG_PATH%;%CudaBin%;%Path%"
 
 :: 设置 安装目录 <注意系统日期应该修改为 - 格式(例如：2017-12-12)，不能是 \ 格式(2017\12\12),因为 \ 是目录路径，不是目录名称>
-set "TempInstallPath=%CurrentCD%ffmpeg\%date%"
+set "TempInstallPath=%CurrentCD%%date%\static"
 set "InstallPath=%TempInstallPath:\=/%"
 
 :: 切换到 ffmpeg 源代码目录。先切换到根目录，再进入子目录
@@ -47,8 +47,7 @@ cd %FFmpegSource%
 :: VS2015 静态编译 x64 版本
 git clean -xdf
 bash -c "make clean"
-:: bash -c "./configure --arch=x86_64 --enable-gpl --enable-version3 --enable-static --enable-nonfree --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libfdk-aac --enable-libfribidi --enable-libfreetype --enable-libxml2 --enable-libfontconfig --enable-libass --enable-libopenh264 --enable-libwebp --enable-opengl --enable-libmfx --enable-cuda-sdk --toolchain=msvc --prefix=%InstallPath%"
-bash -c "./configure --extra-cflags='-DMODPLUG_STATIC -DLIBSSH_STATIC' --extra-libs='User32.lib Advapi32.lib shell32.lib' --enable-gpl --enable-version3 --enable-nonfree --enable-avisynth --enable-libmp3lame --enable-libvorbis --enable-libspeex --enable-libopus --enable-libilbc --enable-libtheora --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libgme --enable-libsoxr --enable-libmodplug --enable-libfreetype --enable-fontconfig --enable-libfribidi --enable-libass --enable-libxml2 --enable-gnutls --disable-schannel --enable-gmp --enable-libssh --enable-libcdio --enable-libbluray --enable-opengl --enable-libmfx --toolchain=msvc  --prefix=%InstallPath%"
+bash -c "./configure --enable-gpl --enable-version3 --enable-nonfree --enable-avisynth --enable-fontconfig --enable-gmp --enable-gnutls --enable-libass --enable-libbluray --enable-libcdio --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libilbc --enable-libmfx --enable-libmodplug --enable-libmp3lame --enable-libopenh264 --enable-libopenjpeg --enable-libopus --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-opengl --disable-schannel --toolchain=msvc --prefix=%InstallPath% --extra-cflags='-DMODPLUG_STATIC -DLIBSSH_STATIC -DOPJ_STATIC' --extra-libs='User32.lib Advapi32.lib shell32.lib dinput8.lib dxguid.lib gdi32.lib winmm.lib imm32.lib ole32.lib oleaut32.lib version.lib uuid.lib openjp2.lib'"
 
 :: 暂停一下，查看是否有错误，如果有，打开 ffmpeg 源代码目录 ffbuild\config.log 查看错误
 pause
