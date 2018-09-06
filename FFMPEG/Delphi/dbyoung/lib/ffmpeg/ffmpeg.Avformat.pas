@@ -113,7 +113,6 @@ const
   AVFMT_AVOID_NEG_TS_MAKE_ZERO         = 2;
 
 type
-  PAVBPrint                  = ^TAVBPrint;
   PAVIOInterruptCB           = ^TAVIOInterruptCB;
   PPAVIODirContext           = ^PAVIODirContext;
   PAVIODirContext            = ^TAVIODirContext;

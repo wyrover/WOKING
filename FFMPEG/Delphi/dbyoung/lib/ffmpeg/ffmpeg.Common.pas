@@ -94,6 +94,59 @@ type
   clongDouble  = extended;
   pclongDouble = ^clongDouble;
 
+  PAVBPrint = ^TAVBPrint;
+
+  TAVBPrint = record
+    case Integer of
+      0:
+        (paddedRecord: array [1 .. 1024] of Byte);
+      1:
+        (str: PAnsiChar;
+          len: cuint;
+          size: cuint;
+          size_max: cuint;
+          reserved_internal_buffer: Pchar
+        );
+  end;
+
+  intptr_t              = pcint32;
+  atomic_flag           = intptr_t;
+  atomic_bool           = intptr_t;
+  atomic_char           = intptr_t;
+  atomic_schar          = intptr_t;
+  atomic_uchar          = intptr_t;
+  atomic_short          = intptr_t;
+  atomic_ushort         = intptr_t;
+  atomic_int            = intptr_t;
+  atomic_uint           = intptr_t;
+  atomic_long           = intptr_t;
+  atomic_ulong          = intptr_t;
+  atomic_llong          = intptr_t;
+  atomic_ullong         = intptr_t;
+  atomic_wchar_t        = intptr_t;
+  atomic_int_least8_t   = intptr_t;
+  atomic_uint_least8_t  = intptr_t;
+  atomic_int_least16_t  = intptr_t;
+  atomic_uint_least16_t = intptr_t;
+  atomic_int_least32_t  = intptr_t;
+  atomic_uint_least32_t = intptr_t;
+  atomic_int_least64_t  = intptr_t;
+  atomic_uint_least64_t = intptr_t;
+  atomic_int_fast8_t    = intptr_t;
+  atomic_uint_fast8_t   = intptr_t;
+  atomic_int_fast16_t   = intptr_t;
+  atomic_uint_fast16_t  = intptr_t;
+  atomic_int_fast32_t   = intptr_t;
+  atomic_uint_fast32_t  = intptr_t;
+  atomic_int_fast64_t   = intptr_t;
+  atomic_uint_fast64_t  = intptr_t;
+  atomic_intptr_t       = intptr_t;
+  atomic_uintptr_t      = intptr_t;
+  atomic_size_t         = intptr_t;
+  atomic_ptrdiff_t      = intptr_t;
+  atomic_intmax_t       = intptr_t;
+  atomic_uintmax_t      = intptr_t;
+
 implementation
 
 end.

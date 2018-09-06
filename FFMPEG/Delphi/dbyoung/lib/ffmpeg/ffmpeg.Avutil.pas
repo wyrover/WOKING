@@ -545,6 +545,11 @@ type
   end;
 
   TAVBuffer = record
+    data: puint8_t;
+    refcount: atomic_uint;
+    free: function(opaque: Pointer; data: puint8_t): Pointer; cdecl;
+    opaque: Pointer;
+    flags: int;
   end;
 
   TAVBufferRef = record
@@ -663,10 +668,27 @@ type
   TAlloc2   = function(opaque: Pointer; size: cint): PAVBufferRef;
   TPoolFree = procedure(opaque: Pointer);
 
-  PPAVBufferPool = ^PAVBufferPool;
-  PAVBufferPool  = ^TAVBufferPool;
+  PPAVBufferPool   = ^PAVBufferPool;
+  PAVBufferPool    = ^TAVBufferPool;
+  AVMutex          = AnsiChar;
+  PBufferPoolEntry = ^BufferPoolEntry;
+
+  BufferPoolEntry = record
+    data: puint8_t;
+    opaque: Pointer;
+    free: procedure(opaque: Pointer; data: puint8_t); cdecl;
+    pool: PAVBufferRef;
+  end;
 
   TAVBufferPool = record
+    mutex: AVMutex;
+    pool: PBufferPoolEntry;
+    refcount: atomic_uint;
+    size: int;
+    opaque: Pointer;
+    alloc: function(size: int): PAVBufferRef; cdecl;
+    alloc2: function(opaque: Pointer; size: int): PAVBufferRef; cdecl;
+    pool_free: function(opaque: Pointer): Pointer; cdecl;
   end;
 
   TAVFrameSideDataType = (                    //
@@ -872,13 +894,25 @@ const
   AV_BF_ROUNDS    = 16;
 
 type
-  PAVAES         = ^AVAES;
-  PAVAESCTR      = ^AVAESCTR;
-  PAVAudioFifo   = ^AVAudioFifo;
-  PPAVFifoBuffer = ^PAVFifoBuffer;
-  PAVFifoBuffer  = ^AVFifoBuffer;
-  PAVBlowfish    = ^AVBlowfish;
-  PAVLFG         = ^AVLFG;
+  PAVAES                     = ^AVAES;
+  PAVAESCTR                  = ^AVAESCTR;
+  PAVAudioFifo               = ^AVAudioFifo;
+  PPAVFifoBuffer             = ^PAVFifoBuffer;
+  PAVFifoBuffer              = ^AVFifoBuffer;
+  PAVBlowfish                = ^AVBlowfish;
+  PAVLFG                     = ^AVLFG;
+  Ptm                        = ^tm;
+  PAVCAMELLIA                = ^AVCAMELLIA;
+  PAVCAST5                   = ^AVCAST5;
+  PAVContentLightMetadata    = ^AVContentLightMetadata;
+  PAVCRC                     = ^AVCRC;
+  PAVDES                     = ^AVDES;
+  PAVDownmixInfo             = ^AVDownmixInfo;
+  PAVEncryptionInfo          = ^AVEncryptionInfo;
+  PAVSubsampleEncryptionInfo = ^AVSubsampleEncryptionInfo;
+  PAVEncryptionInitInfo      = ^AVEncryptionInitInfo;
+  PAVExpr                    = ^AVExpr;
+  PPAVExpr                   = ^PAVExpr;
 
   AVInteger = record
     v: array [0 .. AV_INTEGER_SIZE - 1] of uint16_t;
@@ -929,9 +963,128 @@ type
     index: int;
   end;
 
+  AVEscapeMode = (            //
+    AV_ESCAPE_MODE_AUTO,      //
+    AV_ESCAPE_MODE_BACKSLASH, //
+    AV_ESCAPE_MODE_QUOTE      //
+    );
 
-  // procedure av_bprint_channel_layout(bp: PAVBPrint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
-  // function av_channel_layout_extract_channel(channel_layout: cuint64; index: cint): cuint64; cdecl; external c_strFFmpegDllX64Name;
+  tm = record
+
+  end;
+
+  AVCAMELLIA = record
+    Kw: array [0 .. 3] of uint64_t;
+    Ke: array [0 .. 5] of uint64_t;
+    K: array [0 .. 23] of uint64_t;
+    key_bits: int;
+  end;
+
+  AVCAST5 = record
+    Km: array [0 .. 16] of UInt32;
+    Kr: array [0 .. 16] of UInt32;
+    rounds: int;
+  end;
+
+  AVContentLightMetadata = record
+    MaxCLL: unsigned;
+    MaxFALL: unsigned;
+  end;
+
+  AVCRC = uint32_t;
+
+  AVCRCId = (          //
+    AV_CRC_8_ATM,      //
+    AV_CRC_16_ANSI,    //
+    AV_CRC_16_CCITT,   //
+    AV_CRC_32_IEEE,    //
+    AV_CRC_32_IEEE_LE, //
+    AV_CRC_16_ANSI_LE, //
+    AV_CRC_24_IEEE,    //
+    AV_CRC_8_EBU,      //
+    AV_CRC_MAX);
+
+  AVDES = record
+    round_keys: array [0 .. 2, 0 .. 15] of uint64_t;
+    triple_des: int;
+  end;
+
+  nineArrInt32 = array [0 .. 8] of Int32;
+
+  AVDownmixType = (          //
+    AV_DOWNMIX_TYPE_UNKNOWN, //
+    AV_DOWNMIX_TYPE_LORO,    //
+    AV_DOWNMIX_TYPE_LTRT,    //
+    AV_DOWNMIX_TYPE_DPLII,   //
+    AV_DOWNMIX_TYPE_NB       //
+    );
+
+  AVDownmixInfo = record
+    preferred_downmix_type: AVDownmixType;
+    center_mix_level: Double;
+    center_mix_level_ltrt: Double;
+    surround_mix_level: Double;
+    surround_mix_level_ltrt: Double;
+    lfe_mix_level: Double;
+  end;
+
+  AVSubsampleEncryptionInfo = record
+    bytes_of_clear_data: unsigned_int;
+    bytes_of_protected_datav: unsigned_int;
+  end;
+
+  AVEncryptionInfo = record
+    scheme, crypt_byte_block, skip_byte_block: uint32_t;
+    key_id: puint8_t;
+    key_id_size: uint32_t;
+    iv: puint8_t;
+    iv_size: uint32_t;
+    subsamples: PAVSubsampleEncryptionInfo;
+    subsample_count: uint32_t;
+  end;
+
+  AVEncryptionInitInfo = record
+    system_id: puint8_t;
+    system_id_size: uint32_t;
+    key_ids: ppuint8_t;
+    num_key_ids: uint32_t;
+    key_id_size: uint32_t;
+    data: puint8_t;
+    data_size: uint32_t;
+    next: PAVEncryptionInitInfo;
+  end;
+
+  enumtype = (                                                                    //
+    e_value, e_const, e_func0, e_func1, e_func2,                                  //
+    e_squish, e_gauss, e_ld, e_isnan, e_isinf,                                    //
+    e_mod, e_max, e_min, e_eq, e_gt, e_gte, e_lte, e_lt,                          //
+    e_pow, e_mul, e_div, e_add,                                                   //
+    e_last, e_st, e_while, e_taylor, e_root, e_floor, e_ceil, e_trunc, e_round,   //
+    e_sqrt, e_not, e_random, e_hypot, e_gcd,                                      //
+    e_if, e_ifnot, e_print, e_bitand, e_bitor, e_between, e_clip, e_atan2, e_lerp //
+    );
+
+  Tuniona = record
+    case Integer of
+      0:
+        (const_index: int
+        );
+      1:
+        (func0:
+                  function(): PDouble;
+        cdecl);
+  end;
+
+  AVExpr = record
+    _type: enumtype;
+    value: Double;
+    a: Tuniona;
+    param: array [0 .. 2] of PAVExpr;
+    _var: PDouble;
+  end;
+
+  Tfuncs1 = function(P: Pointer; d: Double)     : PDouble;
+  Tfuncs2 = function(P: Pointer; d1, d2: Double): PDouble;
 
 function av_add_i(a, b: AVInteger): AVInteger; cdecl; external c_strFFmpegDllX64Name;
 function av_add_q(b, c: TAVRational): TAVRational; cdecl; external c_strFFmpegDllX64Name;
@@ -972,35 +1125,108 @@ procedure av_blowfish_crypt(ctx: PAVBlowfish; dst: puint8_t; const src: puint8_t
 procedure av_blowfish_crypt_ecb(ctx: PAVBlowfish; xl: pcuint32; xr: pcuint32; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
 procedure av_blowfish_init(ctx: PAVBlowfish; const key: puint8_t; key_len: int); cdecl; external c_strFFmpegDllX64Name;
 procedure av_bmg_get(lfg: PAVLFG); cdecl; external c_strFFmpegDllX64Name;
-
-function av_buffer_alloc(size: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
-function av_buffer_allocz(size: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_append_data(buf: PAVBPrint; const data: PAnsiChar; size: unsigned); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_channel_layout(bp: PAVBPrint; nb_channels: int; channel_layout: uint64_t); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_chars(buf: PAVBPrint; c: AnsiChar; n: unsigned); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_clear(buf: PAVBPrint); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_escape(dstbuf: PAVBPrint; const src: PAnsiChar; const special_chars: PAnsiChar; mode: AVEscapeMode; flas: int); cdecl; external c_strFFmpegDllX64Name;
+function av_bprint_finalize(buf: PAVBPrint; ret_str: PPAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_get_buffer(buf: PAVBPrint; size: unsigned; mem: PPAnsiChar; actual_size: PCardinal); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_init(buf: PAVBPrint; size_init: unsigned; size_max: unsigned); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_init_for_buffer(buf: PAVBPrint; buffer: PAnsiChar; size: unsigned); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprint_strftime(buf: PAVBPrint; const fmt: PAnsiChar; const tm: Ptm); cdecl; external c_strFFmpegDllX64Name;
+procedure av_bprintf(buf: PAVBPrint; const fmt: array of const); cdecl; external c_strFFmpegDllX64Name;
+function av_buffer_alloc(size: int): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
+function av_buffer_allocz(size: int): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_create(data: pbyte; size: cint; free: TFree; opaque: Pointer; flags: cint): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
+procedure av_buffer_default_free(opaque: Pointer; data: pbyte); cdecl; external c_strFFmpegDllX64Name;
+procedure av_buffer_get_opaque(buf: PAVBufferRef); cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_get_ref_count(buf: PAVBufferRef): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_is_writable(buf: PAVBufferRef): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_make_writable(buf: PPAVBufferRef): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_pool_get(pool: PAVBufferPool): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_pool_init(size: cint; alloc: TAlloc): PAVBufferPool; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_pool_init2(size: cint; opaque: Pointer; alloc: TAlloc2; pool_free: TPoolFree): PAVBufferPool; cdecl; external c_strFFmpegDllX64Name;
+procedure av_buffer_pool_uninit(pool: PPAVBufferPool); cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_realloc(buf: PPAVBufferRef; size: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_buffer_ref(buf: PAVBufferRef): PAVBufferRef; cdecl; external c_strFFmpegDllX64Name;
+procedure av_buffer_unref(buf: PPAVBufferRef); cdecl; external c_strFFmpegDllX64Name;
 function av_calloc(nmemb: size_t; size: size_t): Pointer; cdecl; external c_strFFmpegDllX64Name;
+function av_camellia_alloc(): PAVCAMELLIA; cdecl; external c_strFFmpegDllX64Name;
+procedure av_camellia_crypt(ctx: PAVCAMELLIA; dst: puint8_t; const src: puint8_t; count: int; iv: puint8_t; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+function av_camellia_init(ctx: PAVCAMELLIA; const key: puint8_t; key_bits: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_camellia_size: int; cdecl; external c_strFFmpegDllX64Name;
+function av_cast5_alloc(): PAVCAST5; cdecl; external c_strFFmpegDllX64Name;
+procedure av_cast5_crypt(ctx: PAVCAST5; dst: puint8_t; const src: puint8_t; count: int; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+procedure av_cast5_crypt2(ctx: PAVCAST5; dst: puint8_t; const src: puint8_t; count: int; iv: puint8_t; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+function av_cast5_init(ctx: PAVCAST5; const key: puint8_t; key_bits: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_cast5_size: int; cdecl; external c_strFFmpegDllX64Name;
+function av_channel_layout_extract_channel(channel_layout: cuint64; index: cint): cuint64; cdecl; external c_strFFmpegDllX64Name;
+function av_chroma_location_from_name(const name: PAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+function av_chroma_location_name(location: TAVChromaLocation): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_cmp_i(a, b: AVInteger): int; cdecl; external c_strFFmpegDllX64Name;
+function av_color_primaries_from_name(const name: PAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+function av_color_primaries_name(primaries: TAVColorPrimaries): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_color_range_from_name(const name: PAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+function av_color_range_name(range: TAVColorRange): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_color_space_from_name(const name: PAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+function av_color_space_name(space: TAVColorSpace): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_color_transfer_from_name(const name: PAnsiChar): int; cdecl; external c_strFFmpegDllX64Name;
+function av_color_transfer_name(transfer: TAVColorTransferCharacteristic): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_compare_mod(a, b, modVar: cuint64): cint64; cdecl; external c_strFFmpegDllX64Name;
 function av_compare_ts(ts_a: cint64; tb_a: TAVRational; ts_b: cint64; tb_b: TAVRational): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_content_light_metadata_alloc(size: Psize_t): PAVContentLightMetadata; cdecl; external c_strFFmpegDllX64Name;
+function av_content_light_metadata_create_side_data(): PAVContentLightMetadata; cdecl; external c_strFFmpegDllX64Name;
 function av_cpu_count(): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_cpu_max_align(): size_t; cdecl; external c_strFFmpegDllX64Name;
+function av_crc(ctx: PAVCRC; crc: UInt32; const buffer: puint8_t; lenth: size_t): UInt32; cdecl; external c_strFFmpegDllX64Name;
+function av_crc_get_table(crc_id: AVCRCId): PAVCRC; cdecl; external c_strFFmpegDllX64Name;
+function av_crc_init(ctx: PAVCRC; le: int; bits: int; poly: uint32_t; ctx_size: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_d2q(d: Double; max: int): TAVRational; cdecl; external c_strFFmpegDllX64Name;
+function av_d2str(d: Double): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_default_get_category(ptr: Pointer): TAVClassCategory; cdecl; external c_strFFmpegDllX64Name;
 function av_default_item_name(ctx: Pointer): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+function av_des_alloc(): PAVDES; cdecl; external c_strFFmpegDllX64Name;
+procedure av_des_crypt(d: PAVDES; dst: puint8_t; const src: puint8_t; count: int; iv: puint8_t; decrypt: int); cdecl; external c_strFFmpegDllX64Name;
+function av_des_init(d: PAVDES; const key: puint8_t; key_bits: int; decrypt: int): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_des_mac(d: PAVDES; dst: puint8_t; const src: puint8_t; count: int); cdecl; external c_strFFmpegDllX64Name;
 function av_dict_copy(var dst: PAVDictionary; src: PAVDictionary; flags: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_dict_count(m: PAVDictionary): cint; cdecl; external c_strFFmpegDllX64Name;
+procedure av_dict_free(var m: PAVDictionary); cdecl; external c_strFFmpegDllX64Name;
 function av_dict_get(m: PAVDictionary; key: PAnsiChar; prev: PAVDictionaryEntry; flags: cint): PAVDictionaryEntry; cdecl; external c_strFFmpegDllX64Name;
 function av_dict_get_string(m: PAVDictionary; buffer: PPAnsiChar; key_val_sep: AnsiChar; pairs_sep: AnsiChar): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_dict_parse_string(var pm: PAVDictionary; str: PAnsiChar; key_val_sep: PAnsiChar; pairs_sep: PAnsiChar; flags: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_dict_set(var pm: PAVDictionary; key: PAnsiChar; value: PAnsiChar; flags: cint): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_dict_set_int(var pm: PAVDictionary; key: PAnsiChar; value: cint64; flags: cint): cint; cdecl; external c_strFFmpegDllX64Name;
+function av_dirname(path: PAnsiChar): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
+procedure av_display_matrix_flip(matrix: nineArrInt32; hflip: int; vflip: int); cdecl; external c_strFFmpegDllX64Name;
+function av_display_rotation_get(const matrix: nineArrInt32): Double; cdecl; external c_strFFmpegDllX64Name;
+procedure av_display_rotation_set(matrix: Int32; angle: Double); cdecl; external c_strFFmpegDllX64Name;
+function av_div_i(a, b: AVInteger): AVInteger; cdecl; external c_strFFmpegDllX64Name;
+function av_div_q(b, c: TAVRational): TAVRational; cdecl; external c_strFFmpegDllX64Name;
+function av_downmix_info_update_side_data(frame: PAVFrame): PAVDownmixInfo; cdecl; external c_strFFmpegDllX64Name;
+function av_dynarray2_add(tab_ptr: PPointer; nb_ptr: PInteger; elem_size: size_t; const elem_data: puint8_t): Pointer; cdecl; external c_strFFmpegDllX64Name;
+procedure av_dynarray_add(tab_ptr: Pointer; nb_ptr: Pcint; elem: Pointer); cdecl; external c_strFFmpegDllX64Name;
 function av_dynarray_add_nofree(tab_ptr: Pointer; nb_ptr: Pcint; elem: Pointer): cint; cdecl; external c_strFFmpegDllX64Name;
-function av_dynarray2_add(tab_ptr: Pointer; nb_ptr: Pcint; elem_size: size_t; elem_data: Pcuint8): Pointer; cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_info_add_side_data(const info: PAVEncryptionInfo; size: size_t): puint8_t; cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_info_alloc(subsample_count: uint32_t; key_id_size: uint32_t; iv_size: uint32_t): PAVEncryptionInfo; cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_info_clone(const info: PAVEncryptionInfo): PAVEncryptionInfo; cdecl; external c_strFFmpegDllX64Name;
+procedure av_encryption_info_free(info: PAVEncryptionInfo); cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_info_get_side_data(const side_data: puint8_t; side_data_size: size_t): PAVEncryptionInfo; cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_init_info_add_side_data(const info: PAVEncryptionInitInfo; side_data_size: size_t): puint8_t; cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_init_info_alloc(system_id_size, num_key_ids, key_id_size, data_size: uint32_t): PAVEncryptionInitInfo; cdecl; external c_strFFmpegDllX64Name;
+procedure av_encryption_init_info_free(info: PAVEncryptionInitInfo); cdecl; external c_strFFmpegDllX64Name;
+function av_encryption_init_info_get_side_data(const side_data: puint8_t; side_data_size: size_t): PAVEncryptionInitInfo; cdecl; external c_strFFmpegDllX64Name;
+function av_escape(dst: PPAnsiChar; const src: PAnsiChar; const special_chars: PAnsiChar; mode: AVEscapeMode; flags: int): int; cdecl; external c_strFFmpegDllX64Name;
+function av_expr_eval(e: PAVExpr; const const_values: PDouble; opaque: Pointer): Double; cdecl; external c_strFFmpegDllX64Name;
+procedure av_expr_free(e: PAVExpr); cdecl; external c_strFFmpegDllX64Name;
+function av_expr_parse(expr: PPAVExpr; const s: PAnsiChar; const const_names: PAnsiChar; const func1_name: PAnsiChar; funcs1: Tfuncs1): int; cdecl; external c_strFFmpegDllX64Name;
+function av_expr_parse_and_eval(expr: PPAVExpr; const s: PAnsiChar; const const_names: PAnsiChar; const const_values: PDouble; const func1_name: PAnsiChar; funcs1: Tfuncs1; const func2_name: PAnsiChar; funcs2: Tfuncs2; opaque: Pointer; log_offset: int; log_ctx: Pointer): int; cdecl; external c_strFFmpegDllX64Name;
+procedure av_fast_malloc(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
+procedure av_fast_mallocz(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
 function av_fast_realloc(ptr: Pointer; size: PCuint; min_size: size_t): Pointer; cdecl; external c_strFFmpegDllX64Name;
+function av_fifo_alloc(nmemb: size_t; size: size_t): PAVFifoBuffer; cdecl; external c_strFFmpegDllX64Name;
+
 function av_fourcc_make_string(buf: PAnsiChar; fourcc: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_fourcc2str(fourcc: cuint64): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_frame_alloc(): PAVFrame; cdecl; external c_strFFmpegDllX64Name;
@@ -1041,7 +1267,6 @@ function av_get_channel_name(channel: cuint64): PAnsiChar; cdecl; external c_str
 procedure av_get_channel_layout_string(buf: PAnsiChar; buf_size: cint; nb_channels: cint; channel_layout: cuint64); cdecl; external c_strFFmpegDllX64Name;
 function av_get_default_channel_layout(nb_channels: cint): cint64; cdecl; external c_strFFmpegDllX64Name;
 function av_get_standard_channel_layout(index: cuint; layout: PCuint64; name: PPAnsiChar): cint; cdecl; external c_strFFmpegDllX64Name;
-
 function av_get_cpu_flags(): cint; cdecl; external c_strFFmpegDllX64Name;
 function av_get_media_type_string(media_type: TAVMediaType): PAnsiChar; cdecl; external c_strFFmpegDllX64Name;
 function av_get_packed_sample_fmt(sample_fmt: TAVSampleFormat): TAVSampleFormat; cdecl; external c_strFFmpegDllX64Name;
@@ -1151,20 +1376,12 @@ procedure av_opt_free(obj: Pointer); cdecl; external c_strFFmpegDllX64Name;
 procedure av_opt_freep_ranges(ranges: PPAVOptionRanges); cdecl; external c_strFFmpegDllX64Name;
 procedure av_opt_set_defaults(s: Pointer); cdecl; external c_strFFmpegDllX64Name;
 procedure av_opt_set_defaults2(s: Pointer; mask: cint; flags: cint); cdecl; external c_strFFmpegDllX64Name;
-procedure av_dynarray_add(tab_ptr: Pointer; nb_ptr: Pcint; elem: Pointer); cdecl; external c_strFFmpegDllX64Name;
-procedure av_fast_malloc(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
-procedure av_fast_mallocz(ptr: Pointer; size: PCuint; min_size: size_t); cdecl; external c_strFFmpegDllX64Name;
 procedure av_free(ptr: Pointer); cdecl; external c_strFFmpegDllX64Name;
 procedure av_freep(ptr: Pointer); cdecl; external c_strFFmpegDllX64Name;
 procedure av_max_alloc(max: size_t); cdecl; external c_strFFmpegDllX64Name;
 procedure av_memcpy_backptr(dst: Pcuint8; back: cint; cnt: cint); cdecl; external c_strFFmpegDllX64Name;
-procedure av_buffer_default_free(opaque: Pointer; data: pbyte); cdecl; external c_strFFmpegDllX64Name;
-procedure av_buffer_get_opaque(buf: PAVBufferRef); cdecl; external c_strFFmpegDllX64Name;
-procedure av_buffer_pool_uninit(pool: PPAVBufferPool); cdecl; external c_strFFmpegDllX64Name;
-procedure av_buffer_unref(buf: PPAVBufferRef); cdecl; external c_strFFmpegDllX64Name;
 procedure av_force_cpu_flags(flags: cint); cdecl; external c_strFFmpegDllX64Name;
 procedure av_set_cpu_flags_mask(mask: cint); cdecl; external c_strFFmpegDllX64Name;
-procedure av_dict_free(var m: PAVDictionary); cdecl; external c_strFFmpegDllX64Name;
 procedure av_log_format_line(ptr: Pointer; level: cint; fmt: PAnsiChar; vl: va_list; line: PAnsiChar; line_size: cint; print_prefix: Pcint); cdecl; external c_strFFmpegDllX64Name;
 
 function AV_VERSION_INT(a, b, c: Cardinal): Cardinal;

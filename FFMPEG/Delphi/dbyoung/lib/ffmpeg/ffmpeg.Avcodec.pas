@@ -175,7 +175,6 @@ type
   PAVCodecHWConfig          = ^TAVCodecHWConfig;
   PPAVPacket                = ^PAVPacket;
   TAVMatrixEncoding         = (AV_MATRIX_ENCODING_NONE, AV_MATRIX_ENCODING_DOLBY, AV_MATRIX_ENCODING_DPLII, AV_MATRIX_ENCODING_DPLIIX, AV_MATRIX_ENCODING_DPLIIZ, AV_MATRIX_ENCODING_DOLBYEX, AV_MATRIX_ENCODING_DOLBYHEADPHONE, AV_MATRIX_ENCODING_NB);
-  PAVBPrint                 = ^TAVBPrint;
   PAVAudioConvert           = ^TAVAudioConvert;
   PAVBSFInternal            = ^TAVBSFInternal;
   PAVD3D11VAContext         = ^TAVD3D11VAContext;
@@ -198,19 +197,6 @@ type
   TAVAudioConvert = record
     in_channels, out_channels: cint;
     fmt_pair: cint;
-  end;
-
-  TAVBPrint = record
-    case Integer of
-      0:
-        (paddedRecord: array [1 .. 1024] of Byte);
-      1:
-        (str: PAnsiChar;
-          len: cuint;
-          size: cuint;
-          size_max: cuint;
-          reserved_internal_buffer: Pchar
-        );
   end;
 
   TMpegEncContext = record
@@ -1429,44 +1415,6 @@ type
   end;
 
   PMediaCodecBuffer = ^MediaCodecBuffer;
-  intptr_t          = pcint32;
-
-  atomic_flag           = intptr_t;
-  atomic_bool           = intptr_t;
-  atomic_char           = intptr_t;
-  atomic_schar          = intptr_t;
-  atomic_uchar          = intptr_t;
-  atomic_short          = intptr_t;
-  atomic_ushort         = intptr_t;
-  atomic_int            = intptr_t;
-  atomic_uint           = intptr_t;
-  atomic_long           = intptr_t;
-  atomic_ulong          = intptr_t;
-  atomic_llong          = intptr_t;
-  atomic_ullong         = intptr_t;
-  atomic_wchar_t        = intptr_t;
-  atomic_int_least8_t   = intptr_t;
-  atomic_uint_least8_t  = intptr_t;
-  atomic_int_least16_t  = intptr_t;
-  atomic_uint_least16_t = intptr_t;
-  atomic_int_least32_t  = intptr_t;
-  atomic_uint_least32_t = intptr_t;
-  atomic_int_least64_t  = intptr_t;
-  atomic_uint_least64_t = intptr_t;
-  atomic_int_fast8_t    = intptr_t;
-  atomic_uint_fast8_t   = intptr_t;
-  atomic_int_fast16_t   = intptr_t;
-  atomic_uint_fast16_t  = intptr_t;
-  atomic_int_fast32_t   = intptr_t;
-  atomic_uint_fast32_t  = intptr_t;
-  atomic_int_fast64_t   = intptr_t;
-  atomic_uint_fast64_t  = intptr_t;
-  atomic_intptr_t       = intptr_t;
-  atomic_uintptr_t      = intptr_t;
-  atomic_size_t         = intptr_t;
-  atomic_ptrdiff_t      = intptr_t;
-  atomic_intmax_t       = intptr_t;
-  atomic_uintmax_t      = intptr_t;
 
   MediaCodecBuffer = record
     ctx: PMediaCodecBuffer;
