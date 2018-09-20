@@ -35,7 +35,7 @@ implementation
 
 procedure TfrmFileDateTime.FormCreate(Sender: TObject);
 begin
-  ListFileInfo('F:\openssl-1.0.1c\tmp32');
+  ListFileInfo('F:\Green\Language\MSYS\bin');
 end;
 
 procedure TfrmFileDateTime.ListFileInfo(const strPath: string);
@@ -43,7 +43,10 @@ var
   arrFiles   : TStringDynArray;
   strFileName: string;
 begin
-  arrFiles := TDirectory.GetFiles(strPath, '*.obj');
+  if not DirectoryExists(strPath) then
+    Exit;
+
+  arrFiles := TDirectory.GetFiles(strPath, '*.*');
   lv1.Clear;
   lv1.Items.BeginUpdate;
   for strFileName in arrFiles do
